@@ -1,4 +1,5 @@
-﻿// ****************************** Module Header ****************************** //
+﻿using System.Resources;
+// ****************************** Module Header ****************************** //
 //
 //
 // Last Modified: 16:04:2017 / 20:22
@@ -15,9 +16,9 @@ using System.Windows;
 
 // .NET
 [assembly: AssemblyTitle("AstroSoundBoard")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("A Soundboard for AstroKitty")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("BugLine")]
 [assembly: AssemblyProduct("AstroSoundBoard")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
@@ -35,3 +36,5 @@ using System.Windows;
 
 // LOG4NET
 [assembly: log4net.Config.XmlConfigurator(Watch = true)]
+[assembly: NeutralResourcesLanguage("en")]
+
