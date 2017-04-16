@@ -36,11 +36,15 @@
 					<StackPanel>
 						<StackPanel Orientation="Horizontal">
 							<Label Margin="-3,0,25,0" Content="Dark Mode?" />
-							<ToggleButton />
+							<ToggleButton Click="ChangeLightMode" IsChecked="{Binding IsDarkModeEnabled}" />
 						</StackPanel>
 						<StackPanel Orientation="Horizontal">
 							<Label Margin="-3,0,10,0" Content="Primary Color:" />
-							<ComboBox Name="ColorBox" Width="200" />
+							<ComboBox
+								Name="ColorBox"
+								Width="200"
+								SelectedIndex="{Binding SelectedColor}"
+								SelectionChanged="ChangePrimaryColor" />
 						</StackPanel>
 					</StackPanel>
 				</GroupBox>
@@ -60,9 +64,8 @@
 					Header="Application"
 					Style="{DynamicResource MaterialDesignCardGroupBox}">
 					<StackPanel>
-						<StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
-							<Button Margin="5" Content="Clean up" />
-							<Button Margin="5" Content="Show Changelog" />
+						<StackPanel Orientation="Horizontal">
+							<Button Click="Button_Click" Content="Show Changelog" />
 						</StackPanel>
 					</StackPanel>
 				</GroupBox>

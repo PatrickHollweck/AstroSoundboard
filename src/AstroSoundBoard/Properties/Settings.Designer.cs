@@ -22,5 +22,29 @@ namespace AstroSoundBoard.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("3")]
+        public int PrimaryColor {
+            get {
+                return ((int)(this["PrimaryColor"]));
+            }
+            set {
+                this["PrimaryColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool IsDarkModeEnabled {
+            get {
+                return ((bool)(this["IsDarkModeEnabled"]));
+            }
+            set {
+                this["IsDarkModeEnabled"] = value;
+            }
+        }
     }
 }
