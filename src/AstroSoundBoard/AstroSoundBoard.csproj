@@ -71,6 +71,9 @@
     <Reference Include="MaterialDesignThemes.Wpf, Version=2.3.0.823, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\MaterialDesignThemes.2.3.0.823\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="PropertyChanged, Version=1.52.1.0, Culture=neutral, PublicKeyToken=ee3ee20bcf148ddd, processorArchitecture=MSIL">
       <HintPath>..\..\packages\PropertyChanged.Fody.1.52.1\lib\netstandard10\PropertyChanged.dll</HintPath>
       <Private>False</Private>
@@ -111,7 +114,12 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Core\Components\SettingsManager.cs" />
     <Compile Include="Core\Components\ViewChanger.cs" />
+    <Compile Include="Core\Objects\AppSettings.cs" />
+    <Compile Include="Core\Objects\DataObjects\Sound.cs" />
+    <Compile Include="Core\Objects\DataObjects\Sounds.cs" />
+    <Compile Include="Core\Utils\FileSystem.cs" />
     <Compile Include="WPF\Base\BaseViewModel.cs" />
     <Compile Include="WPF\Pages\Board\BoardView.xaml.cs">
       <DependentUpon>BoardView.xaml</DependentUpon>
@@ -152,7 +160,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Core\Utils\" />
+    <Folder Include="WPF\Controls\Sound\" />
   </ItemGroup>
   <ItemGroup>
     <SplashScreen Include="Resources\Images\SplashScreen.png" />

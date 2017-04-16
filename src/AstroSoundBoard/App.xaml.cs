@@ -1,7 +1,7 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 16:04:2017 / 23:03
+// Last Modified: 16:04:2017 / 23:44
 // Creation: 16:04:2017
 // Project: AstroSoundBoard
 //
@@ -15,6 +15,9 @@ namespace AstroSoundBoard
 	using System.Reflection;
 	using System.Windows;
 
+	using AstroSoundBoard.Core.Components;
+	using AstroSoundBoard.Core.Objects;
+	using AstroSoundBoard.Core.Utils;
 	using AstroSoundBoard.WPF.Pages.Settings;
 
 	using log4net;
@@ -30,11 +33,16 @@ namespace AstroSoundBoard
 			Log.Info("--- APP START! ---");
 			Log.Info($"Current Version: {Assembly.GetExecutingAssembly().GetName().Version}");
 
+			// Make sure all required Folders exist.
+			FileSystem.FolderHelper.CreateIfMissing($"{AppSettings.InstallationPath}/");
+			FileSystem.FolderHelper.CreateIfMissing($"{AppSettings.InstallationPath}/content");
+
 			// Setup error handling to log fatal errors.
 			AppDomain currentDomain = AppDomain.CurrentDomain;
 			currentDomain.UnhandledException += (caller, args) => { Log.Fatal($"Fatal unhanded exception. - {args.ExceptionObject} -- {args.IsTerminating} -> {args}"); };
 
 			ApplyMaterialTheme();
+			SettingsManager.Init();
 		}
 
 		private void Application_Exit(object sender, ExitEventArgs e)
