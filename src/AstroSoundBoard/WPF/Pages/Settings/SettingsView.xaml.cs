@@ -1,7 +1,7 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 16:04:2017 / 22:58
+// Last Modified: 16:04:2017 / 23:01
 // Creation: 16:04:2017
 // Project: AstroSoundBoard
 //
@@ -68,7 +68,7 @@ namespace AstroSoundBoard.WPF.Pages.Settings
 
 		private void BrowserChangeLog(object sender, RoutedEventArgs e)
 		{
-			Process.Start("https://github.com/FetzenRndy/AstroSoundboard/public/changelog.md");
+			Process.Start("https://github.com/FetzenRndy/AstroSoundboard/blob/master/public/changelog.md");
 		}
 	}
 }

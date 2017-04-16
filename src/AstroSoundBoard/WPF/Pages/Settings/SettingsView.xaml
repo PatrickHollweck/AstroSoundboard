@@ -65,7 +65,7 @@
 					Style="{DynamicResource MaterialDesignCardGroupBox}">
 					<StackPanel>
 						<StackPanel Orientation="Horizontal">
-							<Button Click="Button_Click" Content="Show Changelog" />
+							<Button Click="BrowserChangeLog" Content="Show Changelog" />
 						</StackPanel>
 					</StackPanel>
 				</GroupBox>
