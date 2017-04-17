@@ -1,7 +1,7 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 16:04:2017 / 23:27
+// Last Modified: 17:04:2017 / 12:25
 // Creation: 16:04:2017
 // Project: AstroSoundBoard
 //
@@ -21,13 +21,7 @@ namespace AstroSoundBoard.Core.Objects.DataObjects
 
 		public string IsFavorite { get; set; }
 
-		public string Path
-		{
-			get
-			{
-				return $"{AppSettings.InstallationPath}/content/{Name}";
-			}
-		}
+		public string Path => $"{AppSettings.InstallationPath}/content/{Name}";
 
 		public string Description { get; set; }
 		public string VideoSource { get; set; }

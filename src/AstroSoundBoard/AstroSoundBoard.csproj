@@ -98,6 +98,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="WPF\Controls\Sound\SoundView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="WPF\Pages\Board\BoardView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -121,6 +125,9 @@
     <Compile Include="Core\Objects\DataObjects\Sounds.cs" />
     <Compile Include="Core\Utils\FileSystem.cs" />
     <Compile Include="WPF\Base\BaseViewModel.cs" />
+    <Compile Include="WPF\Controls\Sound\SoundView.xaml.cs">
+      <DependentUpon>SoundView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WPF\Pages\Board\BoardView.xaml.cs">
       <DependentUpon>BoardView.xaml</DependentUpon>
     </Compile>
@@ -155,13 +162,12 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Resource Include="Resources\Fonts\big_noodle_titling.ttf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="WPF\Controls\Sound\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <SplashScreen Include="Resources\Images\SplashScreen.png" />
   </ItemGroup>
