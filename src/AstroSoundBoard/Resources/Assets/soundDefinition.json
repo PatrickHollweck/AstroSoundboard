@@ -367,7 +367,7 @@
         },
         {
             "sound": {
-				"name": "MORE_STYLE"
+				"name": "MORE_STYLE",
                 "downloadLink": "http://download844.mediafireuserdownload.com/28ir3hnhiv8g/jye57eh5ag5g0bb/With_More_Style_Than_Them.wav",
                 "version": "1"
             },
@@ -389,6 +389,7 @@
         },
         {
             "sound": {
+				"name": "YOU_SUCK_DUDE",
                 "downloadLink": "http://download1650.mediafireuserdownload.com/lsd5ylvlg4dg/hg2kax8np65k22e/YOU_SUCK_DUDE.wav",
                 "version": "1"
             },
