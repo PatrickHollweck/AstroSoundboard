@@ -46,7 +46,7 @@
     
     mimetype: application/x-microsoft.net.object.binary.base64
     value   : The object must be serialized with 
-            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
     
     mimetype: application/x-microsoft.net.object.soap.base64
@@ -60,6 +60,7 @@
             : and then encoded with base64 encoding.
     -->
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
@@ -68,9 +69,10 @@
               <xsd:sequence>
                 <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="name" use="required" type="xsd:string" />
               <xsd:attribute name="type" type="xsd:string" />
               <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
@@ -85,9 +87,10 @@
                 <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
                 <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
               <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
               <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
@@ -109,9 +112,118 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="AW_YEAH_PAPI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AW_YEAH_PAPI.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="BOOPEY_BOOPEY" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BOOPEY_BOOPEY.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="BYE_BYE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BYE_BYE.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CHEEKY_BOOP" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CHEEKY_BOOP.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CHEEKY_CHEEKY" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CHEEKY_CHEEKY.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DO_IT_FOR_THE_MEMEZ" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DO_IT_FOR_THE_MEMEZ.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DROP_THAT_CHITTY" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DROP_THAT_CHITTY.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="FUCKING_MERCY" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FUCKING_MERCY.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="GET_HER_BABY" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GET_HER_BABY.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="GIVE_A_BLOWJOB" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GIVE_A_BLOWJOB.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="GIVE_IT_TO_ME_ASTRO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GIVE_IT_TO_ME_ASTRO.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="GOING_TOO_DEEP_GUYS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GOING_TOO_DEEP_GUYS.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="GUNG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GUNG.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="HARMONY_ORB" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HARMONY_ORB.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="HEAL_ME_YOU_CUNT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HEAL_ME_YOU_CUNT.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="MONKEY_EAT_MY_ASS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MONKEY_EAT_MY_ASS.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="MORE_STYLE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MORE_STYLE.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="NICE_JOB_ASTRO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NICE_JOB_ASTRO.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="NICE_PHARA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NICE_PHARA.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PRETTY_GOOD_PUSH" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PRETTY_GOOD_PUSH.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PRETTY_NICE_BOOP" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PRETTY_NICE_BOOP.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="RIPPAAA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RIPPAAA.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="RUNNAWAY_FROM_ME" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RUNNAWAY_FROM_ME.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SHUT_UP_ASTROKITTY" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SHUT_UP_ASTROKITTY.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SMACK_MY_BITCH_UP" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SMACK_MY_BITCH_UP.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SO_RUDE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SO_RUDE.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="STOP_BEING_A_PUSSY" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\STOP_BEING_A_PUSSY.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SUCK_MY_DICK" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SUCK_MY_DICK.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="THATS_ALRIGHT_BAE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\THATS_ALRIGHT_BAE.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="THATS_UNFORTUNATE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\THATS_UNFORTUNATE.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="THAT_SUCKS_DICK_DUDE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\THAT_SUCKS_DICK_DUDE.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="THERE_IS_YOUR_PICK1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\THERE_IS_YOUR_PICK.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="THIS_IS_A_BAD_IDEA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\THIS_IS_A_BAD_IDEA.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="WINSTON_ON_MY_COCK" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WINSTON_ON_MY_COCK.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="YOU_SLUT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\YOU_SLUT.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="YOU_SUCK_DUDE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\YOU_SUCK_DUDE.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>
