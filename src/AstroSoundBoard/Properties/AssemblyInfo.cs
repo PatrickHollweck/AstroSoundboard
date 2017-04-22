@@ -1,8 +1,7 @@
-﻿using System.Resources;
-// ****************************** Module Header ****************************** //
+﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 16:04:2017 / 20:22
+// Last Modified: 22:04:2017 / 21:38
 // Creation: 16:04:2017
 // Project: AstroSoundBoard
 //
@@ -11,6 +10,7 @@
 // *************************************************************************** //
 
 using System.Reflection;
+using System.Resources;
 using System.Runtime.InteropServices;
 using System.Windows;
 
@@ -31,10 +31,9 @@ using System.Windows;
 [assembly: ThemeInfo(ResourceDictionaryLocation.None, ResourceDictionaryLocation.SourceAssembly)]
 
 // VERSION
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion("0.9.0")]
+[assembly: AssemblyFileVersion("0.9.0")]
 
 // LOG4NET
 [assembly: log4net.Config.XmlConfigurator(Watch = true)]
 [assembly: NeutralResourcesLanguage("en")]
-

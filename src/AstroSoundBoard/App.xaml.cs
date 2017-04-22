@@ -25,36 +25,37 @@ namespace AstroSoundBoard
     using MaterialDesignThemes.Wpf;
 
     public partial class App : Application
-	{
-		private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+    {
+        private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
-		private void Application_Startup(object sender, StartupEventArgs e)
-		{
-			Log.Info("--- APP START! ---");
-			Log.Info($"Current Version: {Assembly.GetExecutingAssembly().GetName().Version}");
+        private void Application_Startup(object sender, StartupEventArgs e)
+        {
+            Log.Info("--- APP START! ---");
+            Log.Info($"Current Version: {Assembly.GetExecutingAssembly().GetName().Version}");
 
-			// Make sure all required Folders exist.
-			FileSystem.FolderHelper.CreateIfMissing($"{AppSettings.InstallationFilePath}/");
+            // Make sure all required Folders exist.
+            FileSystem.FolderHelper.CreateIfMissing($"{AppSettings.InstallationFilePath}/");
 
-			// Setup error handling to log fatal errors.
-			AppDomain currentDomain = AppDomain.CurrentDomain;
-			currentDomain.UnhandledException += (caller, args) => { Log.Fatal($"Fatal unhanded exception. - {args.ExceptionObject} -- {args.IsTerminating} -> {args}"); };
+            // Setup error handling to log fatal errors.
+            AppDomain currentDomain = AppDomain.CurrentDomain;
+            currentDomain.UnhandledException += (caller, args) => { Log.Fatal($"Fatal unhanded exception. - {args.ExceptionObject} -- {args.IsTerminating} -> {args}"); };
 
-			ApplyMaterialTheme();
-			SoundManager.Init();
-			SettingsManager.Init();
-		}
+            ApplyMaterialTheme();
+            SoundManager.Init();
+            SettingsManager.Init();
+            AppUpdater.Init();
+        }
 
-		private void Application_Exit(object sender, ExitEventArgs e)
-		{
-			Log.Info("--- APP EXIT! ---");
-		}
+        private void Application_Exit(object sender, ExitEventArgs e)
+        {
+            Log.Info("--- APP EXIT! ---");
+        }
 
-		public static void ApplyMaterialTheme()
-		{
-			var palette = new PaletteHelper();
-			palette.SetLightDark(AstroSoundBoard.Properties.Settings.Default.IsDarkModeEnabled);
-			palette.ReplacePrimaryColor(SettingsView.ColorList[AstroSoundBoard.Properties.Settings.Default.PrimaryColor]);
-		}
-	}
+        public static void ApplyMaterialTheme()
+        {
+            var palette = new PaletteHelper();
+            palette.SetLightDark(AstroSoundBoard.Properties.Settings.Default.IsDarkModeEnabled);
+            palette.ReplacePrimaryColor(SettingsView.ColorList[AstroSoundBoard.Properties.Settings.Default.PrimaryColor]);
+        }
+    }
 }
