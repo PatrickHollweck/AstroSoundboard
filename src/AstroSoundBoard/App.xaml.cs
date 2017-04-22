@@ -1,7 +1,7 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 21:04:2017 / 23:29
+// Last Modified: 22:04:2017 / 22:38
 // Creation: 16:04:2017
 // Project: AstroSoundBoard
 //
@@ -43,7 +43,6 @@ namespace AstroSoundBoard
             ApplyMaterialTheme();
             SoundManager.Init();
             SettingsManager.Init();
-            AppUpdater.Init();
         }
 
         private void Application_Exit(object sender, ExitEventArgs e)
