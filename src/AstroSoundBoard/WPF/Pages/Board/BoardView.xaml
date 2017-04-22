@@ -14,7 +14,7 @@
 	mc:Ignorable="d">
 	<Grid Margin="0">
 		<ScrollViewer>
-			<ItemsControl x:Name="ItemControl">
+			<ItemsControl x:Name="ItemCtrl">
 				<ItemsControl.ItemsPanel>
 					<ItemsPanelTemplate>
 						<WrapPanel Width="Auto" Margin="10" />

@@ -5,6 +5,7 @@
 	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 	xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:system="clr-namespace:System;assembly=mscorlib"
 	Title="AstroKitty Soundboard"
 	Width="1100"
 	Height="550"
@@ -71,7 +72,8 @@
 								VerticalAlignment="Center"
 								materialDesign:HintAssist.Hint="Search for item..."
 								materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
-								BorderThickness="0" />
+								BorderThickness="0"
+								TextChanged="SearchForItem" />
 						</Grid>
 					</materialDesign:ColorZone>
 
@@ -86,6 +88,7 @@
 										<CheckBox
 											Name="FavoriteButton"
 											Margin="10"
+											Click="FavoriteButton_Click"
 											Style="{StaticResource MaterialDesignActionToggleButton}"
 											ToolTip="Toggle Favorites">
 											<ToggleButton.Content>
@@ -103,7 +106,8 @@
 											Maximum="100"
 											Minimum="0"
 											TickFrequency="1"
-											ToolTip="Volume Slider" />
+											ToolTip="Volume Slider"
+											ValueChanged="VolumeSlider_ValueChanged" />
 									</StackPanel>
 								</materialDesign:ColorZone>
 							</StackPanel>
@@ -265,6 +269,7 @@
 				Grid.Column="1"
 				Grid.ColumnSpan="2"
 				Content="{Binding}"
+				DataContextChanged="ContentControl_DataContextChanged"
 				FontWeight="Normal" />
 		</Grid>
 	</Grid>

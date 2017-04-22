@@ -8,7 +8,6 @@
 	Width="150"
 	Height="110"
 	Background="Transparent"
-	FontFamily="/AstroSoundBoard;component/Resources/Fonts/#BigNoodleTitling"
 	TextElement.FontSize="16"
 	TextElement.FontWeight="Medium"
 	TextElement.Foreground="{DynamicResource MaterialDesignBody}"
@@ -33,19 +32,20 @@
 			HorizontalAlignment="Center"
 			VerticalAlignment="Center"
 			ClipToBounds="True"
-			Content="{Binding SoundName, Mode=TwoWay, FallbackValue=Sound Name, TargetNullValue=ERROR}"
-			FontFamily="/AstroItemBoard;component/UI/Resources/Fonts/#BigNoodleTitling"
+			Content="{Binding LocalDefinition.Name, Mode=TwoWay, FallbackValue=Sound Name, TargetNullValue=ERROR}"
+			FontFamily="/AstroSoundBoard;component/Resources/Fonts/#BigNoodleTitling"
 			FontSize="20" />
 
 		<Button
 			Grid.Row="1"
 			Grid.Column="1"
-			Grid.ColumnSpan="2"
 			Height="Auto"
 			Margin="5,0,0,0"
 			HorizontalAlignment="Stretch"
 			VerticalAlignment="Center"
+			Click="PlaySound"
 			Content="Play Sound"
+			FontFamily="/AstroSoundBoard;component/Resources/Fonts/#BigNoodleTitling"
 			FontSize="22" />
 
 		<StackPanel
@@ -63,7 +63,7 @@
 				Click="ToggleFavorite"
 				ToolTip="Toggle Favorite">
 				<Button.Content>
-					<materialDesign:PackIcon Kind="{Binding IconKind}" />
+					<materialDesign:PackIcon Kind="{Binding IconKind, Mode=TwoWay}" />
 				</Button.Content>
 			</Button>
 

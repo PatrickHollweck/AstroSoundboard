@@ -71,6 +71,7 @@
     <Reference Include="MaterialDesignThemes.Wpf, Version=2.3.0.823, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\MaterialDesignThemes.2.3.0.823\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -81,11 +82,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Net.Http" />
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
@@ -110,6 +108,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="WPF\Windows\InfoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="WPF\Windows\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -119,11 +121,19 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Core\Components\SettingsManager.cs" />
+    <Compile Include="Core\Components\SoundManager.cs" />
     <Compile Include="Core\Components\ViewChanger.cs" />
     <Compile Include="Core\Objects\AppSettings.cs" />
     <Compile Include="Core\Objects\DataObjects\Sound.cs" />
+    <Compile Include="Core\Objects\DataObjects\SoundDefinitions.cs" />
     <Compile Include="Core\Objects\DataObjects\Sounds.cs" />
     <Compile Include="Core\Utils\FileSystem.cs" />
+    <Compile Include="Core\Utils\Network.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="WPF\Base\BaseViewModel.cs" />
     <Compile Include="WPF\Controls\Sound\SoundView.xaml.cs">
       <DependentUpon>SoundView.xaml</DependentUpon>
@@ -134,6 +144,9 @@
     <Compile Include="WPF\Pages\Settings\SettingsView.xaml.cs">
       <DependentUpon>SettingsView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WPF\Windows\InfoWindow.xaml.cs">
+      <DependentUpon>InfoWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WPF\Windows\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -142,11 +155,6 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -162,12 +170,15 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="Resources\Assets\soundDefinition.json" />
     <Resource Include="Resources\Fonts\big_noodle_titling.ttf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\AW_YEAH_PAPI.wav" />
+  </ItemGroup>
   <ItemGroup>
     <SplashScreen Include="Resources\Images\SplashScreen.png" />
   </ItemGroup>
@@ -193,6 +204,114 @@
   <ItemGroup>
     <Resource Include="FodyWeavers.xml" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BOOPEY_BOOPEY.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BYE_BYE.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CHEEKY_BOOP.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CHEEKY_CHEEKY.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DO_IT_FOR_THE_MEMEZ.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DROP_THAT_CHITTY.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FUCKING_MERCY.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GET_HER_BABY.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GIVE_IT_TO_ME_ASTRO.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GOING_TOO_DEEP_GUYS.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GUNG.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HARMONY_ORB.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HEAL_ME_YOU_CUNT.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MONKEY_EAT_MY_ASS.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NICE_JOB_ASTRO.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NICE_PHARA.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PRETTY_GOOD_PUSH.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PRETTY_NICE_BOOP.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GIVE_A_BLOWJOB.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RIPPAAA.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SHUT_UP_ASTROKITTY.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SMACK_MY_BITCH_UP.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SO_RUDE.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SUCK_MY_DICK.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\THAT_SUCKS_DICK_DUDE.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\THATS_ALRIGHT_BAE.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\THATS_UNFORTUNATE.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\THIS_IS_A_BAD_IDEA.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WINSTON_ON_MY_COCK.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MORE_STYLE.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\YOU_SLUT.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\YOU_SUCK_DUDE.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Core\Utils\Extensions\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RUNNAWAY_FROM_ME.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\STOP_BEING_A_PUSSY.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\THERE_IS_YOUR_PICK.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\..\packages\Fody.1.29.4\build\dotnet\Fody.targets" Condition="Exists('..\..\packages\Fody.1.29.4\build\dotnet\Fody.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
@@ -200,5 +319,7 @@
       <ErrorText>Dieses Projekt verweist auf mindestens ein NuGet-Paket, das auf diesem Computer fehlt. Verwenden Sie die Wiederherstellung von NuGet-Paketen, um die fehlenden Dateien herunterzuladen. Weitere Informationen finden Sie unter "http://go.microsoft.com/fwlink/?LinkID=322105". Die fehlende Datei ist "{0}".</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\..\packages\Fody.1.29.4\build\dotnet\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Fody.1.29.4\build\dotnet\Fody.targets'))" />
+    <Error Condition="!Exists('..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
   </Target>
+  <Import Project="..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
 </Project>

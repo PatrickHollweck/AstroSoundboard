@@ -1,7 +1,7 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 17:04:2017 / 16:05
+// Last Modified: 22:04:2017 / 16:55
 // Creation: 16:04:2017
 // Project: AstroSoundBoard
 //
@@ -11,23 +11,123 @@
 
 namespace AstroSoundBoard.WPF.Pages.Board
 {
-	using System.Collections.Generic;
-	using System.Windows.Controls;
+    using System.Collections.Generic;
+    using System.Windows.Controls;
 
-	using AstroSoundBoard.Core.Objects.DataObjects;
+    using AstroSoundBoard.Core.Components;
+    using AstroSoundBoard.Core.Objects.DataObjects;
+    using AstroSoundBoard.Core.Objects.DataObjects.SoundDefinitionJsonTypes;
+    using AstroSoundBoard.WPF.Controls.Sound;
 
-	using log4net;
+    using log4net;
 
-	public partial class BoardView : UserControl
-	{
-		private static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+    using Newtonsoft.Json;
 
-		private List<Sound> AllSounds { get; set; } = new List<Sound>();
+    using PropertyChanged;
 
-		public BoardView()
-		{
-			InitializeComponent();
-			DataContext = this;
-		}
-	}
+    [ImplementPropertyChanged]
+    public partial class BoardView : UserControl
+    {
+        private static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
+        private List<SoundView> AllSounds { get; set; } = new List<SoundView>();
+
+        public static BoardView BoadViewInstance { get; set; }
+
+        public BoardView()
+        {
+            BoadViewInstance = this;
+
+            InitializeComponent();
+            DataContext = this;
+
+            foreach (Definition definition in SoundManager.Information.GetSoundList())
+            {
+                var item = new Sound
+                {
+                    Description = definition.Info.Description,
+                    IsFavorite = SettingsManager.GetSound(definition.Sound.Name).IsFavorite,
+                    Name = definition.Sound.Name,
+                    VideoLink = definition.Info.VideoLink
+                };
+
+                var view = new SoundView(item);
+
+                AllSounds.Add(view);
+                ItemCtrl.Items.Add(view);
+            }
+        }
+
+        public void OnlyShowFavorites(bool show)
+        {
+            Log.Debug("Board - only showing favs");
+            if (show)
+            {
+
+                List<SoundView> matchingItems = new List<SoundView>();
+
+                foreach (SoundView item in ItemCtrl.Items)
+                {
+                    if (item.LocalDefinition.IsFavorite == JsonConvert.True)
+                    {
+                        matchingItems.Add(item);
+                    }
+                }
+
+                ItemCtrl.Items.Clear();
+
+                foreach (SoundView view in matchingItems)
+                {
+                    ItemCtrl.Items.Add(view);
+                }
+            }
+            else
+            {
+
+                ItemCtrl.Items.Clear();
+
+                foreach (SoundView view in AllSounds)
+                {
+                    ItemCtrl.Items.Add(view);
+                }
+            }
+        }
+
+        public void SearchForElement(string element, bool onlyInFavorites)
+        {
+            if (string.IsNullOrWhiteSpace(element))
+            {
+                ItemCtrl.Items.Clear();
+
+                foreach (SoundView view in AllSounds)
+                {
+                    ItemCtrl.Items.Add(view);
+                }
+
+                if (onlyInFavorites)
+                {
+                    OnlyShowFavorites(true);
+                }
+            }
+            else
+            {
+                List<SoundView> matchingItems = new List<SoundView>();
+
+                foreach (SoundView view in ItemCtrl.Items)
+                {
+                    if (view.LocalDefinition.Name.ToLower().Contains(element.ToLower()))
+                    {
+                        matchingItems.Add(view);
+                    }
+                }
+
+                ItemCtrl.Items.Clear();
+
+                foreach (SoundView view in matchingItems)
+                {
+                    ItemCtrl.Items.Add(view);
+                }
+            }
+        }
+    }
 }

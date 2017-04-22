@@ -1,41 +1,26 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 17:04:2017 / 12:25
-// Creation: 16:04:2017
+// Last Modified: 21:04:2017 / 23:43
+// Creation: 21:04:2017
 // Project: AstroSoundBoard
 //
 //
-// <copyright file="Sound.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
+// <copyright file="Definition.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
 
 namespace AstroSoundBoard.Core.Objects.DataObjects
 {
-	using Newtonsoft.Json;
-
-	public class Sound
+    public class Sound
 	{
+		// Definition
 		public string Name { get; set; }
 
-		public int Version { get; set; }
-
+		// Settings
 		public string IsFavorite { get; set; }
 
-		public string Path => $"{AppSettings.InstallationPath}/content/{Name}";
-
+		// Info
 		public string Description { get; set; }
-		public string VideoSource { get; set; }
-
-		public void MarkAsFavorite()
-		{
-			if (IsFavorite == JsonConvert.True)
-			{
-				IsFavorite = JsonConvert.False;
-			}
-			else
-			{
-				IsFavorite = JsonConvert.True;
-			}
-		}
+		public string VideoLink { get; set; }
 	}
 }

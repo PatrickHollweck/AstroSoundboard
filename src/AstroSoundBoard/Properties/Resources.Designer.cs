@@ -295,6 +295,15 @@ namespace AstroSoundBoard.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die {&quot;FileVersion&quot;:&quot;1&quot;,&quot;ParserVersion&quot;:&quot;1&quot;,&quot;Sounds&quot;:[{&quot;sound&quot;:{&quot;name&quot;:&quot;FUCKING_MERCY&quot;,&quot;version&quot;:&quot;1&quot;},&quot;info&quot;:{&quot;VideoLink&quot;:&quot;https://www.youtube.com/embed/11olpkle_YQ&quot;,&quot;Description&quot;:&quot;Friend of Astro Screaming &apos;FUCKING MERCY&apos; as a mercy comes in and revives alot of people and causing them to lose the Game. - Mercy OP please nerf&quot;}},{&quot;sound&quot;:{&quot;name&quot;:&quot;AW_YEAH_PAPI&quot;,&quot;version&quot;:&quot;1&quot;},&quot;info&quot;:{&quot;VideoLink&quot;:&quot;https://www.youtube.com/embed/4npgppVhcQ4&quot;,&quot;Description&quot;:&quot;A Kid get&apos;s horny in the Middle of the Match&quot;}},{&quot;sound&quot;:{&quot;n [Rest der Zeichenfolge wurde abgeschnitten]&quot;; ähnelt.
+        /// </summary>
+        internal static string SoundDefinition {
+            get {
+                return ResourceManager.GetString("SoundDefinition", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
         /// </summary>
         internal static System.IO.UnmanagedMemoryStream STOP_BEING_A_PUSSY {
@@ -342,9 +351,9 @@ namespace AstroSoundBoard.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream THERE_IS_YOUR_PICK1 {
+        internal static System.IO.UnmanagedMemoryStream THERE_IS_YOUR_PICK {
             get {
-                return ResourceManager.GetStream("THERE_IS_YOUR_PICK1", resourceCulture);
+                return ResourceManager.GetStream("THERE_IS_YOUR_PICK", resourceCulture);
             }
         }
         
