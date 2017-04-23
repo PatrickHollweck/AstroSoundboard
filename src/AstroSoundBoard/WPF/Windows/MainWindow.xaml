@@ -70,7 +70,7 @@
 								MinWidth="200"
 								Margin="8,0,0,0"
 								VerticalAlignment="Center"
-								materialDesign:HintAssist.Hint="Search for item..."
+								materialDesign:HintAssist.Hint="Search for Sound"
 								materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
 								BorderThickness="0"
 								TextChanged="SearchForItem" />
