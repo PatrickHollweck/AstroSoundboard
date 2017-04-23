@@ -1,7 +1,7 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 20:04:2017 / 21:57
+// Last Modified: 23:04:2017 / 14:18
 // Creation: 16:04:2017
 // Project: AstroSoundBoard
 //
@@ -16,34 +16,39 @@ namespace AstroSoundBoard.Core.Objects
     using System.Reflection;
 
     public class AppSettings
-    {
-        /// <summary>
-        /// Installation Path Constant.
-        /// </summary>
-        public const string InstallationFilePath = @"C:/ProgramData/AstroKittySoundBoard";
+	{
+		/// <summary>
+		/// Determins if the Update window should be showen.
+		/// </summary>
+		public static bool showUpdateWindow { get; set; } = false;
 
-        /// <summary>
-        /// Path to the /soundSettings.json file.
-        /// </summary>
-        public static readonly string SoundSettingsFilePath = $"{InstallationFilePath}/soundSettings.json";
+		/// <summary>
+		/// Installation Path Constant.
+		/// </summary>
+		public const string InstallationFilePath = @"C:/ProgramData/AstroKittySoundBoard";
 
-        /// <summary>
-        /// File path to the Definition Definition file.
-        /// </summary>
-        public static string SoundDefinitionFilePath { get; } = $"{InstallationFilePath}/SoundDef.json";
+		/// <summary>
+		/// Path to the /soundSettings.json file.
+		/// </summary>
+		public static readonly string SoundSettingsFilePath = $"{InstallationFilePath}/soundSettings.json";
 
-        /// <summary>
-        /// Get the Directory the Assembly is in.
-        /// </summary>
-        public static string AssemblyDirectory
-        {
-            get
-            {
-                string codeBase = Assembly.GetExecutingAssembly().CodeBase;
-                UriBuilder builder = new UriBuilder(codeBase);
-                string path = Uri.UnescapeDataString(builder.Path);
-                return Path.GetDirectoryName(path);
-            }
-        }
-    }
+		/// <summary>
+		/// File path to the Definition Definition file.
+		/// </summary>
+		public static string SoundDefinitionFilePath { get; } = $"{InstallationFilePath}/SoundDef.json";
+
+		/// <summary>
+		/// Get the Directory the Assembly is in.
+		/// </summary>
+		public static string AssemblyDirectory
+		{
+			get
+			{
+				string codeBase = Assembly.GetExecutingAssembly().CodeBase;
+				UriBuilder builder = new UriBuilder(codeBase);
+				string path = Uri.UnescapeDataString(builder.Path);
+				return Path.GetDirectoryName(path);
+			}
+		}
+	}
 }

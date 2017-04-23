@@ -1,8 +1,8 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 22:04:2017 / 22:37
-// Creation: 22:04:2017
+// Last Modified: 23:04:2017 / 14:20
+// Creation: 23:04:2017
 // Project: AstroSoundBoard
 //
 //
@@ -14,7 +14,7 @@ namespace AstroSoundBoard.Core.Components
     using System;
     using System.Threading.Tasks;
 
-    using AstroSoundBoard.WPF.Windows;
+    using AstroSoundBoard.Core.Objects;
 
     using log4net;
 
@@ -22,14 +22,7 @@ namespace AstroSoundBoard.Core.Components
 
     public class AppUpdater
     {
-        static AppUpdater()
-        {
-            Start();
-        }
-
         private static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-
-        private static readonly string GitHubLink = @"https://github.com/FetzenRndy/AstroSoundboard";
 
         public static void Start()
         {
@@ -37,7 +30,8 @@ namespace AstroSoundBoard.Core.Components
                 {
                     try
                     {
-                        using (var manager = UpdateManager.GitHubUpdateManager(GitHubLink))
+                        Log.Info("Trying to Update!");
+                        using (var manager = UpdateManager.GitHubUpdateManager(@"https://github.com/FetzenRndy/AstroSoundboard"))
                         {
                             await manager.Result.UpdateApp().ConfigureAwait(false);
 
@@ -46,17 +40,26 @@ namespace AstroSoundBoard.Core.Components
                                 onAppUpdate: v =>
                                     {
                                         manager.Result.CreateShortcutForThisExe();
-
-                                        var updateWindow = new UpdateWindow();
-                                        updateWindow.Show();
+                                        AppSettings.showUpdateWindow = true;
                                     },
                                 onFirstRun: () =>
                                     {
+                                        manager.Result.CreateUninstallerRegistryEntry();
                                         manager.Result.CreateShortcutForThisExe();
                                         Log.Info("First Run!");
                                     },
-                                onAppUninstall: v => { manager.Result.RemoveShortcutForThisExe(); },
-                                onInitialInstall: v => { manager.Result.CreateShortcutForThisExe(); }
+                                onAppUninstall: v =>
+                                    {
+                                        manager.Result.RemoveShortcutForThisExe();
+                                        manager.Result.RemoveUninstallerRegistryEntry();
+                                    },
+                                onInitialInstall: v =>
+                                    {
+                                        manager.Result.CreateUninstallerRegistryEntry();
+                                        manager.Result.CreateShortcutForThisExe();
+                                        Log.Info("First Run!");
+                                    }
+
                             );
                         }
                     }

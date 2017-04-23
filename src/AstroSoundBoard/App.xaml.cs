@@ -1,8 +1,8 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 22:04:2017 / 22:38
-// Creation: 16:04:2017
+// Last Modified: 23:04:2017 / 14:19
+// Creation: 23:04:2017
 // Project: AstroSoundBoard
 //
 //
@@ -19,6 +19,7 @@ namespace AstroSoundBoard
     using AstroSoundBoard.Core.Objects;
     using AstroSoundBoard.Core.Utils;
     using AstroSoundBoard.WPF.Pages.Settings;
+    using AstroSoundBoard.WPF.Windows;
 
     using log4net;
 
@@ -43,6 +44,15 @@ namespace AstroSoundBoard
             ApplyMaterialTheme();
             SoundManager.Init();
             SettingsManager.Init();
+            AppUpdater.Start();
+
+            if (AppSettings.showUpdateWindow)
+            {
+                var window = new UpdateWindow();
+                window.Show();
+
+                AppSettings.showUpdateWindow = false;
+            }
         }
 
         private void Application_Exit(object sender, ExitEventArgs e)
