@@ -1,7 +1,7 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 22:04:2017 / 21:25
+// Last Modified: 24:04:2017 / 18:35
 // Creation: 16:04:2017
 // Project: AstroSoundBoard
 //
@@ -28,6 +28,8 @@ namespace AstroSoundBoard.WPF.Windows
 
         public MainWindow()
         {
+            AppUpdater.Update();
+
             ViewChanger.MainWindowInstance = this;
 
             InitializeComponent();
