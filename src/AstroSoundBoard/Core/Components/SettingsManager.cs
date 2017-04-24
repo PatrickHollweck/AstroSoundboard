@@ -1,7 +1,7 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 22:04:2017 / 17:04
+// Last Modified: 23:04:2017 / 15:56
 // Creation: 16:04:2017
 // Project: AstroSoundBoard
 //
@@ -126,7 +126,6 @@ namespace AstroSoundBoard.Core.Components
 
         public static Sound GetSound(string Name)
         {
-            Log.Debug($"Getting sound for {Name}");
             foreach (Sound item in Cache.SoundList)
             {
                 if (item.Name == Name)
@@ -149,10 +148,8 @@ namespace AstroSoundBoard.Core.Components
             Log.Debug($"Changing Definition of {sound.Name}");
             for (int i = 0; i < Cache.SoundList.Count; i++)
             {
-                Log.Info(Cache.SoundList[i].Name + " " + sound.Name);
                 if (Cache.SoundList[i].Name == sound.Name)
                 {
-                    Log.Info("Match found...");
                     Cache.SoundList[i] = sound;
                     WriteSounds();
                     return;

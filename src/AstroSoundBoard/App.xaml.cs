@@ -1,7 +1,7 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 23:04:2017 / 14:19
+// Last Modified: 23:04:2017 / 16:42
 // Creation: 23:04:2017
 // Project: AstroSoundBoard
 //
@@ -19,9 +19,9 @@ namespace AstroSoundBoard
     using AstroSoundBoard.Core.Objects;
     using AstroSoundBoard.Core.Utils;
     using AstroSoundBoard.WPF.Pages.Settings;
-    using AstroSoundBoard.WPF.Windows;
 
     using log4net;
+    using log4net.Core;
 
     using MaterialDesignThemes.Wpf;
 
@@ -31,6 +31,14 @@ namespace AstroSoundBoard
 
         private void Application_Startup(object sender, StartupEventArgs e)
         {
+#if DEBUG
+            ((log4net.Repository.Hierarchy.Hierarchy)LogManager.GetRepository()).Root.Level = Level.Debug;
+            ((log4net.Repository.Hierarchy.Hierarchy)LogManager.GetRepository()).RaiseConfigurationChanged(EventArgs.Empty);
+#else
+            ((log4net.Repository.Hierarchy.Hierarchy)LogManager.GetRepository()).Root.Level = Level.Info;
+            ((log4net.Repository.Hierarchy.Hierarchy)LogManager.GetRepository()).RaiseConfigurationChanged(EventArgs.Empty);
+#endif
+
             Log.Info("--- APP START! ---");
             Log.Info($"Current Version: {Assembly.GetExecutingAssembly().GetName().Version}");
 
@@ -44,15 +52,6 @@ namespace AstroSoundBoard
             ApplyMaterialTheme();
             SoundManager.Init();
             SettingsManager.Init();
-            AppUpdater.Start();
-
-            if (AppSettings.showUpdateWindow)
-            {
-                var window = new UpdateWindow();
-                window.Show();
-
-                AppSettings.showUpdateWindow = false;
-            }
         }
 
         private void Application_Exit(object sender, ExitEventArgs e)

@@ -1,7 +1,7 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 22:04:2017 / 15:58
+// Last Modified: 23:04:2017 / 15:57
 // Creation: 17:04:2017
 // Project: AstroSoundBoard
 //
@@ -36,7 +36,8 @@ namespace AstroSoundBoard.WPF.Controls.Sound
 
         public SoundView(Sound def)
         {
-            // This need's to be done - we want a clone not a reference
+            Log.Debug($"Creating Control for {def.Name}");
+
             LocalDefinition = def;
 
             if (LocalDefinition.Name.Contains("_"))
