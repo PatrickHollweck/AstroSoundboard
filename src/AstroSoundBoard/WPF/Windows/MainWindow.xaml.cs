@@ -13,6 +13,7 @@ namespace AstroSoundBoard.WPF.Windows
 {
     using System;
     using System.Diagnostics;
+    using System.Globalization;
     using System.Runtime.InteropServices;
     using System.Windows;
     using System.Windows.Controls;
@@ -30,6 +31,7 @@ namespace AstroSoundBoard.WPF.Windows
 
         public MainWindow()
         {
+            AutoUpdater.CurrentCulture = CultureInfo.CreateSpecificCulture("en");
             AutoUpdater.Start("https://raw.githubusercontent.com/FetzenRndy/AstroSoundboard/hotfix/Fix_Squirrel_Updating/public/versions/updaterInfo.xml");
 
             ViewChanger.MainWindowInstance = this;
