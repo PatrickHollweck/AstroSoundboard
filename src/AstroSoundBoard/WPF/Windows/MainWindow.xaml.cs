@@ -1,7 +1,7 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 25:04:2017 / 16:55
+// Last Modified: 25:04:2017 / 17:09
 // Creation: 16:04:2017
 // Project: AstroSoundBoard
 //
@@ -30,8 +30,7 @@ namespace AstroSoundBoard.WPF.Windows
 
         public MainWindow()
         {
-            AutoUpdater.CheckForUpdateEvent += AppUpdater.SilentUpdater;
-            AutoUpdater.Start("http://localhost/download/AutoUpdaterTest.xml");
+            AutoUpdater.Start("https://raw.githubusercontent.com/FetzenRndy/AstroSoundboard/hotfix/Fix_Squirrel_Updating/public/versions/updaterInfo.xml");
 
             ViewChanger.MainWindowInstance = this;
 

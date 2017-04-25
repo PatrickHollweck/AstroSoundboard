@@ -1,7 +1,7 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 16:04:2017 / 23:01
+// Last Modified: 25:04:2017 / 18:02
 // Creation: 16:04:2017
 // Project: AstroSoundBoard
 //
@@ -11,64 +11,71 @@
 
 namespace AstroSoundBoard.WPF.Pages.Settings
 {
-	using System.Collections.Generic;
-	using System.Diagnostics;
-	using System.Windows;
-	using System.Windows.Controls;
+    using System.Collections.Generic;
+    using System.Diagnostics;
+    using System.Reflection;
+    using System.Windows;
+    using System.Windows.Controls;
 
-	using AstroSoundBoard.Properties;
+    using AstroSoundBoard.Core.Objects;
+    using AstroSoundBoard.Properties;
 
-	public partial class SettingsView : UserControl
-	{
-		public static List<string> ColorList { get; } = new List<string> { "Red", "Pink", "Purple", "Indigo", "Blue", "Cyan", "Teal", "Green", "Lime", "Yellow", "Amber", "Orange", "Brown", "Grey" };
+    public partial class SettingsView : UserControl
+    {
+        public static List<string> ColorList { get; } = new List<string> { "Red", "Pink", "Purple", "Indigo", "Blue", "Cyan", "Teal", "Green", "Lime", "Yellow", "Amber", "Orange", "Brown", "Grey" };
 
-		public string CurrentVersion { get; } = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
+        public string CurrentVersion { get; } = Assembly.GetExecutingAssembly().GetName().Version.ToString();
 
-		public SettingsView()
-		{
-			InitializeComponent();
-			DataContext = this;
+        public SettingsView()
+        {
+            InitializeComponent();
+            DataContext = this;
 
-			// Add all available colors to the ColorBox. So the User can select the one he wants.
-			foreach (string color in ColorList)
-			{
-				ColorBox.Items.Add(color);
-			}
+            // Add all available colors to the ColorBox. So the User can select the one he wants.
+            foreach (string color in ColorList)
+            {
+                ColorBox.Items.Add(color);
+            }
 
-			ColorBox.SelectedValue = Settings.Default.PrimaryColor;
-		}
+            ColorBox.SelectedValue = Settings.Default.PrimaryColor;
+        }
 
-		public int SelectedColor { get; set; } = Settings.Default.PrimaryColor;
+        public int SelectedColor { get; set; } = Settings.Default.PrimaryColor;
 
-		private void ChangePrimaryColor(object sender, SelectionChangedEventArgs e)
-		{
-			Settings.Default.PrimaryColor = ColorBox.SelectedIndex;
-			Settings.Default.Save();
+        private void ChangePrimaryColor(object sender, SelectionChangedEventArgs e)
+        {
+            Settings.Default.PrimaryColor = ColorBox.SelectedIndex;
+            Settings.Default.Save();
 
-			App.ApplyMaterialTheme();
-		}
+            App.ApplyMaterialTheme();
+        }
 
-		public bool IsDarkModeEnabled { get; set; } = Settings.Default.IsDarkModeEnabled;
+        public bool IsDarkModeEnabled { get; set; } = Settings.Default.IsDarkModeEnabled;
 
-		private void ChangeLightMode(object sender, RoutedEventArgs e)
-		{
-			if (Settings.Default.IsDarkModeEnabled)
-			{
-				Settings.Default.IsDarkModeEnabled = false;
-				Settings.Default.Save();
-			}
-			else
-			{
-				Settings.Default.IsDarkModeEnabled = true;
-				Settings.Default.Save();
-			}
+        private void ChangeLightMode(object sender, RoutedEventArgs e)
+        {
+            if (Settings.Default.IsDarkModeEnabled)
+            {
+                Settings.Default.IsDarkModeEnabled = false;
+                Settings.Default.Save();
+            }
+            else
+            {
+                Settings.Default.IsDarkModeEnabled = true;
+                Settings.Default.Save();
+            }
 
-			App.ApplyMaterialTheme();
-		}
+            App.ApplyMaterialTheme();
+        }
 
-		private void BrowserChangeLog(object sender, RoutedEventArgs e)
-		{
-			Process.Start("https://github.com/FetzenRndy/AstroSoundboard/blob/master/public/changelog.md");
-		}
-	}
+        private void BrowserChangeLog(object sender, RoutedEventArgs e)
+        {
+            Process.Start("https://github.com/FetzenRndy/AstroSoundboard/blob/master/public/changelog.md");
+        }
+
+        private void OpenApplicationPath_Click(object sender, RoutedEventArgs e)
+        {
+            Process.Start("explorer.exe", AppSettings.AssemblyDirectory);
+        }
+    }
 }
