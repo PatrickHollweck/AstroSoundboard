@@ -1,7 +1,7 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 22:04:2017 / 21:25
+// Last Modified: 25:04:2017 / 17:09
 // Creation: 16:04:2017
 // Project: AstroSoundBoard
 //
@@ -13,12 +13,15 @@ namespace AstroSoundBoard.WPF.Windows
 {
     using System;
     using System.Diagnostics;
+    using System.Globalization;
     using System.Runtime.InteropServices;
     using System.Windows;
     using System.Windows.Controls;
 
     using AstroSoundBoard.Core.Components;
     using AstroSoundBoard.WPF.Pages.Board;
+
+    using AutoUpdaterDotNET;
 
     using log4net;
 
@@ -28,6 +31,9 @@ namespace AstroSoundBoard.WPF.Windows
 
         public MainWindow()
         {
+            AutoUpdater.CurrentCulture = CultureInfo.CreateSpecificCulture("en");
+            AutoUpdater.Start("https://raw.githubusercontent.com/FetzenRndy/AstroSoundboard/hotfix/Fix_Squirrel_Updating/public/versions/updaterInfo.xml");
+
             ViewChanger.MainWindowInstance = this;
 
             InitializeComponent();
