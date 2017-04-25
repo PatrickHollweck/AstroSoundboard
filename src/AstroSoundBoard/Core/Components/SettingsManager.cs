@@ -1,7 +1,7 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 23:04:2017 / 15:56
+// Last Modified: 25:04:2017 / 16:46
 // Creation: 16:04:2017
 // Project: AstroSoundBoard
 //
@@ -30,7 +30,7 @@ namespace AstroSoundBoard.Core.Components
 
         public static void Init()
         {
-            Log.Debug("INIT");
+            Log.Debug("Starting the SettingsManager");
 
             if (!File.Exists(AppSettings.SoundSettingsFilePath))
             {
@@ -124,18 +124,18 @@ namespace AstroSoundBoard.Core.Components
             File.WriteAllText(AppSettings.SoundSettingsFilePath, JsonConvert.SerializeObject(Cache));
         }
 
-        public static Sound GetSound(string Name)
+        public static Sound GetSound(string name)
         {
             foreach (Sound item in Cache.SoundList)
             {
-                if (item.Name == Name)
+                if (item.Name == name)
                 {
                     return item;
                 }
             }
 
-            RegisterSound(new Sound { Name = Name, IsFavorite = JsonConvert.False });
-            return GetSound(Name);
+            RegisterSound(new Sound { Name = name, IsFavorite = JsonConvert.False });
+            return GetSound(name);
         }
 
         public static void RewriteSound(Sound sound)

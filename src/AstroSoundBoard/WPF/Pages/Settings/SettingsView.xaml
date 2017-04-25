@@ -14,62 +14,65 @@
 	TextElement.FontWeight="Medium"
 	TextElement.Foreground="{DynamicResource MaterialDesignBody}"
 	mc:Ignorable="d">
-	<Grid>
-		<Grid.ColumnDefinitions>
-			<ColumnDefinition Width="Auto" MinWidth="464" />
-			<ColumnDefinition Width="Auto" MinWidth="89" />
-		</Grid.ColumnDefinitions>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" MinWidth="464" />
+            <ColumnDefinition Width="*" MinWidth="89" />
+        </Grid.ColumnDefinitions>
 
-		<GroupBox>
-			<StackPanel>
-				<GroupBox
-					Margin="16,5,16,0"
-					materialDesign:ShadowAssist.ShadowDepth="Depth3"
-					BorderThickness="0"
-					Header="Application Settings"
-					Style="{DynamicResource MaterialDesignGroupBox}" />
+        <StackPanel MaxWidth="450" Margin="10">
+            <GroupBox
+				Margin="16,5,16,0"
+				materialDesign:ShadowAssist.ShadowDepth="Depth3"
+				BorderThickness="0"
+				Header="Application Settings"
+				Style="{DynamicResource MaterialDesignGroupBox}" />
 
-				<GroupBox
-					Margin="16,0,16,0"
-					Header="Color Settings"
-					Style="{DynamicResource MaterialDesignCardGroupBox}">
-					<StackPanel>
-						<StackPanel Orientation="Horizontal">
-							<Label Margin="-3,0,25,0" Content="Dark Mode?" />
-							<ToggleButton Click="ChangeLightMode" IsChecked="{Binding IsDarkModeEnabled}" />
-						</StackPanel>
-						<StackPanel Orientation="Horizontal">
-							<Label Margin="-3,0,10,0" Content="Primary Color:" />
-							<ComboBox
-								Name="ColorBox"
-								Width="200"
-								SelectedIndex="{Binding SelectedColor}"
-								SelectionChanged="ChangePrimaryColor" />
-						</StackPanel>
-					</StackPanel>
-				</GroupBox>
-				<GroupBox
-					Margin="16,16,16,0"
-					Header="App Info"
-					Style="{DynamicResource MaterialDesignCardGroupBox}">
-					<StackPanel>
-						<StackPanel Orientation="Horizontal">
-							<Label Margin="-3,0,10,0" Content="Current Version: " />
-							<Label Content="{Binding CurrentVersion}" />
-						</StackPanel>
-					</StackPanel>
-				</GroupBox>
-				<GroupBox
-					Margin="16,16,16,0"
-					Header="Application"
-					Style="{DynamicResource MaterialDesignCardGroupBox}">
-					<StackPanel>
-						<StackPanel Orientation="Horizontal">
-							<Button Click="BrowserChangeLog" Content="Show Changelog" />
-						</StackPanel>
-					</StackPanel>
-				</GroupBox>
-			</StackPanel>
-		</GroupBox>
-	</Grid>
+            <GroupBox
+				Margin="16,0,16,0"
+				Header="Color Settings"
+				Style="{DynamicResource MaterialDesignCardGroupBox}">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Margin="-3,0,25,0" Content="Dark Mode?" />
+                        <ToggleButton Click="ChangeLightMode" IsChecked="{Binding IsDarkModeEnabled}" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Margin="-3,0,10,0" Content="Primary Color:" />
+                        <ComboBox
+							Name="ColorBox"
+							Width="200"
+							SelectedIndex="{Binding SelectedColor}"
+							SelectionChanged="ChangePrimaryColor" />
+                    </StackPanel>
+                </StackPanel>
+            </GroupBox>
+            <GroupBox
+				Margin="16,16,16,0"
+				Header="App Info"
+				Style="{DynamicResource MaterialDesignCardGroupBox}">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Margin="-3,0,10,0" Content="Current Version: " />
+                        <Label Content="{Binding CurrentVersion}" />
+                    </StackPanel>
+                </StackPanel>
+            </GroupBox>
+            <GroupBox
+				Margin="16,16,16,0"
+				Header="Application"
+				Style="{DynamicResource MaterialDesignCardGroupBox}">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Button
+							Margin="5"
+							Click="BrowserChangeLog"
+							Content="Show Changelog" />
+                        <Button Click="OpenApplicationPath_Click" Content="Open Application Folder" />
+
+                    </StackPanel>
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+    </Grid>
 </UserControl>
