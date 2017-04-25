@@ -1,8 +1,8 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 25:04:2017 / 18:53
-// Creation: 25:04:2017
+// Last Modified: 25:04:2017 / 17:09
+// Creation: 16:04:2017
 // Project: AstroSoundBoard
 //
 //
@@ -26,125 +26,125 @@ namespace AstroSoundBoard.WPF.Windows
     using log4net;
 
     public partial class MainWindow : Window
-	{
-		private static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+    {
+        private static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
-		public MainWindow()
-		{
-			AutoUpdater.CurrentCulture = CultureInfo.CreateSpecificCulture("en");
-			AutoUpdater.Start("https://raw.githubusercontent.com/FetzenRndy/AstroSoundboard/master/public/versions/updaterInfo.xml");
+        public MainWindow()
+        {
+            AutoUpdater.CurrentCulture = CultureInfo.CreateSpecificCulture("en");
+            AutoUpdater.Start("https://raw.githubusercontent.com/FetzenRndy/AstroSoundboard/hotfix/Fix_Squirrel_Updating/public/versions/updaterInfo.xml");
 
-			ViewChanger.MainWindowInstance = this;
+            ViewChanger.MainWindowInstance = this;
 
-			InitializeComponent();
+            InitializeComponent();
 
-			ViewChanger.ChangeViewTo(ViewChanger.Page.Board);
+            ViewChanger.ChangeViewTo(ViewChanger.Page.Board);
 
-			VolumeSlider_ValueChanged(new object(), new RoutedPropertyChangedEventArgs<double>(0, 50));
-			VolumeSlider.Value = 50;
-		}
+            VolumeSlider_ValueChanged(new object(), new RoutedPropertyChangedEventArgs<double>(0, 50));
+            VolumeSlider.Value = 50;
+        }
 
-		#region Helpers
+        #region Helpers
 
-		private bool CanSearchItemsExecute()
-		{
-			if (ViewChanger.MainWindowInstance.DataContext is BoardView)
-			{
-				SearchBox.IsEnabled = true;
-				FavoriteButton.IsEnabled = true;
-				return true;
-			}
-			else
-			{
-				SearchBox.IsEnabled = false;
-				FavoriteButton.IsEnabled = false;
-				return false;
-			}
-		}
+        private bool CanSearchItemsExecute()
+        {
+            if (ViewChanger.MainWindowInstance.DataContext is BoardView)
+            {
+                SearchBox.IsEnabled = true;
+                FavoriteButton.IsEnabled = true;
+                return true;
+            }
+            else
+            {
+                SearchBox.IsEnabled = false;
+                FavoriteButton.IsEnabled = false;
+                return false;
+            }
+        }
 
-		#endregion Helpers
+        #endregion Helpers
 
-		#region Search
+        #region Search
 
-		public void SearchForItem(object sender, TextChangedEventArgs e)
-		{
-			BoardView.BoadViewInstance?.SearchForElement(SearchBox.Text, onlyFavoritesActive);
-		}
+        public void SearchForItem(object sender, TextChangedEventArgs e)
+        {
+            BoardView.BoadViewInstance?.SearchForElement(SearchBox.Text, onlyFavoritesActive);
+        }
 
-		#endregion Search
+        #endregion Search
 
-		#region Favorites
+        #region Favorites
 
-		private bool onlyFavoritesActive;
+        private bool onlyFavoritesActive;
 
-		public void ToogleFavorites()
-		{
-			Log.Debug("Toggling Favorites!");
+        public void ToogleFavorites()
+        {
+            Log.Debug("Toggling Favorites!");
 
-			if (!CanSearchItemsExecute())
-			{
-				return;
-			}
+            if (!CanSearchItemsExecute())
+            {
+                return;
+            }
 
-			if (onlyFavoritesActive)
-			{
-				onlyFavoritesActive = false;
-				BoardView.BoadViewInstance?.OnlyShowFavorites(onlyFavoritesActive);
-			}
-			else
-			{
-				onlyFavoritesActive = true;
-				BoardView.BoadViewInstance?.OnlyShowFavorites(onlyFavoritesActive);
-			}
-		}
+            if (onlyFavoritesActive)
+            {
+                onlyFavoritesActive = false;
+                BoardView.BoadViewInstance?.OnlyShowFavorites(onlyFavoritesActive);
+            }
+            else
+            {
+                onlyFavoritesActive = true;
+                BoardView.BoadViewInstance?.OnlyShowFavorites(onlyFavoritesActive);
+            }
+        }
 
-		private void FavoriteButton_Click(object sender, RoutedEventArgs e)
-		{
-			ToogleFavorites();
-		}
+        private void FavoriteButton_Click(object sender, RoutedEventArgs e)
+        {
+            ToogleFavorites();
+        }
 
-		private void ContentControl_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
-		{
-			CanSearchItemsExecute();
-		}
+        private void ContentControl_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            CanSearchItemsExecute();
+        }
 
-		#endregion Favorites
+        #endregion Favorites
 
-		#region VolumeSlider
+        #region VolumeSlider
 
-		[DllImport("winmm.dll")]
-		private static extern int waveOutSetVolume(IntPtr hwo, uint dwVolume);
+        [DllImport("winmm.dll")]
+        private static extern int waveOutSetVolume(IntPtr hwo, uint dwVolume);
 
-		private void VolumeSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
-		{
-			int newVolume = ushort.MaxValue / 100 * (int)e.NewValue;
-			uint newVolumeAllChannels = ((uint)newVolume & 0x0000ffff) | ((uint)newVolume << 16);
+        private void VolumeSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            int newVolume = ushort.MaxValue / 100 * (int)e.NewValue;
+            uint newVolumeAllChannels = ((uint)newVolume & 0x0000ffff) | ((uint)newVolume << 16);
 
-			waveOutSetVolume(IntPtr.Zero, newVolumeAllChannels);
-		}
+            waveOutSetVolume(IntPtr.Zero, newVolumeAllChannels);
+        }
 
-		#endregion VolumeSlider
+        #endregion VolumeSlider
 
-		#region UI Events
+        #region UI Events
 
-		private void ShowHome_Click(object sender, RoutedEventArgs e) => ViewChanger.ChangeViewTo(ViewChanger.Page.Board);
+        private void ShowHome_Click(object sender, RoutedEventArgs e) => ViewChanger.ChangeViewTo(ViewChanger.Page.Board);
 
-		private void ShowSettings_Click(object sender, RoutedEventArgs e) => ViewChanger.ChangeViewTo(ViewChanger.Page.Settings);
+        private void ShowSettings_Click(object sender, RoutedEventArgs e) => ViewChanger.ChangeViewTo(ViewChanger.Page.Settings);
 
-		private void BrowserFaceBook_Click(object sender, RoutedEventArgs e) => Process.Start("https://www.facebook.com/TheAstronautKitty");
+        private void BrowserFaceBook_Click(object sender, RoutedEventArgs e) => Process.Start("https://www.facebook.com/TheAstronautKitty");
 
-		private void BrowserTwitter_Click(object sender, RoutedEventArgs e) => Process.Start("https://twitter.com/AstroShitty");
+        private void BrowserTwitter_Click(object sender, RoutedEventArgs e) => Process.Start("https://twitter.com/AstroShitty");
 
-		private void BrowserYoutube_Click(object sender, RoutedEventArgs e) => Process.Start("https://www.youtube.com/user/TheAstronautKitty");
+        private void BrowserYoutube_Click(object sender, RoutedEventArgs e) => Process.Start("https://www.youtube.com/user/TheAstronautKitty");
 
-		private void BrowserRequestFeature_Click(object sender, RoutedEventArgs e) => Process.Start("https://docs.google.com/forms/d/e/1FAIpQLSc9JnTYAgQ2fbaSujj9-F3DsI6_BOXJGG7jsXNLD6Dqf11X9g/viewform?usp=sf_link");
+        private void BrowserRequestFeature_Click(object sender, RoutedEventArgs e) => Process.Start("https://docs.google.com/forms/d/e/1FAIpQLSc9JnTYAgQ2fbaSujj9-F3DsI6_BOXJGG7jsXNLD6Dqf11X9g/viewform?usp=sf_link");
 
-		private void BrowserRequestSound_Click(object sender, RoutedEventArgs e) => Process.Start("https://docs.google.com/forms/d/e/1FAIpQLSfVT7Jx-5n80LYFskIcjLsL3fb2RmI7XOXAS_2rtUFIuyYp8Q/viewform?usp=sf_link");
+        private void BrowserRequestSound_Click(object sender, RoutedEventArgs e) => Process.Start("https://docs.google.com/forms/d/e/1FAIpQLSfVT7Jx-5n80LYFskIcjLsL3fb2RmI7XOXAS_2rtUFIuyYp8Q/viewform?usp=sf_link");
 
-		private void BrowserReportIssue_Click(object sender, RoutedEventArgs e) => Process.Start("https://docs.google.com/forms/d/e/1FAIpQLSdrhFCCVeKrbA56kiLpOqA5H1nszwA4gWimV1V6YOjXr5mC-A/viewform?usp=sf_link");
+        private void BrowserReportIssue_Click(object sender, RoutedEventArgs e) => Process.Start("https://docs.google.com/forms/d/e/1FAIpQLSdrhFCCVeKrbA56kiLpOqA5H1nszwA4gWimV1V6YOjXr5mC-A/viewform?usp=sf_link");
 
-		private void BrowserGitHub_Click(object sender, RoutedEventArgs e) => Process.Start("https://github.com/FetzenRndy/AstroSoundboard");
+        private void BrowserGitHub_Click(object sender, RoutedEventArgs e) => Process.Start("https://github.com/FetzenRndy/AstroSoundboard");
 
-		#endregion UI Events
-	}
+        #endregion UI Events
+    }
 }
