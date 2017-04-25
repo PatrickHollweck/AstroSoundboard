@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.26403.7
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AstroSoundBoard", "src\AstroSoundBoard\AstroSoundBoard.csproj", "{24C2FAA4-3A55-49A3-AA2D-BE8EA58F876C}"
 EndProject
-Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "AstroSoundBoard.Installer", "src\AstroSoundBoard.Installer\AstroSoundBoard.Installer.wixproj", "{CD3FEBA1-16C9-4B5C-ACF1-92E06FC6B8DD}"
+Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "AstroSoundBoard.Installer", "src\AstroSoundBoard.Installer\AstroSoundBoard.Installer.wixproj", "{CACD49F3-F9C1-414C-A65C-4F7F231218C2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,12 +23,12 @@ Global
 		{24C2FAA4-3A55-49A3-AA2D-BE8EA58F876C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{24C2FAA4-3A55-49A3-AA2D-BE8EA58F876C}.Release|x86.ActiveCfg = Release|Any CPU
 		{24C2FAA4-3A55-49A3-AA2D-BE8EA58F876C}.Release|x86.Build.0 = Release|Any CPU
-		{CD3FEBA1-16C9-4B5C-ACF1-92E06FC6B8DD}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{CD3FEBA1-16C9-4B5C-ACF1-92E06FC6B8DD}.Debug|x86.ActiveCfg = Debug|x86
-		{CD3FEBA1-16C9-4B5C-ACF1-92E06FC6B8DD}.Debug|x86.Build.0 = Debug|x86
-		{CD3FEBA1-16C9-4B5C-ACF1-92E06FC6B8DD}.Release|Any CPU.ActiveCfg = Release|x86
-		{CD3FEBA1-16C9-4B5C-ACF1-92E06FC6B8DD}.Release|x86.ActiveCfg = Release|x86
-		{CD3FEBA1-16C9-4B5C-ACF1-92E06FC6B8DD}.Release|x86.Build.0 = Release|x86
+		{CACD49F3-F9C1-414C-A65C-4F7F231218C2}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{CACD49F3-F9C1-414C-A65C-4F7F231218C2}.Debug|x86.ActiveCfg = Debug|x86
+		{CACD49F3-F9C1-414C-A65C-4F7F231218C2}.Debug|x86.Build.0 = Debug|x86
+		{CACD49F3-F9C1-414C-A65C-4F7F231218C2}.Release|Any CPU.ActiveCfg = Release|x86
+		{CACD49F3-F9C1-414C-A65C-4F7F231218C2}.Release|x86.ActiveCfg = Release|x86
+		{CACD49F3-F9C1-414C-A65C-4F7F231218C2}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

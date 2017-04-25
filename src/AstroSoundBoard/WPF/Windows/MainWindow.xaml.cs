@@ -1,7 +1,7 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 24:04:2017 / 18:35
+// Last Modified: 25:04:2017 / 16:55
 // Creation: 16:04:2017
 // Project: AstroSoundBoard
 //
@@ -20,6 +20,8 @@ namespace AstroSoundBoard.WPF.Windows
     using AstroSoundBoard.Core.Components;
     using AstroSoundBoard.WPF.Pages.Board;
 
+    using AutoUpdaterDotNET;
+
     using log4net;
 
     public partial class MainWindow : Window
@@ -28,7 +30,8 @@ namespace AstroSoundBoard.WPF.Windows
 
         public MainWindow()
         {
-            AppUpdater.Update();
+            AutoUpdater.CheckForUpdateEvent += AppUpdater.SilentUpdater;
+            AutoUpdater.Start("http://localhost/download/AutoUpdaterTest.xml");
 
             ViewChanger.MainWindowInstance = this;
 
