@@ -1,8 +1,8 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 24:04:2017 / 17:46
-// Creation: 23:04:2017
+// Last Modified: 26:04:2017 / 18:59
+// Creation: 25:04:2017
 // Project: AstroSoundBoard
 //
 //
@@ -12,13 +12,13 @@
 namespace AstroSoundBoard
 {
     using System;
+    using System.Collections.Generic;
     using System.Reflection;
     using System.Windows;
 
     using AstroSoundBoard.Core.Components;
     using AstroSoundBoard.Core.Objects;
     using AstroSoundBoard.Core.Utils;
-    using AstroSoundBoard.WPF.Pages.Settings;
 
     using log4net;
     using log4net.Core;
@@ -26,11 +26,11 @@ namespace AstroSoundBoard
     using MaterialDesignThemes.Wpf;
 
     public partial class App : Application
-    {
-        private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+	{
+		private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
-        private void Application_Startup(object sender, StartupEventArgs e)
-        {
+		private void Application_Startup(object sender, StartupEventArgs e)
+		{
 #if DEBUG
             ((log4net.Repository.Hierarchy.Hierarchy)LogManager.GetRepository()).Root.Level = Level.Debug;
             ((log4net.Repository.Hierarchy.Hierarchy)LogManager.GetRepository()).RaiseConfigurationChanged(EventArgs.Empty);
@@ -39,31 +39,33 @@ namespace AstroSoundBoard
 			((log4net.Repository.Hierarchy.Hierarchy)LogManager.GetRepository()).RaiseConfigurationChanged(EventArgs.Empty);
 #endif
 
-            Log.Info("--- APP START! ---");
-            Log.Info($"Current Version: {Assembly.GetExecutingAssembly().GetName().Version}");
+			Log.Info("--- APP START! ---");
+			Log.Info($"Current Version: {Assembly.GetExecutingAssembly().GetName().Version}");
 
-            // Make sure all required Folders exist.
-            FileSystem.FolderHelper.CreateIfMissing($"{AppSettings.InstallationFilePath}/");
+			// Make sure all required Folders exist.
+			FileSystem.FolderHelper.CreateIfMissing($"{AppSettings.InstallationFilePath}/");
 
-            // Setup error handling to log fatal errors.
-            AppDomain currentDomain = AppDomain.CurrentDomain;
-            currentDomain.UnhandledException += (caller, args) => { Log.Fatal($"Fatal unhanded exception. - {args.ExceptionObject} -- {args.IsTerminating} -> {args}"); };
+			// Setup error handling to log fatal errors.
+			AppDomain currentDomain = AppDomain.CurrentDomain;
+			currentDomain.UnhandledException += (caller, args) => { Log.Fatal($"Fatal unhanded exception. - {args.ExceptionObject} -- {args.IsTerminating} -> {args}"); };
 
-            ApplyMaterialTheme();
-            SoundManager.Init();
-            SettingsManager.Init();
-        }
+			ApplyMaterialTheme();
+			SoundManager.Init();
+			SettingsManager.Init();
+		}
 
-        private void Application_Exit(object sender, ExitEventArgs e)
-        {
-            Log.Info("--- APP EXIT! ---");
-        }
+		private void Application_Exit(object sender, ExitEventArgs e)
+		{
+			Log.Info("--- APP EXIT! ---");
+		}
 
-        public static void ApplyMaterialTheme()
-        {
-            var palette = new PaletteHelper();
-            palette.SetLightDark(AstroSoundBoard.Properties.Settings.Default.IsDarkModeEnabled);
-            palette.ReplacePrimaryColor(SettingsView.ColorList[AstroSoundBoard.Properties.Settings.Default.PrimaryColor]);
-        }
-    }
+		public static void ApplyMaterialTheme()
+		{
+			List<string> ColorList = new List<string> { "Red", "Pink", "Purple", "Indigo", "Blue", "Cyan", "Teal", "Green", "Lime", "Yellow", "Amber", "Orange", "Brown", "Grey" };
+
+			var palette = new PaletteHelper();
+			palette.SetLightDark(AstroSoundBoard.Properties.Settings.Default.IsDarkModeEnabled);
+			palette.ReplacePrimaryColor(ColorList[AstroSoundBoard.Properties.Settings.Default.PrimaryColor]);
+		}
+	}
 }
