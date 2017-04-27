@@ -1,8 +1,8 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 27:04:2017 / 16:52
-// Creation: 25:04:2017
+// Last Modified: 27:04:2017 / 20:16
+// Creation: 27:04:2017
 // Project: AstroSoundBoard
 //
 //
@@ -20,8 +20,11 @@ namespace AstroSoundBoard.WPF.Pages.Settings
     using AstroSoundBoard.Core.Objects;
     using AstroSoundBoard.Properties;
 
+    using log4net;
+
     public partial class SettingsView : UserControl
     {
+        private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
         public string CurrentVersion { get; } = Assembly.GetExecutingAssembly().GetName().Version.ToString();
 
         public SettingsView()
@@ -30,6 +33,7 @@ namespace AstroSoundBoard.WPF.Pages.Settings
             DataContext = this;
 
             ColorBox.SelectedValue = Settings.Default.PrimaryColor;
+            AllowErrorReportingToogleButton.IsChecked = Settings.Default.AllowErrorReporting;
         }
 
         public int SelectedColor { get; set; } = Settings.Default.PrimaryColor;
@@ -67,5 +71,21 @@ namespace AstroSoundBoard.WPF.Pages.Settings
         private void OpenApplicationPath_Click(object sender, RoutedEventArgs e) => Process.Start("explorer.exe", AppSettings.AssemblyDirectory);
 
         private void OpenLogsFolder(object sender, RoutedEventArgs e) => Process.Start("explorer.exe", @"C:\ProgramData\AstroKittySoundBoard\logs");
+
+        private void AllowErrorReportingToogleButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (Settings.Default.AllowErrorReporting)
+            {
+                Settings.Default.AllowErrorReporting = false;
+                Settings.Default.Save();
+            }
+            else
+            {
+                Settings.Default.AllowErrorReporting = true;
+                Settings.Default.Save();
+            }
+
+            Log.Info($"Changed ErrorReporting! TO: {Settings.Default.AllowErrorReporting}");
+        }
     }
 }

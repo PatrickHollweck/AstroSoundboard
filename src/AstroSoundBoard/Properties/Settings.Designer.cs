@@ -58,5 +58,17 @@ namespace AstroSoundBoard.Properties {
                 this["Volume"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool AllowErrorReporting {
+            get {
+                return ((bool)(this["AllowErrorReporting"]));
+            }
+            set {
+                this["AllowErrorReporting"] = value;
+            }
+        }
     }
 }

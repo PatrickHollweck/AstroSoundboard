@@ -106,7 +106,10 @@
 								<Label Content="Allow sending of error reports?" />
 							</StackPanel>
 							<StackPanel Grid.Column="1">
-								<ToggleButton Margin="0,5,0,3.6" />
+								<ToggleButton
+									Name="AllowErrorReportingToogleButton"
+									Margin="0,5,0,3.6"
+									Click="AllowErrorReportingToogleButton_Click" />
 							</StackPanel>
 						</Grid>
 

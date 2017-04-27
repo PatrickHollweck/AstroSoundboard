@@ -1,8 +1,8 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 26:04:2017 / 18:59
-// Creation: 25:04:2017
+// Last Modified: 27:04:2017 / 20:13
+// Creation: 27:04:2017
 // Project: AstroSoundBoard
 //
 //
@@ -25,6 +25,8 @@ namespace AstroSoundBoard
 
     using MaterialDesignThemes.Wpf;
 
+    using SharpRaven;
+
     public partial class App : Application
 	{
 		private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
@@ -46,8 +48,17 @@ namespace AstroSoundBoard
 			FileSystem.FolderHelper.CreateIfMissing($"{AppSettings.InstallationFilePath}/");
 
 			// Setup error handling to log fatal errors.
+			var ravenClient = new RavenClient(AstroSoundBoard.Properties.Resources.SentryConnection);
 			AppDomain currentDomain = AppDomain.CurrentDomain;
-			currentDomain.UnhandledException += (caller, args) => { Log.Fatal($"Fatal unhanded exception. - {args.ExceptionObject} -- {args.IsTerminating} -> {args}"); };
+			currentDomain.UnhandledException += (caller, args) =>
+				{
+					Log.Fatal($"Fatal unhanded exception. - {args.ExceptionObject} -- {args.IsTerminating} -> {args}");
+
+					if (AstroSoundBoard.Properties.Settings.Default.AllowErrorReporting)
+					{
+						ravenClient.Capture(new SharpRaven.Data.SentryEvent((Exception)args.ExceptionObject));
+					}
+				};
 
 			ApplyMaterialTheme();
 			SoundManager.Init();
@@ -61,11 +72,11 @@ namespace AstroSoundBoard
 
 		public static void ApplyMaterialTheme()
 		{
-			List<string> ColorList = new List<string> { "Red", "Pink", "Purple", "Indigo", "Blue", "Cyan", "Teal", "Green", "Lime", "Yellow", "Amber", "Orange", "Brown", "Grey" };
+			List<string> colorList = new List<string> { "Red", "Pink", "Purple", "Indigo", "Blue", "Cyan", "Teal", "Green", "Lime", "Yellow", "Amber", "Orange", "Brown", "Grey" };
 
 			var palette = new PaletteHelper();
 			palette.SetLightDark(AstroSoundBoard.Properties.Settings.Default.IsDarkModeEnabled);
-			palette.ReplacePrimaryColor(ColorList[AstroSoundBoard.Properties.Settings.Default.PrimaryColor]);
+			palette.ReplacePrimaryColor(colorList[AstroSoundBoard.Properties.Settings.Default.PrimaryColor]);
 		}
 	}
 }
