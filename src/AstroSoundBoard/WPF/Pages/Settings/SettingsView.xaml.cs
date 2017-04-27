@@ -1,7 +1,7 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 26:04:2017 / 20:09
+// Last Modified: 27:04:2017 / 16:52
 // Creation: 25:04:2017
 // Project: AstroSoundBoard
 //
@@ -16,6 +16,7 @@ namespace AstroSoundBoard.WPF.Pages.Settings
     using System.Windows;
     using System.Windows.Controls;
 
+    using AstroSoundBoard.Core.Components;
     using AstroSoundBoard.Core.Objects;
     using AstroSoundBoard.Properties;
 
@@ -59,8 +60,12 @@ namespace AstroSoundBoard.WPF.Pages.Settings
             App.ApplyMaterialTheme();
         }
 
-        private void BrowserChangeLog(object sender, RoutedEventArgs e) => Process.Start("https://github.com/FetzenRndy/AstroSoundboard/blob/master/public/changelog.md");
+        private void ShowAbout_Click(object sender, RoutedEventArgs e) => ViewChanger.ChangeViewTo(ViewChanger.Page.About);
+
+        private void BrowserChangeLog(object sender, RoutedEventArgs e) => Process.Start("https://github.com/FetzenRndy/AstroSoundboard/releases/");
 
         private void OpenApplicationPath_Click(object sender, RoutedEventArgs e) => Process.Start("explorer.exe", AppSettings.AssemblyDirectory);
+
+        private void OpenLogsFolder(object sender, RoutedEventArgs e) => Process.Start("explorer.exe", @"C:\ProgramData\AstroKittySoundBoard\logs");
     }
 }
