@@ -1,8 +1,8 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 25:04:2017 / 18:02
-// Creation: 16:04:2017
+// Last Modified: 27:04:2017 / 16:52
+// Creation: 25:04:2017
 // Project: AstroSoundBoard
 //
 //
@@ -11,31 +11,23 @@
 
 namespace AstroSoundBoard.WPF.Pages.Settings
 {
-    using System.Collections.Generic;
     using System.Diagnostics;
     using System.Reflection;
     using System.Windows;
     using System.Windows.Controls;
 
+    using AstroSoundBoard.Core.Components;
     using AstroSoundBoard.Core.Objects;
     using AstroSoundBoard.Properties;
 
     public partial class SettingsView : UserControl
     {
-        public static List<string> ColorList { get; } = new List<string> { "Red", "Pink", "Purple", "Indigo", "Blue", "Cyan", "Teal", "Green", "Lime", "Yellow", "Amber", "Orange", "Brown", "Grey" };
-
         public string CurrentVersion { get; } = Assembly.GetExecutingAssembly().GetName().Version.ToString();
 
         public SettingsView()
         {
             InitializeComponent();
             DataContext = this;
-
-            // Add all available colors to the ColorBox. So the User can select the one he wants.
-            foreach (string color in ColorList)
-            {
-                ColorBox.Items.Add(color);
-            }
 
             ColorBox.SelectedValue = Settings.Default.PrimaryColor;
         }
@@ -68,14 +60,12 @@ namespace AstroSoundBoard.WPF.Pages.Settings
             App.ApplyMaterialTheme();
         }
 
-        private void BrowserChangeLog(object sender, RoutedEventArgs e)
-        {
-            Process.Start("https://github.com/FetzenRndy/AstroSoundboard/blob/master/public/changelog.md");
-        }
+        private void ShowAbout_Click(object sender, RoutedEventArgs e) => ViewChanger.ChangeViewTo(ViewChanger.Page.About);
 
-        private void OpenApplicationPath_Click(object sender, RoutedEventArgs e)
-        {
-            Process.Start("explorer.exe", AppSettings.AssemblyDirectory);
-        }
+        private void BrowserChangeLog(object sender, RoutedEventArgs e) => Process.Start("https://github.com/FetzenRndy/AstroSoundboard/releases/");
+
+        private void OpenApplicationPath_Click(object sender, RoutedEventArgs e) => Process.Start("explorer.exe", AppSettings.AssemblyDirectory);
+
+        private void OpenLogsFolder(object sender, RoutedEventArgs e) => Process.Start("explorer.exe", @"C:\ProgramData\AstroKittySoundBoard\logs");
     }
 }

@@ -268,6 +268,7 @@
 				Grid.Row="1"
 				Grid.Column="1"
 				Grid.ColumnSpan="2"
+				Panel.ZIndex="-1"
 				Content="{Binding}"
 				DataContextChanged="ContentControl_DataContextChanged"
 				FontWeight="Normal" />

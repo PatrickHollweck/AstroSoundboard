@@ -1,7 +1,7 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 22:04:2017 / 17:04
+// Last Modified: 26:04:2017 / 21:33
 // Creation: 16:04:2017
 // Project: AstroSoundBoard
 //
@@ -26,7 +26,8 @@ namespace AstroSoundBoard.Core.Components
         public enum Page
         {
             Board,
-            Settings
+            Settings,
+            About
         }
 
         public static void ChangeViewTo(Page p)
@@ -44,6 +45,9 @@ namespace AstroSoundBoard.Core.Components
 
                 case Page.Settings:
                     return new SettingsView();
+
+                case Page.About:
+                    return new WPF.Pages.About.AboutView();
 
                 default:
                     throw new System.ArgumentException("Illegal Argument");
