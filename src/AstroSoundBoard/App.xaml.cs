@@ -28,11 +28,11 @@ namespace AstroSoundBoard
     using SharpRaven;
 
     public partial class App : Application
-	{
-		private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+    {
+        private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
-		private void Application_Startup(object sender, StartupEventArgs e)
-		{
+        private void Application_Startup(object sender, StartupEventArgs e)
+        {
 #if DEBUG
             ((log4net.Repository.Hierarchy.Hierarchy)LogManager.GetRepository()).Root.Level = Level.Debug;
             ((log4net.Repository.Hierarchy.Hierarchy)LogManager.GetRepository()).RaiseConfigurationChanged(EventArgs.Empty);
@@ -41,42 +41,42 @@ namespace AstroSoundBoard
 			((log4net.Repository.Hierarchy.Hierarchy)LogManager.GetRepository()).RaiseConfigurationChanged(EventArgs.Empty);
 #endif
 
-			Log.Info("--- APP START! ---");
-			Log.Info($"Current Version: {Assembly.GetExecutingAssembly().GetName().Version}");
+            Log.Info("--- APP START! ---");
+            Log.Info($"Current Version: {Assembly.GetExecutingAssembly().GetName().Version}");
 
-			// Make sure all required Folders exist.
-			FileSystem.FolderHelper.CreateIfMissing($"{AppSettings.InstallationFilePath}/");
+            // Make sure all required Folders exist.
+            FileSystem.FolderHelper.CreateIfMissing($"{AppSettings.InstallationFilePath}/");
 
-			// Setup error handling to log fatal errors.
-			var ravenClient = new RavenClient(AstroSoundBoard.Properties.Resources.SentryConnection);
-			AppDomain currentDomain = AppDomain.CurrentDomain;
-			currentDomain.UnhandledException += (caller, args) =>
-				{
-					Log.Fatal($"Fatal unhanded exception. - {args.ExceptionObject} -- {args.IsTerminating} -> {args}");
+            // Setup error handling to log fatal errors.
+            AppDomain currentDomain = AppDomain.CurrentDomain;
+            currentDomain.UnhandledException += (caller, args) =>
+                {
+                    Log.Fatal($"Fatal unhanded exception. - {args.ExceptionObject} -- {args.IsTerminating} -> {args}");
 
-					if (AstroSoundBoard.Properties.Settings.Default.AllowErrorReporting)
-					{
-						ravenClient.Capture(new SharpRaven.Data.SentryEvent((Exception)args.ExceptionObject));
-					}
-				};
+                    if (AstroSoundBoard.Properties.Settings.Default.AllowErrorReporting)
+                    {
+                        var ravenClient = new RavenClient(Credentials.SentryApiKey);
+                        ravenClient.Capture(new SharpRaven.Data.SentryEvent((Exception)args.ExceptionObject));
+                    }
+                };
 
-			ApplyMaterialTheme();
-			SoundManager.Init();
-			SettingsManager.Init();
-		}
+            ApplyMaterialTheme();
+            SoundManager.Init();
+            SettingsManager.Init();
+        }
 
-		private void Application_Exit(object sender, ExitEventArgs e)
-		{
-			Log.Info("--- APP EXIT! ---");
-		}
+        private void Application_Exit(object sender, ExitEventArgs e)
+        {
+            Log.Info("--- APP EXIT! ---");
+        }
 
-		public static void ApplyMaterialTheme()
-		{
-			List<string> colorList = new List<string> { "Red", "Pink", "Purple", "Indigo", "Blue", "Cyan", "Teal", "Green", "Lime", "Yellow", "Amber", "Orange", "Brown", "Grey" };
+        public static void ApplyMaterialTheme()
+        {
+            List<string> colorList = new List<string> { "Red", "Pink", "Purple", "Indigo", "Blue", "Cyan", "Teal", "Green", "Lime", "Yellow", "Amber", "Orange", "Brown", "Grey" };
 
-			var palette = new PaletteHelper();
-			palette.SetLightDark(AstroSoundBoard.Properties.Settings.Default.IsDarkModeEnabled);
-			palette.ReplacePrimaryColor(colorList[AstroSoundBoard.Properties.Settings.Default.PrimaryColor]);
-		}
-	}
+            var palette = new PaletteHelper();
+            palette.SetLightDark(AstroSoundBoard.Properties.Settings.Default.IsDarkModeEnabled);
+            palette.ReplacePrimaryColor(colorList[AstroSoundBoard.Properties.Settings.Default.PrimaryColor]);
+        }
+    }
 }

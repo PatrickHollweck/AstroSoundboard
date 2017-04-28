@@ -229,7 +229,4 @@
   <data name="YOU_SUCK_DUDE" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\YOU_SUCK_DUDE.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="SentryConnection" xml:space="preserve">
-    <value>https://7022c1d1e36c4342882fd531a437f87d:17f4fdd9922148558ecd41f69f6b70f3@sentry.io/162665</value>
-  </data>
 </root>

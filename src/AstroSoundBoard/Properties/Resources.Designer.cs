@@ -268,15 +268,6 @@ namespace AstroSoundBoard.Properties {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die https://7022c1d1e36c4342882fd531a437f87d:17f4fdd9922148558ecd41f69f6b70f3@sentry.io/162665 ähnelt.
-        /// </summary>
-        internal static string SentryConnection {
-            get {
-                return ResourceManager.GetString("SentryConnection", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
         /// </summary>
         internal static System.IO.UnmanagedMemoryStream SHUT_UP_ASTROKITTY {
