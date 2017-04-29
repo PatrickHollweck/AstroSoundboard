@@ -1,8 +1,8 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 27:04:2017 / 20:13
-// Creation: 27:04:2017
+// Last Modified: 29:04:2017 / 19:56
+// Creation: 29:04:2017
 // Project: AstroSoundBoard
 //
 //
@@ -37,8 +37,8 @@ namespace AstroSoundBoard
             ((log4net.Repository.Hierarchy.Hierarchy)LogManager.GetRepository()).Root.Level = Level.Debug;
             ((log4net.Repository.Hierarchy.Hierarchy)LogManager.GetRepository()).RaiseConfigurationChanged(EventArgs.Empty);
 #else
-			((log4net.Repository.Hierarchy.Hierarchy)LogManager.GetRepository()).Root.Level = Level.Info;
-			((log4net.Repository.Hierarchy.Hierarchy)LogManager.GetRepository()).RaiseConfigurationChanged(EventArgs.Empty);
+            ((log4net.Repository.Hierarchy.Hierarchy)LogManager.GetRepository()).Root.Level = Level.Info;
+            ((log4net.Repository.Hierarchy.Hierarchy)LogManager.GetRepository()).RaiseConfigurationChanged(EventArgs.Empty);
 #endif
 
             Log.Info("--- APP START! ---");
@@ -48,8 +48,7 @@ namespace AstroSoundBoard
             FileSystem.FolderHelper.CreateIfMissing($"{AppSettings.InstallationFilePath}/");
 
             // Setup error handling to log fatal errors.
-            AppDomain currentDomain = AppDomain.CurrentDomain;
-            currentDomain.UnhandledException += (caller, args) =>
+            AppDomain.CurrentDomain.UnhandledException += (caller, args) =>
                 {
                     Log.Fatal($"Fatal unhanded exception. - {args.ExceptionObject} -- {args.IsTerminating} -> {args}");
 
@@ -57,6 +56,8 @@ namespace AstroSoundBoard
                     {
                         var ravenClient = new RavenClient(Credentials.SentryApiKey);
                         ravenClient.Capture(new SharpRaven.Data.SentryEvent((Exception)args.ExceptionObject));
+
+                        Log.Info("Reported error to sentry!");
                     }
                 };
 

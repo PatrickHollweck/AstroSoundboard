@@ -102,11 +102,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Core\Objects\Credentials.cs" />
+    <Compile Include="Core\Utils\NativeMethods.cs" />
     <Compile Include="WPF\Pages\About\AboutView.xaml.cs">
       <DependentUpon>AboutView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="WPF\Windows\UpdateWindow.xaml.cs">
-      <DependentUpon>UpdateWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="WPF\Controls\Sound\SoundView.xaml">
       <SubType>Designer</SubType>
@@ -121,6 +119,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WPF\Pages\Settings\SettingsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Windows\FeedbackWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -160,6 +162,9 @@
     <Compile Include="WPF\Pages\Settings\SettingsView.xaml.cs">
       <DependentUpon>SettingsView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WPF\Windows\FeedbackWindow.xaml.cs">
+      <DependentUpon>FeedbackWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WPF\Windows\InfoWindow.xaml.cs">
       <DependentUpon>InfoWindow.xaml</DependentUpon>
     </Compile>
@@ -167,10 +172,6 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="WPF\Windows\UpdateWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -322,6 +323,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Core\Utils\Extensions\" />
+    <Folder Include="WPF\Pages\IssueReport\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\RUNNAWAY_FROM_ME.wav" />
