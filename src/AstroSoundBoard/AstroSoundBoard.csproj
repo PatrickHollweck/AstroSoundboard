@@ -332,16 +332,104 @@
   <ItemGroup>
     <None Include="Resources\THERE_IS_YOUR_PICK.wav" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\I_MAIN_CANCER.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MOVED_ASLEP.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NOT_PAST_GORILLA.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RRRRRRR.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\THE_META.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TRUMP_2017.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WHEN_YOU_TRY.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ALOT_OF_CUNTS.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BAD_DECISIONS.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ENGINE_START.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FUCKING_DOMINATE.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FUCKING_JUNKRAT.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HEY.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HIT_ME.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\I_AM_NUTCRACKER.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SUCK_MY_ORBS.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OVERUSED_MEME.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GOOD_CATCH.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IS_THIS_HARAMBE.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FUCKING_NEOW.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MONKEY_MONKEY.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PHARA_VS_SOLIDER.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SICK_ULT.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PLATNIUM_DAMAGE.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TURNED_INTO_TRACER.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DARKNESS_IM_DAD.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DICK_SKIN_IS_PEELING.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MAINHART_RAIN.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AMEIZING.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\THIS_MOMENT.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>Dieses Projekt verweist auf mindestens ein NuGet-Paket, das auf diesem Computer fehlt. Verwenden Sie die Wiederherstellung von NuGet-Paketen, um die fehlenden Dateien herunterzuladen. Weitere Informationen finden Sie unter "http://go.microsoft.com/fwlink/?LinkID=322105". Die fehlende Datei ist "{0}".</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
-    <Error Condition="!Exists('..\..\packages\Fody.2.0.4\build\netstandard1.4\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Fody.2.0.4\build\netstandard1.4\Fody.targets'))" />
-    <Error Condition="!Exists('..\..\packages\Costura.Fody.1.4.0\build\Costura.Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Costura.Fody.1.4.0\build\Costura.Fody.targets'))" />
+    <Error Condition="!Exists('..\..\packages\Fody.2.0.6\build\netstandard1.4\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Fody.2.0.6\build\netstandard1.4\Fody.targets'))" />
   </Target>
   <Import Project="..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
-  <Import Project="..\..\packages\Fody.2.0.4\build\netstandard1.4\Fody.targets" Condition="Exists('..\..\packages\Fody.2.0.4\build\netstandard1.4\Fody.targets')" />
-  <Import Project="..\..\packages\Costura.Fody.1.4.0\build\Costura.Fody.targets" Condition="Exists('..\..\packages\Costura.Fody.1.4.0\build\Costura.Fody.targets')" />
+  <Import Project="..\..\packages\Fody.2.0.6\build\netstandard1.4\Fody.targets" Condition="Exists('..\..\packages\Fody.2.0.6\build\netstandard1.4\Fody.targets')" />
 </Project>

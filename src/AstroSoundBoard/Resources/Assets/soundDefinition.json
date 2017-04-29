@@ -361,6 +361,296 @@
                 "VideoLink": "https://www.youtube.com/embed/jKRGhj7vK7Q",
                 "Description": "Mercy waited the whole match on Astro (phara) to ult but he didnt ult, in the end of the round he expresses his emotions."
             }
+        },
+        {
+            "sound": {
+                "name": "ENGINE_START",
+                "version": "1"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/oaiFJwKjacE",
+                "Description": "Astro's friend flees from Astro in Dying light as he is about to make run a way he makes this very ambicious sound."
+            }
+        },
+        {
+            "sound": {
+                "name": "ALOT_OF_CUNTS",
+                "version": "1"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/tD5G_WQWXMw",
+                "Description": "Astro's Teammate was alone on point and saw alot of enemys"
+            }
+        },
+        {
+            "sound": {
+                "name": "BAD_DECISIONS",
+                "version": "1"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/tD5G_WQWXMw",
+                "Description": "Astro wants to kill a Mercy and just walkes throught the whole enemy Team, and gets killed"
+            }
+        },
+        {
+            "sound": {
+                "name": "FUCKING_DOMINATE",
+                "version": "1"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/tD5G_WQWXMw",
+                "Description": "Astro wants to play sym, but a Team mate is against that Idea on Attack, so he changes to phara and has to dominate them"
+            }
+        },
+        {
+            "sound": {
+                "name": "FUCKING_JUNKRAT",
+                "version": "1"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/tD5G_WQWXMw",
+                "Description": "Astro get caught by a junkrat trap"
+            }
+        },
+        {
+            "sound": {
+                "name": "HEY",
+                "version": "1"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/tD5G_WQWXMw",
+                "Description": "Hello"
+            }
+        },
+        {
+            "sound": {
+                "name": "HIT_ME",
+                "version": "1"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/tD5G_WQWXMw",
+                "Description": "Astro playing zarya wants to get energy and hit :3"
+            }
+        },
+        {
+            "sound": {
+                "name": "I_AM_NUTCRACKER",
+                "version": "1"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/tD5G_WQWXMw",
+                "Description": "Astro playing zen with the nuttcracker skin"
+            }
+        },
+        {
+            "sound": {
+                "name": "I_MAIN_CANCER",
+                "version": "1"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/tD5G_WQWXMw",
+                "Description": "Astro playing Mei"
+            }
+        },
+        {
+            "sound": {
+                "name": "MOVED_ASLEP",
+                "version": "1"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/tD5G_WQWXMw",
+                "Description": "Astro teammate ana got slept and moved the payload to victory while sleeping."
+            }
+        },
+        {
+            "sound": {
+                "name": "NOT_PAST_GORILLA",
+                "version": "1"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/tD5G_WQWXMw",
+                "Description": "Astro keeping the whole team from getting to the point with winstons ult"
+            }
+        },
+        {
+            "sound": {
+                "name": "RRRRRRR",
+                "version": "1"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/tD5G_WQWXMw",
+                "Description": "Astro and solider have a affair"
+            }
+        },
+        {
+            "sound": {
+                "name": "SUCK_MY_ORBS",
+                "version": "1"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/tD5G_WQWXMw",
+                "Description": "Phara ults and astro commes in with the zen ult to save the team"
+            }
+        },
+        {
+            "sound": {
+                "name": "THE_META",
+                "version": "1"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/tD5G_WQWXMw",
+                "Description": "Astro wants to play sym but is lagging al over the place, his team mate thought this would be an advantage, when playing sym."
+            }
+        },
+        {
+            "sound": {
+                "name": "TRUMP_2017",
+                "version": "1"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/tD5G_WQWXMw",
+                "Description": "Make murica great again!"
+            }
+        },
+        {
+            "sound": {
+                "name": "WHEN_YOU_TRY",
+                "version": "1"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/tD5G_WQWXMw",
+                "Description": "Astro as zarya get's caught flanking by a winston"
+            }
+        },
+        {
+            "sound": {
+                "name": "GOOD_CATCH",
+                "version": "1"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/QG-ef22eRr0",
+                "Description": "Reinhart catching someone."
+            }
+        },
+        {
+            "sound": {
+                "name": "OVERUSED_MEME",
+                "version": "1"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/QG-ef22eRr0",
+                "Description": "Harambe is a overused meme"
+            }
+        },
+        {
+            "sound": {
+                "name": "FUCKING_NEOW",
+                "version": "1"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/0U_fjk01cNo",
+                "Description": "Unknowen source."
+            }
+        },
+        {
+            "sound": {
+                "name": "MONKEY_MONKEY",
+                "version": "1"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/0U_fjk01cNo",
+                "Description": "Astro as Harambe abuses another player"
+            }
+        },
+        {
+            "sound": {
+                "name": "SICK_ULT",
+                "version": "1"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/I34V4HeasKs",
+                "Description": "Astro as Harambe abuses another player"
+            }
+        },
+        {
+            "sound": {
+                "name": "PLATNIUM_DAMAGE",
+                "version": "1"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/I34V4HeasKs",
+                "Description": "Astro as Harambe abuses another player"
+            }
+        },
+        {
+            "sound": {
+                "name": "PHARA_VS_SOLIDER",
+                "version": "1"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/8-1c9wkWITA",
+                "Description": "Astro as Harambe abuses another player"
+            }
+        },
+        {
+            "sound": {
+                "name": "TURNED_INTO_TRACER",
+                "version": "1"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/8-1c9wkWITA",
+                "Description": "Astro as Harambe abuses another player"
+            }
+        },
+        {
+            "sound": {
+                "name": "DARKNESS_IM_DAD",
+                "version": "1"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/G4V1c5GC72E",
+                "Description": "Astro trolling."
+            }
+        },
+        {
+            "sound": {
+                "name": "DICK_SKIN_IS_PEELING",
+                "version": "1"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/8-1c9wkWITA",
+                "Description": "Kid trying to ryme :3"
+            }
+        },
+        {
+            "sound": {
+                "name": "MAINHART_RAIN",
+                "version": "1"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/bGV2_v64fPI",
+                "Description": "Astro makes a slip of the tongue, while trying to say that he is a Reinhart main"
+            }
+        },
+        {
+            "sound": {
+                "name": "AMEIZING",
+                "version": "1"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/ixda9vcYxvk",
+                "Description": "Pun intendet"
+            }
+        },
+        {
+            "sound": {
+                "name": "THIS_MOMENT",
+                "version": "1"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/ixda9vcYxvk",
+                "Description": "It was at this moment astrokitty knew, he fucked up"
+            }
         }
     ]
 }
