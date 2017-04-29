@@ -1,7 +1,7 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 29:04:2017 / 00:07
+// Last Modified: 29:04:2017 / 20:11
 // Creation: 29:04:2017
 // Project: AstroSoundBoard
 //
@@ -14,11 +14,11 @@ namespace AstroSoundBoard.WPF.Windows
     using System;
     using System.Diagnostics;
     using System.Globalization;
-    using System.Runtime.InteropServices;
     using System.Windows;
     using System.Windows.Controls;
 
     using AstroSoundBoard.Core.Components;
+    using AstroSoundBoard.Core.Utils;
     using AstroSoundBoard.WPF.Pages.Board;
 
     using AutoUpdaterDotNET;
@@ -112,15 +112,12 @@ namespace AstroSoundBoard.WPF.Windows
 
         #region VolumeSlider
 
-        [DllImport("winmm.dll")]
-        private static extern int waveOutSetVolume(IntPtr hwo, uint dwVolume);
-
         private void VolumeSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             int newVolume = ushort.MaxValue / 100 * (int)e.NewValue;
             uint newVolumeAllChannels = ((uint)newVolume & 0x0000ffff) | ((uint)newVolume << 16);
 
-            waveOutSetVolume(IntPtr.Zero, newVolumeAllChannels);
+            NativeMethods.waveOutSetVolume(IntPtr.Zero, newVolumeAllChannels);
         }
 
         #endregion VolumeSlider
@@ -136,14 +133,6 @@ namespace AstroSoundBoard.WPF.Windows
         private void BrowserTwitter_Click(object sender, RoutedEventArgs e) => Process.Start("https://twitter.com/AstroShitty");
 
         private void BrowserYoutube_Click(object sender, RoutedEventArgs e) => Process.Start("https://www.youtube.com/user/TheAstronautKitty");
-
-        private void BrowserRequestFeature_Click(object sender, RoutedEventArgs e) => Process.Start("https://docs.google.com/forms/d/e/1FAIpQLSc9JnTYAgQ2fbaSujj9-F3DsI6_BOXJGG7jsXNLD6Dqf11X9g/viewform?usp=sf_link");
-
-        private void BrowserRequestSound_Click(object sender, RoutedEventArgs e) => Process.Start("https://docs.google.com/forms/d/e/1FAIpQLSfVT7Jx-5n80LYFskIcjLsL3fb2RmI7XOXAS_2rtUFIuyYp8Q/viewform?usp=sf_link");
-
-        private void BrowserReportIssue_Click(object sender, RoutedEventArgs e) => Process.Start("https://docs.google.com/forms/d/e/1FAIpQLSdrhFCCVeKrbA56kiLpOqA5H1nszwA4gWimV1V6YOjXr5mC-A/viewform?usp=sf_link");
-
-        private void BrowserGitHub_Click(object sender, RoutedEventArgs e) => Process.Start("https://github.com/FetzenRndy/AstroSoundboard");
 
         #endregion UI Events
     }
