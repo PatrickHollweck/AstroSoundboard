@@ -1,7 +1,7 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 21:04:2017 / 23:45
+// Last Modified: 29:04:2017 / 21:09
 // Creation: 17:04:2017
 // Project: AstroSoundBoard
 //
@@ -14,31 +14,28 @@ namespace AstroSoundBoard.Core.Objects.DataObjects.SoundDefinitionJsonTypes
     using Newtonsoft.Json;
 
     public class SoundAttribute
-    {
-        [JsonProperty("name")]
-        public string Name { get; set; }
+	{
+		[JsonProperty("name")]
+		public string Name { get; set; }
+	}
 
-        [JsonProperty("version")]
-        public string Version { get; set; }
-    }
+	public class InfoAttribute
+	{
+		[JsonProperty("VideoLink")]
+		public string VideoLink { get; set; }
 
-    public class InfoAttribute
-    {
-        [JsonProperty("VideoLink")]
-        public string VideoLink { get; set; }
+		[JsonProperty("Description")]
+		public string Description { get; set; }
+	}
 
-        [JsonProperty("Description")]
-        public string Description { get; set; }
-    }
+	public class Definition
+	{
+		[JsonProperty("sound")]
+		public SoundAttribute Sound { get; set; }
 
-    public class Definition
-    {
-        [JsonProperty("sound")]
-        public SoundAttribute Sound { get; set; }
-
-        [JsonProperty("info")]
-        public InfoAttribute Info { get; set; }
-    }
+		[JsonProperty("info")]
+		public InfoAttribute Info { get; set; }
+	}
 }
 
 namespace AstroSoundBoard.Core.Objects.DataObjects.SoundDefinition
@@ -50,19 +47,19 @@ namespace AstroSoundBoard.Core.Objects.DataObjects.SoundDefinition
     using Newtonsoft.Json;
 
     public class SoundDefinitions
-    {
-        public SoundDefinitions()
-        {
-            SoundList = new List<Definition>();
-        }
+	{
+		public SoundDefinitions()
+		{
+			SoundList = new List<Definition>();
+		}
 
-        [JsonProperty("FileVersion")]
-        public string FileVersion { get; set; }
+		[JsonProperty("FileVersion")]
+		public string FileVersion { get; set; }
 
-        [JsonProperty("ParserVersion")]
-        public string ParserVersion { get; set; }
+		[JsonProperty("ParserVersion")]
+		public string ParserVersion { get; set; }
 
-        [JsonProperty("Sounds")]
-        public List<Definition> SoundList { get; set; }
-    }
+		[JsonProperty("Sounds")]
+		public List<Definition> SoundList { get; set; }
+	}
 }

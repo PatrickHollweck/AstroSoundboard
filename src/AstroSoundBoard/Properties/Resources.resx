@@ -197,11 +197,9 @@
     <value>{
     "FileVersion": "1",
     "ParserVersion": "1",
-    "Sounds": [
-        {
+    "Sounds": [{
             "sound": {
-                "name": "FUCKING_MERCY",
-                "version": "1"
+                "name": "FUCKING_MERCY"
             },
             "info": {
                 "VideoLink": "https://www.youtube.com/embed/11olpkle_YQ",
@@ -210,8 +208,7 @@
         },
         {
             "sound": {
-                "name": "AW_YEAH_PAPI",
-                "version": "1"
+                "name": "AW_YEAH_PAPI"
             },
             "info": {
                 "VideoLink": "https://www.youtube.com/embed/4npgppVhcQ4",
@@ -220,8 +217,7 @@
         },
         {
             "sound": {
-                "name": "BOOPEY_BOOPEY",
-                "version": "1"
+                "name": "BOOPEY_BOOPEY"
             },
             "info": {
                 "VideoLink": "https://www.youtube.com/embed/Sgcemfa7Tow",
@@ -230,8 +226,7 @@
         },
         {
             "sound": {
-                "name": "BYE_BYE",
-                "version": "1"
+                "name": "BYE_BYE"
             },
             "info": {
                 "VideoLink": "https://www.youtube.com/embed/xNAPJ5bMLGQ",
@@ -240,8 +235,7 @@
         },
         {
             "sound": {
-                "name": "CHEEKY_BOOP",
-                "version": "1"
+                "name": "CHEEKY_BOOP"
             },
             "info": {
                 "VideoLink": "https://www.youtube.com/embed/Sgcemfa7Tow",
@@ -250,8 +244,7 @@
         },
         {
             "sound": {
-                "name": "CHEEKY_CHEEKY",
-                "version": "1"
+                "name": "CHEEKY_CHEEKY"
             },
             "info": {
                 "VideoLink": "https://www.youtube.com/embed/qv8E50WPF9E",
@@ -260,8 +253,7 @@
         },
         {
             "sound": {
-                "name": "DO_IT_FOR_THE_MEMEZ",
-                "version": "1"
+                "name": "DO_IT_FOR_THE_MEMEZ"
             },
             "info": {
                 "VideoLink": "https://www.youtube.com/embed/8tExMeAsGEU",
@@ -270,8 +262,7 @@
         },
         {
             "sound": {
-                "name": "DROP_THAT_CHITTY",
-                "version": "1"
+                "name": "DROP_THAT_CHITTY"
             },
             "info": {
                 "VideoLink": "https://www.youtube.com/embed/I34V4HeasKs",
@@ -280,8 +271,7 @@
         },
         {
             "sound": {
-                "name": "GET_HER_BABY",
-                "version": "1"
+                "name": "GET_HER_BABY"
             },
             "info": {
                 "VideoLink": "https://www.youtube.com/embed/YeDCTAkwAA",
@@ -290,8 +280,7 @@
         },
         {
             "sound": {
-                "name": "GIVE_IT_TO_ME_ASTRO",
-                "version": "1"
+                "name": "GIVE_IT_TO_ME_ASTRO"
             },
             "info": {
                 "VideoLink": "https://www.youtube.com/embed/dwmZwOngW8I",
@@ -300,8 +289,7 @@
         },
         {
             "sound": {
-                "name": "GOING_TOO_DEEP_GUYS",
-                "version": "1"
+                "name": "GOING_TOO_DEEP_GUYS"
             },
             "info": {
                 "VideoLink": "https://www.youtube.com/embed/gGrcV994cqY",
@@ -310,8 +298,7 @@
         },
         {
             "sound": {
-                "name": "GUNG",
-                "version": "1"
+                "name": "GUNG"
             },
             "info": {
                 "VideoLink": "https://www.youtube.com/embed/yGUS7fVu0ZA",
@@ -320,8 +307,7 @@
         },
         {
             "sound": {
-                "name": "HARMONY_ORB",
-                "version": "1"
+                "name": "HARMONY_ORB"
             },
             "info": {
                 "VideoLink": "https://www.youtube.com/embed/YrDomblEJV8",
@@ -330,8 +316,7 @@
         },
         {
             "sound": {
-                "name": "HEAL_ME_YOU_CUNT",
-                "version": "1"
+                "name": "HEAL_ME_YOU_CUNT"
             },
             "info": {
                 "VideoLink": "https://www.youtube.com/embed/IG7sC5tudN0",
@@ -340,8 +325,7 @@
         },
         {
             "sound": {
-                "name": "MONKEY_EAT_MY_ASS",
-                "version": "1"
+                "name": "MONKEY_EAT_MY_ASS"
             },
             "info": {
                 "VideoLink": "https://www.youtube.com/embed/G4V1c5GC72E",
@@ -350,8 +334,7 @@
         },
         {
             "sound": {
-                "name": "NICE_JOB_ASTRO",
-                "version": "1"
+                "name": "NICE_JOB_ASTRO"
             },
             "info": {
                 "VideoLink": "https://www.youtube.com/embed/ixda9vcYxvk",
@@ -360,8 +343,7 @@
         },
         {
             "sound": {
-                "name": "NICE_PHARA",
-                "version": "1"
+                "name": "NICE_PHARA"
             },
             "info": {
                 "VideoLink": "https://www.youtube.com/embed/xNAPJ5bMLGQ",
@@ -370,8 +352,7 @@
         },
         {
             "sound": {
-                "name": "PRETTY_GOOD_PUSH",
-                "version": "1"
+                "name": "PRETTY_GOOD_PUSH"
             },
             "info": {
                 "VideoLink": "https://www.youtube.com/embed/LkcR79j8n-Q",
@@ -380,8 +361,7 @@
         },
         {
             "sound": {
-                "name": "PRETTY_NICE_BOOP",
-                "version": "1"
+                "name": "PRETTY_NICE_BOOP"
             },
             "info": {
                 "VideoLink": "https://www.youtube.com/embed/Sgcemfa7Tow",
@@ -390,8 +370,7 @@
         },
         {
             "sound": {
-                "name": "GIVE_A_BLOWJOB",
-                "version": "1"
+                "name": "GIVE_A_BLOWJOB"
             },
             "info": {
                 "VideoLink": "https://www.youtube.com/embed/4npgppVhcQ4",
@@ -400,8 +379,7 @@
         },
         {
             "sound": {
-                "name": "RIPPAAA",
-                "version": "1"
+                "name": "RIPPAAA"
             },
             "info": {
                 "VideoLink": "https://www.youtube.com/embed/qv8E50WPF9E&amp;t",
@@ -410,8 +388,7 @@
         },
         {
             "sound": {
-                "name": "RUNNAWAY_FROM_ME",
-                "version": "1"
+                "name": "RUNNAWAY_FROM_ME"
             },
             "info": {
                 "VideoLink": "https://www.youtube.com/embed/I34V4HeasKs",
@@ -420,8 +397,7 @@
         },
         {
             "sound": {
-                "name": "SHUT_UP_ASTROKITTY",
-                "version": "1"
+                "name": "SHUT_UP_ASTROKITTY"
             },
             "info": {
                 "VideoLink": "https://www.youtube.com/embed/lYeDCTAkwAA",
@@ -430,8 +406,7 @@
         },
         {
             "sound": {
-                "name": "SMACK_MY_BITCH_UP",
-                "version": "1"
+                "name": "SMACK_MY_BITCH_UP"
             },
             "info": {
                 "VideoLink": "https://www.youtube.com/embed/qv8E50WPF9E",
@@ -440,8 +415,7 @@
         },
         {
             "sound": {
-                "name": "SO_RUDE",
-                "version": "1"
+                "name": "SO_RUDE"
             },
             "info": {
                 "VideoLink": "https://www.youtube.com/embed/8-1c9wkWITA",
@@ -450,8 +424,7 @@
         },
         {
             "sound": {
-                "name": "STOP_BEING_A_PUSSY",
-                "version": "1"
+                "name": "STOP_BEING_A_PUSSY"
             },
             "info": {
                 "VideoLink": "https://www.youtube.com/embed/IG7sC5tudN0",
@@ -460,8 +433,7 @@
         },
         {
             "sound": {
-                "name": "SUCK_MY_DICK",
-                "version": "1"
+                "name": "SUCK_MY_DICK"
             },
             "info": {
                 "VideoLink": "https://www.youtube.com/embed/4npgppVhcQ4",
@@ -470,8 +442,7 @@
         },
         {
             "sound": {
-                "name": "THATS_ALRIGHT_BAE",
-                "version": "1"
+                "name": "THATS_ALRIGHT_BAE"
             },
             "info": {
                 "VideoLink": "https://www.youtube.com/embed/I34V4HeasKs",
@@ -480,8 +451,7 @@
         },
         {
             "sound": {
-                "name": "THATS_UNFORTUNATE",
-                "version": "1"
+                "name": "THATS_UNFORTUNATE"
             },
             "info": {
                 "VideoLink": "https://www.youtube.com/embed/YrDomblEJV8",
@@ -490,8 +460,7 @@
         },
         {
             "sound": {
-                "name": "THAT_SUCKS_DICK_DUDE",
-                "version": "1"
+                "name": "THAT_SUCKS_DICK_DUDE"
             },
             "info": {
                 "VideoLink": "https://www.youtube.com/embed/dwmZwOngW8I",
@@ -500,8 +469,7 @@
         },
         {
             "sound": {
-                "name": "THERE_IS_YOUR_PICK",
-                "version": "1"
+                "name": "THERE_IS_YOUR_PICK"
             },
             "info": {
                 "VideoLink": "https://www.youtube.com/embed/iEZE-Rd-EAY",
@@ -510,8 +478,7 @@
         },
         {
             "sound": {
-                "name": "THIS_IS_A_BAD_IDEA",
-                "version": "1"
+                "name": "THIS_IS_A_BAD_IDEA"
             },
             "info": {
                 "VideoLink": "https://www.youtube.com/embed/8tExMeAsGEU",
@@ -520,8 +487,7 @@
         },
         {
             "sound": {
-                "name": "WINSTON_ON_MY_COCK",
-                "version": "1"
+                "name": "WINSTON_ON_MY_COCK"
             },
             "info": {
                 "VideoLink": "https://www.youtube.com/embed/iEZE-Rd-EAY",
@@ -530,8 +496,7 @@
         },
         {
             "sound": {
-                "name": "MORE_STYLE",
-                "version": "1"
+                "name": "MORE_STYLE"
             },
             "info": {
                 "VideoLink": "https://www.youtube.com/embed/tD5G_WQWXMw",
@@ -540,8 +505,7 @@
         },
         {
             "sound": {
-                "name": "YOU_SLUT",
-                "version": "1"
+                "name": "YOU_SLUT"
             },
             "info": {
                 "VideoLink": "https://www.youtube.com/embed/IG7sC5tudN0",
@@ -550,8 +514,7 @@
         },
         {
             "sound": {
-                "name": "YOU_SUCK_DUDE",
-                "version": "1"
+                "name": "YOU_SUCK_DUDE"
             },
             "info": {
                 "VideoLink": "https://www.youtube.com/embed/jKRGhj7vK7Q",
@@ -560,8 +523,7 @@
         },
         {
             "sound": {
-                "name": "ENGINE_START",
-                "version": "1"
+                "name": "ENGINE_START"
             },
             "info": {
                 "VideoLink": "https://www.youtube.com/embed/oaiFJwKjacE",
@@ -570,8 +532,7 @@
         },
         {
             "sound": {
-                "name": "ALOT_OF_CUNTS",
-                "version": "1"
+                "name": "ALOT_OF_CUNTS"
             },
             "info": {
                 "VideoLink": "https://www.youtube.com/embed/tD5G_WQWXMw",
@@ -580,8 +541,7 @@
         },
         {
             "sound": {
-                "name": "BAD_DECISIONS",
-                "version": "1"
+                "name": "BAD_DECISIONS"
             },
             "info": {
                 "VideoLink": "https://www.youtube.com/embed/tD5G_WQWXMw",
@@ -590,8 +550,7 @@
         },
         {
             "sound": {
-                "name": "FUCKING_DOMINATE",
-                "version": "1"
+                "name": "FUCKING_DOMINATE"
             },
             "info": {
                 "VideoLink": "https://www.youtube.com/embed/tD5G_WQWXMw",
@@ -600,8 +559,7 @@
         },
         {
             "sound": {
-                "name": "FUCKING_JUNKRAT",
-                "version": "1"
+                "name": "FUCKING_JUNKRAT"
             },
             "info": {
                 "VideoLink": "https://www.youtube.com/embed/tD5G_WQWXMw",
@@ -610,8 +568,7 @@
         },
         {
             "sound": {
-                "name": "HEY",
-                "version": "1"
+                "name": "HEY"
             },
             "info": {
                 "VideoLink": "https://www.youtube.com/embed/tD5G_WQWXMw",
@@ -620,8 +577,7 @@
         },
         {
             "sound": {
-                "name": "HIT_ME",
-                "version": "1"
+                "name": "HIT_ME"
             },
             "info": {
                 "VideoLink": "https://www.youtube.com/embed/tD5G_WQWXMw",
@@ -630,8 +586,7 @@
         },
         {
             "sound": {
-                "name": "I_AM_NUTCRACKER",
-                "version": "1"
+                "name": "I_AM_NUTCRACKER"
             },
             "info": {
                 "VideoLink": "https://www.youtube.com/embed/tD5G_WQWXMw",
@@ -640,8 +595,7 @@
         },
         {
             "sound": {
-                "name": "I_MAIN_CANCER",
-                "version": "1"
+                "name": "I_MAIN_CANCER"
             },
             "info": {
                 "VideoLink": "https://www.youtube.com/embed/tD5G_WQWXMw",
@@ -650,8 +604,7 @@
         },
         {
             "sound": {
-                "name": "MOVED_ASLEP",
-                "version": "1"
+                "name": "MOVED_ASLEP"
             },
             "info": {
                 "VideoLink": "https://www.youtube.com/embed/tD5G_WQWXMw",
@@ -660,8 +613,7 @@
         },
         {
             "sound": {
-                "name": "NOT_PAST_GORILLA",
-                "version": "1"
+                "name": "NOT_PAST_GORILLA"
             },
             "info": {
                 "VideoLink": "https://www.youtube.com/embed/tD5G_WQWXMw",
@@ -670,8 +622,7 @@
         },
         {
             "sound": {
-                "name": "RRRRRRR",
-                "version": "1"
+                "name": "RRRRRRR"
             },
             "info": {
                 "VideoLink": "https://www.youtube.com/embed/tD5G_WQWXMw",
@@ -680,8 +631,7 @@
         },
         {
             "sound": {
-                "name": "SUCK_MY_ORBS",
-                "version": "1"
+                "name": "SUCK_MY_ORBS"
             },
             "info": {
                 "VideoLink": "https://www.youtube.com/embed/tD5G_WQWXMw",
@@ -690,8 +640,7 @@
         },
         {
             "sound": {
-                "name": "THE_META",
-                "version": "1"
+                "name": "THE_META"
             },
             "info": {
                 "VideoLink": "https://www.youtube.com/embed/tD5G_WQWXMw",
@@ -700,8 +649,7 @@
         },
         {
             "sound": {
-                "name": "TRUMP_2017",
-                "version": "1"
+                "name": "TRUMP_2017"
             },
             "info": {
                 "VideoLink": "https://www.youtube.com/embed/tD5G_WQWXMw",
@@ -710,8 +658,7 @@
         },
         {
             "sound": {
-                "name": "WHEN_YOU_TRY",
-                "version": "1"
+                "name": "WHEN_YOU_TRY"
             },
             "info": {
                 "VideoLink": "https://www.youtube.com/embed/tD5G_WQWXMw",
@@ -720,8 +667,7 @@
         },
         {
             "sound": {
-                "name": "GOOD_CATCH",
-                "version": "1"
+                "name": "GOOD_CATCH"
             },
             "info": {
                 "VideoLink": "https://www.youtube.com/embed/QG-ef22eRr0",
@@ -730,8 +676,7 @@
         },
         {
             "sound": {
-                "name": "OVERUSED_MEME",
-                "version": "1"
+                "name": "OVERUSED_MEME"
             },
             "info": {
                 "VideoLink": "https://www.youtube.com/embed/QG-ef22eRr0",
@@ -740,8 +685,7 @@
         },
         {
             "sound": {
-                "name": "FUCKING_NEOW",
-                "version": "1"
+                "name": "FUCKING_NEOW"
             },
             "info": {
                 "VideoLink": "https://www.youtube.com/embed/0U_fjk01cNo",
@@ -750,8 +694,7 @@
         },
         {
             "sound": {
-                "name": "MONKEY_MONKEY",
-                "version": "1"
+                "name": "MONKEY_MONKEY"
             },
             "info": {
                 "VideoLink": "https://www.youtube.com/embed/0U_fjk01cNo",
@@ -760,8 +703,7 @@
         },
         {
             "sound": {
-                "name": "SICK_ULT",
-                "version": "1"
+                "name": "SICK_ULT"
             },
             "info": {
                 "VideoLink": "https://www.youtube.com/embed/I34V4HeasKs",
@@ -770,8 +712,7 @@
         },
         {
             "sound": {
-                "name": "PLATNIUM_DAMAGE",
-                "version": "1"
+                "name": "PLATNIUM_DAMAGE"
             },
             "info": {
                 "VideoLink": "https://www.youtube.com/embed/I34V4HeasKs",
@@ -780,8 +721,7 @@
         },
         {
             "sound": {
-                "name": "PHARA_VS_SOLIDER",
-                "version": "1"
+                "name": "PHARA_VS_SOLIDER"
             },
             "info": {
                 "VideoLink": "https://www.youtube.com/embed/8-1c9wkWITA",
@@ -790,8 +730,7 @@
         },
         {
             "sound": {
-                "name": "TURNED_INTO_TRACER",
-                "version": "1"
+                "name": "TURNED_INTO_TRACER"
             },
             "info": {
                 "VideoLink": "https://www.youtube.com/embed/8-1c9wkWITA",
@@ -800,8 +739,7 @@
         },
         {
             "sound": {
-                "name": "DARKNESS_IM_DAD",
-                "version": "1"
+                "name": "DARKNESS_IM_DAD"
             },
             "info": {
                 "VideoLink": "https://www.youtube.com/embed/G4V1c5GC72E",
@@ -810,8 +748,7 @@
         },
         {
             "sound": {
-                "name": "DICK_SKIN_IS_PEELING",
-                "version": "1"
+                "name": "DICK_SKIN_IS_PEELING"
             },
             "info": {
                 "VideoLink": "https://www.youtube.com/embed/8-1c9wkWITA",
@@ -820,8 +757,7 @@
         },
         {
             "sound": {
-                "name": "MAINHART_RAIN",
-                "version": "1"
+                "name": "MAINHART_RAIN"
             },
             "info": {
                 "VideoLink": "https://www.youtube.com/embed/bGV2_v64fPI",
@@ -830,8 +766,7 @@
         },
         {
             "sound": {
-                "name": "AMEIZING",
-                "version": "1"
+                "name": "AMEIZING"
             },
             "info": {
                 "VideoLink": "https://www.youtube.com/embed/ixda9vcYxvk",
@@ -840,8 +775,7 @@
         },
         {
             "sound": {
-                "name": "THIS_MOMENT",
-                "version": "1"
+                "name": "THIS_MOMENT"
             },
             "info": {
                 "VideoLink": "https://www.youtube.com/embed/ixda9vcYxvk",

@@ -514,11 +514,9 @@ namespace AstroSoundBoard.Properties {
         ///   Sucht eine lokalisierte Zeichenfolge, die {
         ///    &quot;FileVersion&quot;: &quot;1&quot;,
         ///    &quot;ParserVersion&quot;: &quot;1&quot;,
-        ///    &quot;Sounds&quot;: [
-        ///        {
+        ///    &quot;Sounds&quot;: [{
         ///            &quot;sound&quot;: {
-        ///                &quot;name&quot;: &quot;FUCKING_MERCY&quot;,
-        ///                &quot;version&quot;: &quot;1&quot;
+        ///                &quot;name&quot;: &quot;FUCKING_MERCY&quot;
         ///            },
         ///            &quot;info&quot;: {
         ///                &quot;VideoLink&quot;: &quot;https://www.youtube.com/embed/11olpkle_YQ&quot;,
@@ -526,7 +524,8 @@ namespace AstroSoundBoard.Properties {
         ///            }
         ///        },
         ///        {
-        ///            &quot; [Rest der Zeichenfolge wurde abgeschnitten]&quot;; ähnelt.
+        ///            &quot;sound&quot;: {
+        ///                &quot;name&quot;: &quot;AW_YEA [Rest der Zeichenfolge wurde abgeschnitten]&quot;; ähnelt.
         /// </summary>
         internal static string SoundDefinition {
             get {
