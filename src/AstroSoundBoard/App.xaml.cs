@@ -1,7 +1,7 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 30:04:2017 / 17:13
+// Last Modified: 01:05:2017 / 01:21
 // Creation: 29:04:2017
 // Project: AstroSoundBoard
 //
@@ -24,6 +24,8 @@ namespace AstroSoundBoard
     using log4net.Core;
 
     using MaterialDesignThemes.Wpf;
+
+    using SharpRaven;
 
     public partial class App : Application
     {
@@ -52,12 +54,13 @@ namespace AstroSoundBoard
 
 #if !DEBUG
                     if (AstroSoundBoard.Properties.Settings.Default.AllowErrorReporting)
-					{
-						var ravenClient = new RavenClient(Credentials.SentryApiKey);
-						ravenClient.Capture(new SharpRaven.Data.SentryEvent((Exception)args.ExceptionObject));
+                    {
+                        var ravenClient = new RavenClient(Credentials.SentryApiKey);
+                        ravenClient.Capture(new SharpRaven.Data.SentryEvent((Exception)args.ExceptionObject));
 
-						Log.Info("Reported error to sentry!");
-					}
+                        Log.Info("Reported error to sentry!");
+                    }
+
 #endif
                 };
 
