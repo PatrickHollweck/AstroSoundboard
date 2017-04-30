@@ -85,9 +85,25 @@
 								Orientation="Horizontal">
 								<materialDesign:ColorZone CornerRadius="2">
 									<StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+										<Button
+											Width="33"
+											Height="33"
+											Margin="10,10,1,10"
+											Click="OpenKeybindManager"
+											Style="{DynamicResource MaterialDesignFloatingActionButton}"
+											ToolTip="Keybind Manager">
+											<Button.Content>
+												<StackPanel Orientation="Horizontal">
+													<materialDesign:PackIcon
+														HorizontalAlignment="Center"
+														VerticalAlignment="Center"
+														Kind="Keyboard" />
+												</StackPanel>
+											</Button.Content>
+										</Button>
 										<CheckBox
 											Name="FavoriteButton"
-											Margin="10"
+											Margin="10,10,1,10"
 											Click="FavoriteButton_Click"
 											Style="{StaticResource MaterialDesignActionToggleButton}"
 											ToolTip="Toggle Favorites">
@@ -101,7 +117,7 @@
 
 										<Slider
 											Name="VolumeSlider"
-											Width="190"
+											Width="170"
 											Margin="10,17,10,0"
 											Maximum="100"
 											Minimum="0"
@@ -193,6 +209,46 @@
 										HorizontalAlignment="Center"
 										VerticalAlignment="Center"
 										Kind="Facebook" />
+								</Button.Content>
+							</Button>
+						</Grid>
+					</GroupBox>
+
+					<GroupBox Header="Application">
+						<Grid>
+
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition />
+								<ColumnDefinition />
+							</Grid.ColumnDefinitions>
+
+							<Button
+								Margin="5"
+								Click="OpenFeedback"
+								ToolTip="Give Feedback">
+								<Button.Content>
+									<StackPanel Orientation="Horizontal">
+										<Label Content="Feedback" />
+										<materialDesign:PackIcon
+											HorizontalAlignment="Center"
+											VerticalAlignment="Center"
+											Kind="AlertBox" />
+									</StackPanel>
+								</Button.Content>
+							</Button>
+							<Button
+								Grid.Column="1"
+								Margin="5"
+								Click="SwitchToAbout"
+								ToolTip="About the Application">
+								<Button.Content>
+									<StackPanel Orientation="Horizontal">
+										<Label Content="About" />
+										<materialDesign:PackIcon
+											HorizontalAlignment="Center"
+											VerticalAlignment="Center"
+											Kind="HumanGreeting" />
+									</StackPanel>
 								</Button.Content>
 							</Button>
 						</Grid>

@@ -1,8 +1,8 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 28:04:2017 / 22:47
-// Creation: 25:04:2017
+// Last Modified: 30:04:2017 / 20:21
+// Creation: 29:04:2017
 // Project: AstroSoundBoard
 //
 //
@@ -12,6 +12,7 @@
 namespace AstroSoundBoard.Core.Components
 {
     using System;
+    using System.Collections.Generic;
     using System.IO;
 
     using AstroSoundBoard.Core.Objects;
@@ -22,140 +23,116 @@ namespace AstroSoundBoard.Core.Components
     using Newtonsoft.Json;
 
     public class SettingsManager
-	{
-		private static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+    {
+        internal static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
-		private static Sounds Cache { get; set; }
+        internal static List<Sound> Cache { get; set; }
 
-		public static void Init()
-		{
-			Log.Debug("Starting the SettingsManager");
+        public static void Init()
+        {
+            Log.Debug("Starting the SettingsManager");
 
-			if (!File.Exists(AppSettings.SoundSettingsFilePath))
-			{
-				CreateStandardFile();
-			}
-			else
-			{
-				try
-				{
-					var readText = File.ReadAllText(AppSettings.SoundSettingsFilePath);
+            if (!File.Exists(AppSettings.SoundSettingsFilePath))
+            {
+                CreateStandardFile();
+            }
+            else
+            {
+                try
+                {
+                    var readText = File.ReadAllText(AppSettings.SoundSettingsFilePath);
 
-					if (readText == string.Empty)
-					{
-						File.Delete(AppSettings.SoundSettingsFilePath);
-						CreateStandardFile();
-					}
+                    if (string.IsNullOrWhiteSpace(readText))
+                    {
+                        File.Delete(AppSettings.SoundSettingsFilePath);
+                        CreateStandardFile();
+                    }
 
-					Cache = JsonConvert.DeserializeObject<Sounds>(readText);
-				}
-				catch (Exception exception)
-				{
-					Log.Error("Something failed.", exception);
-				}
-			}
-		}
+                    Cache = JsonConvert.DeserializeObject<List<Sound>>(readText);
+                }
+                catch (Exception exception)
+                {
+                    File.Delete(AppSettings.SoundSettingsFilePath);
+                    Log.Error("Something failed.", exception);
+                }
+            }
 
-		private static void CreateStandardFile()
-		{
-			Sound stdObject = new Sound();
+            KeybindManager.SetKeybinds();
+        }
 
-			Sound stdSounds = new Sound
-				{
-					Name = "DummyItem",
-					IsFavorite = JsonConvert.False
-				};
+        private static void CreateStandardFile()
+        {
+            Sound stdObject = new Sound();
 
-			ResetCache();
-			Cache.SoundList.Add(stdSounds);
-			File.WriteAllText(AppSettings.SoundSettingsFilePath, JsonConvert.SerializeObject(stdObject));
-		}
+            Sound stdSounds = new Sound
+            {
+                Name = "DummyItem",
+                IsFavorite = JsonConvert.False
+            };
 
-		private static void ResetCache()
-		{
-			Cache = null;
-			Cache = new Sounds();
-		}
+            ResetCache();
+            Cache.Add(stdSounds);
+            File.WriteAllText(AppSettings.SoundSettingsFilePath, JsonConvert.SerializeObject(stdObject));
+        }
 
-		private static void RegisterSound(Sound sound)
-		{
-			Log.Debug("Registering Definition!");
-			Cache.SoundList.Add(sound);
-			WriteSounds();
-		}
+        private static void ResetCache()
+        {
+            Cache = null;
+            Cache = new List<Sound>();
+        }
 
-		public static void RegisterSoundIfNotExists(Sound sound)
-		{
-			try
-			{
-				for (int i = 0; i < Cache.SoundList.Count; i++)
-				{
-					if (Cache.SoundList[i].Name == sound.Name)
-					{
-						break;
-					}
-					else if (i == Cache.SoundList.Count - 1)
-					{
-						RegisterSound(sound);
-					}
-				}
-			}
-			catch (Exception exception)
-			{
-				Log.Error("Error while trying to register Definition...", exception);
-				if (File.Exists(AppSettings.SoundSettingsFilePath))
-				{
-					File.Delete(AppSettings.SoundSettingsFilePath);
-				}
+        private static void RegisterSound(Sound sound)
+        {
+            Log.Debug("Registering Definition!");
+            Cache.Add(sound);
+            WriteSounds();
+        }
 
-				throw;
-			}
-		}
+        public static void WriteSounds()
+        {
+            Log.Debug("Writing sound...");
 
-		public static void WriteSounds()
-		{
-			Log.Debug("Writing sound...");
-			if (File.Exists(AppSettings.SoundSettingsFilePath))
-			{
-				File.Delete(AppSettings.SoundSettingsFilePath);
-			}
+            if (File.Exists(AppSettings.SoundSettingsFilePath))
+            {
+                File.Delete(AppSettings.SoundSettingsFilePath);
+            }
 
-			File.WriteAllText(AppSettings.SoundSettingsFilePath, JsonConvert.SerializeObject(Cache));
-		}
+            File.WriteAllText(AppSettings.SoundSettingsFilePath, JsonConvert.SerializeObject(Cache));
+        }
 
-		public static Sound GetSound(string name)
-		{
-			foreach (Sound item in Cache.SoundList)
-			{
-				if (item.Name == name)
-				{
-					return item;
-				}
-			}
+        public static Sound GetSound(string name)
+        {
+            foreach (Sound item in Cache)
+            {
+                if (item.Name == name)
+                {
+                    return item;
+                }
+            }
 
-			RegisterSound(new Sound { Name = name, IsFavorite = JsonConvert.False });
-			return GetSound(name);
-		}
+            RegisterSound(new Sound { Name = name, IsFavorite = JsonConvert.False });
+            return GetSound(name);
+        }
 
-		public static void RewriteSound(Sound sound)
-		{
-			if (sound.Name.Contains(" "))
-			{
-				sound.Name = sound.Name.Replace(' ', '_');
-			}
+        public static void RewriteSound(Sound sound)
+        {
+            if (sound.Name.Contains(" "))
+            {
+                sound.Name = sound.Name.Replace(' ', '_');
+            }
 
-			Log.Debug($"Changing Definition of {sound.Name}");
-			for (int i = 0; i < Cache.SoundList.Count; i++)
-			{
-				if (Cache.SoundList[i].Name == sound.Name)
-				{
-					Cache.SoundList[i] = sound;
-					WriteSounds();
-					return;
-				}
-			}
+            Log.Debug($"Changing Definition of {sound.Name}");
+            for (int i = 0; i < Cache.Count; i++)
+            {
+                if (Cache[i].Name == sound.Name)
+                {
+                    Cache[i] = sound;
+                    WriteSounds();
+                    return;
+                }
+            }
 
-			Log.Error("NO MATCH!");
-		}
-	}
+            Log.Error("NO MATCH!");
+        }
+    }
 }

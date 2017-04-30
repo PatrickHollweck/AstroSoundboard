@@ -1,7 +1,7 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 29:04:2017 / 20:11
+// Last Modified: 30:04:2017 / 14:27
 // Creation: 29:04:2017
 // Project: AstroSoundBoard
 //
@@ -68,7 +68,7 @@ namespace AstroSoundBoard.WPF.Windows
 
         public void SearchForItem(object sender, TextChangedEventArgs e)
         {
-            BoardView.BoadViewInstance?.SearchForElement(SearchBox.Text, onlyFavoritesActive);
+            BoardView.BoardViewInstance?.SearchForElement(SearchBox.Text, onlyFavoritesActive);
         }
 
         #endregion Search
@@ -89,12 +89,12 @@ namespace AstroSoundBoard.WPF.Windows
             if (onlyFavoritesActive)
             {
                 onlyFavoritesActive = false;
-                BoardView.BoadViewInstance?.OnlyShowFavorites(onlyFavoritesActive);
+                BoardView.BoardViewInstance?.OnlyShowFavorites(onlyFavoritesActive);
             }
             else
             {
                 onlyFavoritesActive = true;
-                BoardView.BoadViewInstance?.OnlyShowFavorites(onlyFavoritesActive);
+                BoardView.BoardViewInstance?.OnlyShowFavorites(onlyFavoritesActive);
             }
         }
 
@@ -133,6 +133,12 @@ namespace AstroSoundBoard.WPF.Windows
         private void BrowserTwitter_Click(object sender, RoutedEventArgs e) => Process.Start("https://twitter.com/AstroShitty");
 
         private void BrowserYoutube_Click(object sender, RoutedEventArgs e) => Process.Start("https://www.youtube.com/user/TheAstronautKitty");
+
+        private void OpenFeedback(object sender, RoutedEventArgs e) => new FeedbackWindow().Show();
+
+        private void SwitchToAbout(object sender, RoutedEventArgs e) => ViewChanger.ChangeViewTo(ViewChanger.Page.About);
+
+        private void OpenKeybindManager(object sender, RoutedEventArgs e) => new KeybindManagerWindow().Show();
 
         #endregion UI Events
     }

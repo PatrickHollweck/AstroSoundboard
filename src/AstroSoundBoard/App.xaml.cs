@@ -1,7 +1,7 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 29:04:2017 / 19:56
+// Last Modified: 30:04:2017 / 17:13
 // Creation: 29:04:2017
 // Project: AstroSoundBoard
 //
@@ -24,8 +24,6 @@ namespace AstroSoundBoard
     using log4net.Core;
 
     using MaterialDesignThemes.Wpf;
-
-    using SharpRaven;
 
     public partial class App : Application
     {
@@ -52,13 +50,15 @@ namespace AstroSoundBoard
                 {
                     Log.Fatal($"Fatal unhanded exception. - {args.ExceptionObject} -- {args.IsTerminating} -> {args}");
 
+#if !DEBUG
                     if (AstroSoundBoard.Properties.Settings.Default.AllowErrorReporting)
-                    {
-                        var ravenClient = new RavenClient(Credentials.SentryApiKey);
-                        ravenClient.Capture(new SharpRaven.Data.SentryEvent((Exception)args.ExceptionObject));
+					{
+						var ravenClient = new RavenClient(Credentials.SentryApiKey);
+						ravenClient.Capture(new SharpRaven.Data.SentryEvent((Exception)args.ExceptionObject));
 
-                        Log.Info("Reported error to sentry!");
-                    }
+						Log.Info("Reported error to sentry!");
+					}
+#endif
                 };
 
             ApplyMaterialTheme();
