@@ -4,9 +4,7 @@
 
 ---
 
-| **`Code Factor`** | **`Travis CI`** | **`Gitter`** | **`YouTrack`**
-|-----------------|---------------------|------------------|------------------|
-| [![CodeFactor](https://www.codefactor.io/repository/github/fetzenrndy/astrosoundboard/badge)](https://www.codefactor.io/repository/github/fetzenrndy/astrosoundboard) | [![Build Status](https://travis-ci.org/FetzenRndy/AstroSoundboard.svg?branch=master)](https://travis-ci.org/FetzenRndy/AstroSoundboard) | [![Gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg)](https://gitter.im/AstroSoundboard/Lobby) | [Issues / Features](https://bugline.myjetbrains.com/youtrack/issues/AstroBoard)
+[![CodeFactor](https://www.codefactor.io/repository/github/fetzenrndy/astrosoundboard/badge)](https://www.codefactor.io/repository/github/fetzenrndy/astrosoundboard) [![Build Status](https://travis-ci.org/FetzenRndy/AstroSoundboard.svg?branch=master)](https://travis-ci.org/FetzenRndy/AstroSoundboard) [![Gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg)](https://gitter.im/AstroSoundboard/Lobby) [![CodeFactor](https://img.shields.io/badge/YouTrack-Online-green.svg)](https://bugline.myjetbrains.com/youtrack/issues/AstroBoard) [![Github All Releases](https://img.shields.io/github/downloads/FetzenRndy/AstroSoundBoard/total.svg)](https://github.com/FetzenRndy/AstroSoundboard/) [![GitHub release](https://img.shields.io/github/release/qubyte/rubidium.svg)](https://github.com/FetzenRndy/AstroSoundboard/)
 
 ## How to get the Soundboard?
 Download the AstroKittySoundBoard.exe [here](https://github.com/FetzenRndy/AstroSoundboard/releases) and run it. - Thats all.
