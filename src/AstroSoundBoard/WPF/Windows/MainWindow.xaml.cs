@@ -1,7 +1,7 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 01:05:2017 / 13:22
+// Last Modified: 01:05:2017 / 15:41
 // Creation: 01:05:2017
 // Project: AstroSoundBoard
 //
@@ -35,7 +35,7 @@ namespace AstroSoundBoard.WPF.Windows
         public MainWindow()
         {
             AutoUpdater.CurrentCulture = CultureInfo.CreateSpecificCulture("en");
-            AutoUpdater.Start("https://raw.githubusercontent.com/FetzenRndy/AstroSoundboard/develop/public/versions/updaterInfo.xml");
+            AutoUpdater.Start("https://raw.githubusercontent.com/FetzenRndy/AstroSoundboard/master/public/versions/updaterInfo.xml");
 
             ViewChanger.MainWindowInstance = this;
 
