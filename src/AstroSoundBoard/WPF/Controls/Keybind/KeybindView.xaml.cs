@@ -1,0 +1,59 @@
+﻿// ****************************** Module Header ****************************** //
+//
+//
+// Last Modified: 01:05:2017 / 13:44
+// Creation: 01:05:2017
+// Project: AstroSoundBoard
+//
+//
+// <copyright file="KeybindView.xaml.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
+// *************************************************************************** //
+
+namespace AstroSoundBoard.WPF.Controls.Keybind
+{
+    using System.Windows;
+    using System.Windows.Controls;
+
+    using AstroSoundBoard.Core.Components;
+    using AstroSoundBoard.Core.Objects.DataObjects;
+    using AstroSoundBoard.WPF.Windows;
+
+    public partial class KeybindView : UserControl
+    {
+        public Sound LocalDefinition { get; set; }
+
+        public KeybindView(Sound sound)
+        {
+            LocalDefinition = SettingsManager.GetSound(sound.Name);
+
+            InitializeComponent();
+            DataContext = this;
+
+            if (LocalDefinition.HotKey == null)
+            {
+                LocalDefinition.HotKey = new KeyBind();
+            }
+
+            LocalDefinition.HotKey.PropertyChanged += (sender, args) => { CurrentKeybindPanel.Visibility = LocalDefinition.HotKey.HasAssignedKeybind ? Visibility.Hidden : Visibility.Visible; };
+            LocalDefinition.HotKey.RaisePropertyChanged();
+        }
+
+        public void ConfigureKeybind(object sender, RoutedEventArgs e)
+        {
+            if (!KeybindConfiguratorWindow.HasOpenInstance)
+            {
+                new KeybindConfiguratorWindow(LocalDefinition).Show();
+            }
+            else
+            {
+                MessageBox.Show("Only one instance of the Configuration Window allowed at a Time... \nPlease close the other one.", "Error!", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+        }
+
+        public void RemoveKeybind(object sender, RoutedEventArgs e)
+        {
+            KeybindManager.RemoveKeybindAndMappingByName(LocalDefinition.Name);
+            LocalDefinition.HotKey.RaisePropertyChanged();
+        }
+    }
+}

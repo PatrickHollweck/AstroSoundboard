@@ -194,7 +194,614 @@
     <value>..\Resources\SMACK_MY_BITCH_UP.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="SoundDefinition" xml:space="preserve">
-    <value>{"FileVersion":"1","ParserVersion":"1","Sounds":[{"sound":{"name":"FUCKING_MERCY","version":"1"},"info":{"VideoLink":"https://www.youtube.com/embed/11olpkle_YQ","Description":"Friend of Astro Screaming 'FUCKING MERCY' as a mercy comes in and revives alot of people and causing them to lose the Game. - Mercy OP please nerf"}},{"sound":{"name":"AW_YEAH_PAPI","version":"1"},"info":{"VideoLink":"https://www.youtube.com/embed/4npgppVhcQ4","Description":"A Kid get's horny in the Middle of the Match"}},{"sound":{"name":"BOOPEY_BOOPEY","version":"1"},"info":{"VideoLink":"https://www.youtube.com/embed/Sgcemfa7Tow","Description":"Astro Boops a Person"}},{"sound":{"name":"BYE_BYE","version":"1"},"info":{"VideoLink":"https://www.youtube.com/embed/xNAPJ5bMLGQ","Description":"Astros team says bye a billion times"}},{"sound":{"name":"CHEEKY_BOOP","version":"1"},"info":{"VideoLink":"https://www.youtube.com/embed/Sgcemfa7Tow","Description":"Astro Boops a other Player while hiding and calls it a cheeky boop"}},{"sound":{"name":"CHEEKY_CHEEKY","version":"1"},"info":{"VideoLink":"https://www.youtube.com/embed/qv8E50WPF9E","Description":"Astro plays Cheeky with Reaper"}},{"sound":{"name":"DO_IT_FOR_THE_MEMEZ","version":"1"},"info":{"VideoLink":"https://www.youtube.com/embed/8tExMeAsGEU","Description":"Kid wants to do it for the Memes"}},{"sound":{"name":"DROP_THAT_CHITTY","version":"1"},"info":{"VideoLink":"https://www.youtube.com/embed/I34V4HeasKs","Description":"Description"}},{"sound":{"name":"GET_HER_BABY","version":"1"},"info":{"VideoLink":"https://www.youtube.com/embed/YeDCTAkwAA","Description":"Mercy wants astro to kill the baby d.va"}},{"sound":{"name":"GIVE_IT_TO_ME_ASTRO","version":"1"},"info":{"VideoLink":"https://www.youtube.com/embed/dwmZwOngW8I","Description":"After a team mate of Astro says to him that he did a good job, and Astro responds with 'Thanks mum' he comes up with this voiceline"}},{"sound":{"name":"GOING_TOO_DEEP_GUYS","version":"1"},"info":{"VideoLink":"https://www.youtube.com/embed/gGrcV994cqY","Description":"Astro and his team are overextending and a grill wants to make them aware of it and tells them that they are going to deep."}},{"sound":{"name":"GUNG","version":"1"},"info":{"VideoLink":"https://www.youtube.com/embed/yGUS7fVu0ZA","Description":"Astros Friend get shot in the Head and the Bullet gets reflected by the Helmet and making a GUNG sound"}},{"sound":{"name":"HARMONY_ORB","version":"1"},"info":{"VideoLink":"https://www.youtube.com/embed/YrDomblEJV8","Description":"Astros Friend imitates the 'Playing with a guy that sounds like zen' video"}},{"sound":{"name":"HEAL_ME_YOU_CUNT","version":"1"},"info":{"VideoLink":"https://www.youtube.com/embed/IG7sC5tudN0","Description":"Astro as Mercy soloheals a McRee the whole match but as the gets to another Teammate to help him out he dies and the McRee gets salty"}},{"sound":{"name":"MONKEY_EAT_MY_ASS","version":"1"},"info":{"VideoLink":"https://www.youtube.com/embed/G4V1c5GC72E","Description":"Astros team mate gets killed by a Winston to which he responds that he wants their Winston to eat his ass"}},{"sound":{"name":"NICE_JOB_ASTRO","version":"1"},"info":{"VideoLink":"https://www.youtube.com/embed/ixda9vcYxvk","Description":"Astro gets a double with the Solider ult saving the point, and a grill calls him out for it."}},{"sound":{"name":"NICE_PHARA","version":"1"},"info":{"VideoLink":"https://www.youtube.com/embed/xNAPJ5bMLGQ","Description":"Astros russian team mate is supprised at phara getting the POTG"}},{"sound":{"name":"PRETTY_GOOD_PUSH","version":"1"},"info":{"VideoLink":"https://www.youtube.com/embed/LkcR79j8n-Q","Description":"Astro fucks up a push"}},{"sound":{"name":"PRETTY_NICE_BOOP","version":"1"},"info":{"VideoLink":"https://www.youtube.com/embed/Sgcemfa7Tow","Description":"Astro is a boop god"}},{"sound":{"name":"GIVE_A_BLOWJOB","version":"1"},"info":{"VideoLink":"https://www.youtube.com/embed/4npgppVhcQ4","Description":"Astros Team mate wants a blowjob from a Guy with a nice voice"}},{"sound":{"name":"RIPPAAA","version":"1"},"info":{"VideoLink":"https://www.youtube.com/embed/qv8E50WPF9E&amp;t","Description":"Astro cheeky with Reaper"}},{"sound":{"name":"RUNNAWAY_FROM_ME","version":"1"},"info":{"VideoLink":"https://www.youtube.com/embed/I34V4HeasKs","Description":"Astros Teammate named runaway leaves the Match"}},{"sound":{"name":"SHUT_UP_ASTROKITTY","version":"1"},"info":{"VideoLink":"https://www.youtube.com/embed/lYeDCTAkwAA","Description":"Astro roasts a mercy that was saving his ult"}},{"sound":{"name":"SMACK_MY_BITCH_UP","version":"1"},"info":{"VideoLink":"https://www.youtube.com/embed/qv8E50WPF9E","Description":"Astro smacks his enemys with Reinhart"}},{"sound":{"name":"SO_RUDE","version":"1"},"info":{"VideoLink":"https://www.youtube.com/embed/8-1c9wkWITA","Description":"Astros Team is Rude"}},{"sound":{"name":"STOP_BEING_A_PUSSY","version":"1"},"info":{"VideoLink":"https://www.youtube.com/embed/IG7sC5tudN0","Description":"Ana on Astros Team wants the Team to push up and not be such a pussy"}},{"sound":{"name":"SUCK_MY_DICK","version":"1"},"info":{"VideoLink":"https://www.youtube.com/embed/4npgppVhcQ4","Description":"Astros team mate gets salty at the end of the match and starts to Argue with him as the match ends the finished with this voiceline"}},{"sound":{"name":"THATS_ALRIGHT_BAE","version":"1"},"info":{"VideoLink":"https://www.youtube.com/embed/I34V4HeasKs","Description":"Astro gets caught from then enemy reinhart and almost dies as ana commes in to save him."}},{"sound":{"name":"THATS_UNFORTUNATE","version":"1"},"info":{"VideoLink":"https://www.youtube.com/embed/YrDomblEJV8","Description":"Astros mate gets picked"}},{"sound":{"name":"THAT_SUCKS_DICK_DUDE","version":"1"},"info":{"VideoLink":"https://www.youtube.com/embed/dwmZwOngW8I","Description":"As Astros team gets a Team wipe mercy comes in and rescuructs the whole team."}},{"sound":{"name":"THERE_IS_YOUR_PICK","version":"1"},"info":{"VideoLink":"https://www.youtube.com/embed/iEZE-Rd-EAY","Description":"Astros team mate gets a double pick and wants to motivate the team to get into the Point."}},{"sound":{"name":"THIS_IS_A_BAD_IDEA","version":"1"},"info":{"VideoLink":"https://www.youtube.com/embed/8tExMeAsGEU","Description":"A Teammate thinks this it is a bad idea to push"}},{"sound":{"name":"WINSTON_ON_MY_COCK","version":"1"},"info":{"VideoLink":"https://www.youtube.com/embed/iEZE-Rd-EAY","Description":"Astros Teammate (zen) gets focused by a winston which he responds to with this voiceline."}},{"sound":{"name":"MORE_STYLE","version":"1"},"info":{"VideoLink":"https://www.youtube.com/embed/tD5G_WQWXMw","Description":"Astro and his Team won a Match with more style that their Enemys"}},{"sound":{"name":"YOU_SLUT","version":"1"},"info":{"VideoLink":"https://www.youtube.com/embed/IG7sC5tudN0","Description":"Astros Team mate gets salty as he gets killed"}},{"sound":{"name":"YOU_SUCK_DUDE","version":"1"},"info":{"VideoLink":"https://www.youtube.com/embed/jKRGhj7vK7Q","Description":"Mercy waited the whole match on Astro (phara) to ult but he didnt ult, in the end of the round he expresses his emotions."}}]}</value>
+    <value>{
+    "FileVersion": "1",
+    "ParserVersion": "1",
+    "Sounds": [{
+            "sound": {
+                "name": "FUCKING_MERCY"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/11olpkle_YQ",
+                "Description": "Friend of Astro Screaming 'FUCKING MERCY' as a mercy comes in and revives alot of people and causing them to lose the Game. - Mercy OP please nerf"
+            }
+        },
+        {
+            "sound": {
+                "name": "AW_YEAH_PAPI"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/4npgppVhcQ4",
+                "Description": "A Kid get's horny in the Middle of the Match"
+            }
+        },
+        {
+            "sound": {
+                "name": "BOOPEY_BOOPEY"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/Sgcemfa7Tow",
+                "Description": "Astro Boops a Person"
+            }
+        },
+        {
+            "sound": {
+                "name": "BYE_BYE"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/xNAPJ5bMLGQ",
+                "Description": "Astros team says bye a billion times"
+            }
+        },
+        {
+            "sound": {
+                "name": "CHEEKY_BOOP"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/Sgcemfa7Tow",
+                "Description": "Astro Boops a other Player while hiding and calls it a cheeky boop"
+            }
+        },
+        {
+            "sound": {
+                "name": "CHEEKY_CHEEKY"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/qv8E50WPF9E",
+                "Description": "Astro plays Cheeky with Reaper"
+            }
+        },
+        {
+            "sound": {
+                "name": "DO_IT_FOR_THE_MEMEZ"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/8tExMeAsGEU",
+                "Description": "Kid wants to do it for the Memes"
+            }
+        },
+        {
+            "sound": {
+                "name": "DROP_THAT_CHITTY"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/I34V4HeasKs",
+                "Description": "Description"
+            }
+        },
+        {
+            "sound": {
+                "name": "GET_HER_BABY"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/Iqp0CqtjlNo",
+                "Description": "Mercy wants astro to kill the baby d.va"
+            }
+        },
+        {
+            "sound": {
+                "name": "GIVE_IT_TO_ME_ASTRO"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/dwmZwOngW8I",
+                "Description": "After a team mate of Astro says to him that he did a good job, and Astro responds with 'Thanks mum' he comes up with this voiceline"
+            }
+        },
+        {
+            "sound": {
+                "name": "GOING_TOO_DEEP_GUYS"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/gGrcV994cqY",
+                "Description": "Astro and his team are overextending and a grill wants to make them aware of it and tells them that they are going to deep."
+            }
+        },
+        {
+            "sound": {
+                "name": "GUNG"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/yGUS7fVu0ZA",
+                "Description": "Astros Friend get shot in the Head and the Bullet gets reflected by the Helmet and making a GUNG sound"
+            }
+        },
+        {
+            "sound": {
+                "name": "HARMONY_ORB"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/YrDomblEJV8",
+                "Description": "Astros Friend imitates the 'Playing with a guy that sounds like zen' video"
+            }
+        },
+        {
+            "sound": {
+                "name": "HEAL_ME_YOU_CUNT"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/IG7sC5tudN0",
+                "Description": "Astro as Mercy soloheals a McRee the whole match but as the gets to another Teammate to help him out he dies and the McRee gets salty"
+            }
+        },
+        {
+            "sound": {
+                "name": "MONKEY_EAT_MY_ASS"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/G4V1c5GC72E",
+                "Description": "Astros team mate gets killed by a Winston to which he responds that he wants their Winston to eat his ass"
+            }
+        },
+        {
+            "sound": {
+                "name": "NICE_JOB_ASTRO"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/ixda9vcYxvk",
+                "Description": "Astro gets a double with the Solider ult saving the point, and a grill calls him out for it."
+            }
+        },
+        {
+            "sound": {
+                "name": "NICE_PHARA"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/xNAPJ5bMLGQ",
+                "Description": "Astros russian team mate is supprised at phara getting the POTG"
+            }
+        },
+        {
+            "sound": {
+                "name": "PRETTY_GOOD_PUSH"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/LkcR79j8n-Q",
+                "Description": "Astro fucks up a push"
+            }
+        },
+        {
+            "sound": {
+                "name": "PRETTY_NICE_BOOP"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/Sgcemfa7Tow",
+                "Description": "Astro is a boop god"
+            }
+        },
+        {
+            "sound": {
+                "name": "GIVE_A_BLOWJOB"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/4npgppVhcQ4",
+                "Description": "Astros Team mate wants a blowjob from a Guy with a nice voice"
+            }
+        },
+        {
+            "sound": {
+                "name": "RIPPAAA"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/qv8E50WPF9E",
+                "Description": "Astro cheeky with Reaper"
+            }
+        },
+        {
+            "sound": {
+                "name": "RUNNAWAY_FROM_ME"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/I34V4HeasKs",
+                "Description": "Astros Teammate named runaway leaves the Match"
+            }
+        },
+        {
+            "sound": {
+                "name": "SHUT_UP_ASTROKITTY"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/lYeDCTAkwAA",
+                "Description": "Astro roasts a mercy that was saving his ult"
+            }
+        },
+        {
+            "sound": {
+                "name": "SMACK_MY_BITCH_UP"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/qv8E50WPF9E",
+                "Description": "Astro smacks his enemys with Reinhart"
+            }
+        },
+        {
+            "sound": {
+                "name": "SO_RUDE"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/8-1c9wkWITA",
+                "Description": "Astros Team is Rude"
+            }
+        },
+        {
+            "sound": {
+                "name": "STOP_BEING_A_PUSSY"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/IG7sC5tudN0",
+                "Description": "Ana on Astros Team wants the Team to push up and not be such a pussy"
+            }
+        },
+        {
+            "sound": {
+                "name": "SUCK_MY_DICK"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/4npgppVhcQ4",
+                "Description": "Astros team mate gets salty at the end of the match and starts to Argue with him as the match ends the finished with this voiceline"
+            }
+        },
+        {
+            "sound": {
+                "name": "THATS_ALRIGHT_BAE"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/I34V4HeasKs",
+                "Description": "Astro gets caught from then enemy reinhart and almost dies as ana commes in to save him."
+            }
+        },
+        {
+            "sound": {
+                "name": "THATS_UNFORTUNATE"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/YrDomblEJV8",
+                "Description": "Astros mate gets picked"
+            }
+        },
+        {
+            "sound": {
+                "name": "THAT_SUCKS_DICK_DUDE"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/dwmZwOngW8I",
+                "Description": "As Astros team gets a Team wipe mercy comes in and rescuructs the whole team."
+            }
+        },
+        {
+            "sound": {
+                "name": "THERE_IS_YOUR_PICK"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/iEZE-Rd-EAY",
+                "Description": "Astros team mate gets a double pick and wants to motivate the team to get into the Point."
+            }
+        },
+        {
+            "sound": {
+                "name": "THIS_IS_A_BAD_IDEA"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/8tExMeAsGEU",
+                "Description": "A Teammate thinks this it is a bad idea to push"
+            }
+        },
+        {
+            "sound": {
+                "name": "WINSTON_ON_MY_COCK"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/iEZE-Rd-EAY",
+                "Description": "Astros Teammate (zen) gets focused by a winston which he responds to with this voiceline."
+            }
+        },
+        {
+            "sound": {
+                "name": "MORE_STYLE"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/tD5G_WQWXMw",
+                "Description": "Astro and his Team won a Match with more style that their Enemys"
+            }
+        },
+        {
+            "sound": {
+                "name": "YOU_SLUT"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/IG7sC5tudN0",
+                "Description": "Astros Team mate gets salty as he gets killed"
+            }
+        },
+        {
+            "sound": {
+                "name": "YOU_SUCK_DUDE"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/jKRGhj7vK7Q",
+                "Description": "Mercy waited the whole match on Astro (phara) to ult but he didnt ult, in the end of the round he expresses his emotions."
+            }
+        },
+        {
+            "sound": {
+                "name": "ENGINE_START"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/oaiFJwKjacE",
+                "Description": "Astro's friend flees from Astro in Dying light as he is about to make run a way he makes this very ambicious sound."
+            }
+        },
+        {
+            "sound": {
+                "name": "ALOT_OF_CUNTS"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/tD5G_WQWXMw",
+                "Description": "Astro's Teammate was alone on point and saw alot of enemys"
+            }
+        },
+        {
+            "sound": {
+                "name": "BAD_DECISIONS"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/tD5G_WQWXMw",
+                "Description": "Astro wants to kill a Mercy and just walkes throught the whole enemy Team, and gets killed"
+            }
+        },
+        {
+            "sound": {
+                "name": "FUCKING_DOMINATE"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/tD5G_WQWXMw",
+                "Description": "Astro wants to play sym, but a Team mate is against that Idea on Attack, so he changes to phara and has to dominate them"
+            }
+        },
+        {
+            "sound": {
+                "name": "FUCKING_JUNKRAT"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/tD5G_WQWXMw",
+                "Description": "Astro get caught by a junkrat trap"
+            }
+        },
+        {
+            "sound": {
+                "name": "HEY"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/tD5G_WQWXMw",
+                "Description": "Hello"
+            }
+        },
+        {
+            "sound": {
+                "name": "HIT_ME"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/tD5G_WQWXMw",
+                "Description": "Astro playing zarya wants to get energy and hit :3"
+            }
+        },
+        {
+            "sound": {
+                "name": "I_AM_NUTCRACKER"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/tD5G_WQWXMw",
+                "Description": "Astro playing zen with the nuttcracker skin"
+            }
+        },
+        {
+            "sound": {
+                "name": "I_MAIN_CANCER"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/tD5G_WQWXMw",
+                "Description": "Astro playing Mei"
+            }
+        },
+        {
+            "sound": {
+                "name": "MOVED_ASLEP"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/tD5G_WQWXMw",
+                "Description": "Astro teammate ana got slept and moved the payload to victory while sleeping."
+            }
+        },
+        {
+            "sound": {
+                "name": "NOT_PAST_GORILLA"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/tD5G_WQWXMw",
+                "Description": "Astro keeping the whole team from getting to the point with winstons ult"
+            }
+        },
+        {
+            "sound": {
+                "name": "RRRRRRR"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/tD5G_WQWXMw",
+                "Description": "Astro and solider have a affair"
+            }
+        },
+        {
+            "sound": {
+                "name": "SUCK_MY_ORBS"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/tD5G_WQWXMw",
+                "Description": "Phara ults and astro commes in with the zen ult to save the team"
+            }
+        },
+        {
+            "sound": {
+                "name": "THE_META"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/tD5G_WQWXMw",
+                "Description": "Astro wants to play sym but is lagging al over the place, his team mate thought this would be an advantage, when playing sym."
+            }
+        },
+        {
+            "sound": {
+                "name": "TRUMP_2017"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/tD5G_WQWXMw",
+                "Description": "Make murica great again!"
+            }
+        },
+        {
+            "sound": {
+                "name": "WHEN_YOU_TRY"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/tD5G_WQWXMw",
+                "Description": "Astro as zarya get's caught flanking by a winston"
+            }
+        },
+        {
+            "sound": {
+                "name": "GOOD_CATCH"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/QG-ef22eRr0",
+                "Description": "Reinhart catching someone."
+            }
+        },
+        {
+            "sound": {
+                "name": "OVERUSED_MEME"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/QG-ef22eRr0",
+                "Description": "Harambe is a overused meme"
+            }
+        },
+        {
+            "sound": {
+                "name": "FUCKING_NEOW"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/0U_fjk01cNo",
+                "Description": "Unknowen source."
+            }
+        },
+        {
+            "sound": {
+                "name": "MONKEY_MONKEY"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/0U_fjk01cNo",
+                "Description": "Astro as Harambe abuses another player"
+            }
+        },
+        {
+            "sound": {
+                "name": "SICK_ULT"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/I34V4HeasKs",
+                "Description": "Astro as Harambe abuses another player"
+            }
+        },
+        {
+            "sound": {
+                "name": "PLATNIUM_DAMAGE"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/I34V4HeasKs",
+                "Description": "Astro as Harambe abuses another player"
+            }
+        },
+        {
+            "sound": {
+                "name": "PHARA_VS_SOLIDER"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/8-1c9wkWITA",
+                "Description": "Astro as Harambe abuses another player"
+            }
+        },
+        {
+            "sound": {
+                "name": "TURNED_INTO_TRACER"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/8-1c9wkWITA",
+                "Description": "Astro as Harambe abuses another player"
+            }
+        },
+        {
+            "sound": {
+                "name": "DARKNESS_IM_DAD"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/G4V1c5GC72E",
+                "Description": "Astro trolling."
+            }
+        },
+        {
+            "sound": {
+                "name": "DICK_SKIN_IS_PEELING"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/8-1c9wkWITA",
+                "Description": "Kid trying to ryme :3"
+            }
+        },
+        {
+            "sound": {
+                "name": "MAINHART_RAIN"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/bGV2_v64fPI",
+                "Description": "Astro makes a slip of the tongue, while trying to say that he is a Reinhart main"
+            }
+        },
+        {
+            "sound": {
+                "name": "AMEIZING"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/ixda9vcYxvk",
+                "Description": "Pun intendet"
+            }
+        },
+        {
+            "sound": {
+                "name": "THIS_MOMENT"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/ixda9vcYxvk",
+                "Description": "It was at this moment astrokitty knew, he fucked up"
+            }
+        },
+                {
+            "sound": {
+                "name": "AGAINST_ME"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/_FaF_1iYkqUk",
+                "Description": "Astro *hates* when he gives soundbites that can be used against him"
+            }
+        },
+                {
+            "sound": {
+                "name": "HE_CAME_IN_MY_FACE"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/_FaF_1iYkqU",
+                "Description": "Astrokitty gettings wrecked in his Face"
+            }
+        }
+    ]
+}</value>
   </data>
   <data name="SO_RUDE" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SO_RUDE.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -228,5 +835,101 @@
   </data>
   <data name="YOU_SUCK_DUDE" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\YOU_SUCK_DUDE.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ALOT_OF_CUNTS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ALOT_OF_CUNTS.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="BAD_DECISIONS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BAD_DECISIONS.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ENGINE_START" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ENGINE_START.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="FUCKING_DOMINATE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FUCKING_DOMINATE.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="FUCKING_JUNKRAT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FUCKING_JUNKRAT.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="HEY" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HEY.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="HIT_ME" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HIT_ME.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="I_AM_NUTCRACKER" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\I_AM_NUTCRACKER.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="I_MAIN_CANCER" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\I_MAIN_CANCER.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="MOVED_ASLEP" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MOVED_ASLEP.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="NOT_PAST_GORILLA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NOT_PAST_GORILLA.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="RRRRRRR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RRRRRRR.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="THE_META" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\THE_META.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TRUMP_2017" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TRUMP_2017.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="WHEN_YOU_TRY" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WHEN_YOU_TRY.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="AMEIZING" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AMEIZING.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DARKNESS_IM_DAD" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DARKNESS_IM_DAD.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DICK_SKIN_IS_PEELING" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DICK_SKIN_IS_PEELING.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="FUCKING_NEOW" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FUCKING_NEOW.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="GOOD_CATCH" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GOOD_CATCH.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="IS_THIS_HARAMBE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IS_THIS_HARAMBE.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="MAINHART_RAIN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MAINHART_RAIN.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="MONKEY_MONKEY" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MONKEY_MONKEY.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="OVERUSED_MEME" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\OVERUSED_MEME.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PHARA_VS_SOLIDER" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PHARA_VS_SOLIDER.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PLATNIUM_DAMAGE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PLATNIUM_DAMAGE.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SICK_ULT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SICK_ULT.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SUCK_MY_ORBS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SUCK_MY_ORBS.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="THIS_MOMENT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\THIS_MOMENT.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TURNED_INTO_TRACER" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TURNED_INTO_TRACER.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="AGAINST_ME" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AGAINST_ME.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="HE_CAME_IN_MY_FACE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HE_CAME_IN_MY_FACE.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

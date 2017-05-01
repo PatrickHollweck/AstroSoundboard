@@ -1,8 +1,8 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 24:04:2017 / 17:46
-// Creation: 23:04:2017
+// Last Modified: 01:05:2017 / 01:21
+// Creation: 29:04:2017
 // Project: AstroSoundBoard
 //
 //
@@ -12,18 +12,20 @@
 namespace AstroSoundBoard
 {
     using System;
+    using System.Collections.Generic;
     using System.Reflection;
     using System.Windows;
 
     using AstroSoundBoard.Core.Components;
     using AstroSoundBoard.Core.Objects;
     using AstroSoundBoard.Core.Utils;
-    using AstroSoundBoard.WPF.Pages.Settings;
 
     using log4net;
     using log4net.Core;
 
     using MaterialDesignThemes.Wpf;
+
+    using SharpRaven;
 
     public partial class App : Application
     {
@@ -35,8 +37,8 @@ namespace AstroSoundBoard
             ((log4net.Repository.Hierarchy.Hierarchy)LogManager.GetRepository()).Root.Level = Level.Debug;
             ((log4net.Repository.Hierarchy.Hierarchy)LogManager.GetRepository()).RaiseConfigurationChanged(EventArgs.Empty);
 #else
-			((log4net.Repository.Hierarchy.Hierarchy)LogManager.GetRepository()).Root.Level = Level.Info;
-			((log4net.Repository.Hierarchy.Hierarchy)LogManager.GetRepository()).RaiseConfigurationChanged(EventArgs.Empty);
+            ((log4net.Repository.Hierarchy.Hierarchy)LogManager.GetRepository()).Root.Level = Level.Info;
+            ((log4net.Repository.Hierarchy.Hierarchy)LogManager.GetRepository()).RaiseConfigurationChanged(EventArgs.Empty);
 #endif
 
             Log.Info("--- APP START! ---");
@@ -46,8 +48,21 @@ namespace AstroSoundBoard
             FileSystem.FolderHelper.CreateIfMissing($"{AppSettings.InstallationFilePath}/");
 
             // Setup error handling to log fatal errors.
-            AppDomain currentDomain = AppDomain.CurrentDomain;
-            currentDomain.UnhandledException += (caller, args) => { Log.Fatal($"Fatal unhanded exception. - {args.ExceptionObject} -- {args.IsTerminating} -> {args}"); };
+            AppDomain.CurrentDomain.UnhandledException += (caller, args) =>
+                {
+                    Log.Fatal($"Fatal unhanded exception. - {args.ExceptionObject} -- {args.IsTerminating} -> {args}");
+
+#if !DEBUG
+                    if (AstroSoundBoard.Properties.Settings.Default.AllowErrorReporting)
+                    {
+                        var ravenClient = new RavenClient(Credentials.SentryApiKey);
+                        ravenClient.Capture(new SharpRaven.Data.SentryEvent((Exception)args.ExceptionObject));
+
+                        Log.Info("Reported error to sentry!");
+                    }
+
+#endif
+                };
 
             ApplyMaterialTheme();
             SoundManager.Init();
@@ -61,9 +76,11 @@ namespace AstroSoundBoard
 
         public static void ApplyMaterialTheme()
         {
+            List<string> colorList = new List<string> { "Red", "Pink", "Purple", "Indigo", "Blue", "Cyan", "Teal", "Green", "Lime", "Yellow", "Amber", "Orange", "Brown", "Grey" };
+
             var palette = new PaletteHelper();
             palette.SetLightDark(AstroSoundBoard.Properties.Settings.Default.IsDarkModeEnabled);
-            palette.ReplacePrimaryColor(SettingsView.ColorList[AstroSoundBoard.Properties.Settings.Default.PrimaryColor]);
+            palette.ReplacePrimaryColor(colorList[AstroSoundBoard.Properties.Settings.Default.PrimaryColor]);
         }
     }
 }

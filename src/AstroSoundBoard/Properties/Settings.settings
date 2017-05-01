@@ -1,15 +1,21 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassnamespace="AstroSoundBoard.Properties" GeneratedClassname="Settings">
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="AstroSoundBoard.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting name="PrimaryColor" Type="System.Int32" Scope="User">
+    <Setting Name="PrimaryColor" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">3</Value>
     </Setting>
-    <Setting name="IsDarkModeEnabled" Type="System.Boolean" Scope="User">
+    <Setting Name="IsDarkModeEnabled" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting name="Volume" Type="System.UInt32" Scope="User">
+    <Setting Name="Volume" Type="System.UInt32" Scope="User">
       <Value Profile="(Default)">50</Value>
+    </Setting>
+    <Setting Name="AllowErrorReporting" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="EnableSoundHotKeys" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
     </Setting>
   </Settings>
 </SettingsFile>

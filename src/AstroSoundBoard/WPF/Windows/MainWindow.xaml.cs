@@ -1,8 +1,8 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 28:04:2017 / 22:58
-// Creation: 28:04:2017
+// Last Modified: 01:05:2017 / 13:22
+// Creation: 01:05:2017
 // Project: AstroSoundBoard
 //
 //
@@ -12,13 +12,16 @@
 namespace AstroSoundBoard.WPF.Windows
 {
     using System;
+    using System.ComponentModel;
     using System.Diagnostics;
     using System.Globalization;
-    using System.Runtime.InteropServices;
+    using System.Threading.Tasks;
     using System.Windows;
     using System.Windows.Controls;
+    using System.Windows.Media.Animation;
 
     using AstroSoundBoard.Core.Components;
+    using AstroSoundBoard.Core.Utils;
     using AstroSoundBoard.WPF.Pages.Board;
 
     using AutoUpdaterDotNET;
@@ -32,7 +35,7 @@ namespace AstroSoundBoard.WPF.Windows
         public MainWindow()
         {
             AutoUpdater.CurrentCulture = CultureInfo.CreateSpecificCulture("en");
-            AutoUpdater.Start("http://127.0.0.1:8887/updaterInfo.xml");
+            AutoUpdater.Start("https://raw.githubusercontent.com/FetzenRndy/AstroSoundboard/develop/public/versions/updaterInfo.xml");
 
             ViewChanger.MainWindowInstance = this;
 
@@ -42,6 +45,12 @@ namespace AstroSoundBoard.WPF.Windows
 
             VolumeSlider_ValueChanged(new object(), new RoutedPropertyChangedEventArgs<double>(0, 50));
             VolumeSlider.Value = 50;
+        }
+
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            KeybindManager.RemoveAllKeybindMappings();
+            base.OnClosing(e);
         }
 
         #region Helpers
@@ -68,7 +77,7 @@ namespace AstroSoundBoard.WPF.Windows
 
         public void SearchForItem(object sender, TextChangedEventArgs e)
         {
-            BoardView.BoadViewInstance?.SearchForElement(SearchBox.Text, onlyFavoritesActive);
+            BoardView.BoardViewInstance?.SearchForElement(SearchBox.Text, onlyFavoritesActive);
         }
 
         #endregion Search
@@ -89,12 +98,12 @@ namespace AstroSoundBoard.WPF.Windows
             if (onlyFavoritesActive)
             {
                 onlyFavoritesActive = false;
-                BoardView.BoadViewInstance?.OnlyShowFavorites(onlyFavoritesActive);
+                BoardView.BoardViewInstance?.OnlyShowFavorites(onlyFavoritesActive);
             }
             else
             {
                 onlyFavoritesActive = true;
-                BoardView.BoadViewInstance?.OnlyShowFavorites(onlyFavoritesActive);
+                BoardView.BoardViewInstance?.OnlyShowFavorites(onlyFavoritesActive);
             }
         }
 
@@ -112,15 +121,12 @@ namespace AstroSoundBoard.WPF.Windows
 
         #region VolumeSlider
 
-        [DllImport("winmm.dll")]
-        private static extern int waveOutSetVolume(IntPtr hwo, uint dwVolume);
-
         private void VolumeSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             int newVolume = ushort.MaxValue / 100 * (int)e.NewValue;
             uint newVolumeAllChannels = ((uint)newVolume & 0x0000ffff) | ((uint)newVolume << 16);
 
-            waveOutSetVolume(IntPtr.Zero, newVolumeAllChannels);
+            NativeMethods.waveOutSetVolume(IntPtr.Zero, newVolumeAllChannels);
         }
 
         #endregion VolumeSlider
@@ -137,13 +143,45 @@ namespace AstroSoundBoard.WPF.Windows
 
         private void BrowserYoutube_Click(object sender, RoutedEventArgs e) => Process.Start("https://www.youtube.com/user/TheAstronautKitty");
 
-        private void BrowserRequestFeature_Click(object sender, RoutedEventArgs e) => Process.Start("https://docs.google.com/forms/d/e/1FAIpQLSc9JnTYAgQ2fbaSujj9-F3DsI6_BOXJGG7jsXNLD6Dqf11X9g/viewform?usp=sf_link");
+        private void OpenFeedback(object sender, RoutedEventArgs e) => new FeedbackWindow().Show();
 
-        private void BrowserRequestSound_Click(object sender, RoutedEventArgs e) => Process.Start("https://docs.google.com/forms/d/e/1FAIpQLSfVT7Jx-5n80LYFskIcjLsL3fb2RmI7XOXAS_2rtUFIuyYp8Q/viewform?usp=sf_link");
+        private void SwitchToAbout(object sender, RoutedEventArgs e) => ViewChanger.ChangeViewTo(ViewChanger.Page.About);
 
-        private void BrowserReportIssue_Click(object sender, RoutedEventArgs e) => Process.Start("https://docs.google.com/forms/d/e/1FAIpQLSdrhFCCVeKrbA56kiLpOqA5H1nszwA4gWimV1V6YOjXr5mC-A/viewform?usp=sf_link");
+        private void OpenKeybindManager(object sender, RoutedEventArgs e) => new KeybindManagerWindow().Show();
 
-        private void BrowserGitHub_Click(object sender, RoutedEventArgs e) => Process.Start("https://github.com/FetzenRndy/AstroSoundboard");
+        private bool isMenuExpanded = true;
+
+        private void ToogleMenu(object sender, RoutedEventArgs e)
+        {
+            if (isMenuExpanded)
+            {
+                isMenuExpanded = false;
+
+                Storyboard anim = (Storyboard)Resources["InAnimation"];
+                anim.Begin();
+
+                Task.Run(
+                    () =>
+                        {
+                            System.Threading.Thread.Sleep(650);
+                            Application.Current.Dispatcher.Invoke(() => { SideMenu.Margin = new Thickness(-300, 0, 0, 0); });
+                        });
+            }
+            else
+            {
+                isMenuExpanded = true;
+
+                Storyboard anim = (Storyboard)Resources["OutAnimation"];
+                anim.Begin();
+
+                Task.Run(
+                    () =>
+                        {
+                            System.Threading.Thread.Sleep(100);
+                            Application.Current.Dispatcher.Invoke(() => { SideMenu.Margin = new Thickness(0, 0, 0, 0); });
+                        });
+            }
+        }
 
         #endregion UI Events
     }

@@ -1,8 +1,8 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 25:04:2017 / 16:46
-// Creation: 16:04:2017
+// Last Modified: 01:05:2017 / 15:08
+// Creation: 01:05:2017
 // Project: AstroSoundBoard
 //
 //
@@ -12,21 +12,22 @@
 namespace AstroSoundBoard.Core.Components
 {
     using System;
+    using System.Collections.Generic;
     using System.IO;
 
     using AstroSoundBoard.Core.Objects;
     using AstroSoundBoard.Core.Objects.DataObjects;
+    using AstroSoundBoard.Properties;
 
     using log4net;
 
     using Newtonsoft.Json;
 
-    // BUG: File does not get written!
     public class SettingsManager
     {
-        private static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        internal static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
-        private static Sounds Cache { get; set; }
+        internal static List<Sound> Cache { get; set; }
 
         public static void Init()
         {
@@ -42,18 +43,24 @@ namespace AstroSoundBoard.Core.Components
                 {
                     var readText = File.ReadAllText(AppSettings.SoundSettingsFilePath);
 
-                    if (readText == string.Empty)
+                    if (string.IsNullOrWhiteSpace(readText))
                     {
                         File.Delete(AppSettings.SoundSettingsFilePath);
                         CreateStandardFile();
                     }
 
-                    Cache = JsonConvert.DeserializeObject<Sounds>(readText);
+                    Cache = JsonConvert.DeserializeObject<List<Sound>>(readText);
                 }
                 catch (Exception exception)
                 {
+                    File.Delete(AppSettings.SoundSettingsFilePath);
                     Log.Error("Something failed.", exception);
                 }
+            }
+
+            if (Settings.Default.EnableSoundHotKeys)
+            {
+                KeybindManager.SetKeybinds();
             }
         }
 
@@ -68,54 +75,27 @@ namespace AstroSoundBoard.Core.Components
             };
 
             ResetCache();
-            Cache.SoundList.Add(stdSounds);
+            Cache.Add(stdSounds);
             File.WriteAllText(AppSettings.SoundSettingsFilePath, JsonConvert.SerializeObject(stdObject));
         }
 
         private static void ResetCache()
         {
             Cache = null;
-            Cache = new Sounds();
+            Cache = new List<Sound>();
         }
 
         private static void RegisterSound(Sound sound)
         {
             Log.Debug("Registering Definition!");
-            Cache.SoundList.Add(sound);
+            Cache.Add(sound);
             WriteSounds();
-        }
-
-        public static void RegisterSoundIfNotExists(Sound sound)
-        {
-            try
-            {
-                for (int i = 0; i < Cache.SoundList.Count; i++)
-                {
-                    if (Cache.SoundList[i].Name == sound.Name)
-                    {
-                        break;
-                    }
-                    else if (i == Cache.SoundList.Count - 1)
-                    {
-                        RegisterSound(sound);
-                    }
-                }
-            }
-            catch (Exception exception)
-            {
-                Log.Error("Error while trying to register Definition...", exception);
-                if (File.Exists(AppSettings.SoundSettingsFilePath))
-                {
-                    File.Delete(AppSettings.SoundSettingsFilePath);
-                }
-
-                throw;
-            }
         }
 
         public static void WriteSounds()
         {
             Log.Debug("Writing sound...");
+
             if (File.Exists(AppSettings.SoundSettingsFilePath))
             {
                 File.Delete(AppSettings.SoundSettingsFilePath);
@@ -126,7 +106,7 @@ namespace AstroSoundBoard.Core.Components
 
         public static Sound GetSound(string name)
         {
-            foreach (Sound item in Cache.SoundList)
+            foreach (Sound item in Cache)
             {
                 if (item.Name == name)
                 {
@@ -146,11 +126,11 @@ namespace AstroSoundBoard.Core.Components
             }
 
             Log.Debug($"Changing Definition of {sound.Name}");
-            for (int i = 0; i < Cache.SoundList.Count; i++)
+            for (int i = 0; i < Cache.Count; i++)
             {
-                if (Cache.SoundList[i].Name == sound.Name)
+                if (Cache[i].Name == sound.Name)
                 {
-                    Cache.SoundList[i] = sound;
+                    Cache[i] = sound;
                     WriteSounds();
                     return;
                 }
