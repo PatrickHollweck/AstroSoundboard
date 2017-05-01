@@ -1,8 +1,8 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 30:04:2017 / 14:27
-// Creation: 29:04:2017
+// Last Modified: 01:05:2017 / 13:22
+// Creation: 01:05:2017
 // Project: AstroSoundBoard
 //
 //
@@ -12,10 +12,13 @@
 namespace AstroSoundBoard.WPF.Windows
 {
     using System;
+    using System.ComponentModel;
     using System.Diagnostics;
     using System.Globalization;
+    using System.Threading.Tasks;
     using System.Windows;
     using System.Windows.Controls;
+    using System.Windows.Media.Animation;
 
     using AstroSoundBoard.Core.Components;
     using AstroSoundBoard.Core.Utils;
@@ -42,6 +45,12 @@ namespace AstroSoundBoard.WPF.Windows
 
             VolumeSlider_ValueChanged(new object(), new RoutedPropertyChangedEventArgs<double>(0, 50));
             VolumeSlider.Value = 50;
+        }
+
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            KeybindManager.RemoveAllKeybindMappings();
+            base.OnClosing(e);
         }
 
         #region Helpers
@@ -139,6 +148,40 @@ namespace AstroSoundBoard.WPF.Windows
         private void SwitchToAbout(object sender, RoutedEventArgs e) => ViewChanger.ChangeViewTo(ViewChanger.Page.About);
 
         private void OpenKeybindManager(object sender, RoutedEventArgs e) => new KeybindManagerWindow().Show();
+
+        private bool isMenuExpanded = true;
+
+        private void ToogleMenu(object sender, RoutedEventArgs e)
+        {
+            if (isMenuExpanded)
+            {
+                isMenuExpanded = false;
+
+                Storyboard anim = (Storyboard)Resources["InAnimation"];
+                anim.Begin();
+
+                Task.Run(
+                    () =>
+                        {
+                            System.Threading.Thread.Sleep(650);
+                            Application.Current.Dispatcher.Invoke(() => { SideMenu.Margin = new Thickness(-300, 0, 0, 0); });
+                        });
+            }
+            else
+            {
+                isMenuExpanded = true;
+
+                Storyboard anim = (Storyboard)Resources["OutAnimation"];
+                anim.Begin();
+
+                Task.Run(
+                    () =>
+                        {
+                            System.Threading.Thread.Sleep(100);
+                            Application.Current.Dispatcher.Invoke(() => { SideMenu.Margin = new Thickness(0, 0, 0, 0); });
+                        });
+            }
+        }
 
         #endregion UI Events
     }

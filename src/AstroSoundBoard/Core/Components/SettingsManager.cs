@@ -1,8 +1,8 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 30:04:2017 / 20:21
-// Creation: 29:04:2017
+// Last Modified: 01:05:2017 / 15:08
+// Creation: 01:05:2017
 // Project: AstroSoundBoard
 //
 //
@@ -17,6 +17,7 @@ namespace AstroSoundBoard.Core.Components
 
     using AstroSoundBoard.Core.Objects;
     using AstroSoundBoard.Core.Objects.DataObjects;
+    using AstroSoundBoard.Properties;
 
     using log4net;
 
@@ -57,7 +58,10 @@ namespace AstroSoundBoard.Core.Components
                 }
             }
 
-            KeybindManager.SetKeybinds();
+            if (Settings.Default.EnableSoundHotKeys)
+            {
+                KeybindManager.SetKeybinds();
+            }
         }
 
         private static void CreateStandardFile()

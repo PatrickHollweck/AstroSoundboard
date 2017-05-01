@@ -110,7 +110,7 @@ namespace AstroSoundBoard.WPF.Pages.Board
             {
                 List<SoundView> matchingItems = new List<SoundView>();
 
-                foreach (SoundView view in ItemCtrl.Items)
+                foreach (SoundView view in AllSounds)
                 {
                     if (view.LocalDefinition.Name.ToLower().Contains(element.ToLower()))
                     {

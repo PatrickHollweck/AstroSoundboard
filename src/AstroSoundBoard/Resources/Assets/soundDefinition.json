@@ -78,7 +78,7 @@
                 "name": "GET_HER_BABY"
             },
             "info": {
-                "VideoLink": "https://www.youtube.com/embed/YeDCTAkwAA",
+                "VideoLink": "https://www.youtube.com/embed/Iqp0CqtjlNo",
                 "Description": "Mercy wants astro to kill the baby d.va"
             }
         },
@@ -186,7 +186,7 @@
                 "name": "RIPPAAA"
             },
             "info": {
-                "VideoLink": "https://www.youtube.com/embed/qv8E50WPF9E&t",
+                "VideoLink": "https://www.youtube.com/embed/qv8E50WPF9E",
                 "Description": "Astro cheeky with Reaper"
             }
         },
@@ -584,6 +584,24 @@
             "info": {
                 "VideoLink": "https://www.youtube.com/embed/ixda9vcYxvk",
                 "Description": "It was at this moment astrokitty knew, he fucked up"
+            }
+        },
+                {
+            "sound": {
+                "name": "AGAINST_ME"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/_FaF_1iYkqUk",
+                "Description": "Astro *hates* when he gives soundbites that can be used against him"
+            }
+        },
+                {
+            "sound": {
+                "name": "HE_CAME_IN_MY_FACE"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/_FaF_1iYkqU",
+                "Description": "Astrokitty gettings wrecked in his Face"
             }
         }
     ]

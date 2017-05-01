@@ -70,5 +70,17 @@ namespace AstroSoundBoard.Properties {
                 this["AllowErrorReporting"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool EnableSoundHotKeys {
+            get {
+                return ((bool)(this["EnableSoundHotKeys"]));
+            }
+            set {
+                this["EnableSoundHotKeys"] = value;
+            }
+        }
     }
 }

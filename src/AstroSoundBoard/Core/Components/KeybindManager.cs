@@ -1,15 +1,13 @@
 ﻿// ****************************** Module Header ****************************** //
-// 
-// 
-// Last Modified: 01:05:2017 / 01:18
-// Creation: 30:04:2017
+//
+//
+// Last Modified: 01:05:2017 / 13:33
+// Creation: 01:05:2017
 // Project: AstroSoundBoard
-// 
-// 
+//
+//
 // <copyright file="KeybindManager.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
-
-
 
 namespace AstroSoundBoard.Core.Components
 {
@@ -44,13 +42,9 @@ namespace AstroSoundBoard.Core.Components
                     HotkeyManager.Current.Remove(sound.Name);
                     HotkeyManager.Current.AddOrReplace(sound.Name, sound.HotKey.Key, sound.HotKey.Modifier, true, PlaySound);
                 }
-                catch (HotkeyAlreadyRegisteredException exception)
+                catch
                 {
-                    Log.Error("Hotkey was not registered:", exception);
-                }
-                catch (Exception exception)
-                {
-                    Log.Error("General Keybind Error:", exception);
+                    // Do nothing. There will be alot of errors but this is fine.
                 }
             }
         }
@@ -61,6 +55,23 @@ namespace AstroSoundBoard.Core.Components
             {
                 SettingsManager.Cache[i].HotKey = new KeyBind();
                 SettingsManager.RewriteSound(SettingsManager.Cache[i]);
+            }
+
+            SetKeybinds();
+        }
+
+        public static void RemoveAllKeybindMappings()
+        {
+            for (int i = 0; i < SettingsManager.Cache.Count; i++)
+            {
+                try
+                {
+                    HotkeyManager.Current.Remove(SettingsManager.Cache[i].Name);
+                }
+                catch
+                {
+                    // Do nothing since there will be many errors thrown.
+                }
             }
 
             SetKeybinds();

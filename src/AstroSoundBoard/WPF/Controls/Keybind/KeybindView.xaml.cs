@@ -1,8 +1,8 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 01:05:2017 / 00:52
-// Creation: 29:04:2017
+// Last Modified: 01:05:2017 / 13:44
+// Creation: 01:05:2017
 // Project: AstroSoundBoard
 //
 //
@@ -29,22 +29,26 @@ namespace AstroSoundBoard.WPF.Controls.Keybind
             InitializeComponent();
             DataContext = this;
 
-            LocalDefinition.HotKey.PropertyChanged += (sender, args) =>
-                {
-                    if (LocalDefinition.HotKey.HasAssignedKeybind)
-                    {
-                        CurrentKeybindPanel.Visibility = Visibility.Hidden;
-                    }
-                    else
-                    {
-                        CurrentKeybindPanel.Visibility = Visibility.Visible;
-                    }
-                };
+            if (LocalDefinition.HotKey == null)
+            {
+                LocalDefinition.HotKey = new KeyBind();
+            }
 
+            LocalDefinition.HotKey.PropertyChanged += (sender, args) => { CurrentKeybindPanel.Visibility = LocalDefinition.HotKey.HasAssignedKeybind ? Visibility.Hidden : Visibility.Visible; };
             LocalDefinition.HotKey.RaisePropertyChanged();
         }
 
-        public void ConfigureKeybind(object sender, RoutedEventArgs e) => new KeybindConfiguratorWindow(LocalDefinition).Show();
+        public void ConfigureKeybind(object sender, RoutedEventArgs e)
+        {
+            if (!KeybindConfiguratorWindow.HasOpenInstance)
+            {
+                new KeybindConfiguratorWindow(LocalDefinition).Show();
+            }
+            else
+            {
+                MessageBox.Show("Only one instance of the Configuration Window allowed at a Time... \nPlease close the other one.", "Error!", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+        }
 
         public void RemoveKeybind(object sender, RoutedEventArgs e)
         {

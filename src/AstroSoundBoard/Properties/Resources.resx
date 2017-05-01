@@ -274,7 +274,7 @@
                 "name": "GET_HER_BABY"
             },
             "info": {
-                "VideoLink": "https://www.youtube.com/embed/YeDCTAkwAA",
+                "VideoLink": "https://www.youtube.com/embed/Iqp0CqtjlNo",
                 "Description": "Mercy wants astro to kill the baby d.va"
             }
         },
@@ -382,7 +382,7 @@
                 "name": "RIPPAAA"
             },
             "info": {
-                "VideoLink": "https://www.youtube.com/embed/qv8E50WPF9E&amp;t",
+                "VideoLink": "https://www.youtube.com/embed/qv8E50WPF9E",
                 "Description": "Astro cheeky with Reaper"
             }
         },
@@ -781,6 +781,24 @@
                 "VideoLink": "https://www.youtube.com/embed/ixda9vcYxvk",
                 "Description": "It was at this moment astrokitty knew, he fucked up"
             }
+        },
+                {
+            "sound": {
+                "name": "AGAINST_ME"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/_FaF_1iYkqUk",
+                "Description": "Astro *hates* when he gives soundbites that can be used against him"
+            }
+        },
+                {
+            "sound": {
+                "name": "HE_CAME_IN_MY_FACE"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/_FaF_1iYkqU",
+                "Description": "Astrokitty gettings wrecked in his Face"
+            }
         }
     ]
 }</value>
@@ -907,5 +925,11 @@
   </data>
   <data name="TURNED_INTO_TRACER" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TURNED_INTO_TRACER.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="AGAINST_ME" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AGAINST_ME.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="HE_CAME_IN_MY_FACE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HE_CAME_IN_MY_FACE.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

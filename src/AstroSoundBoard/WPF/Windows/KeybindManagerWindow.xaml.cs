@@ -1,8 +1,8 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 01:05:2017 / 01:18
-// Creation: 29:04:2017
+// Last Modified: 01:05:2017 / 13:28
+// Creation: 01:05:2017
 // Project: AstroSoundBoard
 //
 //
@@ -39,7 +39,8 @@ namespace AstroSoundBoard.WPF.Windows
                     Description = definition.Info.Description,
                     IsFavorite = SettingsManager.GetSound(definition.Sound.Name).IsFavorite,
                     Name = definition.Sound.Name,
-                    VideoLink = definition.Info.VideoLink
+                    VideoLink = definition.Info.VideoLink,
+                    HotKey = SettingsManager.GetSound(definition.Sound.Name).HotKey
                 };
 
                 var view = new KeybindView(item) { MinWidth = Width - 40 };

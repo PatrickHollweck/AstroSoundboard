@@ -63,6 +63,15 @@ namespace AstroSoundBoard.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
         /// </summary>
+        internal static System.IO.UnmanagedMemoryStream AGAINST_ME {
+            get {
+                return ResourceManager.GetStream("AGAINST_ME", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
+        /// </summary>
         internal static System.IO.UnmanagedMemoryStream ALOT_OF_CUNTS {
             get {
                 return ResourceManager.GetStream("ALOT_OF_CUNTS", resourceCulture);
@@ -273,6 +282,15 @@ namespace AstroSoundBoard.Properties {
         internal static System.IO.UnmanagedMemoryStream HARMONY_ORB {
             get {
                 return ResourceManager.GetStream("HARMONY_ORB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream HE_CAME_IN_MY_FACE {
+            get {
+                return ResourceManager.GetStream("HE_CAME_IN_MY_FACE", resourceCulture);
             }
         }
         
