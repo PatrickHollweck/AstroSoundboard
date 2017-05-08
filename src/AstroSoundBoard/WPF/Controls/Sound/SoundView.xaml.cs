@@ -1,8 +1,8 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 30:04:2017 / 20:21
-// Creation: 17:04:2017
+// Last Modified: 08:05:2017 / 18:06
+// Creation: 08:05:2017
 // Project: AstroSoundBoard
 //
 //
@@ -68,7 +68,7 @@ namespace AstroSoundBoard.WPF.Controls.Sound
 
                 LocalDefinition.IsFavorite = JsonConvert.False;
 
-                SettingsManager.RewriteSound(LocalDefinition);
+                SettingsManager.ChangeSoundAndWrite(LocalDefinition);
             }
             else
             {
@@ -76,24 +76,35 @@ namespace AstroSoundBoard.WPF.Controls.Sound
 
                 LocalDefinition.IsFavorite = JsonConvert.True;
 
-                SettingsManager.RewriteSound(LocalDefinition);
+                SettingsManager.ChangeSoundAndWrite(LocalDefinition);
             }
         }
 
+        /// <summary>
+        /// Shows informations for this sounds in a new window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ShowInfo(object sender, RoutedEventArgs e)
         {
             var window = new InfoWindow(LocalDefinition);
             window.Show();
         }
 
+        /// <summary>
+        /// Plays the Sound
+        /// </summary>
+        /// <param name="sender">Sender</param>
+        /// <param name="e">Event</param>
         private void PlaySound(object sender, RoutedEventArgs e)
         {
+            // In a future version I hope to implement mp3 files since currently I am using .wave which is lossless and quite big.
             try
             {
                 LocalDefinition.Name = LocalDefinition.Name.Replace(' ', '_');
                 Log.Debug($"Trying to Play sound : {LocalDefinition.Name}");
 
-                using (SoundPlayer player = new SoundPlayer((UnmanagedMemoryStream)SoundManager.Storage.GetAudioFileFromResources(LocalDefinition.Name)))
+                using (SoundPlayer player = new SoundPlayer((UnmanagedMemoryStream)SoundManager.GetAudioFileFromResources(LocalDefinition.Name)))
                 {
                     player.Play();
                 }

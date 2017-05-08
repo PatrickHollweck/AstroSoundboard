@@ -1,8 +1,8 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 01:05:2017 / 01:11
-// Creation: 21:04:2017
+// Last Modified: 08:05:2017 / 17:57
+// Creation: 08:05:2017
 // Project: AstroSoundBoard
 //
 //
@@ -14,6 +14,9 @@ namespace AstroSoundBoard.Core.Objects.DataObjects
     using System.ComponentModel;
     using System.Runtime.CompilerServices;
 
+    /// <summary>
+    /// A sound. (Implements INotifyPropertyChanged!)
+    /// </summary>
     public class Sound : INotifyPropertyChanged
     {
         private string name;
@@ -21,6 +24,9 @@ namespace AstroSoundBoard.Core.Objects.DataObjects
         private string isFavorite;
         private KeyBind hotKey;
 
+        /// <summary>
+        /// Name of the Sound.
+        /// </summary>
         public string Name
         {
             get => name;
@@ -32,8 +38,12 @@ namespace AstroSoundBoard.Core.Objects.DataObjects
             }
         }
 
+        /// <summary>
+        /// String Indicating if the Sound is a favorite.
+        /// </summary>
         public string IsFavorite
         {
+            // This has to be a string and not a bool so it can be serialized.
             get => isFavorite;
             set
             {
@@ -42,8 +52,14 @@ namespace AstroSoundBoard.Core.Objects.DataObjects
             }
         }
 
+        /// <summary>
+        /// Description of the Sound
+        /// </summary>
         public string Description { get; set; }
 
+        /// <summary>
+        /// Link to the Video the Sound is originating from.
+        /// </summary>
         public string VideoLink
         {
             get => videoLink;
@@ -54,6 +70,9 @@ namespace AstroSoundBoard.Core.Objects.DataObjects
             }
         }
 
+        /// <summary>
+        /// The Hotkey.
+        /// </summary>
         public KeyBind HotKey
         {
             get => hotKey;
@@ -64,6 +83,9 @@ namespace AstroSoundBoard.Core.Objects.DataObjects
             }
         }
 
+        /// <summary>
+        /// Helper to Raise the Property changed event;
+        /// </summary>
         public void RaisePropertyChanged()
         {
             OnPropertyChanged();

@@ -1,8 +1,8 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 23:04:2017 / 15:18
-// Creation: 23:04:2017
+// Last Modified: 08:05:2017 / 17:57
+// Creation: 08:05:2017
 // Project: AstroSoundBoard
 //
 //
@@ -15,6 +15,9 @@ namespace AstroSoundBoard.Core.Objects
     using System.IO;
     using System.Reflection;
 
+    /// <summary>
+    /// App level Constants
+    /// </summary>
     public class AppSettings
     {
         /// <summary>
@@ -26,11 +29,6 @@ namespace AstroSoundBoard.Core.Objects
         /// Path to the /soundSettings.json file.
         /// </summary>
         public static readonly string SoundSettingsFilePath = $"{InstallationFilePath}/soundSettings.json";
-
-        /// <summary>
-        /// File path to the Definition Definition file.
-        /// </summary>
-        public static string SoundDefinitionFilePath { get; } = $"{InstallationFilePath}/SoundDef.json";
 
         /// <summary>
         /// Get the Directory the Assembly is in.

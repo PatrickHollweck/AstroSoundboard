@@ -1,8 +1,8 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 01:05:2017 / 15:08
-// Creation: 01:05:2017
+// Last Modified: 08:05:2017 / 17:39
+// Creation: 08:05:2017
 // Project: AstroSoundBoard
 //
 //
@@ -25,10 +25,17 @@ namespace AstroSoundBoard.Core.Components
 
     public class SettingsManager
     {
+        // The SettingsManager is a class managing the SoundSettings.json file (C:\ProgramData\AstroKittySoundBoard\). The file is in Json format and for serialisation and serialisation Json.NET is used. Contained in this File is a list of all sounds in the Application. These Sounds are stored as a Sound object which describes the Sound with properties like "isFavorite" and "HotKey" if a property changes the file can get rewritten to the disk effectively saving the Settings the users has made to the Sounds. From there the Sounds can get read back from the file and the UI can get setup.
         internal static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
+        /// <summary>
+        /// The Cache is a List of Sounds containing a list of all the Sounds. This list is used for interaction with other components and as a buffer.
+        /// </summary>
         internal static List<Sound> Cache { get; set; }
 
+        /// <summary>
+        /// Initializes the Settings Manager.
+        /// </summary>
         public static void Init()
         {
             Log.Debug("Starting the SettingsManager");
@@ -60,10 +67,14 @@ namespace AstroSoundBoard.Core.Components
 
             if (Settings.Default.EnableSoundHotKeys)
             {
+                // When the Definitions are read in, the application can start setting up the Keybinds. (Keybinds are stored in the soundSettings.json!)
                 KeybindManager.SetKeybinds();
             }
         }
 
+        /// <summary>
+        /// Creates a clean soundSettings file.
+        /// </summary>
         private static void CreateStandardFile()
         {
             Sound stdObject = new Sound();
@@ -79,12 +90,25 @@ namespace AstroSoundBoard.Core.Components
             File.WriteAllText(AppSettings.SoundSettingsFilePath, JsonConvert.SerializeObject(stdObject));
         }
 
-        private static void ResetCache()
+        /// <summary>
+        /// Resets the Cache.
+        /// </summary>
+        /// <param name="loadSounds">Optionally reloads all sounds back from the File.</param>
+        private static void ResetCache(bool loadSounds = false)
         {
             Cache = null;
             Cache = new List<Sound>();
+
+            if (loadSounds)
+            {
+                Init();
+            }
         }
 
+        /// <summary>
+        /// Registers a Sound into the Manager.
+        /// </summary>
+        /// <param name="sound">Sound to be registered</param>
         private static void RegisterSound(Sound sound)
         {
             Log.Debug("Registering Definition!");
@@ -92,6 +116,9 @@ namespace AstroSoundBoard.Core.Components
             WriteSounds();
         }
 
+        /// <summary>
+        /// Writes the Sounds to the Disk.
+        /// </summary>
         public static void WriteSounds()
         {
             Log.Debug("Writing sound...");
@@ -104,6 +131,11 @@ namespace AstroSoundBoard.Core.Components
             File.WriteAllText(AppSettings.SoundSettingsFilePath, JsonConvert.SerializeObject(Cache));
         }
 
+        /// <summary>
+        /// Gets a Sound from the Manager
+        /// </summary>
+        /// <param name="name">Sound name</param>
+        /// <returns>The queried sound.</returns>
         public static Sound GetSound(string name)
         {
             foreach (Sound item in Cache)
@@ -118,7 +150,11 @@ namespace AstroSoundBoard.Core.Components
             return GetSound(name);
         }
 
-        public static void RewriteSound(Sound sound)
+        /// <summary>
+        /// Changes the Sound and writes it to the disk.
+        /// </summary>
+        /// <param name="sound">Sound to change</param>
+        public static void ChangeSoundAndWrite(Sound sound)
         {
             if (sound.Name.Contains(" "))
             {
@@ -126,6 +162,7 @@ namespace AstroSoundBoard.Core.Components
             }
 
             Log.Debug($"Changing Definition of {sound.Name}");
+
             for (int i = 0; i < Cache.Count; i++)
             {
                 if (Cache[i].Name == sound.Name)

@@ -26,6 +26,9 @@ namespace AstroSoundBoard.Core.Components
     {
         private static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
+        /// <summary>
+        /// Sets all keybinds in the <see cref="SettingsManager.Cache"/>
+        /// </summary>
         public static void SetKeybinds()
         {
             Log.Debug("Setting Keybinds...");
@@ -42,24 +45,107 @@ namespace AstroSoundBoard.Core.Components
                     HotkeyManager.Current.Remove(sound.Name);
                     HotkeyManager.Current.AddOrReplace(sound.Name, sound.HotKey.Key, sound.HotKey.Modifier, true, PlaySound);
                 }
-                catch
+                catch (HotkeyAlreadyRegisteredException)
                 {
-                    // Do nothing. There will be alot of errors but this is fine.
+                    // This exception will occur alot and we will ignore it :)
+                }
+                catch (Exception exception)
+                {
+                    Log.Error($"HotKey error!", exception);
                 }
             }
         }
 
+        /// <summary>
+        /// Checks if a keybind with that Signature already exists.
+        /// </summary>
+        /// <param name="sound"></param>
+        /// <returns></returns>
+        public static (bool status, string) CheckDuplicate(Sound sound)
+        {
+            (bool, string) returnType = (true, "Success");
+
+            try
+            {
+                HotkeyManager.Current.AddOrReplace(sound.Name, sound.HotKey.Key, sound.HotKey.Modifier, true, PlaySound);
+            }
+            catch (HotkeyAlreadyRegisteredException)
+            {
+                // Thanks c# 7 for Tuples :)
+                returnType = (false, $@"A Hotkey for {sound.HotKey.Modifier}+{sound.HotKey.Key} is already defined, in {GetSoundByKeybind(sound)?.Name}! Please choose another one! ");
+            }
+            catch
+            {
+                returnType = (false, "Sorry the Hotkey can not be set");
+            }
+            finally
+            {
+                HotkeyManager.Current.Remove(sound.Name);
+            }
+
+            return returnType;
+        }
+
+        /// <summary>
+        /// Gets the Keybind with a given Signature
+        /// </summary>
+        /// <param name="sound"></param>
+        /// <returns></returns>
+        public static Sound GetSoundByKeybind(Sound sound)
+        {
+            foreach (Sound item in SettingsManager.Cache)
+            {
+                if (item.HotKey.Key == sound.HotKey.Key && item.HotKey.Modifier == sound.HotKey.Modifier)
+                {
+                    return item;
+                }
+            }
+
+            return null;
+        }
+
+        /// <summary>
+        /// Play sound for Hotkeys.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private static void PlaySound(object sender, HotkeyEventArgs e)
+        {
+            Log.Debug($"Trying to Play sound : {e.Name}");
+
+            try
+            {
+                string name = e.Name;
+                name = name.Replace(' ', '_');
+
+                using (SoundPlayer player = new SoundPlayer((UnmanagedMemoryStream)SoundManager.GetAudioFileFromResources(name)))
+                {
+                    player.Play();
+                }
+            }
+            catch (Exception exception)
+            {
+                Log.Error("Can not play Definition!", exception);
+            }
+        }
+
+        /// <summary>
+        /// Removes all keybinds from the cache
+        /// </summary>
         public static void RemoveAllKeybinds()
         {
             for (int i = 0; i < SettingsManager.Cache.Count; i++)
             {
                 SettingsManager.Cache[i].HotKey = new KeyBind();
-                SettingsManager.RewriteSound(SettingsManager.Cache[i]);
+                SettingsManager.ChangeSoundAndWrite(SettingsManager.Cache[i]);
             }
 
             SetKeybinds();
         }
 
+        /// <summary>
+        /// Removes all active Keybind handlers
+        /// </summary>
         public static void RemoveAllKeybindMappings()
         {
             for (int i = 0; i < SettingsManager.Cache.Count; i++)
@@ -77,63 +163,10 @@ namespace AstroSoundBoard.Core.Components
             SetKeybinds();
         }
 
-        public static (bool status, string) CheckDuplicate(Sound sound)
-        {
-            (bool, string) returnType = (true, "Success");
-
-            try
-            {
-                HotkeyManager.Current.AddOrReplace(sound.Name, sound.HotKey.Key, sound.HotKey.Modifier, true, PlaySound);
-            }
-            catch (HotkeyAlreadyRegisteredException)
-            {
-                returnType = (false, $@"A Hotkey for {sound.HotKey.Modifier}+{sound.HotKey.Key} is already defined, in {GetSoundByKeybind(sound)?.Name}! Please choose another one! ");
-            }
-            catch
-            {
-                returnType = (false, "Sorry the Hotkey can not be set");
-            }
-            finally
-            {
-                HotkeyManager.Current.Remove(sound.Name);
-            }
-
-            return returnType;
-        }
-
-        public static Sound GetSoundByKeybind(Sound sound)
-        {
-            foreach (Sound item in SettingsManager.Cache)
-            {
-                if (item.HotKey.Key == sound.HotKey.Key && item.HotKey.Modifier == sound.HotKey.Modifier)
-                {
-                    return item;
-                }
-            }
-
-            return null;
-        }
-
-        private static void PlaySound(object sender, HotkeyEventArgs e)
-        {
-            Log.Debug($"Trying to Play sound : {e.Name}");
-
-            try
-            {
-                string name = e.Name;
-                name = name.Replace(' ', '_');
-
-                using (SoundPlayer player = new SoundPlayer((UnmanagedMemoryStream)SoundManager.Storage.GetAudioFileFromResources(name)))
-                {
-                    player.Play();
-                }
-            }
-            catch (Exception exception)
-            {
-                Log.Error("Can not play Definition!", exception);
-            }
-        }
-
+        /// <summary>
+        /// Removes all Keybinds and all currently active Mappings to the Keybind.
+        /// </summary>
+        /// <param name="name"></param>
         public static void RemoveKeybindAndMappingByName(string name)
         {
             foreach (Sound sound in SettingsManager.Cache)
@@ -151,32 +184,6 @@ namespace AstroSoundBoard.Core.Components
             catch (Exception exception)
             {
                 Log.Error("Hotkey error!", exception);
-            }
-        }
-
-        public static void RemoveKeybindByName(string name)
-        {
-            foreach (Sound sound in SettingsManager.Cache)
-            {
-                if (sound.Name == name)
-                {
-                    sound.HotKey = new KeyBind();
-                }
-            }
-        }
-
-        public static void DisableAllKeybindsAndMappings()
-        {
-            foreach (Sound sound in SettingsManager.Cache)
-            {
-                try
-                {
-                    HotkeyManager.Current.Remove(sound.Name);
-                }
-                catch (Exception exception)
-                {
-                    Log.Error("Hotkey error!", exception);
-                }
             }
         }
     }

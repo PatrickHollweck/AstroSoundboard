@@ -1,7 +1,7 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 08:05:2017 / 14:47
+// Last Modified: 08:05:2017 / 17:43
 // Creation: 08:05:2017
 // Project: AstroSoundBoard
 //
@@ -34,7 +34,7 @@ namespace AstroSoundBoard.WPF.Windows
             InitializeComponent();
             DataContext = this;
 
-            foreach (Definition definition in SoundManager.Information.GetSoundList())
+            foreach (Definition definition in SoundManager.GetSoundList())
             {
                 var item = new Sound
                 {

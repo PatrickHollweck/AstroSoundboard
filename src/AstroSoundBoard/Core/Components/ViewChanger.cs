@@ -1,8 +1,8 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 26:04:2017 / 21:33
-// Creation: 16:04:2017
+// Last Modified: 08:05:2017 / 17:54
+// Creation: 08:05:2017
 // Project: AstroSoundBoard
 //
 //
@@ -17,12 +17,17 @@ namespace AstroSoundBoard.Core.Components
 
     using log4net;
 
+    /// <summary>
+    /// This is a helper class to compensate for my incompetence, also it allows view changing.
+    /// </summary>
     public class ViewChanger
     {
         private static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
+        // Instance of the MainWindow active (Gets set in the MainWindow ctor)
         public static MainWindow MainWindowInstance { get; set; }
 
+        // Enum of Pages in the Application.
         public enum Page
         {
             Board,
@@ -30,15 +35,24 @@ namespace AstroSoundBoard.Core.Components
             About
         }
 
-        public static void ChangeViewTo(Page p)
+        /// <summary>
+        /// Changes to the specified view.
+        /// </summary>
+        /// <param name="p">Page to change to</param>
+        public static void ChangeViewTo(Page page)
         {
-            Log.Info($"Changing View to : {p}");
-            MainWindowInstance.DataContext = GetViewFromEnum(p);
+            Log.Info($"Changing View to : {page}");
+            MainWindowInstance.DataContext = GetViewFromEnum(page);
         }
 
-        private static object GetViewFromEnum(Page p)
+        /// <summary>
+        /// Returns a new View from the requested Page enum.
+        /// </summary>
+        /// <param name="page">Page to get</param>
+        /// <returns><paramref name="page"/></returns>
+        private static object GetViewFromEnum(Page page)
         {
-            switch (p)
+            switch (page)
             {
                 case Page.Board:
                     return new BoardView();

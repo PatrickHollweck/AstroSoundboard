@@ -40,7 +40,7 @@ namespace AstroSoundBoard.WPF.Pages.Board
             InitializeComponent();
             DataContext = this;
 
-            foreach (Definition definition in SoundManager.Information.GetSoundList())
+            foreach (Definition definition in SoundManager.GetSoundList())
             {
                 var item = new Sound
                 {
