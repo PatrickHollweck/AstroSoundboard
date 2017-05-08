@@ -1,8 +1,8 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 01:05:2017 / 13:28
-// Creation: 01:05:2017
+// Last Modified: 08:05:2017 / 14:47
+// Creation: 08:05:2017
 // Project: AstroSoundBoard
 //
 //
@@ -19,6 +19,8 @@ namespace AstroSoundBoard.WPF.Windows
     using AstroSoundBoard.Core.Objects.DataObjects;
     using AstroSoundBoard.Core.Objects.DataObjects.SoundDefinitionJsonTypes;
     using AstroSoundBoard.WPF.Controls.Keybind;
+
+    using Newtonsoft.Json;
 
     using PropertyChanged;
 
@@ -48,6 +50,8 @@ namespace AstroSoundBoard.WPF.Windows
                 ItemCtrl.Items.Add(view);
                 AllViews.Add(view);
             }
+
+            ToogleFavorites(this, new RoutedEventArgs());
         }
 
         private void RemoveAllKeybinds(object sender, RoutedEventArgs e) => KeybindManager.RemoveAllKeybinds();
@@ -78,6 +82,49 @@ namespace AstroSoundBoard.WPF.Windows
                 ItemCtrl.Items.Clear();
 
                 foreach (KeybindView view in matchingItems)
+                {
+                    ItemCtrl.Items.Add(view);
+                }
+            }
+
+            if (onlyShowFavorites)
+            {
+                ToogleFavorites(this, new RoutedEventArgs());
+            }
+        }
+
+        private bool onlyShowFavorites;
+
+        private void ToogleFavorites(object sender, RoutedEventArgs e)
+        {
+            if (onlyShowFavorites)
+            {
+                onlyShowFavorites = false;
+
+                List<KeybindView> matchingItems = new List<KeybindView>();
+
+                foreach (KeybindView view in ItemCtrl.Items)
+                {
+                    if (view.LocalDefinition.IsFavorite == JsonConvert.True)
+                    {
+                        matchingItems.Add(view);
+                    }
+                }
+
+                ItemCtrl.Items.Clear();
+
+                foreach (KeybindView view in matchingItems)
+                {
+                    ItemCtrl.Items.Add(view);
+                }
+            }
+            else
+            {
+                onlyShowFavorites = true;
+
+                ItemCtrl.Items.Clear();
+
+                foreach (KeybindView view in AllViews)
                 {
                     ItemCtrl.Items.Add(view);
                 }

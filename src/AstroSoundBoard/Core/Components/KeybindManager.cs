@@ -1,8 +1,8 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 01:05:2017 / 13:33
-// Creation: 01:05:2017
+// Last Modified: 08:05:2017 / 14:38
+// Creation: 08:05:2017
 // Project: AstroSoundBoard
 //
 //
@@ -34,7 +34,7 @@ namespace AstroSoundBoard.Core.Components
             {
                 if (sound.HotKey == null)
                 {
-                    continue;
+                    sound.HotKey = new KeyBind();
                 }
 
                 try
