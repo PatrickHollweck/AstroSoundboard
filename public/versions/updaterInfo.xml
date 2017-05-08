@@ -2,5 +2,5 @@
 <item>
     <version>1.0.0.0</version>
     <url>https://github.com/FetzenRndy/AstroSoundboard/raw/master/public/versions/AstroKittySoundBoard.zip</url>
-    <changelog>https://raw.githubusercontent.com/FetzenRndy/AstroSoundboard/master/public/versions/releaseNotes.html</changelog>
+    <changelog>https://cdn.rawgit.com/FetzenRndy/AstroSoundboard/master/public/versions/v1/releaseNotes.html</changelog>
 </item>
