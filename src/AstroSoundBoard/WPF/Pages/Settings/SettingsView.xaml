@@ -161,7 +161,10 @@
                             <Label Content="Enable Keybinds" />
                         </StackPanel>
                         <StackPanel Grid.Column="1">
-                            <ToggleButton Click="EnableKeybindsToogle" Margin="0,5,0,3.6" />
+                            <ToggleButton
+                                Margin="0,5,0,3.6"
+                                Click="EnableKeybindsToogle"
+                                IsChecked="{Binding EnableKeybinds}" />
                         </StackPanel>
                     </Grid>
                 </GroupBox>

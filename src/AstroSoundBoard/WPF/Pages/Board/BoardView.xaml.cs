@@ -1,17 +1,20 @@
 ﻿// ****************************** Module Header ****************************** //
-//
-//
-// Last Modified: 30:04:2017 / 23:24
-// Creation: 25:04:2017
+// 
+// 
+// Last Modified: 08:05:2017 / 18:27
+// Creation: 08:05:2017
 // Project: AstroSoundBoard
-//
-//
+// 
+// 
 // <copyright file="BoardView.xaml.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
+
+
 
 namespace AstroSoundBoard.WPF.Pages.Board
 {
     using System.Collections.Generic;
+    using System.Reflection;
     using System.Windows.Controls;
 
     using AstroSoundBoard.Core.Components;
@@ -28,7 +31,7 @@ namespace AstroSoundBoard.WPF.Pages.Board
     [ImplementPropertyChanged]
     public partial class BoardView : UserControl
     {
-        private static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
         public List<SoundView> AllSounds { get; set; } = new List<SoundView>();
         public static BoardView BoardViewInstance { get; set; }
@@ -43,12 +46,12 @@ namespace AstroSoundBoard.WPF.Pages.Board
             foreach (Definition definition in SoundManager.GetSoundList())
             {
                 var item = new Sound
-                {
-                    Description = definition.Info.Description,
-                    IsFavorite = SettingsManager.GetSound(definition.Sound.Name).IsFavorite,
-                    Name = definition.Sound.Name,
-                    VideoLink = definition.Info.VideoLink
-                };
+                    {
+                        Description = definition.Info.Description,
+                        IsFavorite = SettingsManager.GetSound(definition.Sound.Name).IsFavorite,
+                        Name = definition.Sound.Name,
+                        VideoLink = definition.Info.VideoLink
+                    };
 
                 var view = new SoundView(item);
 

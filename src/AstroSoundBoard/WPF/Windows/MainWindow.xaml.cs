@@ -1,13 +1,15 @@
 ﻿// ****************************** Module Header ****************************** //
-//
-//
-// Last Modified: 08:05:2017 / 17:09
+// 
+// 
+// Last Modified: 08:05:2017 / 18:28
 // Creation: 08:05:2017
 // Project: AstroSoundBoard
-//
-//
+// 
+// 
 // <copyright file="MainWindow.xaml.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
+
+
 
 namespace AstroSoundBoard.WPF.Windows
 {
@@ -15,6 +17,8 @@ namespace AstroSoundBoard.WPF.Windows
     using System.ComponentModel;
     using System.Diagnostics;
     using System.Globalization;
+    using System.Reflection;
+    using System.Threading;
     using System.Threading.Tasks;
     using System.Windows;
     using System.Windows.Controls;
@@ -30,7 +34,7 @@ namespace AstroSoundBoard.WPF.Windows
 
     public partial class MainWindow : Window
     {
-        private static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
         public MainWindow()
         {
@@ -166,7 +170,7 @@ namespace AstroSoundBoard.WPF.Windows
                             int leftThickness = 0;
                             while (leftThickness >= -300)
                             {
-                                System.Threading.Thread.Sleep(10);
+                                Thread.Sleep(10);
                                 leftThickness -= 10;
                                 Application.Current.Dispatcher.Invoke(() => { SideMenu.Margin = new Thickness(leftThickness, 0, 0, 0); });
                             }
@@ -185,7 +189,7 @@ namespace AstroSoundBoard.WPF.Windows
                             int leftThickness = -300;
                             while (leftThickness != 0)
                             {
-                                System.Threading.Thread.Sleep(13);
+                                Thread.Sleep(13);
                                 leftThickness += 10;
                                 Application.Current.Dispatcher.Invoke(() => { SideMenu.Margin = new Thickness(leftThickness, 0, 0, 0); });
                             }

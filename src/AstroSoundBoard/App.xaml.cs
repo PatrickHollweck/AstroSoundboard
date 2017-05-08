@@ -19,13 +19,13 @@ namespace AstroSoundBoard
     using AstroSoundBoard.Core.Components;
     using AstroSoundBoard.Core.Objects;
     using AstroSoundBoard.Core.Utils;
+    using AstroSoundBoard.Properties;
 
     using log4net;
     using log4net.Core;
+    using log4net.Repository.Hierarchy;
 
     using MaterialDesignThemes.Wpf;
-
-    using SharpRaven;
 
     public partial class App : Application
     {
@@ -34,10 +34,10 @@ namespace AstroSoundBoard
         private void Application_Startup(object sender, StartupEventArgs e)
         {
 #if DEBUG
-            ((log4net.Repository.Hierarchy.Hierarchy)LogManager.GetRepository()).Root.Level = Level.Debug;
-            ((log4net.Repository.Hierarchy.Hierarchy)LogManager.GetRepository()).RaiseConfigurationChanged(EventArgs.Empty);
+            ((Hierarchy)LogManager.GetRepository()).Root.Level = Level.Debug;
+            ((Hierarchy)LogManager.GetRepository()).RaiseConfigurationChanged(EventArgs.Empty);
 #else
-            ((log4net.Repository.Hierarchy.Hierarchy)LogManager.GetRepository()).Root.Level = Level.Info;
+            ((log4net.Repository.Hierarchy.Hierarchy)LogManager.GetRepository()).Root.Level = Level.Warn;
             ((log4net.Repository.Hierarchy.Hierarchy)LogManager.GetRepository()).RaiseConfigurationChanged(EventArgs.Empty);
 #endif
 
@@ -79,8 +79,8 @@ namespace AstroSoundBoard
             List<string> colorList = new List<string> { "Red", "Pink", "Purple", "Indigo", "Blue", "Cyan", "Teal", "Green", "Lime", "Yellow", "Amber", "Orange", "Brown", "Grey" };
 
             var palette = new PaletteHelper();
-            palette.SetLightDark(AstroSoundBoard.Properties.Settings.Default.IsDarkModeEnabled);
-            palette.ReplacePrimaryColor(colorList[AstroSoundBoard.Properties.Settings.Default.PrimaryColor]);
+            palette.SetLightDark(Settings.Default.IsDarkModeEnabled);
+            palette.ReplacePrimaryColor(colorList[Settings.Default.PrimaryColor]);
         }
     }
 }

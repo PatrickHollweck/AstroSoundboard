@@ -14,6 +14,8 @@ using System.Resources;
 using System.Runtime.InteropServices;
 using System.Windows;
 
+using log4net.Config;
+
 // .NET
 [assembly: AssemblyTitle("AstroSoundBoard")]
 [assembly: AssemblyDescription("A Soundboard for AstroKitty")]
@@ -35,5 +37,5 @@ using System.Windows;
 [assembly: AssemblyFileVersion("1.0.0.0")]
 
 // LOG4NET
-[assembly: log4net.Config.XmlConfigurator(Watch = true)]
+[assembly: XmlConfigurator(Watch = true)]
 [assembly: NeutralResourcesLanguage("en")]

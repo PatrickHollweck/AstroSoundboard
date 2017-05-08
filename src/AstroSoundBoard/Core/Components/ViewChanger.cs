@@ -1,16 +1,22 @@
 ﻿// ****************************** Module Header ****************************** //
-//
-//
-// Last Modified: 08:05:2017 / 17:54
+// 
+// 
+// Last Modified: 08:05:2017 / 18:28
 // Creation: 08:05:2017
 // Project: AstroSoundBoard
-//
-//
+// 
+// 
 // <copyright file="ViewChanger.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
 
+
+
 namespace AstroSoundBoard.Core.Components
 {
+    using System;
+    using System.Reflection;
+
+    using AstroSoundBoard.WPF.Pages.About;
     using AstroSoundBoard.WPF.Pages.Board;
     using AstroSoundBoard.WPF.Pages.Settings;
     using AstroSoundBoard.WPF.Windows;
@@ -22,7 +28,7 @@ namespace AstroSoundBoard.Core.Components
     /// </summary>
     public class ViewChanger
     {
-        private static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
         // Instance of the MainWindow active (Gets set in the MainWindow ctor)
         public static MainWindow MainWindowInstance { get; set; }
@@ -61,10 +67,10 @@ namespace AstroSoundBoard.Core.Components
                     return new SettingsView();
 
                 case Page.About:
-                    return new WPF.Pages.About.AboutView();
+                    return new AboutView();
 
                 default:
-                    throw new System.ArgumentException("Illegal Argument");
+                    throw new ArgumentException("Illegal Argument");
             }
         }
     }

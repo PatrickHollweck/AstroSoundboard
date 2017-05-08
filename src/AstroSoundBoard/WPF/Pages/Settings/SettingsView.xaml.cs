@@ -1,8 +1,8 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 01:05:2017 / 15:09
-// Creation: 29:04:2017
+// Last Modified: 08:05:2017 / 18:27
+// Creation: 08:05:2017
 // Project: AstroSoundBoard
 //
 //
@@ -26,18 +26,23 @@ namespace AstroSoundBoard.WPF.Pages.Settings
     public partial class SettingsView : UserControl
     {
         private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
-        public string CurrentVersion { get; } = Assembly.GetExecutingAssembly().GetName().Version.ToString();
+        private SettingsModel Model { get; set; }
 
         public SettingsView()
         {
+            Model = new SettingsModel
+            {
+                EnableKeybinds = Settings.Default.EnableSoundHotKeys,
+                IsDarkModeEnabled = Settings.Default.IsDarkModeEnabled,
+                SelectedColor = Settings.Default.PrimaryColor
+            };
+
             InitializeComponent();
-            DataContext = this;
+            DataContext = Model;
 
             ColorBox.SelectedValue = Settings.Default.PrimaryColor;
             AllowErrorReportingToogleButton.IsChecked = Settings.Default.AllowErrorReporting;
         }
-
-        public int SelectedColor { get; set; } = Settings.Default.PrimaryColor;
 
         private void ChangePrimaryColor(object sender, SelectionChangedEventArgs e)
         {
@@ -46,8 +51,6 @@ namespace AstroSoundBoard.WPF.Pages.Settings
 
             App.ApplyMaterialTheme();
         }
-
-        public bool IsDarkModeEnabled { get; set; } = Settings.Default.IsDarkModeEnabled;
 
         private void ChangeLightMode(object sender, RoutedEventArgs e)
         {
@@ -73,6 +76,10 @@ namespace AstroSoundBoard.WPF.Pages.Settings
 
         private void OpenLogsFolder(object sender, RoutedEventArgs e) => Process.Start("explorer.exe", @"C:\ProgramData\AstroKittySoundBoard\logs");
 
+        private void RequestImplementation_Click(object sender, RoutedEventArgs e) => new FeedbackWindow().Show();
+
+        private void ReportIssue_Click(object sender, RoutedEventArgs e) => new FeedbackWindow().Show();
+
         private void AllowErrorReportingToogleButton_Click(object sender, RoutedEventArgs e)
         {
             if (Settings.Default.AllowErrorReporting)
@@ -87,18 +94,6 @@ namespace AstroSoundBoard.WPF.Pages.Settings
             }
 
             Log.Info($"Changed ErrorReporting! TO: {Settings.Default.AllowErrorReporting}");
-        }
-
-        private void RequestImplementation_Click(object sender, RoutedEventArgs e)
-        {
-            var window = new FeedbackWindow();
-            window.Show();
-        }
-
-        private void ReportIssue_Click(object sender, RoutedEventArgs e)
-        {
-            var window = new FeedbackWindow();
-            window.Show();
         }
 
         private void EnableKeybindsToogle(object sender, RoutedEventArgs e)

@@ -15,10 +15,12 @@ namespace AstroSoundBoard.Core.Components
     using System.Collections;
     using System.Collections.Generic;
     using System.Globalization;
+    using System.Reflection;
     using System.Resources;
 
     using AstroSoundBoard.Core.Objects.DataObjects.SoundDefinition;
     using AstroSoundBoard.Core.Objects.DataObjects.SoundDefinitionJsonTypes;
+    using AstroSoundBoard.Properties;
 
     using log4net;
 
@@ -29,7 +31,7 @@ namespace AstroSoundBoard.Core.Components
         // This variable get's assigned in the Startup Process in the SettingsManager class!
         private static SoundDefinitions SoundDefinition { get; set; }
 
-        private static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
         // I could have used a static constructor but I like having more control over when this will happen!
         public static void Init()
@@ -38,7 +40,7 @@ namespace AstroSoundBoard.Core.Components
 
             try
             {
-                SoundDefinition = JsonConvert.DeserializeObject<SoundDefinitions>(Properties.Resources.SoundDefinition);
+                SoundDefinition = JsonConvert.DeserializeObject<SoundDefinitions>(Resources.SoundDefinition);
             }
             catch (Exception exception)
             {
@@ -71,7 +73,7 @@ namespace AstroSoundBoard.Core.Components
         /// <returns>List of Resources in the App</returns>
         public static ResourceSet GetResourcesSet()
         {
-            return Properties.Resources.ResourceManager.GetResourceSet(CultureInfo.CurrentUICulture, true, true);
+            return Resources.ResourceManager.GetResourceSet(CultureInfo.CurrentUICulture, true, true);
         }
 
         /// <summary>

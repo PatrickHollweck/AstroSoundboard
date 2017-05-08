@@ -1,19 +1,22 @@
 ﻿// ****************************** Module Header ****************************** //
-//
-//
-// Last Modified: 08:05:2017 / 14:38
+// 
+// 
+// Last Modified: 08:05:2017 / 18:27
 // Creation: 08:05:2017
 // Project: AstroSoundBoard
-//
-//
+// 
+// 
 // <copyright file="KeybindManager.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
+
+
 
 namespace AstroSoundBoard.Core.Components
 {
     using System;
     using System.IO;
     using System.Media;
+    using System.Reflection;
 
     using AstroSoundBoard.Core.Objects.DataObjects;
 
@@ -24,7 +27,7 @@ namespace AstroSoundBoard.Core.Components
 
     public class KeybindManager
     {
-        private static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
         /// <summary>
         /// Sets all keybinds in the <see cref="SettingsManager.Cache"/>

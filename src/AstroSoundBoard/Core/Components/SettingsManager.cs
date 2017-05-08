@@ -1,19 +1,22 @@
 ﻿// ****************************** Module Header ****************************** //
-//
-//
-// Last Modified: 08:05:2017 / 17:39
+// 
+// 
+// Last Modified: 08:05:2017 / 18:28
 // Creation: 08:05:2017
 // Project: AstroSoundBoard
-//
-//
+// 
+// 
 // <copyright file="SettingsManager.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
+
+
 
 namespace AstroSoundBoard.Core.Components
 {
     using System;
     using System.Collections.Generic;
     using System.IO;
+    using System.Reflection;
 
     using AstroSoundBoard.Core.Objects;
     using AstroSoundBoard.Core.Objects.DataObjects;
@@ -26,7 +29,7 @@ namespace AstroSoundBoard.Core.Components
     public class SettingsManager
     {
         // The SettingsManager is a class managing the SoundSettings.json file (C:\ProgramData\AstroKittySoundBoard\). The file is in Json format and for serialisation and serialisation Json.NET is used. Contained in this File is a list of all sounds in the Application. These Sounds are stored as a Sound object which describes the Sound with properties like "isFavorite" and "HotKey" if a property changes the file can get rewritten to the disk effectively saving the Settings the users has made to the Sounds. From there the Sounds can get read back from the file and the UI can get setup.
-        internal static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        internal static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
         /// <summary>
         /// The Cache is a List of Sounds containing a list of all the Sounds. This list is used for interaction with other components and as a buffer.
@@ -80,10 +83,10 @@ namespace AstroSoundBoard.Core.Components
             Sound stdObject = new Sound();
 
             Sound stdSounds = new Sound
-            {
-                Name = "DummyItem",
-                IsFavorite = JsonConvert.False
-            };
+                {
+                    Name = "DummyItem",
+                    IsFavorite = JsonConvert.False
+                };
 
             ResetCache();
             Cache.Add(stdSounds);

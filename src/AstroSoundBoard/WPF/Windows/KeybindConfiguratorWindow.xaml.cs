@@ -1,17 +1,20 @@
 ﻿// ****************************** Module Header ****************************** //
-//
-//
-// Last Modified: 01:05:2017 / 13:46
-// Creation: 01:05:2017
+// 
+// 
+// Last Modified: 08:05:2017 / 18:27
+// Creation: 08:05:2017
 // Project: AstroSoundBoard
-//
-//
+// 
+// 
 // <copyright file="KeybindConfiguratorWindow.xaml.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
+
+
 
 namespace AstroSoundBoard.WPF.Windows
 {
     using System.ComponentModel;
+    using System.Reflection;
     using System.Windows;
     using System.Windows.Input;
 
@@ -27,7 +30,7 @@ namespace AstroSoundBoard.WPF.Windows
     {
         public static bool HasOpenInstance { get; set; }
 
-        private static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
         public Sound LocalDefinition { get; set; }
 

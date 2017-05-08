@@ -116,7 +116,6 @@
     <Compile Include="Core\Objects\Credentials.cs" />
     <Compile Include="Core\Objects\DataObjects\KeyBind.cs" />
     <Compile Include="Core\Utils\NativeMethods.cs" />
-    <Compile Include="WPF\Base\RelayCommand.cs" />
     <Compile Include="WPF\Controls\Keybind\KeybindView.xaml.cs">
       <DependentUpon>KeybindView.xaml</DependentUpon>
     </Compile>
@@ -174,19 +173,18 @@
     <Compile Include="Core\Objects\DataObjects\Sound.cs" />
     <Compile Include="Core\Objects\DataObjects\SoundDefinitions.cs" />
     <Compile Include="Core\Utils\FileSystem.cs" />
-    <Compile Include="Core\Utils\Network.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="WPF\Base\BaseViewModel.cs" />
     <Compile Include="WPF\Controls\Sound\SoundView.xaml.cs">
       <DependentUpon>SoundView.xaml</DependentUpon>
     </Compile>
     <Compile Include="WPF\Pages\Board\BoardView.xaml.cs">
       <DependentUpon>BoardView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WPF\Pages\Settings\SettingsModel.cs" />
     <Compile Include="WPF\Pages\Settings\SettingsView.xaml.cs">
       <DependentUpon>SettingsView.xaml</DependentUpon>
     </Compile>
@@ -357,8 +355,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Core\Utils\Extensions\" />
-    <Folder Include="WPF\Pages\IssueReport\" />
-    <Folder Include="WPF\WindowsForms\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\RUNNAWAY_FROM_ME.wav" />

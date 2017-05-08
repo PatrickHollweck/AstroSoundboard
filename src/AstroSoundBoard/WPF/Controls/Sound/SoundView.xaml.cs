@@ -1,19 +1,22 @@
 ﻿// ****************************** Module Header ****************************** //
-//
-//
-// Last Modified: 08:05:2017 / 18:06
+// 
+// 
+// Last Modified: 08:05:2017 / 18:28
 // Creation: 08:05:2017
 // Project: AstroSoundBoard
-//
-//
+// 
+// 
 // <copyright file="SoundView.xaml.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
+
+
 
 namespace AstroSoundBoard.WPF.Controls.Sound
 {
     using System;
     using System.IO;
     using System.Media;
+    using System.Reflection;
     using System.Windows;
     using System.Windows.Controls;
 
@@ -30,7 +33,7 @@ namespace AstroSoundBoard.WPF.Controls.Sound
     [ImplementPropertyChanged]
     public partial class SoundView : UserControl
     {
-        private static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
         public Sound LocalDefinition { get; set; }
 
