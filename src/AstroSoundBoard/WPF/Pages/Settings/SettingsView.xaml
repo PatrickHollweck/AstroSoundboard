@@ -179,7 +179,7 @@
                                 Text="( Advanced Users Only )" />
                         </StackPanel>
                     </GroupBox.Header>
-                    <Expander Header="Toogle Debug Settings">
+                    <Expander Header="Toggle Debug Settings">
                         <StackPanel Margin="5" HorizontalAlignment="Stretch">
                             <Button Click="OpenLogsFolder" Content="Open Logs Folder" />
                             <Button
