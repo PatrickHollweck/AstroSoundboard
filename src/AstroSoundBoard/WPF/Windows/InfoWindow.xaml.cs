@@ -26,13 +26,6 @@ namespace AstroSoundBoard.WPF.Windows
             InitializeComponent();
             DataContext = this;
 
-            Browser.Navigate(LocalSound.VideoLink);
-        }
-
-        private void Window_Closing(object sender, CancelEventArgs e)
-        {
-            // Needed to stop the Video if it is playing!
-            Browser.Dispose();
         }
     }
 }
