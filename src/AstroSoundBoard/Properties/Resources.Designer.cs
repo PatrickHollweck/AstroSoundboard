@@ -63,18 +63,18 @@ namespace AstroSoundBoard.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream AGAINST_ME {
+        internal static System.IO.UnmanagedMemoryStream A_LOT_OF_CUNTS {
             get {
-                return ResourceManager.GetStream("AGAINST_ME", resourceCulture);
+                return ResourceManager.GetStream("A_LOT_OF_CUNTS", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream ALOT_OF_CUNTS {
+        internal static System.IO.UnmanagedMemoryStream AGAINST_ME {
             get {
-                return ResourceManager.GetStream("ALOT_OF_CUNTS", resourceCulture);
+                return ResourceManager.GetStream("AGAINST_ME", resourceCulture);
             }
         }
         
@@ -387,9 +387,9 @@ namespace AstroSoundBoard.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream MOVED_ASLEP {
+        internal static System.IO.UnmanagedMemoryStream MOVED_ASLEEP {
             get {
-                return ResourceManager.GetStream("MOVED_ASLEP", resourceCulture);
+                return ResourceManager.GetStream("MOVED_ASLEEP", resourceCulture);
             }
         }
         
@@ -543,7 +543,7 @@ namespace AstroSoundBoard.Properties {
         ///        },
         ///        {
         ///            &quot;sound&quot;: {
-        ///                &quot;name&quot;: &quot;AW_YEA [Rest der Zeichenfolge wurde abgeschnitten]&quot;; ähnelt.
+        ///                &quot; [Rest der Zeichenfolge wurde abgeschnitten]&quot;; ähnelt.
         /// </summary>
         internal static string SoundDefinition {
             get {
