@@ -12,6 +12,7 @@
 namespace AstroSoundBoard.WPF.Pages.Settings
 {
     using System.Diagnostics;
+    using System.IO;
     using System.Reflection;
     using System.Windows;
     using System.Windows.Controls;
@@ -107,6 +108,22 @@ namespace AstroSoundBoard.WPF.Pages.Settings
             {
                 Settings.Default.EnableSoundHotKeys = true;
                 Settings.Default.Save();
+            }
+        }
+
+        private void Uninstall(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Directory.Delete(@"C:\ProgramData\AstroKittySoundBoard", true);
+            }
+            catch
+            {
+                // Eat
+            }
+            finally
+            {
+                MessageBox.Show("Uninstall complete, to finish the uninstall delete the .exe file you started the Program from. Bye :3", "Uninstall", MessageBoxButton.OK, MessageBoxImage.Asterisk);
             }
         }
     }
