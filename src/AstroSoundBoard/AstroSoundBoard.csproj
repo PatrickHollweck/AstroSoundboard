@@ -413,9 +413,6 @@
     <None Include="Resources\I_MAIN_CANCER.wav" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\MOVED_ASLEP.wav" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\NOT_PAST_GORILLA.wav" />
   </ItemGroup>
   <ItemGroup>
@@ -429,9 +426,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\WHEN_YOU_TRY.wav" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ALOT_OF_CUNTS.wav" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\BAD_DECISIONS.wav" />
@@ -504,6 +498,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\HE_CAME_IN_MY_FACE.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NO_NO_NO_NO.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SO_ERRECT.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HEY_FAM.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RUNAWAY_EFFECT.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DONT_DO_IT.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NICE_JOB_MEN.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DONT_HURT_ME.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

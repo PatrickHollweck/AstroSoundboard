@@ -779,7 +779,7 @@
                 "Description": "It was at this moment astrokitty knew, he fucked up"
             }
         },
-                {
+        {
             "sound": {
                 "name": "AGAINST_ME"
             },
@@ -788,7 +788,7 @@
                 "Description": "Astro *hates* when he gives soundbites that can be used against him"
             }
         },
-                {
+        {
             "sound": {
                 "name": "HE_CAME_IN_MY_FACE"
             },
@@ -796,7 +796,71 @@
                 "VideoLink": "https://www.youtube.com/embed/_FaF_1iYkqU",
                 "Description": "Astrokitty getting wrecked in his Face"
             }
+        },
+        {
+            "sound": {
+                "name": "NO_NO_NO_NO"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/nRh7LP6j2vE",
+                "Description": "From the 'look at this dude' meme"
+            }
+        },
+        {
+            "sound": {
+                "name": "HEY_FAM"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/iEZE-Rd-EAY",
+                "Description": "Hey fam"
+            }
+        },
+        {
+            "sound": {
+                "name": "RUNAWAY_EFFECT"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/iEZE-Rd-EAY",
+                "Description": "Astro gets into a lobby with 'Runaway' the guy who left a game before and where the 'Runaway from me' sound originates from, makes someone leaf again."
+            }
+        },
+        {
+            "sound": {
+                "name": "SO_ERRECT"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/iEZE-Rd-EAY",
+                "Description": "Astro gets errect"
+            }
+        },
+        {
+            "sound": {
+                "name": "DONT_DO_IT"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/9y4JwyjdY4E",
+                "Description": "Dont do it."
+            }
+        },
+        {
+            "sound": {
+                "name": "DONT_HURT_ME"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/YzX4We4BQiY",
+                "Description": "Astro gets dominated"
+            }
+        },
+        {
+            "sound": {
+                "name": "NICE_JOB_MEN"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/YzX4We4BQiY",
+                "Description": "Nice job alternative version"
+            }
         }
+
     ]
 }</value>
   </data>
@@ -931,5 +995,26 @@
   </data>
   <data name="FUCKING_NEOW" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FUCKING_NEOW.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="HEY_FAM" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HEY_FAM.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="NO_NO_NO_NO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NO_NO_NO_NO.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="RUNAWAY_EFFECT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RUNAWAY_EFFECT.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SO_ERRECT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SO_ERRECT.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DONT_DO_IT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DONT_DO_IT.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DONT_HURT_ME" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DONT_HURT_ME.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="NICE_JOB_MEN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NICE_JOB_MEN.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>
