@@ -1,15 +1,13 @@
-﻿// ****************************** Module Header ****************************** //
-// 
-// 
-// Last Modified: 08:05:2017 / 18:28
-// Creation: 08:05:2017
+// ****************************** Module Header ****************************** //
+//
+//
+// Last Modified: 11:05:2017 / 16:41
+// Creation: 11:05:2017
 // Project: AstroSoundBoard
-// 
-// 
+//
+//
 // <copyright file="SettingsManager.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
-
-
 
 namespace AstroSoundBoard.Core.Components
 {
@@ -17,6 +15,7 @@ namespace AstroSoundBoard.Core.Components
     using System.Collections.Generic;
     using System.IO;
     using System.Reflection;
+    using System.Windows.Forms;
 
     using AstroSoundBoard.Core.Objects;
     using AstroSoundBoard.Core.Objects.DataObjects;
@@ -83,10 +82,10 @@ namespace AstroSoundBoard.Core.Components
             Sound stdObject = new Sound();
 
             Sound stdSounds = new Sound
-                {
-                    Name = "DummyItem",
-                    IsFavorite = JsonConvert.False
-                };
+            {
+                Name = "DummyItem",
+                IsFavorite = JsonConvert.False
+            };
 
             ResetCache();
             Cache.Add(stdSounds);
@@ -116,22 +115,31 @@ namespace AstroSoundBoard.Core.Components
         {
             Log.Debug("Registering Definition!");
             Cache.Add(sound);
-            WriteSounds();
+            Save();
         }
 
         /// <summary>
         /// Writes the Sounds to the Disk.
         /// </summary>
-        public static void WriteSounds()
+        public static void Save()
         {
-            Log.Debug("Writing sound...");
+            Log.Debug("Saving sound settings to disk...");
 
             if (File.Exists(AppSettings.SoundSettingsFilePath))
             {
                 File.Delete(AppSettings.SoundSettingsFilePath);
             }
 
-            File.WriteAllText(AppSettings.SoundSettingsFilePath, JsonConvert.SerializeObject(Cache));
+            try
+            {
+                File.WriteAllText(AppSettings.SoundSettingsFilePath, JsonConvert.SerializeObject(Cache));
+            }
+            catch (UnauthorizedAccessException exception)
+            {
+                MessageBox.Show($"The settings file could not be read! Make sure you only have one instance of the soundboard running and restart the Application \n\n {exception.Message}", @"Error", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
+                Environment.Exit(1);
+            }
         }
 
         /// <summary>
@@ -141,12 +149,17 @@ namespace AstroSoundBoard.Core.Components
         /// <returns>The queried sound.</returns>
         public static Sound GetSound(string name)
         {
+            name = name.Replace(" ", "_");
+
             foreach (Sound item in Cache)
             {
+                item.Name = item.Name.Replace(" ", "_");
+
                 if (item.Name == name)
                 {
                     return item;
                 }
+
             }
 
             RegisterSound(new Sound { Name = name, IsFavorite = JsonConvert.False });
@@ -157,21 +170,25 @@ namespace AstroSoundBoard.Core.Components
         /// Changes the Sound and writes it to the disk.
         /// </summary>
         /// <param name="sound">Sound to change</param>
-        public static void ChangeSoundAndWrite(Sound sound)
+        public static void ChangeSound(Sound sound)
         {
-            if (sound.Name.Contains(" "))
-            {
-                sound.Name = sound.Name.Replace(' ', '_');
-            }
-
             Log.Debug($"Changing Definition of {sound.Name}");
+
+            sound.Name = sound.Name.Replace(' ', '_');
 
             for (int i = 0; i < Cache.Count; i++)
             {
                 if (Cache[i].Name == sound.Name)
                 {
+                    sound.Name = sound.Name.Replace(" ", "_");
+
+                    Log.Error($"SOUND NAME AFTER CHANGE: {sound.Name}");
+
                     Cache[i] = sound;
-                    WriteSounds();
+                    Save();
+
+                    sound.Name = sound.Name.Replace("_", " ");
+
                     return;
                 }
             }

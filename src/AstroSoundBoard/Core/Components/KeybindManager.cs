@@ -1,8 +1,8 @@
 ﻿// ****************************** Module Header ****************************** //
 // 
 // 
-// Last Modified: 08:05:2017 / 18:27
-// Creation: 08:05:2017
+// Last Modified: 11:05:2017 / 16:23
+// Creation: 10:05:2017
 // Project: AstroSoundBoard
 // 
 // 
@@ -140,7 +140,7 @@ namespace AstroSoundBoard.Core.Components
             for (int i = 0; i < SettingsManager.Cache.Count; i++)
             {
                 SettingsManager.Cache[i].HotKey = new KeyBind();
-                SettingsManager.ChangeSoundAndWrite(SettingsManager.Cache[i]);
+                SettingsManager.ChangeSound(SettingsManager.Cache[i]);
             }
 
             SetKeybinds();

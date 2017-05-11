@@ -1,13 +1,15 @@
 ﻿// ****************************** Module Header ****************************** //
-//
-//
-// Last Modified: 08:05:2017 / 17:49
-// Creation: 08:05:2017
+// 
+// 
+// Last Modified: 11:05:2017 / 16:23
+// Creation: 10:05:2017
 // Project: AstroSoundBoard
-//
-//
+// 
+// 
 // <copyright file="SoundManager.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
+
+
 
 namespace AstroSoundBoard.Core.Components
 {

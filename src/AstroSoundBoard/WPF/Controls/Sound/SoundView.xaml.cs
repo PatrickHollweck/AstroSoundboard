@@ -1,15 +1,13 @@
 ﻿// ****************************** Module Header ****************************** //
-// 
-// 
-// Last Modified: 08:05:2017 / 18:28
-// Creation: 08:05:2017
+//
+//
+// Last Modified: 11:05:2017 / 16:54
+// Creation: 11:05:2017
 // Project: AstroSoundBoard
-// 
-// 
+//
+//
 // <copyright file="SoundView.xaml.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
-
-
 
 namespace AstroSoundBoard.WPF.Controls.Sound
 {
@@ -43,11 +41,6 @@ namespace AstroSoundBoard.WPF.Controls.Sound
 
             LocalDefinition = def;
 
-            if (LocalDefinition.Name.Contains("_"))
-            {
-                LocalDefinition.Name = LocalDefinition.Name.Replace('_', ' ');
-            }
-
             if (LocalDefinition.IsFavorite == JsonConvert.True)
             {
                 IconKind = "Heart";
@@ -56,6 +49,8 @@ namespace AstroSoundBoard.WPF.Controls.Sound
             {
                 IconKind = "HeartOutline";
             }
+
+            LocalDefinition.Name = LocalDefinition.Name.Replace('_', ' ');
 
             InitializeComponent();
             DataContext = this;
@@ -68,26 +63,24 @@ namespace AstroSoundBoard.WPF.Controls.Sound
             if (LocalDefinition.IsFavorite == JsonConvert.True)
             {
                 IconKind = "HeartOutline";
-
                 LocalDefinition.IsFavorite = JsonConvert.False;
 
-                SettingsManager.ChangeSoundAndWrite(LocalDefinition);
+                SettingsManager.ChangeSound(LocalDefinition);
             }
             else
             {
                 IconKind = "Heart";
-
                 LocalDefinition.IsFavorite = JsonConvert.True;
 
-                SettingsManager.ChangeSoundAndWrite(LocalDefinition);
+                SettingsManager.ChangeSound(LocalDefinition);
             }
         }
 
         /// <summary>
         /// Shows informations for this sounds in a new window
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">Sender</param>
+        /// <param name="e">E</param>
         private void ShowInfo(object sender, RoutedEventArgs e)
         {
             var window = new InfoWindow(LocalDefinition);

@@ -1,15 +1,13 @@
 ﻿// ****************************** Module Header ****************************** //
-// 
-// 
+//
+//
 // Last Modified: 08:05:2017 / 18:27
 // Creation: 08:05:2017
 // Project: AstroSoundBoard
-// 
-// 
+//
+//
 // <copyright file="BoardView.xaml.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
-
-
 
 namespace AstroSoundBoard.WPF.Pages.Board
 {
@@ -46,12 +44,12 @@ namespace AstroSoundBoard.WPF.Pages.Board
             foreach (Definition definition in SoundManager.GetSoundList())
             {
                 var item = new Sound
-                    {
-                        Description = definition.Info.Description,
-                        IsFavorite = SettingsManager.GetSound(definition.Sound.Name).IsFavorite,
-                        Name = definition.Sound.Name,
-                        VideoLink = definition.Info.VideoLink
-                    };
+                {
+                    Description = definition.Info.Description,
+                    IsFavorite = SettingsManager.GetSound(definition.Sound.Name).IsFavorite,
+                    Name = definition.Sound.Name,
+                    VideoLink = definition.Info.VideoLink
+                };
 
                 var view = new SoundView(item);
 

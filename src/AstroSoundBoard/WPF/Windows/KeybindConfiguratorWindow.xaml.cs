@@ -91,7 +91,7 @@ namespace AstroSoundBoard.WPF.Windows
 
         private void ApplyKeybind(object sender, RoutedEventArgs e)
         {
-            SettingsManager.ChangeSoundAndWrite(LocalDefinition);
+            SettingsManager.ChangeSound(LocalDefinition);
         }
 
         protected override void OnClosing(CancelEventArgs e)
