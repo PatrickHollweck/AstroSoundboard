@@ -11,19 +11,15 @@
 
 namespace AstroSoundBoard.WPF.Windows
 {
-    using System.Reflection;
     using System.Windows;
 
     using AstroSoundBoard.Core.Objects;
-
-    using log4net;
 
     using SharpRaven;
     using SharpRaven.Data;
 
     public partial class FeedbackWindow : Window
     {
-        private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
         public FeedbackWindow()
         {
@@ -38,17 +34,16 @@ namespace AstroSoundBoard.WPF.Windows
                 {
                     var data = new SentryEvent("USER ISSUE REPORT!")
                     {
-                        Level = ErrorLevel.Info,
+                        Level = ErrorLevel.Warning,
                         Message = $"USER ISSUE REPORT: {IssueTitle.Text} \nKIND: {IssueKind.Text} \n\nDESCRIPTION: \n{IssueDescription.Text} \n \nContact: \n{IssueContact.Text}"
                     };
+
+                    data.Tags.Add("ReportType", "Issue");
 
                     new RavenClient(Credentials.SentryApiKey).Capture(data);
 
                     IssueStatus.Content = "Issue Sent! - Thanks for the Feedback";
-
-                    IssueTitle.Text = string.Empty;
-                    IssueDescription.Text = string.Empty;
-                    IssueContact.Text = string.Empty;
+                    ResetInterface();
                 }
                 else
                 {
@@ -73,17 +68,16 @@ namespace AstroSoundBoard.WPF.Windows
                         Message = $"USER FEATURE REQUEST: {FeatureTitle.Text} \nDESCRIPTION:\n{FeatureDescription.Text} \n \nContact: \n{FeatureContact.Text}"
                     };
 
+                    data.Tags.Add("ReportType", "Feature");
+
                     new RavenClient(Credentials.SentryApiKey).Capture(data);
 
                     FeatureStatus.Content = "Issue Sent! - Thanks for the Feedback";
-
-                    FeatureTitle.Text = string.Empty;
-                    FeatureDescription.Text = string.Empty;
-                    FeatureContact.Text = string.Empty;
+                    ResetInterface();
                 }
                 else
                 {
-                    FeatureStatus.Content = "Please atlease fill the Title and the Description!";
+                    FeatureStatus.Content = "Please at least fill the Title and the Description!";
                 }
             }
             catch
@@ -104,23 +98,37 @@ namespace AstroSoundBoard.WPF.Windows
                         Message = $"USER SOUND REQUEST: {SoundTitle.Text} \nDESCRIPTION:\n{SoundDescription.Text} \n \nContact: \n{SoundContact.Text}"
                     };
 
+                    data.Tags.Add("ReportType", "Sound");
+
                     new RavenClient(Credentials.SentryApiKey).Capture(data);
 
                     IssueStatus.Content = "Issue Sent! - Thanks for the Feedback";
-
-                    SoundTitle.Text = string.Empty;
-                    SoundDescription.Text = string.Empty;
-                    SoundContact.Text = string.Empty;
+                    ResetInterface();
                 }
                 else
                 {
-                    SoundStatus.Content = "Please atlease fill the Title and the Description!";
+                    SoundStatus.Content = "Please at least fill the Title and the Description!";
                 }
             }
             catch
             {
                 SoundStatus.Content = "Error while sending... Try again...";
             }
+        }
+
+        private void ResetInterface()
+        {
+            FeatureTitle.Text = string.Empty;
+            FeatureDescription.Text = string.Empty;
+            FeatureContact.Text = string.Empty;
+
+            SoundTitle.Text = string.Empty;
+            SoundDescription.Text = string.Empty;
+            SoundContact.Text = string.Empty;
+
+            IssueTitle.Text = string.Empty;
+            IssueDescription.Text = string.Empty;
+            IssueContact.Text = string.Empty;
         }
     }
 }

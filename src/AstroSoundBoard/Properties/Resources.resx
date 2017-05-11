@@ -118,9 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="AW_YEAH_PAPI" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\AW_YEAH_PAPI.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="BOOPEY_BOOPEY" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BOOPEY_BOOPEY.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -884,9 +881,6 @@
   <data name="DICK_SKIN_IS_PEELING" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\DICK_SKIN_IS_PEELING.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="FUCKING_NEOW" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\FUCKING_NEOW.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="GOOD_CATCH" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\GOOD_CATCH.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -931,5 +925,11 @@
   </data>
   <data name="MOVED_ASLEEP" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MOVED_ASLEEP.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="AW_YEAH_PAPI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AW_YEAH_PAPI.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="FUCKING_NEOW" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FUCKING_NEOW.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>
