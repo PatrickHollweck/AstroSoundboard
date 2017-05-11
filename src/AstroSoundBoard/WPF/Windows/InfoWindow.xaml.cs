@@ -1,8 +1,8 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 22:04:2017 / 16:16
-// Creation: 22:04:2017
+// Last Modified: 11:05:2017 / 20:08
+// Creation: 10:05:2017
 // Project: AstroSoundBoard
 //
 //
@@ -11,10 +11,16 @@
 
 namespace AstroSoundBoard.WPF.Windows
 {
-    using System.ComponentModel;
+    using System.IO;
     using System.Windows;
 
+    using AstroSoundBoard.Core.Components;
     using AstroSoundBoard.Core.Objects.DataObjects;
+
+    using Microsoft.Win32;
+
+    using NAudio.Lame;
+    using NAudio.Wave;
 
     public partial class InfoWindow : Window
     {
@@ -25,7 +31,37 @@ namespace AstroSoundBoard.WPF.Windows
             LocalSound = def;
             InitializeComponent();
             DataContext = this;
+        }
 
+        private void SaveSound(object sender, RoutedEventArgs e)
+        {
+            // Get the audio stream ( file from resources )
+            LocalSound.Name = LocalSound.Name.Replace(" ", "_");
+            var soundStream = (UnmanagedMemoryStream)SoundManager.GetAudioFileFromResources(LocalSound.Name);
+
+            // Save it to the file if the getting was successful, yes getting, thats absolutely correct
+            if (soundStream != null)
+            {
+                // Dialog to determine the file path
+                var dialog = new SaveFileDialog
+                {
+                    Filter = ".mp3 File (*.mp3)|*.mp3",
+                    Title = $"Sound Location for sound : {LocalSound.Name}"
+                };
+                dialog.ShowDialog();
+
+                using (var reader = new WaveFileReader(soundStream))
+                using (var writer = new LameMP3FileWriter(dialog.FileName, reader.WaveFormat, LAMEPreset.VBR_90))
+                {
+                    reader.CopyTo(writer);
+                }
+
+                MessageBox.Show($"Sound has been successfully created! At {dialog.FileName}", "Success!", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            else
+            {
+                MessageBox.Show("There was a problem creating the File.", "Error!", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+            }
         }
     }
 }

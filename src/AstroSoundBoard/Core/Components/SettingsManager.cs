@@ -1,7 +1,7 @@
 // ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 11:05:2017 / 16:41
+// Last Modified: 11:05:2017 / 20:54
 // Creation: 11:05:2017
 // Project: AstroSoundBoard
 //
@@ -159,7 +159,6 @@ namespace AstroSoundBoard.Core.Components
                 {
                     return item;
                 }
-
             }
 
             RegisterSound(new Sound { Name = name, IsFavorite = JsonConvert.False });
@@ -181,8 +180,6 @@ namespace AstroSoundBoard.Core.Components
                 if (Cache[i].Name == sound.Name)
                 {
                     sound.Name = sound.Name.Replace(" ", "_");
-
-                    Log.Error($"SOUND NAME AFTER CHANGE: {sound.Name}");
 
                     Cache[i] = sound;
                     Save();
