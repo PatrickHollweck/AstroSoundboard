@@ -68,7 +68,7 @@
                             <TextBox
                                 Name="IssueContact"
                                 Margin="0,10"
-                                materialDesign:HintAssist.Hint="Contact for Feedback to your Request, email, skype, discord..." />
+                                materialDesign:HintAssist.Hint="(Optional) Contact for Feedback to your Request, email, skype, discord..." />
 
                             <StackPanel Orientation="Horizontal">
                                 <Button
@@ -101,7 +101,7 @@
                             <TextBox
                                 Name="FeatureContact"
                                 Margin="0,10"
-                                materialDesign:HintAssist.Hint="Contact for Feedback to your Request, email, skype, discord..." />
+                                materialDesign:HintAssist.Hint="(Optional) Contact for Feedback to your Request, email, skype, discord..." />
 
                             <StackPanel Orientation="Horizontal">
                                 <Button
@@ -134,7 +134,7 @@
                             <TextBox
                                 Name="SoundContact"
                                 Margin="0,10"
-                                materialDesign:HintAssist.Hint="Contact for Feedback to your Request, email, skype, discord..." />
+                                materialDesign:HintAssist.Hint="(Optional) Contact for Feedback to your Request, email, skype, discord..." />
                             <StackPanel Orientation="Horizontal">
                                 <Button
                                     Width="150"
