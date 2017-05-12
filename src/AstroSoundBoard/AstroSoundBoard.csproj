@@ -464,9 +464,6 @@
     <None Include="Resources\GOOD_CATCH.wav" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\IS_THIS_HARAMBE.wav" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\FUCKING_NEOW.wav" />
   </ItemGroup>
   <ItemGroup>
@@ -533,6 +530,12 @@
     <Content Include="libmp3lame.64.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\IS_THIS_HARAMBE.wav" />
+    <None Include="Resources\ASTROCITY.wav" />
+    <None Include="Resources\ON_THE_SIGHT.wav" />
+    <None Include="Resources\NICE_BOOP.wav" />
+    <None Include="Resources\OH_HELLO.wav" />
+    <None Include="Resources\JUST_WALK_OVER.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -784,7 +784,7 @@
                 "name": "AGAINST_ME"
             },
             "info": {
-                "VideoLink": "https://www.youtube.com/embed/_FaF_1iYkqUk",
+                "VideoLink": "https://www.youtube.com/embed/ixda9vcYxvk",
                 "Description": "Astro *hates* when he gives soundbites that can be used against him"
             }
         },
@@ -859,8 +859,61 @@
                 "VideoLink": "https://www.youtube.com/embed/YzX4We4BQiY",
                 "Description": "Nice job alternative version"
             }
+        },
+        {
+            "sound": {
+                "name": "OH_HELLO"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/ecuZhbpL9Y0",
+                "Description": "Basically Shreck"
+            }
+        },
+        {
+            "sound": {
+                "name": "JUST_WALK_OVER"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/ecuZhbpL9Y0",
+                "Description": "Mercy tries to go for a res or something but just walks into the whole enemy team."
+            }
+        },
+        {
+            "sound": {
+                "name": "NICE_BOOP"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/gGrcV994cqY",
+                "Description": "Astro get a nice boop"
+            }
+        },
+        {
+            "sound": {
+                "name": "ASTROCITY"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/ecuZhbpL9Y0",
+                "Description": "Astro's mate misreads Astro's name"
+            }
+        },
+        {
+            "sound": {
+                "name": "ON_THE_SIGHT"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/aGK2WorPm0U",
+                "Description": "ON THE SIGHT"
+            }
+        },
+        {
+            "sound": {
+                "name": "IS_THIS_HARAMBE"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/QG-ef22eRr0",
+                "Description": "Astro's team mate gets rekt by harambe"
+            }
         }
-
     ]
 }</value>
   </data>
@@ -1016,5 +1069,20 @@
   </data>
   <data name="NICE_JOB_MEN" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NICE_JOB_MEN.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ASTROCITY" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ASTROCITY.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="JUST_WALK_OVER" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\JUST_WALK_OVER.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="NICE_BOOP" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NICE_BOOP.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="OH_HELLO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\OH_HELLO.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ON_THE_SIGHT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ON_THE_SIGHT.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

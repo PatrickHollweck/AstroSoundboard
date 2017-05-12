@@ -49,7 +49,11 @@ namespace AstroSoundBoard.WPF.Windows
                     Filter = ".mp3 File (*.mp3)|*.mp3",
                     Title = $"Sound Location for sound : {LocalSound.Name}"
                 };
-                dialog.ShowDialog();
+
+                if (dialog.ShowDialog() != true)
+                {
+                    return;
+                }
 
                 using (var reader = new WaveFileReader(soundStream))
                 using (var writer = new LameMP3FileWriter(dialog.FileName, reader.WaveFormat, LAMEPreset.VBR_90))

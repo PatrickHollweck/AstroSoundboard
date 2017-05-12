@@ -591,7 +591,7 @@
                 "name": "AGAINST_ME"
             },
             "info": {
-                "VideoLink": "https://www.youtube.com/embed/_FaF_1iYkqUk",
+                "VideoLink": "https://www.youtube.com/embed/ixda9vcYxvk",
                 "Description": "Astro *hates* when he gives soundbites that can be used against him"
             }
         },
@@ -666,7 +666,60 @@
                 "VideoLink": "https://www.youtube.com/embed/YzX4We4BQiY",
                 "Description": "Nice job alternative version"
             }
+        },
+        {
+            "sound": {
+                "name": "OH_HELLO"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/ecuZhbpL9Y0",
+                "Description": "Basically Shreck"
+            }
+        },
+        {
+            "sound": {
+                "name": "JUST_WALK_OVER"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/ecuZhbpL9Y0",
+                "Description": "Mercy tries to go for a res or something but just walks into the whole enemy team."
+            }
+        },
+        {
+            "sound": {
+                "name": "NICE_BOOP"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/gGrcV994cqY",
+                "Description": "Astro get a nice boop"
+            }
+        },
+        {
+            "sound": {
+                "name": "ASTROCITY"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/ecuZhbpL9Y0",
+                "Description": "Astro's mate misreads Astro's name"
+            }
+        },
+        {
+            "sound": {
+                "name": "ON_THE_SIGHT"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/aGK2WorPm0U",
+                "Description": "ON THE SIGHT"
+            }
+        },
+        {
+            "sound": {
+                "name": "IS_THIS_HARAMBE"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/QG-ef22eRr0",
+                "Description": "Astro's team mate gets rekt by harambe"
+            }
         }
-
     ]
 }
