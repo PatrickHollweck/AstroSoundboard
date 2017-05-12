@@ -107,6 +107,9 @@
     <Reference Include="AutoUpdater.NET, Version=1.4.0.0, Culture=neutral, PublicKeyToken=942f95247e354701, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Autoupdater.NET.Official.1.4\lib\net40\AutoUpdater.NET.dll</HintPath>
     </Reference>
+    <Reference Include="CrashReporter.NET, Version=1.5.1.0, Culture=neutral, PublicKeyToken=986591a91592b7e6, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CrashReporter.NET.Official.1.5.1\lib\net40\CrashReporter.NET.dll</HintPath>
+    </Reference>
     <Reference Include="log4net">
       <HintPath>..\..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
       <Private>True</Private>
