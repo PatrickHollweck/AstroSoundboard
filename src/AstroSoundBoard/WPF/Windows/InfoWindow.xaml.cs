@@ -1,7 +1,7 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 11:05:2017 / 20:08
+// Last Modified: 12:05:2017 / 19:07
 // Creation: 10:05:2017
 // Project: AstroSoundBoard
 //
@@ -11,6 +11,7 @@
 
 namespace AstroSoundBoard.WPF.Windows
 {
+    using System.Diagnostics;
     using System.IO;
     using System.Windows;
 
@@ -63,5 +64,7 @@ namespace AstroSoundBoard.WPF.Windows
                 MessageBox.Show("There was a problem creating the File.", "Error!", MessageBoxButton.OK, MessageBoxImage.Asterisk);
             }
         }
+
+        private void OpenSoundsGit(object sender, RoutedEventArgs e) => Process.Start("https://github.com/FetzenRndy/AstroSoundboard/tree/master/src/AstroSoundBoard/Resources");
     }
 }
