@@ -5,7 +5,6 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:wpf="clr-namespace:CefSharp.Wpf;assembly=CefSharp.Wpf"
     Title="Sound Info"
     Width="800"
     Height="440"
@@ -108,8 +107,10 @@
                     </StackPanel>
                 </DataTemplate>
             </GroupBox.HeaderTemplate>
-            <wpf:ChromiumWebBrowser Address="{Binding LocalSound.VideoLink}" />
+            <StackPanel>
+                <Label>This webbrowser is momentarely disabled! Have a link instead</Label>
+                <TextBox IsReadOnly="True" Text="{Binding LocalSound.VideoLink}" />
+            </StackPanel>
         </GroupBox>
-
     </Grid>
 </Window>
