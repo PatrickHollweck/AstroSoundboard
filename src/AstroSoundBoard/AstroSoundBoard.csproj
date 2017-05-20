@@ -107,14 +107,24 @@
     <Reference Include="AutoUpdater.NET, Version=1.4.0.0, Culture=neutral, PublicKeyToken=942f95247e354701, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Autoupdater.NET.Official.1.4\lib\net40\AutoUpdater.NET.dll</HintPath>
     </Reference>
-    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+    <Reference Include="CrashReporter.NET, Version=1.5.1.0, Culture=neutral, PublicKeyToken=986591a91592b7e6, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CrashReporter.NET.Official.1.5.1\lib\net40\CrashReporter.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
       <HintPath>..\..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="MaterialDesignColors, Version=1.1.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\MaterialDesignColors.1.1.3\lib\net45\MaterialDesignColors.dll</HintPath>
     </Reference>
     <Reference Include="MaterialDesignThemes.Wpf, Version=2.3.0.823, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\MaterialDesignThemes.2.3.0.823\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio, Version=1.7.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NAudio.1.7.3\lib\net35\NAudio.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.Lame, Version=1.0.3.3048, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NAudio.Lame.1.0.4\lib\net20\NAudio.Lame.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -157,8 +167,8 @@
     <Compile Include="Core\Components\KeybindManager.cs" />
     <Compile Include="Core\Objects\Credentials.cs" />
     <Compile Include="Core\Objects\DataObjects\KeyBind.cs" />
+    <Compile Include="Core\Utils\KeyDetector.cs" />
     <Compile Include="Core\Utils\NativeMethods.cs" />
-    <Compile Include="WPF\Base\RelayCommand.cs" />
     <Compile Include="WPF\Controls\Keybind\KeybindView.xaml.cs">
       <DependentUpon>KeybindView.xaml</DependentUpon>
     </Compile>
@@ -216,13 +226,11 @@
     <Compile Include="Core\Objects\DataObjects\Sound.cs" />
     <Compile Include="Core\Objects\DataObjects\SoundDefinitions.cs" />
     <Compile Include="Core\Utils\FileSystem.cs" />
-    <Compile Include="Core\Utils\Network.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="WPF\Base\BaseViewModel.cs" />
     <Compile Include="WPF\Controls\Sound\SoundView.xaml.cs">
       <DependentUpon>SoundView.xaml</DependentUpon>
     </Compile>
@@ -232,6 +240,7 @@
     <Compile Include="WPF\Pages\Settings\SettingsView.xaml.cs">
       <DependentUpon>SettingsView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WPF\SettingsModel.cs" />
     <Compile Include="WPF\Windows\FeedbackWindow.xaml.cs">
       <DependentUpon>FeedbackWindow.xaml</DependentUpon>
     </Compile>
@@ -414,9 +423,6 @@
     <None Include="Resources\I_MAIN_CANCER.wav" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\MOVED_ASLEP.wav" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\NOT_PAST_GORILLA.wav" />
   </ItemGroup>
   <ItemGroup>
@@ -430,9 +436,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\WHEN_YOU_TRY.wav" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ALOT_OF_CUNTS.wav" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\BAD_DECISIONS.wav" />
@@ -463,9 +466,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\GOOD_CATCH.wav" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\IS_THIS_HARAMBE.wav" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\FUCKING_NEOW.wav" />
@@ -505,6 +505,41 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\HE_CAME_IN_MY_FACE.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NO_NO_NO_NO.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SO_ERRECT.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HEY_FAM.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RUNAWAY_EFFECT.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DONT_DO_IT.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NICE_JOB_MEN.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DONT_HURT_ME.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="libmp3lame.32.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="libmp3lame.64.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\IS_THIS_HARAMBE.wav" />
+    <None Include="Resources\ASTROCITY.wav" />
+    <None Include="Resources\ON_THE_SIGHT.wav" />
+    <None Include="Resources\NICE_BOOP.wav" />
+    <None Include="Resources\OH_HELLO.wav" />
+    <None Include="Resources\JUST_WALK_OVER.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

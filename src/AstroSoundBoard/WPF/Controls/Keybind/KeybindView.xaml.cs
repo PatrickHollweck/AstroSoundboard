@@ -1,8 +1,8 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 01:05:2017 / 13:44
-// Creation: 01:05:2017
+// Last Modified: 18:05:2017 / 19:32
+// Creation: 10:05:2017
 // Project: AstroSoundBoard
 //
 //
@@ -20,6 +20,9 @@ namespace AstroSoundBoard.WPF.Controls.Keybind
 
     public partial class KeybindView : UserControl
     {
+        /// <summary>
+        /// Local Instance of the Sound
+        /// </summary>
         public Sound LocalDefinition { get; set; }
 
         public KeybindView(Sound sound)
@@ -29,11 +32,13 @@ namespace AstroSoundBoard.WPF.Controls.Keybind
             InitializeComponent();
             DataContext = this;
 
+            // When migrating from older versions the Hotkey object may be null -> set it to a new Keybind
             if (LocalDefinition.HotKey == null)
             {
                 LocalDefinition.HotKey = new KeyBind();
             }
 
+            // The Visibility of the "What keybind is set for this sound" should be hidden by default if there is no Hotkey.
             LocalDefinition.HotKey.PropertyChanged += (sender, args) => { CurrentKeybindPanel.Visibility = LocalDefinition.HotKey.HasAssignedKeybind ? Visibility.Hidden : Visibility.Visible; };
             LocalDefinition.HotKey.RaisePropertyChanged();
         }
@@ -52,7 +57,12 @@ namespace AstroSoundBoard.WPF.Controls.Keybind
 
         public void RemoveKeybind(object sender, RoutedEventArgs e)
         {
-            KeybindManager.RemoveKeybindAndMappingByName(LocalDefinition.Name);
+            int index = SettingsManager.Cache.FindIndex(cacheSound => cacheSound.Name == LocalDefinition.Name);
+            SettingsManager.Cache[index].HotKey = new KeyBind();
+            SettingsManager.Cache[index].HotKey.RaisePropertyChanged();
+
+            KeybindManager.SetKeybinds();
+
             LocalDefinition.HotKey.RaisePropertyChanged();
         }
     }

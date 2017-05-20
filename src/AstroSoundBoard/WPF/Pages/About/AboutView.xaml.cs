@@ -1,8 +1,8 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 27:04:2017 / 18:13
-// Creation: 26:04:2017
+// Last Modified: 08:05:2017 / 18:26
+// Creation: 08:05:2017
 // Project: AstroSoundBoard
 //
 //
@@ -15,20 +15,17 @@ namespace AstroSoundBoard.WPF.Pages.About
     using System.Windows;
     using System.Windows.Controls;
 
-    /// <summary>
-    /// Interaktionslogik für AboutView.xaml
-    /// </summary>
     public partial class AboutView : UserControl
-	{
-		public AboutView()
-		{
-			InitializeComponent();
-		}
+    {
+        public AboutView()
+        {
+            InitializeComponent();
+        }
 
-		private void OpenGitHub(object sender, RoutedEventArgs e) => Process.Start("https://github.com/FetzenRndy/AstroSoundboard");
+        private void OpenGitHub(object sender, RoutedEventArgs e) => Process.Start("https://github.com/FetzenRndy/AstroSoundboard");
 
-		private void ShowDiscordInfo(object sender, RoutedEventArgs e) => MessageBox.Show("Add me on discord : Fetzen.NET#9296");
+        private void ShowDiscordInfo(object sender, RoutedEventArgs e) => MessageBox.Show("Add me on discord : Fetzen.NET#9296");
 
-		private void OpenMail(object sender, RoutedEventArgs e) => Process.Start("mailto:patrick-hollweck@gmx.de");
-	}
+        private void OpenMail(object sender, RoutedEventArgs e) => Process.Start("mailto:patrick-hollweck@gmx.de");
+    }
 }

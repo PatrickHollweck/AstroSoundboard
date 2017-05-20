@@ -8,9 +8,7 @@
     xmlns:wpf="clr-namespace:CefSharp.Wpf;assembly=CefSharp.Wpf"
     Title="Sound Info"
     Width="800"
-    Height="470"
-    MinWidth="800"
-    MinHeight="470"
+    Height="440"
     Background="{DynamicResource MaterialDesignPaper}"
     FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
     ResizeMode="NoResize"
@@ -62,10 +60,30 @@
                     </StackPanel>
                 </DataTemplate>
             </GroupBox.HeaderTemplate>
-            <TextBlock
-                Margin="4"
-                Text="{Binding LocalSound.Description}"
-                TextWrapping="Wrap" />
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <StackPanel>
+                    <TextBlock
+                        Margin="4"
+                        Text="{Binding LocalSound.Description}"
+                        TextWrapping="Wrap" />
+                </StackPanel>
+                <StackPanel Grid.Row="1">
+                    <Button
+                        Margin="5"
+                        VerticalAlignment="Bottom"
+                        Click="SaveSound"
+                        Content="Save sound as File" />
+                    <Button
+                        Margin="5"
+                        VerticalAlignment="Bottom"
+                        Click="OpenSoundsGit"
+                        Content="View all sounds" />
+                </StackPanel>
+            </Grid>
         </GroupBox>
 
         <GroupBox

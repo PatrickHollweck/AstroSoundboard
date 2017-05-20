@@ -1,13 +1,15 @@
 ﻿// ****************************** Module Header ****************************** //
-//
-//
-// Last Modified: 01:05:2017 / 01:12
-// Creation: 30:04:2017
+// 
+// 
+// Last Modified: 18:05:2017 / 18:35
+// Creation: 11:05:2017
 // Project: AstroSoundBoard
-//
-//
+// 
+// 
 // <copyright file="KeyBind.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
+
+
 
 namespace AstroSoundBoard.Core.Objects.DataObjects
 {
@@ -30,7 +32,6 @@ namespace AstroSoundBoard.Core.Objects.DataObjects
             Key = Key.None;
         }
 
-        private bool isActive;
         private Key key;
         private ModifierKeys modifier;
 

@@ -1,8 +1,8 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 01:05:2017 / 13:28
-// Creation: 01:05:2017
+// Last Modified: 18:05:2017 / 19:25
+// Creation: 10:05:2017
 // Project: AstroSoundBoard
 //
 //
@@ -20,6 +20,8 @@ namespace AstroSoundBoard.WPF.Windows
     using AstroSoundBoard.Core.Objects.DataObjects.SoundDefinitionJsonTypes;
     using AstroSoundBoard.WPF.Controls.Keybind;
 
+    using Newtonsoft.Json;
+
     using PropertyChanged;
 
     [ImplementPropertyChanged]
@@ -32,7 +34,7 @@ namespace AstroSoundBoard.WPF.Windows
             InitializeComponent();
             DataContext = this;
 
-            foreach (Definition definition in SoundManager.Information.GetSoundList())
+            foreach (Definition definition in SoundManager.GetSoundList())
             {
                 var item = new Sound
                 {
@@ -48,9 +50,15 @@ namespace AstroSoundBoard.WPF.Windows
                 ItemCtrl.Items.Add(view);
                 AllViews.Add(view);
             }
+
+            ToogleFavorites(this, new RoutedEventArgs());
         }
 
-        private void RemoveAllKeybinds(object sender, RoutedEventArgs e) => KeybindManager.RemoveAllKeybinds();
+        private void RemoveAllKeybinds(object sender, RoutedEventArgs e)
+        {
+            KeybindManager.RemoveAllKeybindsFromSettings();
+            KeybindManager.SetKeybinds();
+        }
 
         public void SearchForElement(object sender, TextChangedEventArgs e)
         {
@@ -78,6 +86,49 @@ namespace AstroSoundBoard.WPF.Windows
                 ItemCtrl.Items.Clear();
 
                 foreach (KeybindView view in matchingItems)
+                {
+                    ItemCtrl.Items.Add(view);
+                }
+            }
+
+            if (onlyShowFavorites)
+            {
+                ToogleFavorites(this, new RoutedEventArgs());
+            }
+        }
+
+        private bool onlyShowFavorites;
+
+        private void ToogleFavorites(object sender, RoutedEventArgs e)
+        {
+            if (onlyShowFavorites)
+            {
+                onlyShowFavorites = false;
+
+                List<KeybindView> matchingItems = new List<KeybindView>();
+
+                foreach (KeybindView view in ItemCtrl.Items)
+                {
+                    if (view.LocalDefinition.IsFavorite == JsonConvert.True)
+                    {
+                        matchingItems.Add(view);
+                    }
+                }
+
+                ItemCtrl.Items.Clear();
+
+                foreach (KeybindView view in matchingItems)
+                {
+                    ItemCtrl.Items.Add(view);
+                }
+            }
+            else
+            {
+                onlyShowFavorites = true;
+
+                ItemCtrl.Items.Clear();
+
+                foreach (KeybindView view in AllViews)
                 {
                     ItemCtrl.Items.Add(view);
                 }

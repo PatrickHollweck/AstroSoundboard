@@ -1,8 +1,8 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 01:05:2017 / 15:59
-// Creation: 01:05:2017
+// Last Modified: 20:05:2017 / 14:47
+// Creation: 20:05:2017
 // Project: AstroSoundBoard
 //
 //
@@ -13,6 +13,8 @@ using System.Reflection;
 using System.Resources;
 using System.Runtime.InteropServices;
 using System.Windows;
+
+using log4net.Config;
 
 // .NET
 [assembly: AssemblyTitle("AstroSoundBoard")]
@@ -31,9 +33,9 @@ using System.Windows;
 [assembly: ThemeInfo(ResourceDictionaryLocation.None, ResourceDictionaryLocation.SourceAssembly)]
 
 // VERSION
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion("1.1.0.0")]
+[assembly: AssemblyFileVersion("1.1.0.0")]
 
 // LOG4NET
-[assembly: log4net.Config.XmlConfigurator(Watch = true)]
+[assembly: XmlConfigurator(Watch = true)]
 [assembly: NeutralResourcesLanguage("en")]

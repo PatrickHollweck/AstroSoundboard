@@ -19,6 +19,7 @@
     TextElement.FontWeight="Medium"
     TextElement.Foreground="{DynamicResource MaterialDesignBody}"
     mc:Ignorable="d">
+
     <Window.Resources>
         <Storyboard x:Key="InAnimation">
             <DoubleAnimation
@@ -45,6 +46,7 @@
             </DoubleAnimation>
         </Storyboard>
     </Window.Resources>
+
     <Grid>
         <Grid>
             <Grid.RowDefinitions>
@@ -71,12 +73,11 @@
                 </materialDesign:ColorZone.RenderTransform>
                 <StackPanel>
                     <TextBlock
-                        Margin="10,10,10,-5"
+                        Margin="10,10,10,5"
                         HorizontalAlignment="Center"
                         FontSize="22"
                         FontWeight="Bold"
                         Text="ASTROKITTY MEMEBOARD" />
-                    <Label Content="  Public Beta" FontSize="10" />
 
                     <materialDesign:ColorZone
                         Margin="10,0,-5,10"

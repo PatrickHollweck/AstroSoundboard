@@ -1,8 +1,8 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 30:04:2017 / 14:33
-// Creation: 29:04:2017
+// Last Modified: 18:05:2017 / 17:37
+// Creation: 10:05:2017
 // Project: AstroSoundBoard
 //
 //
@@ -14,15 +14,18 @@ namespace AstroSoundBoard.Core.Utils
     using System;
     using System.Runtime.InteropServices;
 
-    public class Win32
-	{
-		public const int WM_HOTKEY_MSG_ID = 0x0312;
-	}
+    /// <summary>
+    /// All native methods used in the Application (Fody forces this behavior!)
+    /// </summary>
+    public class NativeMethods
+    {
+        // SOUNDS
+        [DllImport("winmm.dll")]
+        public static extern int waveOutSetVolume(IntPtr hwo, uint dwVolume);
 
-	public class NativeMethods
-	{
-		// SOUNDS
-		[DllImport("winmm.dll")]
-		public static extern int waveOutSetVolume(IntPtr hwo, uint dwVolume);
-	}
+        // Keybind
+        [DllImport("user32.dll")]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        public static extern bool GetKeyboardState(byte[] keyState);
+    }
 }

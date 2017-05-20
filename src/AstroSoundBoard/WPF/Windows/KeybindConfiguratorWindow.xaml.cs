@@ -1,8 +1,8 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 01:05:2017 / 13:46
-// Creation: 01:05:2017
+// Last Modified: 18:05:2017 / 19:28
+// Creation: 10:05:2017
 // Project: AstroSoundBoard
 //
 //
@@ -12,11 +12,13 @@
 namespace AstroSoundBoard.WPF.Windows
 {
     using System.ComponentModel;
+    using System.Reflection;
     using System.Windows;
     using System.Windows.Input;
 
     using AstroSoundBoard.Core.Components;
     using AstroSoundBoard.Core.Objects.DataObjects;
+    using AstroSoundBoard.Core.Utils;
 
     using log4net;
 
@@ -27,11 +29,9 @@ namespace AstroSoundBoard.WPF.Windows
     {
         public static bool HasOpenInstance { get; set; }
 
-        private static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-
         public Sound LocalDefinition { get; set; }
 
-        private Key PressedKey { get; set; }
+        private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
         public KeybindConfiguratorWindow(Sound definition)
         {
@@ -46,141 +46,67 @@ namespace AstroSoundBoard.WPF.Windows
             {
                 LocalDefinition.HotKey = new KeyBind();
             }
-
-            LoadState();
-
-            KeyDown += (sender, e) =>
-                {
-                    PressedKey = e.Key;
-                    BoundKey.Text = e.Key.ToString();
-                    LocalDefinition.HotKey.Key = e.Key;
-                    CheckDuplicate();
-                };
         }
 
-        private void LoadState()
+        private void ResetKeybind(object sender, RoutedEventArgs e)
         {
-            Log.Debug("LOADING STATE!");
-            LocalDefinition.HotKey.SetValues();
-
-            if (LocalDefinition.HotKey.Modifier == ModifierKeys.Alt)
-            {
-                AltModifier.IsChecked = true;
-            }
-
-            if (LocalDefinition.HotKey.Modifier == ModifierKeys.Control)
-            {
-                CtrlModifier.IsChecked = true;
-            }
-
-            if (LocalDefinition.HotKey.Modifier == ModifierKeys.Windows)
-            {
-                WindowsModifier.IsChecked = true;
-            }
-
-            if (LocalDefinition.HotKey.Modifier == ModifierKeys.Shift)
-            {
-                ShiftModifier.IsChecked = true;
-            }
-
-            BoundKey.Text = LocalDefinition.HotKey.Key.ToString();
+            LocalDefinition.HotKey.Key = Key.None;
+            LocalDefinition.HotKey.Modifier = ModifierKeys.None;
+            UpdateText();
         }
 
         private void ApplyKeybind(object sender, RoutedEventArgs e)
         {
-            SettingsManager.RewriteSound(LocalDefinition);
+            int index = SettingsManager.Cache.FindIndex(cacheSound => cacheSound.Name == LocalDefinition.Name);
+            SettingsManager.Cache[index] = LocalDefinition;
+
+            KeybindManager.SetKeybinds();
+        }
+
+        private void UpdateText() => KeybindBox.Text = $"{LocalDefinition.HotKey.Modifier} + {LocalDefinition.HotKey.Key}";
+
+        protected override void OnKeyDown(KeyEventArgs e)
+        {
+            foreach (Key key in new KeyDetector().GetDownKeys())
+            {
+                // Check if key is modifier.
+                if (key == Key.LeftCtrl || key == Key.RightCtrl)
+                {
+                    LocalDefinition.HotKey.Modifier = ModifierKeys.Control;
+                }
+                else if (key == Key.LeftAlt || key == Key.RightAlt)
+                {
+                    LocalDefinition.HotKey.Modifier = ModifierKeys.Alt;
+                }
+                else if (key == Key.LeftShift || key == Key.RightShift)
+                {
+                    LocalDefinition.HotKey.Modifier = ModifierKeys.Shift;
+                }
+                else if (key == Key.LWin || key == Key.RWin)
+                {
+                    LocalDefinition.HotKey.Modifier = ModifierKeys.Windows;
+                }
+                else
+                {
+                    // Key is not a modifier -> Is key
+                    LocalDefinition.HotKey.Key = key;
+                }
+
+                if (KeybindManager.CheckDuplicate(LocalDefinition))
+                {
+                    LocalDefinition.HotKey.Key = Key.None;
+                    LocalDefinition.HotKey.Modifier = ModifierKeys.None;
+                    MessageBox.Show("This Keybind is already defined somewhere else! Please choose another one!");
+                }
+
+                UpdateText();
+            }
         }
 
         protected override void OnClosing(CancelEventArgs e)
         {
             HasOpenInstance = false;
-            KeybindManager.SetKeybinds();
             base.OnClosing(e);
-        }
-
-        private void ModifierChanged(object sender, RoutedEventArgs e)
-        {
-            bool control = CtrlModifier.IsChecked != null && (bool)CtrlModifier.IsChecked;
-            bool shift = ShiftModifier.IsChecked != null && (bool)ShiftModifier.IsChecked;
-            bool windows = WindowsModifier.IsChecked != null && (bool)WindowsModifier.IsChecked;
-            bool alternative = AltModifier.IsChecked != null && (bool)AltModifier.IsChecked;
-
-            int checkedCount = 0;
-
-            if (windows)
-            {
-                checkedCount++;
-            }
-
-            if (shift)
-            {
-                checkedCount++;
-            }
-
-            if (control)
-            {
-                checkedCount++;
-            }
-
-            if (alternative)
-            {
-                checkedCount++;
-            }
-
-            if (checkedCount > 1)
-            {
-                MessageBox.Show("Only one Modifier allowed... Support for more comming in a future version!");
-
-                CtrlModifier.IsChecked = false;
-                ShiftModifier.IsChecked = false;
-                WindowsModifier.IsChecked = false;
-                AltModifier.IsChecked = false;
-            }
-            else
-            {
-                if (windows)
-                {
-                    LocalDefinition.HotKey.Modifier = ModifierKeys.Windows;
-                    return;
-                }
-
-                if (shift)
-                {
-                    LocalDefinition.HotKey.Modifier = ModifierKeys.Shift;
-                    return;
-                }
-
-                if (control)
-                {
-                    LocalDefinition.HotKey.Modifier = ModifierKeys.Control;
-                    return;
-                }
-
-                if (alternative)
-                {
-                    LocalDefinition.HotKey.Modifier = ModifierKeys.Alt;
-                    return;
-                }
-
-                LocalDefinition.HotKey.Modifier = ModifierKeys.None;
-            }
-
-            CheckDuplicate();
-        }
-
-        private void CheckDuplicate()
-        {
-            (bool status, string message) checkResult = KeybindManager.CheckDuplicate(LocalDefinition);
-
-            if (!checkResult.status)
-            {
-                MessageBox.Show(checkResult.message, "Error!", MessageBoxButton.OK, MessageBoxImage.Information);
-                ApplyButton.IsEnabled = false;
-            }
-            else
-            {
-                ApplyButton.IsEnabled = true;
-            }
         }
     }
 }

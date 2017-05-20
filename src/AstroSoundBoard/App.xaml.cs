@@ -1,8 +1,8 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 01:05:2017 / 01:21
-// Creation: 29:04:2017
+// Last Modified: 12:05:2017 / 20:16
+// Creation: 11:05:2017
 // Project: AstroSoundBoard
 //
 //
@@ -19,9 +19,13 @@ namespace AstroSoundBoard
     using AstroSoundBoard.Core.Components;
     using AstroSoundBoard.Core.Objects;
     using AstroSoundBoard.Core.Utils;
+    using AstroSoundBoard.Properties;
+
+    using CrashReporterDotNET;
 
     using log4net;
     using log4net.Core;
+    using log4net.Repository.Hierarchy;
 
     using MaterialDesignThemes.Wpf;
 
@@ -34,11 +38,11 @@ namespace AstroSoundBoard
         private void Application_Startup(object sender, StartupEventArgs e)
         {
 #if DEBUG
-            ((log4net.Repository.Hierarchy.Hierarchy)LogManager.GetRepository()).Root.Level = Level.Debug;
-            ((log4net.Repository.Hierarchy.Hierarchy)LogManager.GetRepository()).RaiseConfigurationChanged(EventArgs.Empty);
+            ((Hierarchy)LogManager.GetRepository()).Root.Level = Level.Debug;
+            ((Hierarchy)LogManager.GetRepository()).RaiseConfigurationChanged(EventArgs.Empty);
 #else
-            ((log4net.Repository.Hierarchy.Hierarchy)LogManager.GetRepository()).Root.Level = Level.Info;
-            ((log4net.Repository.Hierarchy.Hierarchy)LogManager.GetRepository()).RaiseConfigurationChanged(EventArgs.Empty);
+            ((Hierarchy)LogManager.GetRepository()).Root.Level = Level.Warn;
+            ((Hierarchy)LogManager.GetRepository()).RaiseConfigurationChanged(EventArgs.Empty);
 #endif
 
             Log.Info("--- APP START! ---");
@@ -48,25 +52,42 @@ namespace AstroSoundBoard
             FileSystem.FolderHelper.CreateIfMissing($"{AppSettings.InstallationFilePath}/");
 
             // Setup error handling to log fatal errors.
-            AppDomain.CurrentDomain.UnhandledException += (caller, args) =>
-                {
-                    Log.Fatal($"Fatal unhanded exception. - {args.ExceptionObject} -- {args.IsTerminating} -> {args}");
-
 #if !DEBUG
-                    if (AstroSoundBoard.Properties.Settings.Default.AllowErrorReporting)
-                    {
-                        var ravenClient = new RavenClient(Credentials.SentryApiKey);
-                        ravenClient.Capture(new SharpRaven.Data.SentryEvent((Exception)args.ExceptionObject));
-
-                        Log.Info("Reported error to sentry!");
-                    }
-
+            AppDomain.CurrentDomain.UnhandledException += ReportError;
 #endif
-                };
 
             ApplyMaterialTheme();
             SoundManager.Init();
             SettingsManager.Init();
+        }
+
+        public static void ReportError(object sender, UnhandledExceptionEventArgs args)
+        {
+            Log.Fatal($"Fatal unhanded exception. - {args.ExceptionObject} -- {args.IsTerminating} -> {args}");
+
+            if (Settings.Default.AllowErrorReporting)
+            {
+                var ravenClient = new RavenClient(Credentials.SentryApiKey);
+                ravenClient.Capture(new SharpRaven.Data.SentryEvent((Exception)args.ExceptionObject));
+
+                ReportCrash((Exception)args.ExceptionObject);
+
+                Log.Info("Reported error to sentry!");
+            }
+        }
+
+        public static void ReportCrash(Exception exception, string developerMessage = "")
+        {
+            var reportCrash = new ReportCrash
+            {
+                IncludeScreenshot = true,
+                CaptureScreen = true,
+
+                DeveloperMessage = developerMessage,
+                ToEmail = "patrick-hollweck@gmx.de"
+            };
+
+            reportCrash.Send(exception);
         }
 
         private void Application_Exit(object sender, ExitEventArgs e)
@@ -79,8 +100,8 @@ namespace AstroSoundBoard
             List<string> colorList = new List<string> { "Red", "Pink", "Purple", "Indigo", "Blue", "Cyan", "Teal", "Green", "Lime", "Yellow", "Amber", "Orange", "Brown", "Grey" };
 
             var palette = new PaletteHelper();
-            palette.SetLightDark(AstroSoundBoard.Properties.Settings.Default.IsDarkModeEnabled);
-            palette.ReplacePrimaryColor(colorList[AstroSoundBoard.Properties.Settings.Default.PrimaryColor]);
+            palette.SetLightDark(Settings.Default.IsDarkModeEnabled);
+            palette.ReplacePrimaryColor(colorList[Settings.Default.PrimaryColor]);
         }
     }
 }

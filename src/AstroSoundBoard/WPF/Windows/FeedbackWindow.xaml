@@ -1,39 +1,39 @@
 ﻿<Window
-	x:Class="AstroSoundBoard.WPF.Windows.FeedbackWindow"
-	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-	xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-	Title="AstroKitty Soundboard"
-	Width="800"
-	Height="550"
-	MinWidth="800"
-	MinHeight="550"
-	MaxWidth="800"
-	MaxHeight="550"
-	Background="{DynamicResource MaterialDesignPaper}"
-	FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
-	ResizeMode="CanMinimize"
-	TextElement.FontSize="14"
-	TextElement.FontWeight="Medium"
-	TextElement.Foreground="{DynamicResource MaterialDesignBody}"
-	mc:Ignorable="d">
+    x:Class="AstroSoundBoard.WPF.Windows.FeedbackWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="AstroKitty Soundboard"
+    Width="800"
+    Height="550"
+    MinWidth="800"
+    MinHeight="550"
+    MaxWidth="800"
+    MaxHeight="550"
+    Background="{DynamicResource MaterialDesignPaper}"
+    FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
+    ResizeMode="CanMinimize"
+    TextElement.FontSize="14"
+    TextElement.FontWeight="Medium"
+    TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+    mc:Ignorable="d">
     <ScrollViewer>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock
-				Margin="0,20"
-				HorizontalAlignment="Center"
-				FontSize="30">
-				Give Feedback
+                Margin="0,20"
+                HorizontalAlignment="Center"
+                FontSize="30">
+                Give Feedback
             </TextBlock>
 
             <GroupBox Width="750" Style="{DynamicResource MaterialDesignCardGroupBox}">
                 <GroupBox.Header>
                     <Label
-						HorizontalAlignment="Center"
-						Content="What kind of Feedback do you want to give?"
-						FontSize="20" />
+                        HorizontalAlignment="Center"
+                        Content="What kind of Feedback do you want to give?"
+                        FontSize="20" />
                 </GroupBox.Header>
                 <StackPanel>
 
@@ -42,40 +42,41 @@
                     <Expander Margin="0,10,0,0" Header="Issue Report">
                         <StackPanel Margin="10,0">
                             <TextBox
-								Name="IssueTitle"
-								Margin="0,10"
-								materialDesign:HintAssist.Hint="Brief Title"
-								Text="" />
+                                Name="IssueTitle"
+                                Margin="0,10"
+                                materialDesign:HintAssist.Hint="Brief Title"
+                                Text="" />
                             <ComboBox
-								Name="IssueKind"
-								Margin="0,10"
-								materialDesign:HintAssist.Hint="Issue Kind">
+                                Name="IssueKind"
+                                Margin="0,10"
+                                materialDesign:HintAssist.Hint="Issue Type">
                                 <ComboBoxItem>Bug</ComboBoxItem>
                                 <ComboBoxItem>Cosmetic</ComboBoxItem>
                                 <ComboBoxItem>Exception</ComboBoxItem>
                                 <ComboBoxItem>Usability Problem</ComboBoxItem>
                                 <ComboBoxItem>Performance Problem</ComboBoxItem>
                                 <ComboBoxItem>General Improvement</ComboBoxItem>
+                                <ComboBoxItem>General Feedback</ComboBoxItem>
                             </ComboBox>
                             <TextBox
-								Name="IssueDescription"
-								Margin="0,10"
-								materialDesign:HintAssist.Hint="Detailed Description"
-								AcceptsReturn="True"
-								Text=""
-								TextWrapping="Wrap" />
+                                Name="IssueDescription"
+                                Margin="0,10"
+                                materialDesign:HintAssist.Hint="Detailed Description"
+                                AcceptsReturn="True"
+                                Text=""
+                                TextWrapping="Wrap" />
                             <TextBox
-								Name="IssueContact"
-								Margin="0,10"
-								materialDesign:HintAssist.Hint="Contact for Feedback to your Request, email, skype, discord..." />
+                                Name="IssueContact"
+                                Margin="0,10"
+                                materialDesign:HintAssist.Hint="(Optional) Contact for Feedback to your Request, email, skype, discord..." />
 
                             <StackPanel Orientation="Horizontal">
                                 <Button
-									Width="150"
-									Margin="0,10"
-									HorizontalAlignment="Left"
-									Click="IssueSubmit"
-									Content="Submit" />
+                                    Width="150"
+                                    Margin="0,10"
+                                    HorizontalAlignment="Left"
+                                    Click="IssueSubmit"
+                                    Content="Submit" />
                                 <Label Name="IssueStatus" VerticalAlignment="Center" />
                             </StackPanel>
                         </StackPanel>
@@ -86,29 +87,29 @@
                     <Expander Margin="0,10,0,0" Header="Feature Request">
                         <StackPanel Margin="10,0">
                             <TextBox
-								Name="FeatureTitle"
-								Margin="0,10"
-								materialDesign:HintAssist.Hint="Brief Title"
-								Text="" />
+                                Name="FeatureTitle"
+                                Margin="0,10"
+                                materialDesign:HintAssist.Hint="Brief Title"
+                                Text="" />
                             <TextBox
-								Name="FeatureDescription"
-								Margin="0,10"
-								materialDesign:HintAssist.Hint="Description"
-								AcceptsReturn="True"
-								Text=""
-								TextWrapping="Wrap" />
+                                Name="FeatureDescription"
+                                Margin="0,10"
+                                materialDesign:HintAssist.Hint="Description"
+                                AcceptsReturn="True"
+                                Text=""
+                                TextWrapping="Wrap" />
                             <TextBox
-								Name="FeatureContact"
-								Margin="0,10"
-								materialDesign:HintAssist.Hint="Contact for Feedback to your Request, email, skype, discord..." />
+                                Name="FeatureContact"
+                                Margin="0,10"
+                                materialDesign:HintAssist.Hint="(Optional) Contact for Feedback to your Request, email, skype, discord..." />
 
                             <StackPanel Orientation="Horizontal">
                                 <Button
-									Width="150"
-									Margin="0,10"
-									HorizontalAlignment="Left"
-									Click="FeatureSubmit"
-									Content="Submit" />
+                                    Width="150"
+                                    Margin="0,10"
+                                    HorizontalAlignment="Left"
+                                    Click="FeatureSubmit"
+                                    Content="Submit" />
                                 <Label Name="FeatureStatus" VerticalAlignment="Center" />
                             </StackPanel>
                         </StackPanel>
@@ -119,28 +120,28 @@
                     <Expander Margin="0,10,0,0" Header="Sound Request">
                         <StackPanel Margin="10,0">
                             <TextBox
-								Name="SoundTitle"
-								Margin="0,10"
-								materialDesign:HintAssist.Hint="Brief Title"
-								Text="" />
+                                Name="SoundTitle"
+                                Margin="0,10"
+                                materialDesign:HintAssist.Hint="Brief Title"
+                                Text="" />
                             <TextBox
-								Name="SoundDescription"
-								Margin="0,10"
-								materialDesign:HintAssist.Hint="Sound Description ( If Possible, with Link )"
-								AcceptsReturn="True"
-								Text=""
-								TextWrapping="Wrap" />
+                                Name="SoundDescription"
+                                Margin="0,10"
+                                materialDesign:HintAssist.Hint="Sound Description ( If Possible, with Link )"
+                                AcceptsReturn="True"
+                                Text=""
+                                TextWrapping="Wrap" />
                             <TextBox
-								Name="SoundContact"
-								Margin="0,10"
-								materialDesign:HintAssist.Hint="Contact for Feedback to your Request, email, skype, discord..." />
+                                Name="SoundContact"
+                                Margin="0,10"
+                                materialDesign:HintAssist.Hint="(Optional) Contact for Feedback to your Request, email, skype, discord..." />
                             <StackPanel Orientation="Horizontal">
                                 <Button
-									Width="150"
-									Margin="0,10"
-									HorizontalAlignment="Left"
-									Click="SoundSubmit"
-									Content="Submit" />
+                                    Width="150"
+                                    Margin="0,10"
+                                    HorizontalAlignment="Left"
+                                    Click="SoundSubmit"
+                                    Content="Submit" />
                                 <Label Name="SoundStatus" VerticalAlignment="Center" />
                             </StackPanel>
                         </StackPanel>
