@@ -1,15 +1,13 @@
 ﻿// ****************************** Module Header ****************************** //
-// 
-// 
-// Last Modified: 08:05:2017 / 18:28
-// Creation: 08:05:2017
+//
+//
+// Last Modified: 18:05:2017 / 19:34
+// Creation: 12:05:2017
 // Project: AstroSoundBoard
-// 
-// 
+//
+//
 // <copyright file="MainWindow.xaml.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
-
-
 
 namespace AstroSoundBoard.WPF.Windows
 {
@@ -53,7 +51,8 @@ namespace AstroSoundBoard.WPF.Windows
 
         protected override void OnClosing(CancelEventArgs e)
         {
-            KeybindManager.RemoveAllKeybindMappings();
+            KeybindManager.UnregisterAllKeybinds();
+            SettingsManager.Save();
             base.OnClosing(e);
         }
 

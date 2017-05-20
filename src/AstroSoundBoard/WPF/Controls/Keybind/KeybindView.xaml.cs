@@ -1,15 +1,13 @@
 ﻿// ****************************** Module Header ****************************** //
-// 
-// 
-// Last Modified: 08:05:2017 / 18:04
-// Creation: 08:05:2017
+//
+//
+// Last Modified: 18:05:2017 / 19:32
+// Creation: 10:05:2017
 // Project: AstroSoundBoard
-// 
-// 
+//
+//
 // <copyright file="KeybindView.xaml.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
-
-
 
 namespace AstroSoundBoard.WPF.Controls.Keybind
 {
@@ -59,7 +57,12 @@ namespace AstroSoundBoard.WPF.Controls.Keybind
 
         public void RemoveKeybind(object sender, RoutedEventArgs e)
         {
-            KeybindManager.RemoveKeybindAndMappingByName(LocalDefinition.Name);
+            int index = SettingsManager.Cache.FindIndex(cacheSound => cacheSound.Name == LocalDefinition.Name);
+            SettingsManager.Cache[index].HotKey = new KeyBind();
+            SettingsManager.Cache[index].HotKey.RaisePropertyChanged();
+
+            KeybindManager.SetKeybinds();
+
             LocalDefinition.HotKey.RaisePropertyChanged();
         }
     }

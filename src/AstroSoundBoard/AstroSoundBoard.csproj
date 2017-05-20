@@ -167,6 +167,7 @@
     <Compile Include="Core\Components\KeybindManager.cs" />
     <Compile Include="Core\Objects\Credentials.cs" />
     <Compile Include="Core\Objects\DataObjects\KeyBind.cs" />
+    <Compile Include="Core\Utils\KeyDetector.cs" />
     <Compile Include="Core\Utils\NativeMethods.cs" />
     <Compile Include="WPF\Controls\Keybind\KeybindView.xaml.cs">
       <DependentUpon>KeybindView.xaml</DependentUpon>

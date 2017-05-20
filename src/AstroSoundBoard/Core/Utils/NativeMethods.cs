@@ -1,8 +1,8 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 08:05:2017 / 18:00
-// Creation: 08:05:2017
+// Last Modified: 18:05:2017 / 17:37
+// Creation: 10:05:2017
 // Project: AstroSoundBoard
 //
 //
@@ -22,5 +22,10 @@ namespace AstroSoundBoard.Core.Utils
         // SOUNDS
         [DllImport("winmm.dll")]
         public static extern int waveOutSetVolume(IntPtr hwo, uint dwVolume);
+
+        // Keybind
+        [DllImport("user32.dll")]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        public static extern bool GetKeyboardState(byte[] keyState);
     }
 }

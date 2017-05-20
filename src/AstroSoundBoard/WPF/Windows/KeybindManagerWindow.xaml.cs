@@ -1,8 +1,8 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 08:05:2017 / 17:43
-// Creation: 08:05:2017
+// Last Modified: 18:05:2017 / 19:25
+// Creation: 10:05:2017
 // Project: AstroSoundBoard
 //
 //
@@ -54,7 +54,11 @@ namespace AstroSoundBoard.WPF.Windows
             ToogleFavorites(this, new RoutedEventArgs());
         }
 
-        private void RemoveAllKeybinds(object sender, RoutedEventArgs e) => KeybindManager.RemoveAllKeybinds();
+        private void RemoveAllKeybinds(object sender, RoutedEventArgs e)
+        {
+            KeybindManager.RemoveAllKeybindsFromSettings();
+            KeybindManager.SetKeybinds();
+        }
 
         public void SearchForElement(object sender, TextChangedEventArgs e)
         {

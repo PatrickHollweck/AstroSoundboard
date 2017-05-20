@@ -1,7 +1,7 @@
 // ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 11:05:2017 / 20:54
+// Last Modified: 18:05:2017 / 21:01
 // Creation: 11:05:2017
 // Project: AstroSoundBoard
 //
@@ -111,7 +111,7 @@ namespace AstroSoundBoard.Core.Components
         /// Registers a Sound into the Manager.
         /// </summary>
         /// <param name="sound">Sound to be registered</param>
-        private static void RegisterSound(Sound sound)
+        private static void Create(Sound sound)
         {
             Log.Debug("Registering Definition!");
             Cache.Add(sound);
@@ -136,7 +136,7 @@ namespace AstroSoundBoard.Core.Components
             }
             catch (UnauthorizedAccessException exception)
             {
-                MessageBox.Show($"The settings file could not be read! Make sure you only have one instance of the soundboard running and restart the Application \n\n {exception.Message}", @"Error", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                MessageBox.Show($@"The settings file could not be read! Make sure you only have one instance of the soundboard running and restart the Application \n\n {exception.Message}", @"Error", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 
                 Environment.Exit(1);
             }
@@ -161,7 +161,7 @@ namespace AstroSoundBoard.Core.Components
                 }
             }
 
-            RegisterSound(new Sound { Name = name, IsFavorite = JsonConvert.False });
+            Create(new Sound { Name = name, IsFavorite = JsonConvert.False });
             return GetSound(name);
         }
 
@@ -169,7 +169,7 @@ namespace AstroSoundBoard.Core.Components
         /// Changes the Sound and writes it to the disk.
         /// </summary>
         /// <param name="sound">Sound to change</param>
-        public static void ChangeSound(Sound sound)
+        public static void Update(Sound sound)
         {
             Log.Debug($"Changing Definition of {sound.Name}");
 

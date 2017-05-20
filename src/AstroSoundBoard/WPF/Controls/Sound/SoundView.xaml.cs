@@ -67,14 +67,14 @@ namespace AstroSoundBoard.WPF.Controls.Sound
                 IconKind = "HeartOutline";
                 LocalDefinition.IsFavorite = JsonConvert.False;
 
-                SettingsManager.ChangeSound(LocalDefinition);
+                SettingsManager.Update(LocalDefinition);
             }
             else
             {
                 IconKind = "Heart";
                 LocalDefinition.IsFavorite = JsonConvert.True;
 
-                SettingsManager.ChangeSound(LocalDefinition);
+                SettingsManager.Update(LocalDefinition);
             }
         }
 
