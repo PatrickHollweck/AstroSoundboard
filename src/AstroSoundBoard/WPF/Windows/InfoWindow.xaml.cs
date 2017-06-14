@@ -16,7 +16,7 @@ namespace AstroSoundBoard.WPF.Windows
     using System.Windows;
 
     using AstroSoundBoard.Core.Components;
-    using AstroSoundBoard.Core.Objects.DataObjects;
+    using AstroSoundBoard.Core.Objects.Models;
 
     using Microsoft.Win32;
 

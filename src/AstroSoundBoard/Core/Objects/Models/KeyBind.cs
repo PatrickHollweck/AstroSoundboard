@@ -1,17 +1,15 @@
 ﻿// ****************************** Module Header ****************************** //
-// 
-// 
+//
+//
 // Last Modified: 18:05:2017 / 18:35
 // Creation: 11:05:2017
 // Project: AstroSoundBoard
-// 
-// 
+//
+//
 // <copyright file="KeyBind.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
 
-
-
-namespace AstroSoundBoard.Core.Objects.DataObjects
+namespace AstroSoundBoard.Core.Objects.Models
 {
     using System;
     using System.ComponentModel;

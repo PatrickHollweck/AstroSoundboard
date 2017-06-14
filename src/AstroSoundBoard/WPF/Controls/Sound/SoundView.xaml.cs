@@ -1,15 +1,13 @@
 ﻿// ****************************** Module Header ****************************** //
-// 
-// 
+//
+//
 // Last Modified: 11:05:2017 / 20:07
 // Creation: 11:05:2017
 // Project: AstroSoundBoard
-// 
-// 
+//
+//
 // <copyright file="SoundView.xaml.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
-
-
 
 namespace AstroSoundBoard.WPF.Controls.Sound
 {
@@ -21,7 +19,7 @@ namespace AstroSoundBoard.WPF.Controls.Sound
     using System.Windows.Controls;
 
     using AstroSoundBoard.Core.Components;
-    using AstroSoundBoard.Core.Objects.DataObjects;
+    using AstroSoundBoard.Core.Objects.Models;
     using AstroSoundBoard.WPF.Windows;
 
     using log4net;

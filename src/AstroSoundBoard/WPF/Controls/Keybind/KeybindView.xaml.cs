@@ -15,7 +15,7 @@ namespace AstroSoundBoard.WPF.Controls.Keybind
     using System.Windows.Controls;
 
     using AstroSoundBoard.Core.Components;
-    using AstroSoundBoard.Core.Objects.DataObjects;
+    using AstroSoundBoard.Core.Objects.Models;
     using AstroSoundBoard.WPF.Windows;
 
     public partial class KeybindView : UserControl

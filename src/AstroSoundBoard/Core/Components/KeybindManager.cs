@@ -15,8 +15,7 @@ namespace AstroSoundBoard.Core.Components
     using System.IO;
     using System.Media;
     using System.Reflection;
-
-    using AstroSoundBoard.Core.Objects.DataObjects;
+    using AstroSoundBoard.Core.Objects.Models;
 
     using log4net;
 
@@ -29,17 +28,11 @@ namespace AstroSoundBoard.Core.Components
 
         public static void SetKeybinds()
         {
-            foreach (Sound sound in SettingsManager.Cache)
-            {
-                HotkeyManager.Current.Remove(sound.Name);
-            }
+            SettingsManager.Cache.ForEach(sound => HotkeyManager.Current.Remove(sound.Name));
 
             foreach (Sound sound in SettingsManager.Cache)
             {
-                if (sound.HotKey == null)
-                {
-                    sound.HotKey = new KeyBind();
-                }
+                sound.HotKey = sound.HotKey ?? new KeyBind();
 
                 try
                 {

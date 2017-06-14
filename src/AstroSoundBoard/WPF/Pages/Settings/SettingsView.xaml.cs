@@ -1,8 +1,8 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 08:05:2017 / 18:27
-// Creation: 08:05:2017
+// Last Modified: 14:06:2017 / 12:54
+// Creation: 20:05:2017
 // Project: AstroSoundBoard
 //
 //
@@ -17,7 +17,6 @@ namespace AstroSoundBoard.WPF.Pages.Settings
     using System.Windows;
     using System.Windows.Controls;
 
-    using AstroSoundBoard.Core.Components;
     using AstroSoundBoard.Core.Objects;
     using AstroSoundBoard.Properties;
     using AstroSoundBoard.WPF.Windows;
@@ -31,45 +30,17 @@ namespace AstroSoundBoard.WPF.Pages.Settings
 
         public SettingsView()
         {
-            Model = new SettingsModel
-            {
-                EnableKeybinds = Settings.Default.EnableSoundHotKeys,
-                IsDarkModeEnabled = Settings.Default.IsDarkModeEnabled,
-                SelectedColor = Settings.Default.PrimaryColor
-            };
+            Model = new SettingsModel();
 
             InitializeComponent();
             DataContext = Model;
 
-            ColorBox.SelectedValue = Settings.Default.PrimaryColor;
-            AllowErrorReportingToogleButton.IsChecked = Settings.Default.AllowErrorReporting;
+            ColorBox.SelectedValue = Model.SelectedColor;
         }
 
-        private void ChangePrimaryColor(object sender, SelectionChangedEventArgs e)
-        {
-            Settings.Default.PrimaryColor = ColorBox.SelectedIndex;
-            Settings.Default.Save();
+        private void ChangePrimaryColor(object sender, SelectionChangedEventArgs e) => Model.SelectedColor = ColorBox.SelectedIndex;
 
-            App.ApplyMaterialTheme();
-        }
-
-        private void ChangeLightMode(object sender, RoutedEventArgs e)
-        {
-            if (Settings.Default.IsDarkModeEnabled)
-            {
-                Settings.Default.IsDarkModeEnabled = false;
-                Settings.Default.Save();
-            }
-            else
-            {
-                Settings.Default.IsDarkModeEnabled = true;
-                Settings.Default.Save();
-            }
-
-            App.ApplyMaterialTheme();
-        }
-
-        private void ShowAbout_Click(object sender, RoutedEventArgs e) => ViewChanger.ChangeViewTo(ViewChanger.Page.About);
+        private void ChangeLightMode(object sender, RoutedEventArgs e) => Model.IsDarkModeEnabled = !Settings.Default.IsDarkModeEnabled;
 
         private void BrowserChangeLog(object sender, RoutedEventArgs e) => Process.Start("https://github.com/FetzenRndy/AstroSoundboard/releases/");
 
@@ -77,39 +48,9 @@ namespace AstroSoundBoard.WPF.Pages.Settings
 
         private void OpenLogsFolder(object sender, RoutedEventArgs e) => Process.Start("explorer.exe", @"C:\ProgramData\AstroKittySoundBoard\logs");
 
-        private void RequestImplementation_Click(object sender, RoutedEventArgs e) => new FeedbackWindow().Show();
+        private void GiveFeedback_Click(object sender, RoutedEventArgs e) => new FeedbackWindow().Show();
 
-        private void ReportIssue_Click(object sender, RoutedEventArgs e) => new FeedbackWindow().Show();
-
-        private void AllowErrorReportingToogleButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (Settings.Default.AllowErrorReporting)
-            {
-                Settings.Default.AllowErrorReporting = false;
-                Settings.Default.Save();
-            }
-            else
-            {
-                Settings.Default.AllowErrorReporting = true;
-                Settings.Default.Save();
-            }
-
-            Log.Info($"Changed ErrorReporting! TO: {Settings.Default.AllowErrorReporting}");
-        }
-
-        private void EnableKeybindsToogle(object sender, RoutedEventArgs e)
-        {
-            if (Settings.Default.EnableSoundHotKeys)
-            {
-                Settings.Default.EnableSoundHotKeys = false;
-                Settings.Default.Save();
-            }
-            else
-            {
-                Settings.Default.EnableSoundHotKeys = true;
-                Settings.Default.Save();
-            }
-        }
+        private void EnableKeybindsToogle(object sender, RoutedEventArgs e) => Model.EnableKeybinds = !Settings.Default.EnableSoundHotKeys;
 
         private void Uninstall(object sender, RoutedEventArgs e)
         {

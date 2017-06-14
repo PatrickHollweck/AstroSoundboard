@@ -1,15 +1,17 @@
 ﻿// ****************************** Module Header ****************************** //
-//
-//
-// Last Modified: 08:05:2017 / 17:57
-// Creation: 08:05:2017
+// 
+// 
+// Last Modified: 14:06:2017 / 12:24
+// Creation: 13:06:2017
 // Project: AstroSoundBoard
-//
-//
+// 
+// 
 // <copyright file="Sound.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
 
-namespace AstroSoundBoard.Core.Objects.DataObjects
+
+
+namespace AstroSoundBoard.Core.Objects.Models
 {
     using System.ComponentModel;
     using System.Runtime.CompilerServices;

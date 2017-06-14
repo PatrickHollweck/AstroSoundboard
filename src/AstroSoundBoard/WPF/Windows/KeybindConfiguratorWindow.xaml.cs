@@ -17,7 +17,7 @@ namespace AstroSoundBoard.WPF.Windows
     using System.Windows.Input;
 
     using AstroSoundBoard.Core.Components;
-    using AstroSoundBoard.Core.Objects.DataObjects;
+    using AstroSoundBoard.Core.Objects.Models;
     using AstroSoundBoard.Core.Utils;
 
     using log4net;

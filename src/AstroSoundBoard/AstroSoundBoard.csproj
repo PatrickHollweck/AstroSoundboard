@@ -108,6 +108,9 @@
     <Reference Include="CrashReporter.NET, Version=1.5.1.0, Culture=neutral, PublicKeyToken=986591a91592b7e6, processorArchitecture=MSIL">
       <HintPath>..\..\packages\CrashReporter.NET.Official.1.5.1\lib\net40\CrashReporter.NET.dll</HintPath>
     </Reference>
+    <Reference Include="FetzDeLib">
+      <HintPath>..\..\..\libs\C#\FetzDeLib\FetzDeLib.dll</HintPath>
+    </Reference>
     <Reference Include="log4net">
       <HintPath>..\..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
       <Private>True</Private>
@@ -160,7 +163,9 @@
     </ApplicationDefinition>
     <Compile Include="Core\Components\KeybindManager.cs" />
     <Compile Include="Core\Objects\Credentials.cs" />
-    <Compile Include="Core\Objects\DataObjects\KeyBind.cs" />
+    <Compile Include="Core\Objects\Models\KeyBind.cs" />
+    <Compile Include="Core\Objects\Models\Sound.cs" />
+    <Compile Include="Core\Objects\Models\SoundDefinitions.cs" />
     <Compile Include="Core\Utils\KeyDetector.cs" />
     <Compile Include="Core\Utils\NativeMethods.cs" />
     <Compile Include="WPF\Controls\Keybind\KeybindView.xaml.cs">
@@ -217,8 +222,6 @@
     <Compile Include="Core\Components\SoundManager.cs" />
     <Compile Include="Core\Components\ViewChanger.cs" />
     <Compile Include="Core\Objects\AppSettings.cs" />
-    <Compile Include="Core\Objects\DataObjects\Sound.cs" />
-    <Compile Include="Core\Objects\DataObjects\SoundDefinitions.cs" />
     <Compile Include="Core\Utils\FileSystem.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -231,10 +234,10 @@
     <Compile Include="WPF\Pages\Board\BoardView.xaml.cs">
       <DependentUpon>BoardView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WPF\Pages\Settings\SettingsModel.cs" />
     <Compile Include="WPF\Pages\Settings\SettingsView.xaml.cs">
       <DependentUpon>SettingsView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WPF\SettingsModel.cs" />
     <Compile Include="WPF\Windows\FeedbackWindow.xaml.cs">
       <DependentUpon>FeedbackWindow.xaml</DependentUpon>
     </Compile>
@@ -402,7 +405,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Core\Utils\Extensions\" />
-    <Folder Include="WPF\Pages\IssueReport\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\RUNNAWAY_FROM_ME.wav" />
