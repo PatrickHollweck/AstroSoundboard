@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item>
-    <version>1.0.0.0</version>
-    <url>https://github.com/FetzenRndy/AstroSoundboard/raw/master/public/versions/AstroKittySoundBoard.zip</url>
-    <changelog>https://cdn.rawgit.com/FetzenRndy/AstroSoundboard/master/public/versions/v1/releaseNotes.html</changelog>
+    <version>1.1.1.0</version>
+    <url>https://github.com/FetzenRndy/AstroSoundboard/releases/download/v1.1.1-hotfix/AstroSoundBoard.exe</url>
+    <changelog>https://cdn.rawgit.com/FetzenRndy/AstroSoundboard/deda24dc/public/versions/v1.1.1/releaseNotes.html</changelog>
 </item>

@@ -1,0 +1,1088 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="BOOPEY_BOOPEY" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BOOPEY_BOOPEY.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="BYE_BYE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BYE_BYE.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CHEEKY_BOOP" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CHEEKY_BOOP.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CHEEKY_CHEEKY" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CHEEKY_CHEEKY.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DO_IT_FOR_THE_MEMEZ" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DO_IT_FOR_THE_MEMEZ.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DROP_THAT_CHITTY" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DROP_THAT_CHITTY.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="FUCKING_MERCY" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FUCKING_MERCY.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="GET_HER_BABY" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GET_HER_BABY.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="GIVE_A_BLOWJOB" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GIVE_A_BLOWJOB.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="GIVE_IT_TO_ME_ASTRO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GIVE_IT_TO_ME_ASTRO.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="GOING_TOO_DEEP_GUYS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GOING_TOO_DEEP_GUYS.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="GUNG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GUNG.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="HARMONY_ORB" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HARMONY_ORB.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="HEAL_ME_YOU_CUNT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HEAL_ME_YOU_CUNT.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="MONKEY_EAT_MY_ASS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MONKEY_EAT_MY_ASS.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="MORE_STYLE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MORE_STYLE.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="NICE_JOB_ASTRO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NICE_JOB_ASTRO.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="NICE_PHARA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NICE_PHARA.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PRETTY_GOOD_PUSH" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PRETTY_GOOD_PUSH.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PRETTY_NICE_BOOP" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PRETTY_NICE_BOOP.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="RIPPAAA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RIPPAAA.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="RUNNAWAY_FROM_ME" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RUNNAWAY_FROM_ME.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SHUT_UP_ASTROKITTY" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SHUT_UP_ASTROKITTY.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SMACK_MY_BITCH_UP" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SMACK_MY_BITCH_UP.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SoundDefinition" xml:space="preserve">
+    <value>{
+    "FileVersion": "1",
+    "ParserVersion": "1",
+    "Sounds": [{
+            "sound": {
+                "name": "FUCKING_MERCY"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/11olpkle_YQ",
+                "Description": "Friend of Astro Screaming 'FUCKING MERCY' as a mercy comes in and revives alot of people and causing them to lose the Game. - Mercy OP please nerf"
+            }
+        },
+        {
+            "sound": {
+                "name": "AW_YEAH_PAPI"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/4npgppVhcQ4",
+                "Description": "A Kid gets horny in the Middle of the Match"
+            }
+        },
+        {
+            "sound": {
+                "name": "BOOPEY_BOOPEY"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/Sgcemfa7Tow",
+                "Description": "Astro boops Person"
+            }
+        },
+        {
+            "sound": {
+                "name": "BYE_BYE"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/xNAPJ5bMLGQ",
+                "Description": "Astro's team says bye a billion times"
+            }
+        },
+        {
+            "sound": {
+                "name": "CHEEKY_BOOP"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/Sgcemfa7Tow",
+                "Description": "Astro Boops a other Player while hiding and calls it a cheeky boop"
+            }
+        },
+        {
+            "sound": {
+                "name": "CHEEKY_CHEEKY"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/qv8E50WPF9E",
+                "Description": "Astro plays Cheeky with Reaper"
+            }
+        },
+        {
+            "sound": {
+                "name": "DO_IT_FOR_THE_MEMEZ"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/8tExMeAsGEU",
+                "Description": "Kid wants to do it for the Memes"
+            }
+        },
+        {
+            "sound": {
+                "name": "DROP_THAT_CHITTY"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/I34V4HeasKs",
+                "Description": "Description"
+            }
+        },
+        {
+            "sound": {
+                "name": "GET_HER_BABY"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/Iqp0CqtjlNo",
+                "Description": "Mercy wants astro to kill the baby d.va"
+            }
+        },
+        {
+            "sound": {
+                "name": "GIVE_IT_TO_ME_ASTRO"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/dwmZwOngW8I",
+                "Description": "After a team mate of Astro says to him that he did a good job, and Astro responds with 'Thanks mum' he comes up with this voiceline"
+            }
+        },
+        {
+            "sound": {
+                "name": "GOING_TOO_DEEP_GUYS"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/gGrcV994cqY",
+                "Description": "Astro and his team are overextending and a grill wants to make them aware of it and tells them that they are going to deep."
+            }
+        },
+        {
+            "sound": {
+                "name": "GUNG"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/yGUS7fVu0ZA",
+                "Description": "Astro's Friend get shot in the Head and the Bullet gets reflected by the Helmet and making a GUNG sound"
+            }
+        },
+        {
+            "sound": {
+                "name": "HARMONY_ORB"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/YrDomblEJV8",
+                "Description": "Astro's Friend imitates the 'Playing with a guy that sounds like zen' video"
+            }
+        },
+        {
+            "sound": {
+                "name": "HEAL_ME_YOU_CUNT"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/IG7sC5tudN0",
+                "Description": "Astro as Mercy solo heals a McRee the whole match but as the gets to another Teammate to help him out he dies and the McRee gets salty"
+            }
+        },
+        {
+            "sound": {
+                "name": "MONKEY_EAT_MY_ASS"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/G4V1c5GC72E",
+                "Description": "Astro's team mate gets killed by a Winston to which he responds that he wants their Winston to eat his ass"
+            }
+        },
+        {
+            "sound": {
+                "name": "NICE_JOB_ASTRO"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/ixda9vcYxvk",
+                "Description": "Astro gets a double with the Solider ult saving the point, and a grill calls him out for it."
+            }
+        },
+        {
+            "sound": {
+                "name": "NICE_PHARA"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/xNAPJ5bMLGQ",
+                "Description": "Astro's russian team mate is surprised at phara getting the POTG"
+            }
+        },
+        {
+            "sound": {
+                "name": "PRETTY_GOOD_PUSH"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/LkcR79j8n-Q",
+                "Description": "Astro fucks up a push"
+            }
+        },
+        {
+            "sound": {
+                "name": "PRETTY_NICE_BOOP"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/Sgcemfa7Tow",
+                "Description": "Astro is a boop god"
+            }
+        },
+        {
+            "sound": {
+                "name": "GIVE_A_BLOWJOB"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/4npgppVhcQ4",
+                "Description": "Astro's Team mate wants a blowjob from a Guy with a nice voice"
+            }
+        },
+        {
+            "sound": {
+                "name": "RIPPAAA"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/qv8E50WPF9E",
+                "Description": "Astro cheeky with Reaper"
+            }
+        },
+        {
+            "sound": {
+                "name": "RUNNAWAY_FROM_ME"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/I34V4HeasKs",
+                "Description": "Astro's Teammate named runaway leaves the Match"
+            }
+        },
+        {
+            "sound": {
+                "name": "SHUT_UP_ASTROKITTY"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/lYeDCTAkwAA",
+                "Description": "Astro roasts a mercy that was saving his ult"
+            }
+        },
+        {
+            "sound": {
+                "name": "SMACK_MY_BITCH_UP"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/qv8E50WPF9E",
+                "Description": "Astro smacks his enemies with Reinhart"
+            }
+        },
+        {
+            "sound": {
+                "name": "SO_RUDE"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/8-1c9wkWITA",
+                "Description": "Astro's Team is Rude"
+            }
+        },
+        {
+            "sound": {
+                "name": "STOP_BEING_A_PUSSY"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/IG7sC5tudN0",
+                "Description": "Ana on Astro's Team wants the Team to push up and not be such a pussy"
+            }
+        },
+        {
+            "sound": {
+                "name": "SUCK_MY_DICK"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/4npgppVhcQ4",
+                "Description": "Astro's team mate gets salty at the end of the match and starts to Argue with him as the match ends the finished with this voiceline"
+            }
+        },
+        {
+            "sound": {
+                "name": "THATS_ALRIGHT_BAE"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/I34V4HeasKs",
+                "Description": "Astro gets caught from then enemy reinhart and almost dies as ana commes in to save him."
+            }
+        },
+        {
+            "sound": {
+                "name": "THATS_UNFORTUNATE"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/YrDomblEJV8",
+                "Description": "Astro's mate gets picked"
+            }
+        },
+        {
+            "sound": {
+                "name": "THAT_SUCKS_DICK_DUDE"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/dwmZwOngW8I",
+                "Description": "As Astro's team gets a Team wipe mercy comes in and rescuructs the whole team."
+            }
+        },
+        {
+            "sound": {
+                "name": "THERE_IS_YOUR_PICK"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/iEZE-Rd-EAY",
+                "Description": "Astro's team mate gets a double pick and wants to motivate the team to get into the Point."
+            }
+        },
+        {
+            "sound": {
+                "name": "THIS_IS_A_BAD_IDEA"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/8tExMeAsGEU",
+                "Description": "A Teammate thinks this it is a bad idea to push"
+            }
+        },
+        {
+            "sound": {
+                "name": "WINSTON_ON_MY_COCK"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/iEZE-Rd-EAY",
+                "Description": "Astro's Teammate (zen) gets focused by a winston which he responds to with this voiceline."
+            }
+        },
+        {
+            "sound": {
+                "name": "MORE_STYLE"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/tD5G_WQWXMw",
+                "Description": "Astro and his Team won a Match with more style that their Enemys"
+            }
+        },
+        {
+            "sound": {
+                "name": "YOU_SLUT"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/IG7sC5tudN0",
+                "Description": "Astro's Team mate gets salty as he gets killed"
+            }
+        },
+        {
+            "sound": {
+                "name": "YOU_SUCK_DUDE"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/jKRGhj7vK7Q",
+                "Description": "Mercy waited the whole match on Astro (phara) to ult but he didnt ult, in the end of the round he expresses his emotions."
+            }
+        },
+        {
+            "sound": {
+                "name": "ENGINE_START"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/oaiFJwKjacE",
+                "Description": "Astro's friend flees from Astro in Dying light as he is about to make run a way he makes this very ambicious sound."
+            }
+        },
+        {
+            "sound": {
+                "name": "A_LOT_OF_CUNTS"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/tD5G_WQWXMw",
+                "Description": "Astro's Teammate was alone on point and saw a lot of enemies"
+            }
+        },
+        {
+            "sound": {
+                "name": "BAD_DECISIONS"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/tD5G_WQWXMw",
+                "Description": "Astro wants to kill a Mercy and just walks through the whole enemy Team, and gets killed"
+            }
+        },
+        {
+            "sound": {
+                "name": "FUCKING_DOMINATE"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/tD5G_WQWXMw",
+                "Description": "Astro wants to play sym, but a Team mate is against that Idea on Attack, so he changes to phara and has to dominate them"
+            }
+        },
+        {
+            "sound": {
+                "name": "FUCKING_JUNKRAT"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/tD5G_WQWXMw",
+                "Description": "Astro get caught by a junkrat trap"
+            }
+        },
+        {
+            "sound": {
+                "name": "HEY"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/tD5G_WQWXMw",
+                "Description": "Hello"
+            }
+        },
+        {
+            "sound": {
+                "name": "HIT_ME"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/tD5G_WQWXMw",
+                "Description": "Astro playing zarya wants to get energy and hit :3"
+            }
+        },
+        {
+            "sound": {
+                "name": "I_AM_NUTCRACKER"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/tD5G_WQWXMw",
+                "Description": "Astro playing zen with the nut-cracker skin"
+            }
+        },
+        {
+            "sound": {
+                "name": "I_MAIN_CANCER"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/tD5G_WQWXMw",
+                "Description": "Astro playing Mei"
+            }
+        },
+        {
+            "sound": {
+                "name": "MOVED_ASLEEP"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/tD5G_WQWXMw",
+                "Description": "Astro teammate ana got slept and moved the payload to victory while sleeping."
+            }
+        },
+        {
+            "sound": {
+                "name": "NOT_PAST_GORILLA"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/tD5G_WQWXMw",
+                "Description": "Astro keeping the whole team from getting to the point with winstons ult"
+            }
+        },
+        {
+            "sound": {
+                "name": "RRRRRRR"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/tD5G_WQWXMw",
+                "Description": "Astro and solider have a affair"
+            }
+        },
+        {
+            "sound": {
+                "name": "SUCK_MY_ORBS"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/tD5G_WQWXMw",
+                "Description": "Phara ults and astro comes in with the zen ult to save the team"
+            }
+        },
+        {
+            "sound": {
+                "name": "THE_META"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/tD5G_WQWXMw",
+                "Description": "Astro wants to play sym but is lagging al over the place, his team mate thought this would be an advantage, when playing sym."
+            }
+        },
+        {
+            "sound": {
+                "name": "TRUMP_2017"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/tD5G_WQWXMw",
+                "Description": "Make murica great again!"
+            }
+        },
+        {
+            "sound": {
+                "name": "WHEN_YOU_TRY"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/tD5G_WQWXMw",
+                "Description": "Astro as zarya gets caught flanking by a winston"
+            }
+        },
+        {
+            "sound": {
+                "name": "GOOD_CATCH"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/QG-ef22eRr0",
+                "Description": "Reinhart catching someone."
+            }
+        },
+        {
+            "sound": {
+                "name": "OVERUSED_MEME"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/QG-ef22eRr0",
+                "Description": "Harambe is a overused meme"
+            }
+        },
+        {
+            "sound": {
+                "name": "FUCKING_NEOW"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/0U_fjk01cNo",
+                "Description": "Unknown source."
+            }
+        },
+        {
+            "sound": {
+                "name": "MONKEY_MONKEY"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/0U_fjk01cNo",
+                "Description": "Astro as Harambe abuses another player"
+            }
+        },
+        {
+            "sound": {
+                "name": "SICK_ULT"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/I34V4HeasKs",
+                "Description": "Astro as Harambe abuses another player"
+            }
+        },
+        {
+            "sound": {
+                "name": "PLATNIUM_DAMAGE"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/I34V4HeasKs",
+                "Description": "Astro as Harambe abuses another player"
+            }
+        },
+        {
+            "sound": {
+                "name": "PHARA_VS_SOLIDER"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/8-1c9wkWITA",
+                "Description": "Astro as Harambe abuses another player"
+            }
+        },
+        {
+            "sound": {
+                "name": "TURNED_INTO_TRACER"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/8-1c9wkWITA",
+                "Description": "Astro as Harambe abuses another player"
+            }
+        },
+        {
+            "sound": {
+                "name": "DARKNESS_IM_DAD"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/G4V1c5GC72E",
+                "Description": "Astro trolling."
+            }
+        },
+        {
+            "sound": {
+                "name": "DICK_SKIN_IS_PEELING"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/8-1c9wkWITA",
+                "Description": "Kid trying to rhyme :3"
+            }
+        },
+        {
+            "sound": {
+                "name": "MAINHART_RAIN"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/bGV2_v64fPI",
+                "Description": "Astro makes a slip of the tongue, while trying to say that he is a Reinhart main"
+            }
+        },
+        {
+            "sound": {
+                "name": "AMEIZING"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/ixda9vcYxvk",
+                "Description": "Pun intendet"
+            }
+        },
+        {
+            "sound": {
+                "name": "THIS_MOMENT"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/ixda9vcYxvk",
+                "Description": "It was at this moment astrokitty knew, he fucked up"
+            }
+        },
+        {
+            "sound": {
+                "name": "AGAINST_ME"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/ixda9vcYxvk",
+                "Description": "Astro *hates* when he gives soundbites that can be used against him"
+            }
+        },
+        {
+            "sound": {
+                "name": "HE_CAME_IN_MY_FACE"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/_FaF_1iYkqU",
+                "Description": "Astrokitty getting wrecked in his Face"
+            }
+        },
+        {
+            "sound": {
+                "name": "NO_NO_NO_NO"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/nRh7LP6j2vE",
+                "Description": "From the 'look at this dude' meme"
+            }
+        },
+        {
+            "sound": {
+                "name": "HEY_FAM"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/iEZE-Rd-EAY",
+                "Description": "Hey fam"
+            }
+        },
+        {
+            "sound": {
+                "name": "RUNAWAY_EFFECT"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/iEZE-Rd-EAY",
+                "Description": "Astro gets into a lobby with 'Runaway' the guy who left a game before and where the 'Runaway from me' sound originates from, makes someone leaf again."
+            }
+        },
+        {
+            "sound": {
+                "name": "SO_ERRECT"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/iEZE-Rd-EAY",
+                "Description": "Astro gets errect"
+            }
+        },
+        {
+            "sound": {
+                "name": "DONT_DO_IT"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/9y4JwyjdY4E",
+                "Description": "Dont do it."
+            }
+        },
+        {
+            "sound": {
+                "name": "DONT_HURT_ME"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/YzX4We4BQiY",
+                "Description": "Astro gets dominated"
+            }
+        },
+        {
+            "sound": {
+                "name": "NICE_JOB_MEN"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/YzX4We4BQiY",
+                "Description": "Nice job alternative version"
+            }
+        },
+        {
+            "sound": {
+                "name": "OH_HELLO"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/ecuZhbpL9Y0",
+                "Description": "Basically Shreck"
+            }
+        },
+        {
+            "sound": {
+                "name": "JUST_WALK_OVER"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/ecuZhbpL9Y0",
+                "Description": "Mercy tries to go for a res or something but just walks into the whole enemy team."
+            }
+        },
+        {
+            "sound": {
+                "name": "NICE_BOOP"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/gGrcV994cqY",
+                "Description": "Astro get a nice boop"
+            }
+        },
+        {
+            "sound": {
+                "name": "ASTROCITY"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/ecuZhbpL9Y0",
+                "Description": "Astro's mate misreads Astro's name"
+            }
+        },
+        {
+            "sound": {
+                "name": "ON_THE_SIGHT"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/aGK2WorPm0U",
+                "Description": "ON THE SIGHT"
+            }
+        },
+        {
+            "sound": {
+                "name": "IS_THIS_HARAMBE"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/QG-ef22eRr0",
+                "Description": "Astro's team mate gets rekt by harambe"
+            }
+        }
+    ]
+}</value>
+  </data>
+  <data name="SO_RUDE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SO_RUDE.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="STOP_BEING_A_PUSSY" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\STOP_BEING_A_PUSSY.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SUCK_MY_DICK" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SUCK_MY_DICK.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="THATS_ALRIGHT_BAE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\THATS_ALRIGHT_BAE.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="THATS_UNFORTUNATE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\THATS_UNFORTUNATE.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="THAT_SUCKS_DICK_DUDE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\THAT_SUCKS_DICK_DUDE.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="THERE_IS_YOUR_PICK" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\THERE_IS_YOUR_PICK.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="THIS_IS_A_BAD_IDEA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\THIS_IS_A_BAD_IDEA.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="WINSTON_ON_MY_COCK" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WINSTON_ON_MY_COCK.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="YOU_SLUT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\YOU_SLUT.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="YOU_SUCK_DUDE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\YOU_SUCK_DUDE.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="BAD_DECISIONS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BAD_DECISIONS.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ENGINE_START" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ENGINE_START.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="FUCKING_DOMINATE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FUCKING_DOMINATE.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="FUCKING_JUNKRAT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FUCKING_JUNKRAT.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="HEY" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HEY.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="HIT_ME" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HIT_ME.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="I_AM_NUTCRACKER" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\I_AM_NUTCRACKER.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="I_MAIN_CANCER" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\I_MAIN_CANCER.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="NOT_PAST_GORILLA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NOT_PAST_GORILLA.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="RRRRRRR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RRRRRRR.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="THE_META" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\THE_META.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TRUMP_2017" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TRUMP_2017.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="WHEN_YOU_TRY" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WHEN_YOU_TRY.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="AMEIZING" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AMEIZING.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DARKNESS_IM_DAD" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DARKNESS_IM_DAD.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DICK_SKIN_IS_PEELING" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DICK_SKIN_IS_PEELING.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="GOOD_CATCH" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GOOD_CATCH.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="IS_THIS_HARAMBE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IS_THIS_HARAMBE.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="MAINHART_RAIN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MAINHART_RAIN.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="MONKEY_MONKEY" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MONKEY_MONKEY.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="OVERUSED_MEME" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\OVERUSED_MEME.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PHARA_VS_SOLIDER" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PHARA_VS_SOLIDER.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PLATNIUM_DAMAGE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PLATNIUM_DAMAGE.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SICK_ULT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SICK_ULT.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SUCK_MY_ORBS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SUCK_MY_ORBS.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="THIS_MOMENT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\THIS_MOMENT.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TURNED_INTO_TRACER" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TURNED_INTO_TRACER.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="AGAINST_ME" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AGAINST_ME.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="HE_CAME_IN_MY_FACE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HE_CAME_IN_MY_FACE.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="A_LOT_OF_CUNTS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\A_LOT_OF_CUNTS.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="MOVED_ASLEEP" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MOVED_ASLEEP.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="AW_YEAH_PAPI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AW_YEAH_PAPI.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="FUCKING_NEOW" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FUCKING_NEOW.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="HEY_FAM" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HEY_FAM.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="NO_NO_NO_NO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NO_NO_NO_NO.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="RUNAWAY_EFFECT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RUNAWAY_EFFECT.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SO_ERRECT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SO_ERRECT.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DONT_DO_IT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DONT_DO_IT.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DONT_HURT_ME" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DONT_HURT_ME.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="NICE_JOB_MEN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NICE_JOB_MEN.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ASTROCITY" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ASTROCITY.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="JUST_WALK_OVER" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\JUST_WALK_OVER.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="NICE_BOOP" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NICE_BOOP.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="OH_HELLO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\OH_HELLO.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ON_THE_SIGHT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ON_THE_SIGHT.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>

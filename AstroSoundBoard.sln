@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26403.7
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AstroSoundBoard", "src\AstroSoundBoard\AstroSoundBoard.csproj", "{24C2FAA4-3A55-49A3-AA2D-BE8EA58F876C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AstroSoundBoard", "src\Desktop\AstroSoundBoard.csproj", "{24C2FAA4-3A55-49A3-AA2D-BE8EA58F876C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
