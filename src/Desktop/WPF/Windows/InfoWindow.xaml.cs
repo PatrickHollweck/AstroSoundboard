@@ -1,8 +1,8 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 20:05:2017 / 19:22
-// Creation: 20:05:2017
+// Last Modified: 01:07:2017 / 11:45
+// Creation: 01:07:2017
 // Project: AstroSoundBoard
 //
 //
@@ -16,6 +16,7 @@ namespace AstroSoundBoard.WPF.Windows
     using System.Windows;
 
     using AstroSoundBoard.Core.Components;
+    using AstroSoundBoard.Core.Objects;
     using AstroSoundBoard.Core.Objects.Models;
 
     using Microsoft.Win32;
@@ -46,6 +47,7 @@ namespace AstroSoundBoard.WPF.Windows
                 // Dialog to determine the file path
                 var dialog = new SaveFileDialog
                 {
+                    InitialDirectory = $"{AppSettings.AssemblyDirectory}",
                     Filter = ".mp3 File (*.mp3)|*.mp3",
                     Title = $"Sound Location for sound : {LocalSound.Name}",
                     FileName = LocalSound.Name

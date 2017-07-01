@@ -1,13 +1,15 @@
 ﻿// ****************************** Module Header ****************************** //
-//
-//
-// Last Modified: 18:05:2017 / 19:25
-// Creation: 10:05:2017
+// 
+// 
+// Last Modified: 01:07:2017 / 11:22
+// Creation: 01:07:2017
 // Project: AstroSoundBoard
-//
-//
+// 
+// 
 // <copyright file="KeybindManagerWindow.xaml.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
+
+
 
 namespace AstroSoundBoard.WPF.Windows
 {
@@ -22,9 +24,7 @@ namespace AstroSoundBoard.WPF.Windows
 
     using Newtonsoft.Json;
 
-    using PropertyChanged;
-
-    [ImplementPropertyChanged]
+    [PropertyChanged.AddINotifyPropertyChangedInterface]
     public partial class KeybindManagerWindow : Window
     {
         private List<KeybindView> AllViews { get; set; } = new List<KeybindView>();
@@ -37,13 +37,13 @@ namespace AstroSoundBoard.WPF.Windows
             foreach (Definition definition in SoundManager.GetSoundList())
             {
                 var item = new Sound
-                {
-                    Description = definition.Info.Description,
-                    IsFavorite = SettingsManager.GetSound(definition.Sound.Name).IsFavorite,
-                    Name = definition.Sound.Name,
-                    VideoLink = definition.Info.VideoLink,
-                    HotKey = SettingsManager.GetSound(definition.Sound.Name).HotKey
-                };
+                    {
+                        Description = definition.Info.Description,
+                        IsFavorite = SettingsManager.GetSound(definition.Sound.Name).IsFavorite,
+                        Name = definition.Sound.Name,
+                        VideoLink = definition.Info.VideoLink,
+                        HotKey = SettingsManager.GetSound(definition.Sound.Name).HotKey
+                    };
 
                 var view = new KeybindView(item) { MinWidth = Width - 40 };
 

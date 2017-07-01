@@ -1,13 +1,15 @@
 ﻿// ****************************** Module Header ****************************** //
-//
-//
-// Last Modified: 18:05:2017 / 19:28
-// Creation: 10:05:2017
+// 
+// 
+// Last Modified: 01:07:2017 / 11:22
+// Creation: 01:07:2017
 // Project: AstroSoundBoard
-//
-//
+// 
+// 
 // <copyright file="KeybindConfiguratorWindow.xaml.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
+
+
 
 namespace AstroSoundBoard.WPF.Windows
 {
@@ -22,9 +24,7 @@ namespace AstroSoundBoard.WPF.Windows
 
     using log4net;
 
-    using PropertyChanged;
-
-    [ImplementPropertyChanged]
+    [PropertyChanged.AddINotifyPropertyChangedInterface]
     public partial class KeybindConfiguratorWindow : Window
     {
         public static bool HasOpenInstance { get; set; }

@@ -1,13 +1,15 @@
 ﻿// ****************************** Module Header ****************************** //
-//
-//
-// Last Modified: 15:06:2017 / 17:38
-// Creation: 15:06:2017
+// 
+// 
+// Last Modified: 01:07:2017 / 11:22
+// Creation: 01:07:2017
 // Project: AstroSoundBoard
-//
-//
+// 
+// 
 // <copyright file="SoundModel.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
+
+
 
 namespace AstroSoundBoard.WPF.Controls.Sound
 {
@@ -15,9 +17,7 @@ namespace AstroSoundBoard.WPF.Controls.Sound
 
     using Newtonsoft.Json;
 
-    using PropertyChanged;
-
-    [ImplementPropertyChanged]
+    [PropertyChanged.AddINotifyPropertyChangedInterface]
     public class SoundModel
     {
         public SoundModel(Sound def)

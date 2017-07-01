@@ -1,8 +1,8 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 08:05:2017 / 18:27
-// Creation: 08:05:2017
+// Last Modified: 01:07:2017 / 11:22
+// Creation: 01:07:2017
 // Project: AstroSoundBoard
 //
 //
@@ -24,9 +24,7 @@ namespace AstroSoundBoard.WPF.Pages.Board
 
     using Newtonsoft.Json;
 
-    using PropertyChanged;
-
-    [ImplementPropertyChanged]
+    [PropertyChanged.AddINotifyPropertyChangedInterface]
     public partial class BoardView : UserControl
     {
         private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
