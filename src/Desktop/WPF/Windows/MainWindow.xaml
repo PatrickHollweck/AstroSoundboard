@@ -150,6 +150,7 @@
                                             Name="VolumeSlider"
                                             Width="170"
                                             Margin="10,17,10,0"
+                                            AutoToolTipPlacement="BottomRight"
                                             Maximum="100"
                                             Minimum="0"
                                             TickFrequency="1"

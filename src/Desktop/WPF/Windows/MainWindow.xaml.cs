@@ -1,8 +1,8 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 18:05:2017 / 19:34
-// Creation: 12:05:2017
+// Last Modified: 01:07:2017 / 12:07
+// Creation: 01:07:2017
 // Project: AstroSoundBoard
 //
 //
@@ -130,6 +130,16 @@ namespace AstroSoundBoard.WPF.Windows
             uint newVolumeAllChannels = ((uint)newVolume & 0x0000ffff) | ((uint)newVolume << 16);
 
             NativeMethods.waveOutSetVolume(IntPtr.Zero, newVolumeAllChannels);
+
+            if (VolumeSlider.ToolTip != null)
+            {
+                // Main condition
+                if (VolumeSlider.ToolTip is ToolTip castToolTip)
+                {
+                    castToolTip.ToolTip = $"Volume: {newVolumeAllChannels}%";
+                    castToolTip.IsOpen = true;
+                }
+            }
         }
 
         #endregion VolumeSlider
