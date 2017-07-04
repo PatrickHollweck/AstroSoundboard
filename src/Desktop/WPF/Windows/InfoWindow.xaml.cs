@@ -26,11 +26,11 @@ namespace AstroSoundBoard.WPF.Windows
 
     public partial class InfoWindow : Window
     {
-        public Sound LocalSound { get; set; }
+        public SoundModel LocalSoundModel { get; set; }
 
-        public InfoWindow(Sound def)
+        public InfoWindow(SoundModel def)
         {
-            LocalSound = def;
+            LocalSoundModel = def;
             InitializeComponent();
             DataContext = this;
         }
@@ -38,8 +38,8 @@ namespace AstroSoundBoard.WPF.Windows
         private void SaveSound(object sender, RoutedEventArgs e)
         {
             // Get the audio stream ( file from resources )
-            LocalSound.Name = LocalSound.Name.Replace(" ", "_");
-            var soundStream = (UnmanagedMemoryStream)SoundManager.GetAudioFileFromResources(LocalSound.Name);
+            LocalSoundModel.Name = LocalSoundModel.Name.Replace(" ", "_");
+            var soundStream = (UnmanagedMemoryStream)SoundManager.GetAudioFileFromResources(LocalSoundModel.Name);
 
             // Save it to the file if the getting was successful, yes getting, thats absolutely correct
             if (soundStream != null)
@@ -49,8 +49,8 @@ namespace AstroSoundBoard.WPF.Windows
                 {
                     InitialDirectory = $"{AppSettings.AssemblyDirectory}",
                     Filter = ".mp3 File (*.mp3)|*.mp3",
-                    Title = $"Sound Location for sound : {LocalSound.Name}",
-                    FileName = LocalSound.Name
+                    Title = $"Sound Location for sound : {LocalSoundModel.Name}",
+                    FileName = LocalSoundModel.Name
                 };
 
                 if (dialog.ShowDialog() != true)

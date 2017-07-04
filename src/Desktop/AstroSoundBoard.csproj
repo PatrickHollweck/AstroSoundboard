@@ -166,18 +166,22 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Core\Components\ItemManager.cs" />
     <Compile Include="Core\Components\KeybindManager.cs" />
+    <Compile Include="Core\Objects\Interfaces\IAddableView.cs" />
+    <Compile Include="Core\Objects\Interfaces\IAddableViewModel.cs" />
     <Compile Include="Core\Utils\Extensions\StringExtensions.cs" />
     <Compile Include="Core\Objects\Credentials.cs" />
     <Compile Include="Core\Objects\Models\KeyBind.cs" />
-    <Compile Include="Core\Objects\Models\Sound.cs" />
+    <Compile Include="Core\Objects\Models\SoundModel.cs" />
     <Compile Include="Core\Objects\Models\SoundDefinitions.cs" />
     <Compile Include="Core\Utils\KeyDetector.cs" />
     <Compile Include="Core\Utils\NativeMethods.cs" />
+    <Compile Include="WPF\Controls\Keybind\KeybindViewModel.cs" />
     <Compile Include="WPF\Controls\Keybind\KeybindView.xaml.cs">
       <DependentUpon>KeybindView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WPF\Controls\Sound\SoundModel.cs" />
+    <Compile Include="WPF\Controls\Sound\SoundViewModel.cs" />
     <Compile Include="WPF\Pages\About\AboutView.xaml.cs">
       <DependentUpon>AboutView.xaml</DependentUpon>
     </Compile>

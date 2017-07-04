@@ -305,8 +305,9 @@
                 Margin="25,15"
                 HorizontalAlignment="Right"
                 VerticalAlignment="Bottom"
+                materialDesign:ShadowAssist.ShadowDepth="Depth5"
                 Click="ToogleMenu"
-                Style="{DynamicResource MaterialDesignFloatingActionButton}"
+                Style="{DynamicResource MaterialDesignFloatingActionAccentButton}"
                 ToolTip="Toggle Fullscreen">
                 <Button.Content>
                     <StackPanel Orientation="Horizontal">

@@ -1,8 +1,8 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 18:05:2017 / 19:32
-// Creation: 10:05:2017
+// Last Modified: 04:07:2017 / 17:25
+// Creation: 20:06:2017
 // Project: AstroSoundBoard
 //
 //
@@ -15,36 +15,42 @@ namespace AstroSoundBoard.WPF.Controls.Keybind
     using System.Windows.Controls;
 
     using AstroSoundBoard.Core.Components;
+    using AstroSoundBoard.Core.Objects.Interfaces;
     using AstroSoundBoard.Core.Objects.Models;
     using AstroSoundBoard.WPF.Windows;
 
-    public partial class KeybindView : UserControl
-    {
-        /// <summary>
-        /// Local Instance of the Sound
-        /// </summary>
-        public Sound LocalDefinition { get; set; }
+    using log4net;
 
-        public KeybindView(Sound sound)
+    public partial class KeybindView : UserControl, IAddableView
+    {
+        private static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
+        public KeybindViewModel Model { get; set; }
+        public IAddableViewModel SoundModel
         {
-            LocalDefinition = SettingsManager.GetSound(sound.Name);
+            get => Model;
+            set => Model = (KeybindViewModel)value;
+        }
+
+        // TODO: Hotkey only shows up if there is one set!
+        public KeybindView(SoundModel soundModel)
+        {
+            Model = new KeybindViewModel(soundModel);
 
             InitializeComponent();
             DataContext = this;
 
-            // When migrating from older versions the Hotkey object may be null -> set it to a new Keybind
-            LocalDefinition.HotKey = LocalDefinition.HotKey ?? new KeyBind();
+            Log.Debug(Model.Sound.Name + " " + Model.Sound.HotKey.HasAssignedKeybind);
 
-            // The Visibility of the "What keybind is set for this sound" should be hidden by default if there is no Hotkey.
-            LocalDefinition.HotKey.PropertyChanged += (sender, args) => { CurrentKeybindPanel.Visibility = LocalDefinition.HotKey.HasAssignedKeybind ? Visibility.Hidden : Visibility.Visible; };
-            LocalDefinition.HotKey.RaisePropertyChanged();
+            Model.Sound.HotKey.PropertyChanged += (sender, args) => { CurrentKeybindPanel.Visibility = Model.Sound.HotKey.HasAssignedKeybind ? Visibility.Visible : Visibility.Hidden; };
+            Model.Sound.HotKey.RaisePropertyChanged();
         }
 
         public void ConfigureKeybind(object sender, RoutedEventArgs e)
         {
             if (!KeybindConfiguratorWindow.HasOpenInstance)
             {
-                new KeybindConfiguratorWindow(LocalDefinition).Show();
+                new KeybindConfiguratorWindow(Model.Sound).Show();
             }
             else
             {
@@ -54,7 +60,7 @@ namespace AstroSoundBoard.WPF.Controls.Keybind
 
         public void RemoveKeybind(object sender, RoutedEventArgs e)
         {
-            int index = SettingsManager.Cache.FindIndex(cacheSound => cacheSound.Name == LocalDefinition.Name);
+            int index = SettingsManager.Cache.FindIndex(cacheSound => cacheSound.Name == Model.Sound.Name);
             SettingsManager.Cache[index].HotKey = new KeyBind();
 
             KeybindManager.SetKeybinds();

@@ -1,8 +1,8 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 12:05:2017 / 20:16
-// Creation: 11:05:2017
+// Last Modified: 04:07:2017 / 20:12
+// Creation: 20:06:2017
 // Project: AstroSoundBoard
 //
 //
@@ -37,6 +37,10 @@ namespace AstroSoundBoard
 
         private void Application_Startup(object sender, StartupEventArgs e)
         {
+#if !DEBUG // Setup error handling to log fatal errors.
+            AppDomain.CurrentDomain.UnhandledException += ReportError;
+#endif
+
 #if DEBUG
             ((Hierarchy)LogManager.GetRepository()).Root.Level = Level.Debug;
             ((Hierarchy)LogManager.GetRepository()).RaiseConfigurationChanged(EventArgs.Empty);
@@ -48,13 +52,7 @@ namespace AstroSoundBoard
             Log.Info("--- APP START! ---");
             Log.Info($"Current Version: {Assembly.GetExecutingAssembly().GetName().Version}");
 
-            // Make sure all required Folders exist.
             FileSystem.FolderHelper.CreateIfMissing($"{AppSettings.InstallationFilePath}/");
-
-            // Setup error handling to log fatal errors.
-#if !DEBUG
-            AppDomain.CurrentDomain.UnhandledException += ReportError;
-#endif
 
             ApplyMaterialTheme();
             SoundManager.Init();

@@ -30,7 +30,7 @@ namespace AstroSoundBoard.Core.Components
         {
             SettingsManager.Cache.ForEach(sound => HotkeyManager.Current.Remove(sound.Name));
 
-            foreach (Sound sound in SettingsManager.Cache)
+            foreach (SoundModel sound in SettingsManager.Cache)
             {
                 sound.HotKey = sound.HotKey ?? new KeyBind();
 
@@ -45,12 +45,12 @@ namespace AstroSoundBoard.Core.Components
             }
         }
 
-        public static bool CheckDuplicate(Sound sound)
+        public static bool CheckDuplicate(SoundModel soundModel)
         {
             // Poor mans implementation.
             try
             {
-                HotkeyManager.Current.AddOrReplace(sound.Name, sound.HotKey.Key, sound.HotKey.Modifier, PlaySound);
+                HotkeyManager.Current.AddOrReplace(soundModel.Name, soundModel.HotKey.Key, soundModel.HotKey.Modifier, PlaySound);
             }
             catch (HotkeyAlreadyRegisteredException)
             {
@@ -62,7 +62,7 @@ namespace AstroSoundBoard.Core.Components
 
         public static void UnregisterAllKeybinds()
         {
-            foreach (Sound sound in SettingsManager.Cache)
+            foreach (SoundModel sound in SettingsManager.Cache)
             {
                 HotkeyManager.Current.Remove(sound.Name);
             }
@@ -70,7 +70,7 @@ namespace AstroSoundBoard.Core.Components
 
         public static void RemoveAllKeybindsFromSettings()
         {
-            foreach (Sound sound in SettingsManager.Cache)
+            foreach (SoundModel sound in SettingsManager.Cache)
             {
                 sound.HotKey = new KeyBind();
                 sound.HotKey.RaisePropertyChanged();
