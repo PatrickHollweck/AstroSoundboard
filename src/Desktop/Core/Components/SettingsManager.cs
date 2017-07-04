@@ -1,7 +1,7 @@
 // ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 04:07:2017 / 20:19
+// Last Modified: 04:07:2017 / 21:26
 // Creation: 24:06:2017
 // Project: AstroSoundBoard
 //
@@ -19,6 +19,7 @@ namespace AstroSoundBoard.Core.Components
 
     using AstroSoundBoard.Core.Objects;
     using AstroSoundBoard.Core.Objects.Models;
+    using AstroSoundBoard.Core.Utils.Extensions;
     using AstroSoundBoard.Properties;
 
     using log4net;
@@ -154,13 +155,9 @@ namespace AstroSoundBoard.Core.Components
         /// <returns>The queried sound.</returns>
         public static SoundModel GetSound(string name)
         {
-            name = name.Replace(" ", "_");
-
             foreach (SoundModel item in Cache)
             {
-                item.Name = item.Name.Replace(" ", "_");
-
-                if (item.Name == name)
+                if (item.Name == name.ToFileName())
                 {
                     return item;
                 }

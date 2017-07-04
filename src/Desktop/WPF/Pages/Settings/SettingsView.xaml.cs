@@ -1,8 +1,8 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 14:06:2017 / 12:54
-// Creation: 20:05:2017
+// Last Modified: 04:07:2017 / 21:31
+// Creation: 20:06:2017
 // Project: AstroSoundBoard
 //
 //
@@ -39,6 +39,8 @@ namespace AstroSoundBoard.WPF.Pages.Settings
         }
 
         private void ChangePrimaryColor(object sender, SelectionChangedEventArgs e) => Model.SelectedColor = ColorBox.SelectedIndex;
+
+        private void ChangeAccentColor(object sender, SelectionChangedEventArgs e) => Model.SelectedAccentColor = AccentColorBox.SelectedIndex;
 
         private void ChangeLightMode(object sender, RoutedEventArgs e) => Model.IsDarkModeEnabled = !Settings.Default.IsDarkModeEnabled;
 

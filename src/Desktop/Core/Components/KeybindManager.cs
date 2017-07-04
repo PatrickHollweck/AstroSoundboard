@@ -88,7 +88,7 @@ namespace AstroSoundBoard.Core.Components
 
             try
             {
-                using (SoundPlayer player = new SoundPlayer((UnmanagedMemoryStream)SoundManager.GetAudioFileFromResources(e.Name.Replace(' ', '_'))))
+                using (SoundPlayer player = new SoundPlayer((UnmanagedMemoryStream)SoundManager.GetAudioFileFromResources(e.Name)))
                 {
                     player.Play();
                 }

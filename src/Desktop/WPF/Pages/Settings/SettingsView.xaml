@@ -111,6 +111,30 @@
                                 <ComboBoxItem>Brown</ComboBoxItem>
                                 <ComboBoxItem>Grey</ComboBoxItem>
                             </ComboBox>
+                            <ComboBox
+                                Name="AccentColorBox"
+                                Width="200"
+                                Margin="30,0"
+                                HorizontalAlignment="Stretch"
+                                materialDesign:HintAssist.Hint="Accent Color"
+                                materialDesign:HintAssist.IsFloating="True"
+                                SelectedIndex="{Binding SelectedAccentColor}"
+                                SelectionChanged="ChangeAccentColor">
+                                <ComboBoxItem>Red</ComboBoxItem>
+                                <ComboBoxItem>Pink</ComboBoxItem>
+                                <ComboBoxItem>Purple</ComboBoxItem>
+                                <ComboBoxItem>Indigo</ComboBoxItem>
+                                <ComboBoxItem>Blue</ComboBoxItem>
+                                <ComboBoxItem>Cyan</ComboBoxItem>
+                                <ComboBoxItem>Teal</ComboBoxItem>
+                                <ComboBoxItem>Green</ComboBoxItem>
+                                <ComboBoxItem>Lime</ComboBoxItem>
+                                <ComboBoxItem>Yellow</ComboBoxItem>
+                                <ComboBoxItem>Amber</ComboBoxItem>
+                                <ComboBoxItem>Orange</ComboBoxItem>
+                                <ComboBoxItem>Brown</ComboBoxItem>
+                                <ComboBoxItem>Grey</ComboBoxItem>
+                            </ComboBox>
                         </StackPanel>
                     </StackPanel>
                 </GroupBox>

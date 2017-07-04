@@ -1,7 +1,7 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 04:07:2017 / 20:12
+// Last Modified: 04:07:2017 / 21:28
 // Creation: 20:06:2017
 // Project: AstroSoundBoard
 //
@@ -99,6 +99,7 @@ namespace AstroSoundBoard
 
             var palette = new PaletteHelper();
             palette.SetLightDark(Settings.Default.IsDarkModeEnabled);
+            palette.ReplaceAccentColor(colorList[Settings.Default.AccentColor]);
             palette.ReplacePrimaryColor(colorList[Settings.Default.PrimaryColor]);
         }
     }

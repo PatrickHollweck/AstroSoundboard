@@ -1,8 +1,8 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 14:06:2017 / 12:55
-// Creation: 14:06:2017
+// Last Modified: 04:07:2017 / 21:28
+// Creation: 01:07:2017
 // Project: AstroSoundBoard
 //
 //
@@ -49,6 +49,18 @@ namespace AstroSoundBoard.WPF.Pages.Settings
             set
             {
                 selectedColor = configuration.PrimaryColor = value;
+                configuration.Save();
+                App.ApplyMaterialTheme();
+            }
+        }
+
+        private int selectedAccentColor = Settings.Default.AccentColor;
+        public int SelectedAccentColor
+        {
+            get => selectedAccentColor;
+            set
+            {
+                selectedAccentColor = configuration.AccentColor = value;
                 configuration.Save();
                 App.ApplyMaterialTheme();
             }
