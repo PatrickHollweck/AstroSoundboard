@@ -533,9 +533,7 @@
     <None Include="Resources\DONT_HURT_ME.wav" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="libmp3lame.32.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="libmp3lame.32.dll" />
     <Content Include="libmp3lame.64.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
