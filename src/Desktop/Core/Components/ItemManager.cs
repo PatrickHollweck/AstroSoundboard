@@ -1,7 +1,7 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 04:07:2017 / 20:30
+// Last Modified: 16:07:2017 / 18:45
 // Creation: 01:07:2017
 // Project: AstroSoundBoard
 //
@@ -13,10 +13,14 @@ namespace AstroSoundBoard.Core.Components
 {
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics;
     using System.Windows.Controls;
 
+    using AstroSoundBoard.Core.Objects;
     using AstroSoundBoard.Core.Objects.Interfaces;
     using AstroSoundBoard.Core.Objects.Models;
+
+    using FetzDeLib.Extensions;
 
     using Newtonsoft.Json;
 
@@ -56,6 +60,22 @@ namespace AstroSoundBoard.Core.Components
 
         public void Search(ref ItemsControl itemControl, string element)
         {
+            /* BEGIN EASTER EGG CODE */
+            string[] links =
+                {
+                    "http://stackoverflow.com/admin.php",
+                    "https://youtu.be/dWja_zn_ftc",
+                    "https://youtu.be/LVGRAd8TuaQ",
+                    "https://youtu.be/k7VcSMr3hbc",
+                    "https://youtu.be/K5tVbVu9Mkg"
+                };
+
+            if (element.ToLower().EqualsAnyOf("static", "void", "main", "public"))
+            {
+                Process.Start(links[AppSettings.Rng.Next(0, links.Length)]);
+            }
+
+            /* END EASTER EGG CODE */
             itemControl.Items.Filter = item => Filter(item as TView);
 
             bool Filter(IAddableView model)
