@@ -24,7 +24,6 @@ namespace AstroSoundBoard.WPF.Windows
         public static KeybindManagerWindow KeybindManagerInstance;
 
         private readonly ItemManager<KeybindView> itemManager = new ItemManager<KeybindView>(model => new KeybindView(model) { Width = 550 });
-        private bool onlyFavoritesActive;
 
         public KeybindManagerWindow()
         {

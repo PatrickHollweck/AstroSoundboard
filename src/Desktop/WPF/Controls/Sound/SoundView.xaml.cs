@@ -1,7 +1,7 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 16:07:2017 / 19:06
+// Last Modified: 16:07:2017 / 19:40
 // Creation: 01:07:2017
 // Project: AstroSoundBoard
 //
@@ -22,6 +22,8 @@ namespace AstroSoundBoard.WPF.Controls.Sound
     using AstroSoundBoard.WPF.Windows;
 
     using log4net;
+
+    using Newtonsoft.Json;
 
     [PropertyChanged.AddINotifyPropertyChangedInterface]
     public partial class SoundView : UserControl, IAddableView
@@ -51,7 +53,12 @@ namespace AstroSoundBoard.WPF.Controls.Sound
         /// </summary>
         /// <param name="sender">Sender</param>
         /// <param name="e">E</param>
-        private void ToggleFavorite(object sender, RoutedEventArgs e) => SettingsManager.Update(Model.Sound);
+        private void ToggleFavorite(object sender, RoutedEventArgs e)
+        {
+            Model.Sound.IsFavorite = SoundModel.Sound.IsFavorite == JsonConvert.True ? JsonConvert.False : JsonConvert.True;
+            Model.IconKind = Model.UpdateIcon();
+            SettingsManager.Update(Model.Sound);
+        }
 
         /// <summary>
         /// Opens a new Window with Informations about the Sound

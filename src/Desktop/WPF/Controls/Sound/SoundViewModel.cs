@@ -1,7 +1,7 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 04:07:2017 / 16:46
+// Last Modified: 16:07:2017 / 19:37
 // Creation: 01:07:2017
 // Project: AstroSoundBoard
 //
@@ -26,6 +26,16 @@ namespace AstroSoundBoard.WPF.Controls.Sound
             Sound = modelDef;
         }
 
-        public string IconKind => Sound.IsFavorite == JsonConvert.True ? "Heart" : "HeartOutline";
+        private string iconKind;
+        public string IconKind
+        {
+            get => UpdateIcon();
+            set => iconKind = value;
+        }
+
+        public string UpdateIcon()
+        {
+            return Sound.IsFavorite == JsonConvert.True ? "Heart" : "HeartOutline";
+        }
     }
 }
