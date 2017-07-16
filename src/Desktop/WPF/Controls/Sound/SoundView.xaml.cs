@@ -1,21 +1,16 @@
 ﻿// ****************************** Module Header ****************************** //
-// 
-// 
-// Last Modified: 04:07:2017 / 18:33
+//
+//
+// Last Modified: 16:07:2017 / 19:06
 // Creation: 01:07:2017
 // Project: AstroSoundBoard
-// 
-// 
+//
+//
 // <copyright file="SoundView.xaml.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
 
-
-
 namespace AstroSoundBoard.WPF.Controls.Sound
 {
-    using System;
-    using System.IO;
-    using System.Media;
     using System.Reflection;
     using System.Windows;
     using System.Windows.Controls;
@@ -76,24 +71,7 @@ namespace AstroSoundBoard.WPF.Controls.Sound
         /// <param name="e">Event</param>
         private void PlaySound(object sender, RoutedEventArgs e)
         {
-            // In a future version I hope to implement mp3 files since currently I am using .wave which is lossless and quite big in size.
-            try
-            {
-                Model.Sound.Name = Model.Sound.Name.ToFileName();
-
-                Log.Debug($"Trying to Play sound : {Model.Sound.Name}");
-
-                using (SoundPlayer player = new SoundPlayer((UnmanagedMemoryStream)SoundManager.GetAudioFileFromResources(Model.Sound.Name)))
-                {
-                    player.Play();
-                }
-
-                Model.Sound.Name = Model.Sound.Name.ToDisplayName();
-            }
-            catch (Exception exception)
-            {
-                Log.Error("Can not play Definition!", exception);
-            }
+            Model.Sound.PlaySound();
         }
     }
 }

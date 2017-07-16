@@ -1,23 +1,28 @@
 ﻿// ****************************** Module Header ****************************** //
-// 
-// 
-// Last Modified: 04:07:2017 / 20:08
+//
+//
+// Last Modified: 16:07:2017 / 19:12
 // Creation: 20:06:2017
 // Project: AstroSoundBoard
-// 
-// 
+//
+//
 // <copyright file="SoundModel.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
 
-
-
 namespace AstroSoundBoard.Core.Objects.Models
 {
+    using System;
     using System.ComponentModel;
+    using System.IO;
+    using System.Media;
     using System.Runtime.CompilerServices;
+    using System.Windows.Forms;
 
+    using AstroSoundBoard.Core.Components;
     using AstroSoundBoard.Core.Objects.DataObjects.SoundDefinitionJsonTypes;
     using AstroSoundBoard.Core.Utils.Extensions;
+
+    using log4net;
 
     using Newtonsoft.Json;
 
@@ -27,6 +32,8 @@ namespace AstroSoundBoard.Core.Objects.Models
     [PropertyChanged.AddINotifyPropertyChangedInterface]
     public class SoundModel : INotifyPropertyChanged
     {
+        private static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
         private string name;
         private string videoLink;
         private string isFavorite;
@@ -46,6 +53,7 @@ namespace AstroSoundBoard.Core.Objects.Models
         }
 
         public string DisplayName => Name.ToDisplayName();
+        public string FileName => Name.ToFileName();
 
         /// <summary>
         /// String Indicating if the Sound is a favorite. ( Compare with JsonConvert.True )
@@ -113,6 +121,31 @@ namespace AstroSoundBoard.Core.Objects.Models
 
         #region Methods
 
+        public void PlaySound()
+        {
+            // TODO: In a future version I hope to implement mp3 files since currently I am using .wave which is lossless and quite big in size.
+            try
+            {
+                Log.Debug($"Trying to Play sound : {Name}");
+
+                var stream = (UnmanagedMemoryStream)SoundManager.GetAudioFileFromResources(FileName);
+
+                if (stream == null)
+                {
+                    MessageBox.Show(@"Sorry this sound can not be played! Please contact the developers, with the name of the Sound you tried to play!", @"ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                using (SoundPlayer player = new SoundPlayer(stream))
+                {
+                    player.Play();
+                }
+            }
+            catch (Exception exception)
+            {
+                Log.Error("Can not play Definition!", exception);
+            }
+        }
+
         /// <summary>
         /// Returns a SoundModel based on its <paramref name="definition"/>
         /// </summary>
@@ -121,13 +154,13 @@ namespace AstroSoundBoard.Core.Objects.Models
         public static SoundModel GetModel(Definition definition)
         {
             return new SoundModel
-                {
-                    Name = definition.Sound.Name,
-                    Description = definition.Info.Description,
-                    IsFavorite = JsonConvert.False,
-                    VideoLink = definition.Info.VideoLink,
-                    HotKey = new KeyBind()
-                };
+            {
+                Name = definition.Sound.Name,
+                Description = definition.Info.Description,
+                IsFavorite = JsonConvert.False,
+                VideoLink = definition.Info.VideoLink,
+                HotKey = new KeyBind()
+            };
         }
 
         #endregion Methods

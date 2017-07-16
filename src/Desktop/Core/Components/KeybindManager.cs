@@ -1,8 +1,8 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 18:05:2017 / 19:30
-// Creation: 12:05:2017
+// Last Modified: 16:07:2017 / 19:06
+// Creation: 24:06:2017
 // Project: AstroSoundBoard
 //
 //
@@ -11,10 +11,8 @@
 
 namespace AstroSoundBoard.Core.Components
 {
-    using System;
-    using System.IO;
-    using System.Media;
     using System.Reflection;
+
     using AstroSoundBoard.Core.Objects.Models;
 
     using log4net;
@@ -84,19 +82,7 @@ namespace AstroSoundBoard.Core.Components
         /// <param name="e">E</param>
         private static void PlaySound(object sender, HotkeyEventArgs e)
         {
-            Log.Debug($"Trying to Play sound by Keybind : {e.Name}");
-
-            try
-            {
-                using (SoundPlayer player = new SoundPlayer((UnmanagedMemoryStream)SoundManager.GetAudioFileFromResources(e.Name)))
-                {
-                    player.Play();
-                }
-            }
-            catch (Exception exception)
-            {
-                Log.Error("Can not play Sound!", exception);
-            }
+            SettingsManager.GetSound(e.Name).PlaySound();
         }
     }
 }
