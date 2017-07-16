@@ -1,7 +1,7 @@
 // ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 04:07:2017 / 21:26
+// Last Modified: 16:07:2017 / 18:54
 // Creation: 24:06:2017
 // Project: AstroSoundBoard
 //
@@ -117,7 +117,7 @@ namespace AstroSoundBoard.Core.Components
         /// Registers a Sound into the Manager.
         /// </summary>
         /// <param name="soundModel">Sound to be registered</param>
-        private static void Create(SoundModel soundModel)
+        private static void Add(SoundModel soundModel)
         {
             Log.Debug("Registering Definition!");
             Cache.Add(soundModel);
@@ -157,13 +157,13 @@ namespace AstroSoundBoard.Core.Components
         {
             foreach (SoundModel item in Cache)
             {
-                if (item.Name == name.ToFileName())
+                if (item.Name == name.ToDisplayName())
                 {
                     return item;
                 }
             }
 
-            Create(new SoundModel { Name = name, IsFavorite = JsonConvert.False });
+            Add(new SoundModel { Name = name, IsFavorite = JsonConvert.False });
             return GetSound(name);
         }
 
