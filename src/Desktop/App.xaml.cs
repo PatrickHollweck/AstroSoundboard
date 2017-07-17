@@ -1,7 +1,7 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 04:07:2017 / 21:28
+// Last Modified: 17:07:2017 / 17:07
 // Creation: 20:06:2017
 // Project: AstroSoundBoard
 //
@@ -37,16 +37,16 @@ namespace AstroSoundBoard
 
         private void Application_Startup(object sender, StartupEventArgs e)
         {
-#if !DEBUG // Setup error handling to log fatal errors.
-            AppDomain.CurrentDomain.UnhandledException += ReportError;
-#endif
-
 #if DEBUG
+
             ((Hierarchy)LogManager.GetRepository()).Root.Level = Level.Debug;
             ((Hierarchy)LogManager.GetRepository()).RaiseConfigurationChanged(EventArgs.Empty);
 #else
             ((Hierarchy)LogManager.GetRepository()).Root.Level = Level.Warn;
             ((Hierarchy)LogManager.GetRepository()).RaiseConfigurationChanged(EventArgs.Empty);
+
+            // Setup error handler
+            AppDomain.CurrentDomain.UnhandledException += ReportError;
 #endif
 
             Log.Info("--- APP START! ---");

@@ -251,6 +251,7 @@
     <Compile Include="Core\Objects\Models\SoundDefinitions.cs" />
     <Compile Include="Core\Utils\KeyDetector.cs" />
     <Compile Include="Core\Utils\NativeMethods.cs" />
+    <Compile Include="Core\Objects\Models\JsonSoundModel.cs" />
     <Compile Include="WPF\Controls\Keybind\KeybindViewModel.cs" />
     <Compile Include="WPF\Controls\Keybind\KeybindView.xaml.cs">
       <DependentUpon>KeybindView.xaml</DependentUpon>

@@ -1,7 +1,7 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 16:07:2017 / 19:12
+// Last Modified: 17:07:2017 / 18:09
 // Creation: 20:06:2017
 // Project: AstroSoundBoard
 //
@@ -17,8 +17,10 @@ namespace AstroSoundBoard.Core.Objects.Models
     using System.Media;
     using System.Runtime.CompilerServices;
     using System.Windows.Forms;
+    using System.Windows.Input;
 
     using AstroSoundBoard.Core.Components;
+    using AstroSoundBoard.Core.Objects.DataObjects;
     using AstroSoundBoard.Core.Objects.DataObjects.SoundDefinitionJsonTypes;
     using AstroSoundBoard.Core.Utils.Extensions;
 
@@ -160,6 +162,27 @@ namespace AstroSoundBoard.Core.Objects.Models
                 IsFavorite = JsonConvert.False,
                 VideoLink = definition.Info.VideoLink,
                 HotKey = new KeyBind()
+            };
+        }
+
+        /// <summary>
+        /// Returns a SoundModel based on its <paramref name="jsonModel"/>
+        /// </summary>
+        /// <param name="jsonModel">Definition of the Sound</param>
+        /// <returns>New SoundModel object</returns>
+        public static SoundModel GetModel(JsonSoundModel jsonModel)
+        {
+            return new SoundModel
+            {
+                Name = jsonModel.Name,
+                Description = jsonModel.Description,
+                IsFavorite = jsonModel.IsFavorite,
+                VideoLink = jsonModel.VideoLink,
+                HotKey = new KeyBind
+                {
+                    Key = (Key)jsonModel.HotKey.Key,
+                    Modifier = (ModifierKeys)jsonModel.HotKey.Modifier
+                }
             };
         }
 

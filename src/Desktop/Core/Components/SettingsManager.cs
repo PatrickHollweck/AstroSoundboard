@@ -1,8 +1,8 @@
 // ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 16:07:2017 / 20:38
-// Creation: 16:07:2017
+// Last Modified: 17:07:2017 / 18:09
+// Creation: 17:07:2017
 // Project: AstroSoundBoard
 //
 //
@@ -18,6 +18,7 @@ namespace AstroSoundBoard.Core.Components
     using System.Windows.Forms;
 
     using AstroSoundBoard.Core.Objects;
+    using AstroSoundBoard.Core.Objects.DataObjects;
     using AstroSoundBoard.Core.Objects.Models;
     using AstroSoundBoard.Core.Utils.Extensions;
     using AstroSoundBoard.Properties;
@@ -73,12 +74,18 @@ namespace AstroSoundBoard.Core.Components
                         CreateStandardFile();
                     }
 
-                    Cache = JsonConvert.DeserializeObject<List<SoundModel>>(readText);
+                    List<JsonSoundModel> jsonModels = JsonConvert.DeserializeObject<List<JsonSoundModel>>(readText);
+
+                    Cache = new List<SoundModel>();
+                    foreach (JsonSoundModel model in jsonModels)
+                    {
+                        Cache.Add(SoundModel.GetModel(model));
+                    }
                 }
                 catch (Exception exception)
                 {
                     File.Delete(AppSettings.SoundSettingsFilePath);
-                    Log.Error("Something failed.", exception);
+                    Log.Error("Settings Manager initialization failed!", exception);
                 }
             }
 
@@ -138,7 +145,6 @@ namespace AstroSoundBoard.Core.Components
 
             try
             {
-                // BUG: There is a bug here. The sounds dont get read in correctly -> Keybinds dont get saved!
                 File.WriteAllText(AppSettings.SoundSettingsFilePath, JsonConvert.SerializeObject(Cache));
             }
             catch (UnauthorizedAccessException exception)

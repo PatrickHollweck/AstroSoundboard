@@ -33,11 +33,11 @@
                         <Button
                             Margin="0,5"
                             Click="BrowserChangeLog"
-                            Content="Show Release log" />
+                            Content="Open Download Page" />
                         <Button
                             Margin="0,5"
-                            Click="Uninstall"
-                            Content="Uninstall" />
+                            Click="ResetSoundboard"
+                            Content="Reset Soundboard" />
                     </StackPanel>
                 </GroupBox>
                 <GroupBox
