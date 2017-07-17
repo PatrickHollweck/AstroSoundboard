@@ -1,7 +1,7 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 16:07:2017 / 18:45
+// Last Modified: 16:07:2017 / 20:13
 // Creation: 01:07:2017
 // Project: AstroSoundBoard
 //
@@ -40,17 +40,8 @@ namespace AstroSoundBoard.Core.Components
 
         private void Reload()
         {
-            LoadModels();
-            LoadViews();
-        }
-
-        private void LoadModels()
-        {
             models = SettingsManager.GetSounds();
-        }
 
-        private void LoadViews()
-        {
             views.Clear();
             foreach (SoundModel model in models)
             {

@@ -1,7 +1,7 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 04:07:2017 / 17:25
+// Last Modified: 16:07:2017 / 20:09
 // Creation: 20:06:2017
 // Project: AstroSoundBoard
 //
@@ -32,7 +32,6 @@ namespace AstroSoundBoard.WPF.Controls.Keybind
             set => Model = (KeybindViewModel)value;
         }
 
-        // TODO: Hotkey only shows up if there is one set!
         public KeybindView(SoundModel soundModel)
         {
             Model = new KeybindViewModel(soundModel);

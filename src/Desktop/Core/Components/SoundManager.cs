@@ -1,8 +1,8 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 04:07:2017 / 18:29
-// Creation: 20:06:2017
+// Last Modified: 16:07:2017 / 20:24
+// Creation: 16:07:2017
 // Project: AstroSoundBoard
 //
 //
@@ -21,7 +21,6 @@ namespace AstroSoundBoard.Core.Components
 
     using AstroSoundBoard.Core.Objects.DataObjects.SoundDefinition;
     using AstroSoundBoard.Core.Objects.DataObjects.SoundDefinitionJsonTypes;
-    using AstroSoundBoard.Core.Objects.Models;
     using AstroSoundBoard.Properties;
 
     using log4net;
@@ -30,7 +29,6 @@ namespace AstroSoundBoard.Core.Components
 
     public static class SoundManager
     {
-        // This variable get's assigned in the Startup Process in the SettingsManager class!
         public static SoundDefinitions Cache { get; set; }
 
         private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
@@ -95,25 +93,6 @@ namespace AstroSoundBoard.Core.Components
         public static Definition GetSound(string soundName)
         {
             return (from sound in GetSounds() where sound.Sound.Name == soundName select sound).FirstOrDefault();
-        }
-
-        /// <summary>
-        /// Returns a Models from a given sound Name
-        /// </summary>
-        /// <param name="soundName">Name of the Sound</param>
-        /// <returns>SoundModel of the Sound</returns>
-        public static SoundModel GetModel(string soundName)
-        {
-            var definition = GetSound(soundName);
-            var model = new SoundModel
-            {
-                Description = definition.Info.Description,
-                IsFavorite = SettingsManager.GetSound(definition.Sound.Name).IsFavorite,
-                Name = definition.Sound.Name,
-                VideoLink = definition.Info.VideoLink
-            };
-
-            return model;
         }
     }
 }

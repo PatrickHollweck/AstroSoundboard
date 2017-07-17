@@ -1,8 +1,8 @@
 // ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 16:07:2017 / 18:54
-// Creation: 24:06:2017
+// Last Modified: 16:07:2017 / 20:38
+// Creation: 16:07:2017
 // Project: AstroSoundBoard
 //
 //
@@ -138,6 +138,7 @@ namespace AstroSoundBoard.Core.Components
 
             try
             {
+                // BUG: There is a bug here. The sounds dont get read in correctly -> Keybinds dont get saved!
                 File.WriteAllText(AppSettings.SoundSettingsFilePath, JsonConvert.SerializeObject(Cache));
             }
             catch (UnauthorizedAccessException exception)
