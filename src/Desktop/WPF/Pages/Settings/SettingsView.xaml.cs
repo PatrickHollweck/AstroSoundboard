@@ -1,8 +1,8 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 14:06:2017 / 12:54
-// Creation: 20:05:2017
+// Last Modified: 17:07:2017 / 17:09
+// Creation: 20:06:2017
 // Project: AstroSoundBoard
 //
 //
@@ -40,6 +40,8 @@ namespace AstroSoundBoard.WPF.Pages.Settings
 
         private void ChangePrimaryColor(object sender, SelectionChangedEventArgs e) => Model.SelectedColor = ColorBox.SelectedIndex;
 
+        private void ChangeAccentColor(object sender, SelectionChangedEventArgs e) => Model.SelectedAccentColor = AccentColorBox.SelectedIndex;
+
         private void ChangeLightMode(object sender, RoutedEventArgs e) => Model.IsDarkModeEnabled = !Settings.Default.IsDarkModeEnabled;
 
         private void BrowserChangeLog(object sender, RoutedEventArgs e) => Process.Start("https://github.com/FetzenRndy/AstroSoundboard/releases/");
@@ -52,11 +54,20 @@ namespace AstroSoundBoard.WPF.Pages.Settings
 
         private void EnableKeybindsToogle(object sender, RoutedEventArgs e) => Model.EnableKeybinds = !Settings.Default.EnableSoundHotKeys;
 
-        private void Uninstall(object sender, RoutedEventArgs e)
+        private void ResetSoundboard(object sender, RoutedEventArgs e)
         {
             try
             {
                 Directory.Delete(@"C:\ProgramData\AstroKittySoundBoard", true);
+
+                Settings.Default.IsDarkModeEnabled = true;
+                Settings.Default.PrimaryColor = 3;
+                Settings.Default.AccentColor = 2;
+                Settings.Default.AllowErrorReporting = true;
+                Settings.Default.EnableSoundHotKeys = true;
+                Settings.Default.Volume = 100;
+
+                Settings.Default.Save();
             }
             catch
             {

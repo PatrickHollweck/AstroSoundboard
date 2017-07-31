@@ -1,15 +1,13 @@
 ﻿// ****************************** Module Header ****************************** //
-// 
-// 
-// Last Modified: 11:05:2017 / 16:23
-// Creation: 10:05:2017
+//
+//
+// Last Modified: 16:07:2017 / 20:24
+// Creation: 16:07:2017
 // Project: AstroSoundBoard
-// 
-// 
+//
+//
 // <copyright file="SoundManager.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
-
-
 
 namespace AstroSoundBoard.Core.Components
 {
@@ -17,6 +15,7 @@ namespace AstroSoundBoard.Core.Components
     using System.Collections;
     using System.Collections.Generic;
     using System.Globalization;
+    using System.Linq;
     using System.Reflection;
     using System.Resources;
 
@@ -30,8 +29,7 @@ namespace AstroSoundBoard.Core.Components
 
     public static class SoundManager
     {
-        // This variable get's assigned in the Startup Process in the SettingsManager class!
-        private static SoundDefinitions SoundDefinition { get; set; }
+        public static SoundDefinitions Cache { get; set; }
 
         private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
@@ -42,7 +40,7 @@ namespace AstroSoundBoard.Core.Components
 
             try
             {
-                SoundDefinition = JsonConvert.DeserializeObject<SoundDefinitions>(Resources.SoundDefinition);
+                Cache = JsonConvert.DeserializeObject<SoundDefinitions>(Resources.SoundDefinition);
             }
             catch (Exception exception)
             {
@@ -82,9 +80,19 @@ namespace AstroSoundBoard.Core.Components
         /// Gets the SoundList
         /// </summary>
         /// <returns>Sound-list</returns>
-        public static List<Definition> GetSoundList()
+        public static List<Definition> GetSounds()
         {
-            return SoundDefinition.SoundList;
+            return Cache.SoundList;
+        }
+
+        /// <summary>
+        /// Returns the cached sound via the SoundName
+        /// </summary>
+        /// <param name="soundName">Name of the Sound</param>
+        /// <returns>Definition of the Sound</returns>
+        public static Definition GetSound(string soundName)
+        {
+            return (from sound in GetSounds() where sound.Sound.Name == soundName select sound).FirstOrDefault();
         }
     }
 }

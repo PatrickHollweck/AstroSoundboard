@@ -1,8 +1,8 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 12:05:2017 / 20:16
-// Creation: 11:05:2017
+// Last Modified: 17:07:2017 / 17:07
+// Creation: 20:06:2017
 // Project: AstroSoundBoard
 //
 //
@@ -38,23 +38,21 @@ namespace AstroSoundBoard
         private void Application_Startup(object sender, StartupEventArgs e)
         {
 #if DEBUG
+
             ((Hierarchy)LogManager.GetRepository()).Root.Level = Level.Debug;
             ((Hierarchy)LogManager.GetRepository()).RaiseConfigurationChanged(EventArgs.Empty);
 #else
             ((Hierarchy)LogManager.GetRepository()).Root.Level = Level.Warn;
             ((Hierarchy)LogManager.GetRepository()).RaiseConfigurationChanged(EventArgs.Empty);
+
+            // Setup error handler
+            AppDomain.CurrentDomain.UnhandledException += ReportError;
 #endif
 
             Log.Info("--- APP START! ---");
             Log.Info($"Current Version: {Assembly.GetExecutingAssembly().GetName().Version}");
 
-            // Make sure all required Folders exist.
             FileSystem.FolderHelper.CreateIfMissing($"{AppSettings.InstallationFilePath}/");
-
-            // Setup error handling to log fatal errors.
-#if !DEBUG
-            AppDomain.CurrentDomain.UnhandledException += ReportError;
-#endif
 
             ApplyMaterialTheme();
             SoundManager.Init();
@@ -101,6 +99,7 @@ namespace AstroSoundBoard
 
             var palette = new PaletteHelper();
             palette.SetLightDark(Settings.Default.IsDarkModeEnabled);
+            palette.ReplaceAccentColor(colorList[Settings.Default.AccentColor]);
             palette.ReplacePrimaryColor(colorList[Settings.Default.PrimaryColor]);
         }
     }

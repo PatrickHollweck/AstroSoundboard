@@ -493,6 +493,15 @@
         },
         {
             "sound": {
+                "name": "WINSTON_COCK_LONG"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/iEZE-Rd-EAY",
+                "Description": "Winston on my cock - long edition"
+            }
+        },
+        {
+            "sound": {
                 "name": "MORE_STYLE"
             },
             "info": {
@@ -650,7 +659,7 @@
             },
             "info": {
                 "VideoLink": "https://www.youtube.com/embed/tD5G_WQWXMw",
-                "Description": "Make murica great again!"
+                "Description": "Make murica great again! - (DEV NOTE: No i am not a trump supporter ;) )"
             }
         },
         {
@@ -913,7 +922,322 @@
                 "VideoLink": "https://www.youtube.com/embed/QG-ef22eRr0",
                 "Description": "Astro's team mate gets rekt by harambe"
             }
-        }
+        },
+        {
+            "sound": {
+                "name": "BABY_TO_HELP_YOU"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/HQbqWEOfkYI",
+                "Description": "A enemy player cant finish astro off without the help of his Teammate"
+            }
+        },
+        {
+            "sound": {
+                "name": "WHAT_SHE_SAID"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/3bITxJTcHyQ",
+                "Description": "What she said"
+            }
+        },
+        {
+            "sound": {
+                "name": "NO_HOMO"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/3bITxJTcHyQ",
+                "Description": "Its is not gay if you say no homo!"
+            }
+        },
+        {
+            "sound": {
+                "name": "CAVELERY_IS_HERE"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/3bITxJTcHyQ",
+                "Description": "Cavelery is here"
+            }
+        },
+        {
+            "sound": {
+                "name": "EXCELENT_SHATTER"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/9_RmnurQuu8",
+                "Description": "Excelent shatter"
+            }
+        },
+        {
+            "sound": {
+                "name": "DVA_THAT_MOMENT"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/9_RmnurQuu8",
+                "Description": "Dva knew. ;)"
+            }
+        },
+        {
+            "sound": {
+                "name": "LOVE_SUICIDE"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/9_RmnurQuu8",
+                "Description": "He loves killing himself"
+            }
+        },
+        {
+            "sound": {
+                "name": "IDIOT_LUCIO"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/9_RmnurQuu8",
+                "Description": "Lucio is not a idiot!"
+            }
+        },
+        {
+            "sound": {
+                "name": "CRYING_OATS"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/9_RmnurQuu8",
+                "Description": "Lucio is not a idiot!"
+            }
+        },
+        {
+            "sound": {
+                "name": "HOW_TO_THROW"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/9_RmnurQuu8",
+                "Description": "10/10"
+            }
+        },
+        {
+            "sound": {
+                "name": "DICK_ON_POINT"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/T-81nmP2nus",
+                "Description": "Sexy"
+            }
+        },
+        {
+            "sound": {
+                "name": "GOLD_ELIMS"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/1nvu-6eon2g",
+                "Description": "That means nothing"
+            }
+        },
+        {
+            "sound": {
+                "name": "DOES_HAVE_CANCER"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/1nvu-6eon2g",
+                "Description": "Thats a yes"
+            }
+        },
+        {
+            "sound": {
+                "name": "INTENSE_GAMEPLAY"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/1nvu-6eon2g",
+                "Description": "Intense Gameplay"
+            }
+        },
+        {
+            "sound": {
+                "name": "WINSTON_BOOP"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/1nvu-6eon2g",
+                "Description": "Did someone say Nice Boop ?"
+            }
+        },
+        {
+            "sound": {
+                "name": "SMACK_BABYS"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/4OsW1tBEQgU",
+                "Description": "Dont, just dont smack them."
+            }
+        },
+        {
+            "sound": {
+                "name": "BOOPI_BOOPI_2"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/1qFwZByNrDc",
+                "Description": "Boop"
+            }
+        },
+        {
+            "sound": {
+                "name": "DINKI"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/XCIiEUSe8tQ",
+                "Description": "Dinki :)"
+            }
+        },
+        {
+            "sound": {
+                "name": "NOT_EXPECT_MUCH"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/XCIiEUSe8tQ",
+                "Description": "Neighter"
+            }
+        },
+        {
+            "sound": {
+                "name": "BLUE_GUNG"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/6BO_I1oi0bk",
+                "Description": "New gung sound from Blue"
+            }
+        },
+        {
+            "sound": {
+                "name": "YOUR_FUCKED"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/6BO_I1oi0bk",
+                "Description": "Yo are fucked"
+            }
+        },
+        {
+            "sound": {
+                "name": "CRYING_SCARY"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/6BO_I1oi0bk",
+                "Description": "Cry me a river"
+            }
+        },
+        {
+            "sound": {
+                "name": "CALCULATED"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/cARPyTUx6xg",
+                "Description": "Just calculated"
+            }
+        },
+        {
+            "sound": {
+                "name": "SUICIDE"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/cARPyTUx6xg",
+                "Description": "Suicide is not the answer it's the solution."
+            }
+        },
+        {
+            "sound": {
+                "name": "CUM_HERE_BITCH"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/cARPyTUx6xg",
+                "Description": "Cum on."
+            }
+        },
+        {
+            "sound": {
+                "name": "ONE_KILL_CARRY"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/OVwOtaMyaNk",
+                "Description": "The amazing one elim carry."
+            }
+        },
+        {
+            "sound": {
+                "name": "FOCK_OFF"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/OVwOtaMyaNk",
+                "Description": "The amazing one elim carry."
+            }
+        },
+        {
+            "sound": {
+                "name": "BEST_DAY_FOR_MONKEY"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/Bkdt2OYpsKI",
+                "Description": "It truly is."
+            }
+        },
+        {
+            "sound": {
+                "name": "REZ_ME"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/cHIINMS88LU",
+                "Description": "REZZZZZ MEEEEE"
+            }
+        },
+        {
+            "sound": {
+                "name": "ANY_INDICATION"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/cHIINMS88LU",
+                "Description": "Is this any indication?"
+            }
+        },
+        {
+            "sound": {
+                "name": "MONKEY_ON_ME"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/W3WPx6rQYEo",
+                "Description": "Is this any indication?"
+            }
+        },
+        {
+            "sound": {
+                "name": "SLEEPY_BYE_BYE"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/dwmZwOngW8I",
+                "Description": "Sleepy bye bye"
+            }
+        },
+        {
+            "sound": {
+                "name": "I_WANT_TO_DIE"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/uWoqrggaEXc",
+                "Description": "Me 2"
+            }
+        },
+        {
+            "sound": {
+                "name": "WAS_THAT_A_GRILL"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/eZj5rAru_Og",
+                "Description": "Yes"
+            }
+        },
+        {
+            "sound": {
+                "name": "EXCELLENTE_AMIGOS"
+            },
+            "info": {
+                "VideoLink": "https://www.youtube.com/embed/OVwOtaMyaNk",
+                "Description": "Really excellent"
+            }
+        },
     ]
 }</value>
   </data>
@@ -1084,5 +1408,119 @@
   </data>
   <data name="ON_THE_SIGHT" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ON_THE_SIGHT.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="BABY_TO_HELP_YOU" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BABY_TO_HELP_YOU.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CAVELERY_IS_HERE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CAVELERY_IS_HERE.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CRYING_OATS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CRYING_OATS.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DICK_ON_POINT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DICK_ON_POINT.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DVA_THAT_MOMENT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DVA_THAT_MOMENT.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="EXCELENT_SHATTER" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EXCELENT_SHATTER.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="HOW_TO_THROW" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HOW_TO_THROW.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="IDIOT_LUCIO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IDIOT_LUCIO.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="INTO_HER_ASSHOLE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\INTO_HER_ASSHOLE.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="LOVE_SUICIDE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LOVE_SUICIDE.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="NO_HOMO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NO_HOMO.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="WHAT_SHE_SAID" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WHAT_SHE_SAID.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ANY_INDICATION" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ANY_INDICATION.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="BEST_DAY_FOR_MONKEY" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BEST_DAY_FOR_MONKEY.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="BLUE_GUNG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BLUE_GUNG.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="BOOPI_BOOPI_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BOOPI_BOOPI_2.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CALCULATED" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CALCULATED.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CRYING_SCARY" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CRYING_SCARY.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CUM_HERE_BITCH" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CUM_HERE_BITCH.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DINKI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DINKI.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DOES_HAVE_CANCER" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DOES_HAVE_CANCER.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="EJECT_IF_SEX" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EJECT_IF_SEX.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="EXCELLENTE_AMIGOS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EXCELLENTE_AMIGOS.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="FOCK_OFF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FOCK_OFF.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="GOLD_ELIMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GOLD_ELIMS.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="INTENSE_GAMEPLAY" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\INTENSE_GAMEPLAY.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="I_WANT_TO_DIE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\I_WANT_TO_DIE.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="MONKEY_ON_ME" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MONKEY_ON_ME.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="NOT_EXPECT_MUCH" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NOT_EXPECT_MUCH.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ONE_KILL_CARRY" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ONE_KILL_CARRY.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="REZ_ME" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REZ_ME.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SLEEPY_BYE_BYE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SLEEPY_BYE_BYE.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SMACK_BABYS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SMACK_BABYS.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SUICIDE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SUICIDE.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="WAS_THAT_A_GRILL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WAS_THAT_A_GRILL.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="WINSTON_BOOP" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WINSTON_BOOP.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="WINSTON_COCK_LONG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WINSTON_COCK_LONG.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="YOUR_FUCKED" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\YOUR_FUCKED.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

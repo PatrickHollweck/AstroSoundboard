@@ -1,8 +1,8 @@
 // ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 18:05:2017 / 21:01
-// Creation: 11:05:2017
+// Last Modified: 17:07:2017 / 18:09
+// Creation: 17:07:2017
 // Project: AstroSoundBoard
 //
 //
@@ -18,22 +18,31 @@ namespace AstroSoundBoard.Core.Components
     using System.Windows.Forms;
 
     using AstroSoundBoard.Core.Objects;
+    using AstroSoundBoard.Core.Objects.DataObjects;
     using AstroSoundBoard.Core.Objects.Models;
+    using AstroSoundBoard.Core.Utils.Extensions;
     using AstroSoundBoard.Properties;
 
     using log4net;
 
     using Newtonsoft.Json;
 
+    /// <summary>
+    /// The SettingsManager is a class managing the SoundSettings.json file (C:\ProgramData\AstroKittySoundBoard\)<para/>
+    /// The file is in Json format and for serialisation Json.NET is used.<para/>
+    /// Contained in this Sound File is a list of all sounds in the Application.<para/>
+    /// These Sounds are stored as a Sound object which describes the Sound with properties like "isFavorite" and "HotKey".<para/>
+    /// If a property changes the file can get rewritten to the disk effectively saving the Settings the users has made to the Sounds.<para/>
+    /// From there the Sounds can get read back from the file and the UI can get setup.
+    /// </summary>
     public class SettingsManager
     {
-        // The SettingsManager is a class managing the SoundSettings.json file (C:\ProgramData\AstroKittySoundBoard\). The file is in Json format and for serialisation and serialisation Json.NET is used. Contained in this File is a list of all sounds in the Application. These Sounds are stored as a Sound object which describes the Sound with properties like "isFavorite" and "HotKey" if a property changes the file can get rewritten to the disk effectively saving the Settings the users has made to the Sounds. From there the Sounds can get read back from the file and the UI can get setup.
         internal static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
         /// <summary>
         /// The Cache is a List of Sounds containing a list of all the Sounds. This list is used for interaction with other components and as a buffer.
         /// </summary>
-        internal static List<Sound> Cache { get; set; }
+        internal static List<SoundModel> Cache { get; set; }
 
         /// <summary>
         /// Initializes the Settings Manager.
@@ -44,6 +53,13 @@ namespace AstroSoundBoard.Core.Components
 
             if (!File.Exists(AppSettings.SoundSettingsFilePath))
             {
+                Cache = new List<SoundModel>();
+
+                foreach (var definition in SoundManager.Cache.SoundList)
+                {
+                    Cache.Add(SoundModel.GetModel(definition));
+                }
+
                 CreateStandardFile();
             }
             else
@@ -58,14 +74,22 @@ namespace AstroSoundBoard.Core.Components
                         CreateStandardFile();
                     }
 
-                    Cache = JsonConvert.DeserializeObject<List<Sound>>(readText);
+                    List<JsonSoundModel> jsonModels = JsonConvert.DeserializeObject<List<JsonSoundModel>>(readText);
+
+                    Cache = new List<SoundModel>();
+                    foreach (JsonSoundModel model in jsonModels)
+                    {
+                        Cache.Add(SoundModel.GetModel(model));
+                    }
                 }
                 catch (Exception exception)
                 {
                     File.Delete(AppSettings.SoundSettingsFilePath);
-                    Log.Error("Something failed.", exception);
+                    Log.Error("Settings Manager initialization failed!", exception);
                 }
             }
+
+            Cache.RemoveAll(item => item.Name == "DummyItem");
 
             if (Settings.Default.EnableSoundHotKeys)
             {
@@ -79,17 +103,7 @@ namespace AstroSoundBoard.Core.Components
         /// </summary>
         private static void CreateStandardFile()
         {
-            Sound stdObject = new Sound();
-
-            Sound stdSounds = new Sound
-            {
-                Name = "DummyItem",
-                IsFavorite = JsonConvert.False
-            };
-
-            ResetCache();
-            Cache.Add(stdSounds);
-            File.WriteAllText(AppSettings.SoundSettingsFilePath, JsonConvert.SerializeObject(stdObject));
+            File.WriteAllText(AppSettings.SoundSettingsFilePath, JsonConvert.SerializeObject(Cache));
         }
 
         /// <summary>
@@ -98,8 +112,7 @@ namespace AstroSoundBoard.Core.Components
         /// <param name="loadSounds">Optionally reloads all sounds back from the File.</param>
         private static void ResetCache(bool loadSounds = false)
         {
-            Cache = null;
-            Cache = new List<Sound>();
+            Cache = new List<SoundModel>();
 
             if (loadSounds)
             {
@@ -110,11 +123,11 @@ namespace AstroSoundBoard.Core.Components
         /// <summary>
         /// Registers a Sound into the Manager.
         /// </summary>
-        /// <param name="sound">Sound to be registered</param>
-        private static void Create(Sound sound)
+        /// <param name="soundModel">Sound to be registered</param>
+        private static void Add(SoundModel soundModel)
         {
             Log.Debug("Registering Definition!");
-            Cache.Add(sound);
+            Cache.Add(soundModel);
             Save();
         }
 
@@ -147,50 +160,45 @@ namespace AstroSoundBoard.Core.Components
         /// </summary>
         /// <param name="name">Sound name</param>
         /// <returns>The queried sound.</returns>
-        public static Sound GetSound(string name)
+        public static SoundModel GetSound(string name)
         {
-            name = name.Replace(" ", "_");
-
-            foreach (Sound item in Cache)
+            foreach (SoundModel item in Cache)
             {
-                item.Name = item.Name.Replace(" ", "_");
-
-                if (item.Name == name)
+                if (item.Name == name.ToDisplayName())
                 {
                     return item;
                 }
             }
 
-            Create(new Sound { Name = name, IsFavorite = JsonConvert.False });
+            Add(new SoundModel { Name = name, IsFavorite = JsonConvert.False });
             return GetSound(name);
         }
 
         /// <summary>
         /// Changes the Sound and writes it to the disk.
         /// </summary>
-        /// <param name="sound">Sound to change</param>
-        public static void Update(Sound sound)
+        /// <param name="soundModel">Sound to change</param>
+        public static void Update(SoundModel soundModel)
         {
-            Log.Debug($"Changing Definition of {sound.Name}");
-
-            sound.Name = sound.Name.Replace(' ', '_');
+            Log.Debug($"Changing Definition of {soundModel.Name}");
 
             for (int i = 0; i < Cache.Count; i++)
             {
-                if (Cache[i].Name == sound.Name)
+                if (Cache[i].Name == soundModel.Name)
                 {
-                    sound.Name = sound.Name.Replace(" ", "_");
-
-                    Cache[i] = sound;
+                    Cache[i] = soundModel;
                     Save();
-
-                    sound.Name = sound.Name.Replace("_", " ");
 
                     return;
                 }
             }
 
             Log.Error("NO MATCH!");
+        }
+
+        public static List<SoundModel> GetSounds()
+        {
+            return Cache;
         }
     }
 }

@@ -15,8 +15,8 @@
         <Grid HorizontalAlignment="Stretch">
 
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="5*" />
-                <ColumnDefinition Width="10*" />
+                <ColumnDefinition Width="6*" />
+                <ColumnDefinition Width="8*" />
                 <ColumnDefinition Width="5*" />
             </Grid.ColumnDefinitions>
 
@@ -32,7 +32,7 @@
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
                     ClipToBounds="True"
-                    Content="{Binding LocalDefinition.Name, Mode=TwoWay, FallbackValue=Sound Name, TargetNullValue=ERROR}"
+                    Content="{Binding Model.Sound.Name, FallbackValue=Sound Name, TargetNullValue=ERROR}"
                     FontFamily="/AstroSoundBoard;component/Resources/Fonts/#BigNoodleTitling"
                     FontSize="20" />
             </materialDesign:ColorZone>
@@ -43,11 +43,10 @@
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 Orientation="Horizontal"
-                Visibility="Visible">
-                <TextBlock Text="Current Keybind: " />
-                <TextBlock Text="{Binding LocalDefinition.HotKey.ModifierString}" />
+                Visibility="Hidden">
+                <TextBlock Text="{Binding Model.Sound.HotKey.ModifierString}" />
                 <TextBlock Text=" + " />
-                <TextBlock Text="{Binding LocalDefinition.HotKey.KeyString}" />
+                <TextBlock Text="{Binding Model.Sound.HotKey.KeyString}" />
             </StackPanel>
 
             <StackPanel
@@ -60,18 +59,18 @@
                     Click="RemoveKeybind"
                     Content="Remove"
                     FontFamily="/AstroSoundBoard;component/Resources/Fonts/#BigNoodleTitling"
-                    FontSize="20"
+                    FontSize="18"
                     Style="{DynamicResource MaterialDesignToolForegroundButton}" />
 
-                <Label Margin="5,0,0,4">|</Label>
+                <Label Margin="0,0,0,4">|</Label>
 
                 <Button
-                    Margin="5,0"
+                    Margin="0,0,3,0"
                     HorizontalAlignment="Right"
                     Click="ConfigureKeybind"
                     Content="Configure"
                     FontFamily="/AstroSoundBoard;component/Resources/Fonts/#BigNoodleTitling"
-                    FontSize="20"
+                    FontSize="18"
                     Style="{DynamicResource MaterialDesignToolForegroundButton}" />
             </StackPanel>
         </Grid>

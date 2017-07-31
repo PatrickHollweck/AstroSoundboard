@@ -32,7 +32,7 @@
 			HorizontalAlignment="Center"
 			VerticalAlignment="Center"
 			ClipToBounds="True"
-			Content="{Binding Model.SoundDef.Name, Mode=TwoWay, FallbackValue=Sound Name, TargetNullValue=ERROR}"
+			Content="{Binding Model.Sound.Name, FallbackValue=Sound Name, TargetNullValue=ERROR}"
 			FontFamily="/AstroSoundBoard;component/Resources/Fonts/#BigNoodleTitling"
 			FontSize="20" />
 
@@ -62,7 +62,7 @@
 				Click="ToggleFavorite"
 				ToolTip="Toggle Favorite">
 				<Button.Content>
-					<materialDesign:PackIcon Kind="{Binding Model.IconKind, Mode=TwoWay}" />
+					<materialDesign:PackIcon Kind="{Binding Model.IconKind}" />
 				</Button.Content>
 			</Button>
 

@@ -1,8 +1,8 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 15:06:2017 / 18:12
-// Creation: 15:06:2017
+// Last Modified: 16:07:2017 / 19:40
+// Creation: 01:07:2017
 // Project: AstroSoundBoard
 //
 //
@@ -11,56 +11,63 @@
 
 namespace AstroSoundBoard.WPF.Controls.Sound
 {
-    using System;
-    using System.IO;
-    using System.Media;
     using System.Reflection;
     using System.Windows;
     using System.Windows.Controls;
 
     using AstroSoundBoard.Core.Components;
-    using AstroSoundBoard.Core.Extensions;
+    using AstroSoundBoard.Core.Objects.Interfaces;
     using AstroSoundBoard.Core.Objects.Models;
+    using AstroSoundBoard.Core.Utils.Extensions;
     using AstroSoundBoard.WPF.Windows;
 
     using log4net;
 
     using Newtonsoft.Json;
 
-    using PropertyChanged;
-
-    [ImplementPropertyChanged]
-    public partial class SoundView : UserControl
+    [PropertyChanged.AddINotifyPropertyChangedInterface]
+    public partial class SoundView : UserControl, IAddableView
     {
         private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
-        public SoundModel Model { get; set; }
+        public SoundViewModel Model { get; set; }
 
-        public SoundView(Sound def)
+        public IAddableViewModel SoundModel
+        {
+            get => Model;
+            set => Model = (SoundViewModel)value;
+        }
+
+        public SoundView(SoundModel def)
         {
             Log.Debug($"Creating Control for {def.Name}");
 
-            Model = new SoundModel(def);
-            Model.SoundDef.Name = Model.SoundDef.Name.ToDisplayName();
+            Model = new SoundViewModel(def);
+            Model.Sound.Name = Model.Sound.Name.ToDisplayName();
 
             InitializeComponent();
             DataContext = this;
         }
 
+        /// <summary>
+        /// Toggles the Favorite Setting
+        /// </summary>
+        /// <param name="sender">Sender</param>
+        /// <param name="e">E</param>
         private void ToggleFavorite(object sender, RoutedEventArgs e)
         {
-            Model.SoundDef.IsFavorite = Model.SoundDef.IsFavorite == JsonConvert.True ? JsonConvert.False : JsonConvert.True;
-            Model.IconKind = Model.SoundDef.IsFavorite == JsonConvert.True ? "HeartOutline" : "Heart";
-            SettingsManager.Update(Model.SoundDef);
+            Model.Sound.IsFavorite = SoundModel.Sound.IsFavorite == JsonConvert.True ? JsonConvert.False : JsonConvert.True;
+            Model.IconKind = Model.UpdateIcon();
+            SettingsManager.Update(Model.Sound);
         }
 
         /// <summary>
-        /// Shows informations for this sounds in a new window
+        /// Opens a new Window with Informations about the Sound
         /// </summary>
         /// <param name="sender">Sender</param>
         /// <param name="e">E</param>
         private void ShowInfo(object sender, RoutedEventArgs e)
         {
-            var window = new InfoWindow(Model.SoundDef);
+            var window = new InfoWindow(Model.Sound);
             window.Show();
         }
 
@@ -71,24 +78,7 @@ namespace AstroSoundBoard.WPF.Controls.Sound
         /// <param name="e">Event</param>
         private void PlaySound(object sender, RoutedEventArgs e)
         {
-            // In a future version I hope to implement mp3 files since currently I am using .wave which is lossless and quite big.
-            try
-            {
-                Model.SoundDef.Name = Model.SoundDef.Name.ToFileName();
-
-                Log.Debug($"Trying to Play sound : {Model.SoundDef.Name}");
-
-                using (SoundPlayer player = new SoundPlayer((UnmanagedMemoryStream)SoundManager.GetAudioFileFromResources(Model.SoundDef.Name)))
-                {
-                    player.Play();
-                }
-
-                Model.SoundDef.Name = Model.SoundDef.Name.ToDisplayName();
-            }
-            catch (Exception exception)
-            {
-                Log.Error("Can not play Definition!", exception);
-            }
+            Model.Sound.PlaySound();
         }
     }
 }

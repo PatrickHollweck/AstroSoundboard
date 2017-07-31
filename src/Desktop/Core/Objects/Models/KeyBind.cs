@@ -1,8 +1,8 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 18:05:2017 / 18:35
-// Creation: 11:05:2017
+// Last Modified: 04:07:2017 / 17:12
+// Creation: 20:06:2017
 // Project: AstroSoundBoard
 //
 //
@@ -15,6 +15,7 @@ namespace AstroSoundBoard.Core.Objects.Models
     using System.Runtime.CompilerServices;
     using System.Windows.Input;
 
+    [PropertyChanged.AddINotifyPropertyChangedInterface]
     public class KeyBind : INotifyPropertyChanged
     {
         public KeyBind(Key key, ModifierKeys modifier)
@@ -52,10 +53,7 @@ namespace AstroSoundBoard.Core.Objects.Models
             }
         }
 
-        public bool HasAssignedKeybind
-        {
-            get => Key == Key.None && Modifier == ModifierKeys.None;
-        }
+        public bool HasAssignedKeybind => !(Key == Key.None && Modifier == ModifierKeys.None);
 
         // Needed for Json Serialisation.
         public string ModifierString => Modifier.ToString();

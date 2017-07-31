@@ -1,8 +1,8 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 18:05:2017 / 19:28
-// Creation: 10:05:2017
+// Last Modified: 04:07:2017 / 17:30
+// Creation: 01:07:2017
 // Project: AstroSoundBoard
 //
 //
@@ -22,48 +22,49 @@ namespace AstroSoundBoard.WPF.Windows
 
     using log4net;
 
-    using PropertyChanged;
-
-    [ImplementPropertyChanged]
+    [PropertyChanged.AddINotifyPropertyChangedInterface]
     public partial class KeybindConfiguratorWindow : Window
     {
         public static bool HasOpenInstance { get; set; }
-
-        public Sound LocalDefinition { get; set; }
+        public SoundModel Model { get; set; }
 
         private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
-        public KeybindConfiguratorWindow(Sound definition)
+        public KeybindConfiguratorWindow(SoundModel definition)
         {
             InitializeComponent();
             DataContext = this;
 
             HasOpenInstance = true;
 
-            LocalDefinition = SettingsManager.GetSound(definition.Name);
+            Model = SettingsManager.GetSound(definition.Name);
 
-            if (LocalDefinition.HotKey == null)
+            if (Model.HotKey == null)
             {
-                LocalDefinition.HotKey = new KeyBind();
+                Model.HotKey = new KeyBind();
             }
         }
 
         private void ResetKeybind(object sender, RoutedEventArgs e)
         {
-            LocalDefinition.HotKey.Key = Key.None;
-            LocalDefinition.HotKey.Modifier = ModifierKeys.None;
+            Model.HotKey.Key = Key.None;
+            Model.HotKey.Modifier = ModifierKeys.None;
             UpdateText();
         }
 
         private void ApplyKeybind(object sender, RoutedEventArgs e)
         {
-            int index = SettingsManager.Cache.FindIndex(cacheSound => cacheSound.Name == LocalDefinition.Name);
-            SettingsManager.Cache[index] = LocalDefinition;
+            int index = SettingsManager.Cache.FindIndex(cacheSound => cacheSound.Name == Model.Name);
+            SettingsManager.Cache[index] = Model;
+            SettingsManager.Save();
 
             KeybindManager.SetKeybinds();
+
+            KeybindManagerWindow.Update();
+            Close();
         }
 
-        private void UpdateText() => KeybindBox.Text = $"{LocalDefinition.HotKey.Modifier} + {LocalDefinition.HotKey.Key}";
+        private void UpdateText() => KeybindBox.Text = $"{Model.HotKey.Modifier} + {Model.HotKey.Key}";
 
         protected override void OnKeyDown(KeyEventArgs e)
         {
@@ -72,30 +73,30 @@ namespace AstroSoundBoard.WPF.Windows
                 // Check if key is modifier.
                 if (key == Key.LeftCtrl || key == Key.RightCtrl)
                 {
-                    LocalDefinition.HotKey.Modifier = ModifierKeys.Control;
+                    Model.HotKey.Modifier = ModifierKeys.Control;
                 }
                 else if (key == Key.LeftAlt || key == Key.RightAlt)
                 {
-                    LocalDefinition.HotKey.Modifier = ModifierKeys.Alt;
+                    Model.HotKey.Modifier = ModifierKeys.Alt;
                 }
                 else if (key == Key.LeftShift || key == Key.RightShift)
                 {
-                    LocalDefinition.HotKey.Modifier = ModifierKeys.Shift;
+                    Model.HotKey.Modifier = ModifierKeys.Shift;
                 }
                 else if (key == Key.LWin || key == Key.RWin)
                 {
-                    LocalDefinition.HotKey.Modifier = ModifierKeys.Windows;
+                    Model.HotKey.Modifier = ModifierKeys.Windows;
                 }
                 else
                 {
                     // Key is not a modifier -> Is key
-                    LocalDefinition.HotKey.Key = key;
+                    Model.HotKey.Key = key;
                 }
 
-                if (KeybindManager.CheckDuplicate(LocalDefinition))
+                if (KeybindManager.CheckDuplicate(Model))
                 {
-                    LocalDefinition.HotKey.Key = Key.None;
-                    LocalDefinition.HotKey.Modifier = ModifierKeys.None;
+                    Model.HotKey.Key = Key.None;
+                    Model.HotKey.Modifier = ModifierKeys.None;
                     MessageBox.Show("This Keybind is already defined somewhere else! Please choose another one!");
                 }
 

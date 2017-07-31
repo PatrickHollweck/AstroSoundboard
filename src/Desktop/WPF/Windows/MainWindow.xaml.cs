@@ -1,8 +1,8 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 18:05:2017 / 19:34
-// Creation: 12:05:2017
+// Last Modified: 04:07:2017 / 20:28
+// Creation: 01:07:2017
 // Project: AstroSoundBoard
 //
 //
@@ -80,14 +80,17 @@ namespace AstroSoundBoard.WPF.Windows
 
         public void SearchForItem(object sender, TextChangedEventArgs e)
         {
-            BoardView.BoardViewInstance?.SearchForElement(SearchBox.Text, onlyFavoritesActive);
+            if (!CanSearchItemsExecute())
+            {
+                return;
+            }
+
+            BoardView.BoardViewInstance?.SearchForElement(SearchBox.Text);
         }
 
         #endregion Search
 
         #region Favorites
-
-        private bool onlyFavoritesActive;
 
         public void ToogleFavorites()
         {
@@ -98,16 +101,7 @@ namespace AstroSoundBoard.WPF.Windows
                 return;
             }
 
-            if (onlyFavoritesActive)
-            {
-                onlyFavoritesActive = false;
-                BoardView.BoardViewInstance?.OnlyShowFavorites(onlyFavoritesActive);
-            }
-            else
-            {
-                onlyFavoritesActive = true;
-                BoardView.BoardViewInstance?.OnlyShowFavorites(onlyFavoritesActive);
-            }
+            BoardView.BoardViewInstance?.OnlyShowFavorites();
         }
 
         private void FavoriteButton_Click(object sender, RoutedEventArgs e)
@@ -130,6 +124,16 @@ namespace AstroSoundBoard.WPF.Windows
             uint newVolumeAllChannels = ((uint)newVolume & 0x0000ffff) | ((uint)newVolume << 16);
 
             NativeMethods.waveOutSetVolume(IntPtr.Zero, newVolumeAllChannels);
+
+            if (VolumeSlider.ToolTip != null)
+            {
+                // Main condition
+                if (VolumeSlider.ToolTip is ToolTip castToolTip)
+                {
+                    castToolTip.ToolTip = $"Volume: {newVolumeAllChannels}%";
+                    castToolTip.IsOpen = true;
+                }
+            }
         }
 
         #endregion VolumeSlider

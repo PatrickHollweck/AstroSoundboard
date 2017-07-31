@@ -1,8 +1,8 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 08:05:2017 / 17:57
-// Creation: 08:05:2017
+// Last Modified: 16:07:2017 / 18:44
+// Creation: 20:06:2017
 // Project: AstroSoundBoard
 //
 //
@@ -20,6 +20,11 @@ namespace AstroSoundBoard.Core.Objects
     /// </summary>
     public class AppSettings
     {
+        /// <summary>
+        /// Static Random.
+        /// </summary>
+        public static Random Rng = new Random();
+
         /// <summary>
         /// Installation Path Constant.
         /// </summary>

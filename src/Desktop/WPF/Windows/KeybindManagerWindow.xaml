@@ -7,15 +7,13 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:system="clr-namespace:System;assembly=mscorlib"
     Title="AstroKitty Soundboard"
-    Width="1000"
+    Width="1155"
     Height="550"
-    MinWidth="1000"
+    MinWidth="600"
     MinHeight="550"
-    d:DesignHeight="550"
-    d:DesignWidth="1000"
     Background="{DynamicResource MaterialDesignPaper}"
     FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
-    ResizeMode="CanMinimize"
+    ResizeMode="CanResize"
     TextElement.FontSize="14"
     TextElement.FontWeight="Medium"
     TextElement.Foreground="{DynamicResource MaterialDesignBody}"
@@ -28,7 +26,11 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <materialDesign:ColorZone VerticalAlignment="Top" Mode="PrimaryDark">
+        <materialDesign:ColorZone
+            Height="39"
+            VerticalAlignment="Top"
+            materialDesign:ShadowAssist.ShadowDepth="Depth4"
+            Mode="PrimaryDark">
             <StackPanel>
                 <Label
                     HorizontalAlignment="Center"
@@ -38,7 +40,7 @@
                 </Label>
                 <Label
                     HorizontalAlignment="Center"
-                    Content="There are some combinations that cant work! For most but not all keys you need a modifier! Set Hotkeys only work for that sound and can not be used by windows!&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Hotkeys are only active when the Soundboard is running!"
+                    Content=""
                     FontSize="13" />
             </StackPanel>
         </materialDesign:ColorZone>
@@ -55,7 +57,10 @@
             </StackPanel>
         </ScrollViewer>
 
-        <materialDesign:ColorZone Grid.Row="2" Mode="PrimaryDark">
+        <materialDesign:ColorZone
+            Grid.Row="2"
+            materialDesign:ShadowAssist.ShadowDepth="Depth5"
+            Mode="PrimaryDark">
             <StackPanel Orientation="Horizontal">
                 <materialDesign:ColorZone
                     Width="350"
@@ -87,10 +92,10 @@
                 </materialDesign:ColorZone>
 
                 <Button
-                    Margin="15,3.5"
+                    Margin="10,3.5"
                     VerticalAlignment="Center"
                     Click="RemoveAllKeybinds"
-                    Content="Reset all Keybinds" />
+                    Content="Reset All" />
                 <CheckBox
                     Margin="5,0"
                     Click="ToogleFavorites"
@@ -103,6 +108,10 @@
                         <materialDesign:PackIcon Kind="Heart" />
                     </materialDesign:ToggleButtonAssist.OnContent>
                 </CheckBox>
+                <TextBlock
+                    Height="32"
+                    Margin="100,10"
+                    TextWrapping="Wrap"><Run Text="HotKeys are only active when the Soundboard is running! &#xA;" /><Run Text="Keys attatched to a Sound can not be used in Windows!" /></TextBlock>
             </StackPanel>
         </materialDesign:ColorZone>
     </Grid>

@@ -34,7 +34,7 @@
             Grid.ColumnSpan="2"
             Margin="16,16,16,0"
             BorderThickness="0"
-            Header="{Binding LocalSound.Name, FallbackValue=SoundName}"
+            Header="{Binding Model.Name, FallbackValue=SoundName}"
             Style="{DynamicResource MaterialDesignGroupBox}" />
 
         <GroupBox
@@ -67,7 +67,7 @@
                 <StackPanel>
                     <TextBlock
                         Margin="4"
-                        Text="{Binding LocalSound.Description}"
+                        Text="{Binding Model.Description}"
                         TextWrapping="Wrap" />
                 </StackPanel>
                 <StackPanel Grid.Row="1">
@@ -108,8 +108,8 @@
                 </DataTemplate>
             </GroupBox.HeaderTemplate>
             <StackPanel>
-                <Label>This webbrowser is momentarely disabled! Have a link instead</Label>
-                <TextBox IsReadOnly="True" Text="{Binding LocalSound.VideoLink}" />
+                <Label Height="50" Content="The Web-browser is disabled. Since it has been causing Problems.&#xD;&#xA;As a workaround here you have the Link to the Video." />
+                <TextBox IsReadOnly="True" Text="{Binding Model.VideoLink}" />
             </StackPanel>
         </GroupBox>
     </Grid>

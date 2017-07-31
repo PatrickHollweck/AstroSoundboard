@@ -1,8 +1,8 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 18:05:2017 / 19:30
-// Creation: 12:05:2017
+// Last Modified: 16:07:2017 / 19:06
+// Creation: 24:06:2017
 // Project: AstroSoundBoard
 //
 //
@@ -11,10 +11,8 @@
 
 namespace AstroSoundBoard.Core.Components
 {
-    using System;
-    using System.IO;
-    using System.Media;
     using System.Reflection;
+
     using AstroSoundBoard.Core.Objects.Models;
 
     using log4net;
@@ -30,7 +28,7 @@ namespace AstroSoundBoard.Core.Components
         {
             SettingsManager.Cache.ForEach(sound => HotkeyManager.Current.Remove(sound.Name));
 
-            foreach (Sound sound in SettingsManager.Cache)
+            foreach (SoundModel sound in SettingsManager.Cache)
             {
                 sound.HotKey = sound.HotKey ?? new KeyBind();
 
@@ -45,12 +43,12 @@ namespace AstroSoundBoard.Core.Components
             }
         }
 
-        public static bool CheckDuplicate(Sound sound)
+        public static bool CheckDuplicate(SoundModel soundModel)
         {
             // Poor mans implementation.
             try
             {
-                HotkeyManager.Current.AddOrReplace(sound.Name, sound.HotKey.Key, sound.HotKey.Modifier, PlaySound);
+                HotkeyManager.Current.AddOrReplace(soundModel.Name, soundModel.HotKey.Key, soundModel.HotKey.Modifier, PlaySound);
             }
             catch (HotkeyAlreadyRegisteredException)
             {
@@ -62,7 +60,7 @@ namespace AstroSoundBoard.Core.Components
 
         public static void UnregisterAllKeybinds()
         {
-            foreach (Sound sound in SettingsManager.Cache)
+            foreach (SoundModel sound in SettingsManager.Cache)
             {
                 HotkeyManager.Current.Remove(sound.Name);
             }
@@ -70,7 +68,7 @@ namespace AstroSoundBoard.Core.Components
 
         public static void RemoveAllKeybindsFromSettings()
         {
-            foreach (Sound sound in SettingsManager.Cache)
+            foreach (SoundModel sound in SettingsManager.Cache)
             {
                 sound.HotKey = new KeyBind();
                 sound.HotKey.RaisePropertyChanged();
@@ -84,19 +82,7 @@ namespace AstroSoundBoard.Core.Components
         /// <param name="e">E</param>
         private static void PlaySound(object sender, HotkeyEventArgs e)
         {
-            Log.Debug($"Trying to Play sound by Keybind : {e.Name}");
-
-            try
-            {
-                using (SoundPlayer player = new SoundPlayer((UnmanagedMemoryStream)SoundManager.GetAudioFileFromResources(e.Name.Replace(' ', '_'))))
-                {
-                    player.Play();
-                }
-            }
-            catch (Exception exception)
-            {
-                Log.Error("Can not play Sound!", exception);
-            }
+            SettingsManager.GetSound(e.Name).PlaySound();
         }
     }
 }

@@ -1,8 +1,8 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 18:05:2017 / 19:25
-// Creation: 10:05:2017
+// Last Modified: 04:07:2017 / 17:29
+// Creation: 01:07:2017
 // Project: AstroSoundBoard
 //
 //
@@ -11,47 +11,27 @@
 
 namespace AstroSoundBoard.WPF.Windows
 {
-    using System.Collections.Generic;
+    using System.ComponentModel;
     using System.Windows;
     using System.Windows.Controls;
 
     using AstroSoundBoard.Core.Components;
-    using AstroSoundBoard.Core.Objects.DataObjects.SoundDefinitionJsonTypes;
-    using AstroSoundBoard.Core.Objects.Models;
     using AstroSoundBoard.WPF.Controls.Keybind;
 
-    using Newtonsoft.Json;
-
-    using PropertyChanged;
-
-    [ImplementPropertyChanged]
+    [PropertyChanged.AddINotifyPropertyChangedInterface]
     public partial class KeybindManagerWindow : Window
     {
-        private List<KeybindView> AllViews { get; set; } = new List<KeybindView>();
+        public static KeybindManagerWindow KeybindManagerInstance;
+
+        private readonly ItemManager<KeybindView> itemManager = new ItemManager<KeybindView>(model => new KeybindView(model) { Width = 550 });
 
         public KeybindManagerWindow()
         {
+            KeybindManagerInstance = this;
+
             InitializeComponent();
             DataContext = this;
-
-            foreach (Definition definition in SoundManager.GetSoundList())
-            {
-                var item = new Sound
-                {
-                    Description = definition.Info.Description,
-                    IsFavorite = SettingsManager.GetSound(definition.Sound.Name).IsFavorite,
-                    Name = definition.Sound.Name,
-                    VideoLink = definition.Info.VideoLink,
-                    HotKey = SettingsManager.GetSound(definition.Sound.Name).HotKey
-                };
-
-                var view = new KeybindView(item) { MinWidth = Width - 40 };
-
-                ItemCtrl.Items.Add(view);
-                AllViews.Add(view);
-            }
-
-            ToogleFavorites(this, new RoutedEventArgs());
+            itemManager.SetAll(ref ItemCtrl);
         }
 
         private void RemoveAllKeybinds(object sender, RoutedEventArgs e)
@@ -60,79 +40,26 @@ namespace AstroSoundBoard.WPF.Windows
             KeybindManager.SetKeybinds();
         }
 
-        public void SearchForElement(object sender, TextChangedEventArgs e)
+        private void SearchForElement(object sender, TextChangedEventArgs e)
         {
-            if (string.IsNullOrEmpty(SearchBox.Text))
-            {
-                ItemCtrl.Items.Clear();
-
-                foreach (KeybindView view in AllViews)
-                {
-                    ItemCtrl.Items.Add(view);
-                }
-            }
-            else
-            {
-                List<KeybindView> matchingItems = new List<KeybindView>();
-
-                foreach (KeybindView view in ItemCtrl.Items)
-                {
-                    if (view.LocalDefinition.Name.ToLower().Contains(SearchBox.Text.ToLower()))
-                    {
-                        matchingItems.Add(view);
-                    }
-                }
-
-                ItemCtrl.Items.Clear();
-
-                foreach (KeybindView view in matchingItems)
-                {
-                    ItemCtrl.Items.Add(view);
-                }
-            }
-
-            if (onlyShowFavorites)
-            {
-                ToogleFavorites(this, new RoutedEventArgs());
-            }
+            itemManager.Search(ref ItemCtrl, SearchBox.Text);
         }
-
-        private bool onlyShowFavorites;
 
         private void ToogleFavorites(object sender, RoutedEventArgs e)
         {
-            if (onlyShowFavorites)
-            {
-                onlyShowFavorites = false;
+            itemManager.ToogleFavorites(ref ItemCtrl);
 
-                List<KeybindView> matchingItems = new List<KeybindView>();
+        }
 
-                foreach (KeybindView view in ItemCtrl.Items)
-                {
-                    if (view.LocalDefinition.IsFavorite == JsonConvert.True)
-                    {
-                        matchingItems.Add(view);
-                    }
-                }
+        public static void Update()
+        {
+            KeybindManagerInstance?.itemManager.SetAll(ref KeybindManagerInstance.ItemCtrl);
+        }
 
-                ItemCtrl.Items.Clear();
-
-                foreach (KeybindView view in matchingItems)
-                {
-                    ItemCtrl.Items.Add(view);
-                }
-            }
-            else
-            {
-                onlyShowFavorites = true;
-
-                ItemCtrl.Items.Clear();
-
-                foreach (KeybindView view in AllViews)
-                {
-                    ItemCtrl.Items.Add(view);
-                }
-            }
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            KeybindManagerInstance = null;
+            base.OnClosing(e);
         }
     }
 }
