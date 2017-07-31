@@ -102,15 +102,15 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AutoUpdater.NET, Version=1.4.2.0, Culture=neutral, PublicKeyToken=942f95247e354701, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Autoupdater.NET.Official.1.4.2\lib\net462\AutoUpdater.NET.dll</HintPath>
+    <Reference Include="AutoUpdater.NET, Version=1.4.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Autoupdater.NET.Official.1.4.3\lib\net462\AutoUpdater.NET.dll</HintPath>
     </Reference>
     <Reference Include="Costura, Version=1.6.2.0, Culture=neutral, PublicKeyToken=9919ef960d84173d, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Costura.Fody.1.6.2\lib\dotnet\Costura.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="CrashReporter.NET, Version=1.5.1.0, Culture=neutral, PublicKeyToken=986591a91592b7e6, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\CrashReporter.NET.Official.1.5.1\lib\net40\CrashReporter.NET.dll</HintPath>
+    <Reference Include="CrashReporter.NET, Version=1.5.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CrashReporter.NET.Official.1.5.2\lib\net462\CrashReporter.NET.dll</HintPath>
     </Reference>
     <Reference Include="FetzDeLib, Version=0.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\FetzDeLib.0.1.0\lib\netstandard1.4\FetzDeLib.dll</HintPath>
@@ -128,11 +128,11 @@
     <Reference Include="Microsoft.Win32.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.Win32.Primitives.4.3.0\lib\net46\Microsoft.Win32.Primitives.dll</HintPath>
     </Reference>
-    <Reference Include="NAudio, Version=1.8.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\NAudio.1.8.0\lib\net35\NAudio.dll</HintPath>
+    <Reference Include="NAudio, Version=1.8.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NAudio.1.8.1\lib\net35\NAudio.dll</HintPath>
     </Reference>
-    <Reference Include="NAudio.Lame, Version=1.0.3.3048, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\NAudio.Lame.1.0.4\lib\net20\NAudio.Lame.dll</HintPath>
+    <Reference Include="NAudio.Lame, Version=1.0.5.30726, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NAudio.Lame.1.0.5\lib\net20\NAudio.Lame.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -159,8 +159,8 @@
       <HintPath>..\..\packages\System.Console.4.3.0\lib\net46\System.Console.dll</HintPath>
     </Reference>
     <Reference Include="System.Data" />
-    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\System.Diagnostics.DiagnosticSource.4.3.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Diagnostics.DiagnosticSource.4.4.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
     </Reference>
     <Reference Include="System.Diagnostics.Tracing, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\..\packages\System.Diagnostics.Tracing.4.3.0\lib\net462\System.Diagnostics.Tracing.dll</HintPath>
@@ -185,8 +185,8 @@
     <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\..\packages\System.IO.FileSystem.Primitives.4.3.0\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
     </Reference>
-    <Reference Include="System.Net.Http, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\System.Net.Http.4.3.0\lib\net46\System.Net.Http.dll</HintPath>
+    <Reference Include="System.Net.Http, Version=4.1.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Net.Http.4.3.2\lib\net46\System.Net.Http.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Sockets, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\..\packages\System.Net.Sockets.4.3.0\lib\net46\System.Net.Sockets.dll</HintPath>
@@ -489,7 +489,14 @@
   <ItemGroup>
     <None Include="Resources\YOU_SUCK_DUDE.wav" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="libmp3lame.32.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="libmp3lame.64.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\RUNNAWAY_FROM_ME.wav" />
   </ItemGroup>
@@ -608,10 +615,44 @@
     <None Include="Resources\DONT_HURT_ME.wav" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="libmp3lame.32.dll" />
-    <Content Include="libmp3lame.64.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <None Include="Resources\EXCELLENTE_AMIGOS.wav" />
+    <None Include="Resources\WINSTON_COCK_LONG.wav" />
+    <None Include="Resources\WAS_THAT_A_GRILL.wav" />
+    <None Include="Resources\SLEEPY_BYE_BYE.wav" />
+    <None Include="Resources\I_WANT_TO_DIE.wav" />
+    <None Include="Resources\DICK_ON_POINT.wav" />
+    <None Include="Resources\CUM_HERE_BITCH.wav" />
+    <None Include="Resources\CRYING_SCARY.wav" />
+    <None Include="Resources\CRYING_OATS.wav" />
+    <None Include="Resources\CAVELERY_IS_HERE.wav" />
+    <None Include="Resources\CALCULATED.wav" />
+    <None Include="Resources\BOOPI_BOOPI_2.wav" />
+    <None Include="Resources\BLUE_GUNG.wav" />
+    <None Include="Resources\BEST_DAY_FOR_MONKEY.wav" />
+    <None Include="Resources\BABY_TO_HELP_YOU.wav" />
+    <None Include="Resources\ANY_INDICATION.wav" />
+    <None Include="Resources\YOUR_FUCKED.wav" />
+    <None Include="Resources\WINSTON_BOOP.wav" />
+    <None Include="Resources\WHAT_SHE_SAID.wav" />
+    <None Include="Resources\SUICIDE.wav" />
+    <None Include="Resources\SMACK_BABYS.wav" />
+    <None Include="Resources\REZ_ME.wav" />
+    <None Include="Resources\ONE_KILL_CARRY.wav" />
+    <None Include="Resources\NOT_EXPECT_MUCH.wav" />
+    <None Include="Resources\NO_HOMO.wav" />
+    <None Include="Resources\MONKEY_ON_ME.wav" />
+    <None Include="Resources\LOVE_SUICIDE.wav" />
+    <None Include="Resources\INTO_HER_ASSHOLE.wav" />
+    <None Include="Resources\INTENSE_GAMEPLAY.wav" />
+    <None Include="Resources\IDIOT_LUCIO.wav" />
+    <None Include="Resources\HOW_TO_THROW.wav" />
+    <None Include="Resources\GOLD_ELIMS.wav" />
+    <None Include="Resources\FOCK_OFF.wav" />
+    <None Include="Resources\EXCELENT_SHATTER.wav" />
+    <None Include="Resources\EJECT_IF_SEX.wav" />
+    <None Include="Resources\DVA_THAT_MOMENT.wav" />
+    <None Include="Resources\DOES_HAVE_CANCER.wav" />
+    <None Include="Resources\DINKI.wav" />
     <None Include="Resources\IS_THIS_HARAMBE.wav" />
     <None Include="Resources\ASTROCITY.wav" />
     <None Include="Resources\ON_THE_SIGHT.wav" />
@@ -626,9 +667,9 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
     <Error Condition="!Exists('..\..\packages\Costura.Fody.1.6.2\build\dotnet\Costura.Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Costura.Fody.1.6.2\build\dotnet\Costura.Fody.targets'))" />
-    <Error Condition="!Exists('..\..\packages\Fody.2.1.1\build\netstandard1.0\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Fody.2.1.1\build\netstandard1.0\Fody.targets'))" />
+    <Error Condition="!Exists('..\..\packages\Fody.2.1.2\build\netstandard1.0\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Fody.2.1.2\build\netstandard1.0\Fody.targets'))" />
   </Target>
   <Import Project="..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
   <Import Project="..\..\packages\Costura.Fody.1.6.2\build\dotnet\Costura.Fody.targets" Condition="Exists('..\..\packages\Costura.Fody.1.6.2\build\dotnet\Costura.Fody.targets')" />
-  <Import Project="..\..\packages\Fody.2.1.1\build\netstandard1.0\Fody.targets" Condition="Exists('..\..\packages\Fody.2.1.1\build\netstandard1.0\Fody.targets')" />
+  <Import Project="..\..\packages\Fody.2.1.2\build\netstandard1.0\Fody.targets" Condition="Exists('..\..\packages\Fody.2.1.2\build\netstandard1.0\Fody.targets')" />
 </Project>
