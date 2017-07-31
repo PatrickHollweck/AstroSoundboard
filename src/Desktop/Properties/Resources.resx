@@ -1231,15 +1231,6 @@
         },
         {
             "sound": {
-                "name": "WAS_THAT_A_GRILL"
-            },
-            "info": {
-                "VideoLink": "https://www.youtube.com/embed/eZj5rAru_Og",
-                "Description": "Yes"
-            }
-        },
-        {
-            "sound": {
                 "name": "EXCELLENTE_AMIGOS"
             },
             "info": {

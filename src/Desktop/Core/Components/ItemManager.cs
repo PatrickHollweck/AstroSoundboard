@@ -17,6 +17,7 @@ namespace AstroSoundBoard.Core.Components
     using System.Windows.Controls;
 
     using AstroSoundBoard.Core.Objects;
+    using AstroSoundBoard.Core.Objects.DataObjects.SoundDefinitionJsonTypes;
     using AstroSoundBoard.Core.Objects.Interfaces;
     using AstroSoundBoard.Core.Objects.Models;
 
@@ -41,6 +42,21 @@ namespace AstroSoundBoard.Core.Components
         private void Reload()
         {
             models = SettingsManager.GetSounds();
+
+            if (models.Count < SoundManager.GetSounds().Count)
+            {
+                foreach (Definition definition in SoundManager.GetSounds())
+                {
+                    var sound = SoundModel.GetModel(definition);
+
+                    if (!models.Contains(sound))
+                    {
+                        SettingsManager.Cache.Add(sound);
+                    }
+                }
+
+                SettingsManager.Save();
+            }
 
             views.Clear();
             foreach (SoundModel model in models)
