@@ -1,8 +1,8 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 17:07:2017 / 17:07
-// Creation: 20:06:2017
+// Last Modified: 16:11:2017 / 18:10
+// Creation: 31:07:2017
 // Project: AstroSoundBoard
 //
 //
@@ -38,7 +38,6 @@ namespace AstroSoundBoard
         private void Application_Startup(object sender, StartupEventArgs e)
         {
 #if DEBUG
-
             ((Hierarchy)LogManager.GetRepository()).Root.Level = Level.Debug;
             ((Hierarchy)LogManager.GetRepository()).RaiseConfigurationChanged(EventArgs.Empty);
 #else
@@ -61,31 +60,24 @@ namespace AstroSoundBoard
 
         public static void ReportError(object sender, UnhandledExceptionEventArgs args)
         {
-            Log.Fatal($"Fatal unhanded exception. - {args.ExceptionObject} -- {args.IsTerminating} -> {args}");
+            Log.Fatal($"Fatal unhanded exception. (caught in ReportError Handler) - {args.ExceptionObject}");
 
             if (Settings.Default.AllowErrorReporting)
             {
+                // Sentry
                 var ravenClient = new RavenClient(Credentials.SentryApiKey);
                 ravenClient.Capture(new SharpRaven.Data.SentryEvent((Exception)args.ExceptionObject));
 
-                ReportCrash((Exception)args.ExceptionObject);
+                // CrashReporter.NET
+                var reportCrash = new ReportCrash
+                {
+                    IncludeScreenshot = true,
+                    CaptureScreen = true,
 
-                Log.Info("Reported error to sentry!");
+                    ToEmail = "patrick-hollweck@gmx.de"
+                };
+                reportCrash.Send((Exception)args.ExceptionObject);
             }
-        }
-
-        public static void ReportCrash(Exception exception, string developerMessage = "")
-        {
-            var reportCrash = new ReportCrash
-            {
-                IncludeScreenshot = true,
-                CaptureScreen = true,
-
-                DeveloperMessage = developerMessage,
-                ToEmail = "patrick-hollweck@gmx.de"
-            };
-
-            reportCrash.Send(exception);
         }
 
         private void Application_Exit(object sender, ExitEventArgs e)

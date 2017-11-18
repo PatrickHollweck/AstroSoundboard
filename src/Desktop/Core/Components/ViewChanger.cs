@@ -1,15 +1,13 @@
 ﻿// ****************************** Module Header ****************************** //
-// 
-// 
-// Last Modified: 11:05:2017 / 16:23
-// Creation: 11:05:2017
+//
+//
+// Last Modified: 16:11:2017 / 18:13
+// Creation: 24:06:2017
 // Project: AstroSoundBoard
-// 
-// 
+//
+//
 // <copyright file="ViewChanger.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
-
-
 
 namespace AstroSoundBoard.Core.Components
 {
@@ -36,15 +34,26 @@ namespace AstroSoundBoard.Core.Components
         // Enum of Pages in the Application.
         public enum Page
         {
+            /// <summary>
+            /// The board page.
+            /// </summary>
             Board,
+
+            /// <summary>
+            /// The Settings page.
+            /// </summary>
             Settings,
+
+            /// <summary>
+            /// The About page.
+            /// </summary>
             About
         }
 
         /// <summary>
         /// Changes to the specified view.
         /// </summary>
-        /// <param name="p">Page to change to</param>
+        /// <param name="page">Page to change to</param>
         public static void ChangeViewTo(Page page)
         {
             Log.Info($"Changing View to : {page}");
