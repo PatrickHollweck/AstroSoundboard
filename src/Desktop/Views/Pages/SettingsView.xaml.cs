@@ -9,7 +9,7 @@
 // <copyright file="SettingsView.xaml.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
 
-namespace AstroSoundBoard.Pages.Settings
+namespace AstroSoundBoard.Views.Pages
 {
     using System.Diagnostics;
     using System.IO;
@@ -17,9 +17,10 @@ namespace AstroSoundBoard.Pages.Settings
     using System.Windows;
     using System.Windows.Controls;
 
-    using AstroSoundBoard.Core.Objects;
+    using AstroSoundBoard.Objects;
+    using AstroSoundBoard.Objects.Models;
     using AstroSoundBoard.Properties;
-    using AstroSoundBoard.Windows;
+    using AstroSoundBoard.Views.Windows;
 
     using log4net;
 

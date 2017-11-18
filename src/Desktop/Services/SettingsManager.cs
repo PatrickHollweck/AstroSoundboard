@@ -9,7 +9,7 @@
 // <copyright file="SettingsManager.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
 
-namespace AstroSoundBoard.Core.Components
+namespace AstroSoundBoard.Services
 {
     using System;
     using System.Collections.Generic;
@@ -17,9 +17,9 @@ namespace AstroSoundBoard.Core.Components
     using System.Reflection;
     using System.Windows.Forms;
 
-    using AstroSoundBoard.Core.Objects;
-    using AstroSoundBoard.Core.Objects.Models;
-    using AstroSoundBoard.Core.Utils.Extensions;
+    using AstroSoundBoard.Misc.Extensions;
+    using AstroSoundBoard.Objects;
+    using AstroSoundBoard.Objects.Models;
     using AstroSoundBoard.Properties;
 
     using log4net;

@@ -9,11 +9,11 @@
 // <copyright file="KeybindManager.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
 
-namespace AstroSoundBoard.Core.Components
+namespace AstroSoundBoard.Services
 {
     using System.Reflection;
 
-    using AstroSoundBoard.Core.Objects.Models;
+    using AstroSoundBoard.Objects.Models;
 
     using log4net;
 

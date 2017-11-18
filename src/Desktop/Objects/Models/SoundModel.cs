@@ -9,7 +9,7 @@
 // <copyright file="SoundModel.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
 
-namespace AstroSoundBoard.Core.Objects.Models
+namespace AstroSoundBoard.Objects.Models
 {
     using System;
     using System.ComponentModel;
@@ -19,8 +19,8 @@ namespace AstroSoundBoard.Core.Objects.Models
     using System.Windows.Forms;
     using System.Windows.Input;
 
-    using AstroSoundBoard.Core.Components;
-    using AstroSoundBoard.Core.Utils.Extensions;
+    using AstroSoundBoard.Misc.Extensions;
+    using AstroSoundBoard.Services;
 
     using log4net;
 

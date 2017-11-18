@@ -9,7 +9,7 @@
 // <copyright file="StringExtensions.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
 
-namespace AstroSoundBoard.Core.Utils.Extensions
+namespace AstroSoundBoard.Misc.Extensions
 {
     public static class StringExtensions
     {

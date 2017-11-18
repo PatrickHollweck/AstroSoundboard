@@ -9,7 +9,7 @@
 // <copyright file="KeyDetector.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
 
-namespace AstroSoundBoard.Core.Utils
+namespace AstroSoundBoard.Misc
 {
     using System.Collections.Generic;
     using System.Linq;

@@ -9,14 +9,14 @@
 // <copyright file="KeybindManagerWindow.xaml.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
 
-namespace AstroSoundBoard.Windows
+namespace AstroSoundBoard.Views.Windows
 {
     using System.ComponentModel;
     using System.Windows;
     using System.Windows.Controls;
 
     using AstroSoundBoard.Controls.Keybind;
-    using AstroSoundBoard.Core.Components;
+    using AstroSoundBoard.Services;
 
     [PropertyChanged.AddINotifyPropertyChangedInterface]
     public partial class KeybindManagerWindow : Window

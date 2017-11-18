@@ -16,10 +16,10 @@ namespace AstroSoundBoard
     using System.Reflection;
     using System.Windows;
 
-    using AstroSoundBoard.Core.Components;
-    using AstroSoundBoard.Core.Objects;
-    using AstroSoundBoard.Core.Utils;
+    using AstroSoundBoard.Misc;
+    using AstroSoundBoard.Objects;
     using AstroSoundBoard.Properties;
+    using AstroSoundBoard.Services;
     using AstroSoundBoard.ViewModels;
 
     using Caliburn.Micro;

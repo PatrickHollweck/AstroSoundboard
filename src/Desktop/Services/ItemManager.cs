@@ -1,24 +1,24 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 16:07:2017 / 20:13
-// Creation: 01:07:2017
+// Last Modified: 18:11:2017 / 14:39
+// Creation: 18:11:2017
 // Project: AstroSoundBoard
 //
 //
 // <copyright file="ItemManager.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
 
-namespace AstroSoundBoard.Core.Components
+namespace AstroSoundBoard.Services
 {
     using System;
     using System.Collections.Generic;
     using System.Diagnostics;
     using System.Windows.Controls;
 
-    using AstroSoundBoard.Core.Objects;
-    using AstroSoundBoard.Core.Objects.Interfaces;
-    using AstroSoundBoard.Core.Objects.Models;
+    using AstroSoundBoard.Objects;
+    using AstroSoundBoard.Objects.Interfaces;
+    using AstroSoundBoard.Objects.Models;
 
     using FetzDeLib.Extensions;
 

@@ -9,15 +9,13 @@
 // <copyright file="ViewChanger.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
 
-namespace AstroSoundBoard.Core.Components
+namespace AstroSoundBoard.Services
 {
     using System;
     using System.Reflection;
 
-    using AstroSoundBoard.Pages.About;
-    using AstroSoundBoard.Pages.Board;
-    using AstroSoundBoard.Pages.Settings;
     using AstroSoundBoard.Views;
+    using AstroSoundBoard.Views.Pages;
 
     using log4net;
 

@@ -9,7 +9,7 @@
 // <copyright file="SoundManager.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
 
-namespace AstroSoundBoard.Core.Components
+namespace AstroSoundBoard.Services
 {
     using System;
     using System.Collections;
@@ -19,7 +19,7 @@ namespace AstroSoundBoard.Core.Components
     using System.Reflection;
     using System.Resources;
 
-    using AstroSoundBoard.Core.Objects.Models;
+    using AstroSoundBoard.Objects.Models;
     using AstroSoundBoard.Properties;
 
     using log4net;

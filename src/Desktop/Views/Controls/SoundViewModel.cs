@@ -1,21 +1,24 @@
 ﻿// ****************************** Module Header ****************************** //
-//
-//
-// Last Modified: 16:07:2017 / 19:37
-// Creation: 01:07:2017
+// 
+// 
+// Last Modified: 18:11:2017 / 14:46
+// Creation: 18:11:2017
 // Project: AstroSoundBoard
-//
-//
+// 
+// 
 // <copyright file="SoundViewModel.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
 
+
+
 namespace AstroSoundBoard.Controls.Sound
 {
-    using AstroSoundBoard.Core.Objects.Interfaces;
-    using AstroSoundBoard.Core.Objects.Models;
+    using AstroSoundBoard.Objects.Interfaces;
+    using AstroSoundBoard.Objects.Models;
 
     using Newtonsoft.Json;
 
+    // TODO: Move viewmodel to viewmodels folder
     [PropertyChanged.AddINotifyPropertyChangedInterface]
     public class SoundViewModel : IAddableViewModel
     {

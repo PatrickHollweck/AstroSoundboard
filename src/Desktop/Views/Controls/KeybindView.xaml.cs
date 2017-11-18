@@ -14,10 +14,10 @@ namespace AstroSoundBoard.Controls.Keybind
     using System.Windows;
     using System.Windows.Controls;
 
-    using AstroSoundBoard.Core.Components;
-    using AstroSoundBoard.Core.Objects.Interfaces;
-    using AstroSoundBoard.Core.Objects.Models;
-    using AstroSoundBoard.Windows;
+    using AstroSoundBoard.Objects.Interfaces;
+    using AstroSoundBoard.Objects.Models;
+    using AstroSoundBoard.Services;
+    using AstroSoundBoard.Views.Windows;
 
     using log4net;
 

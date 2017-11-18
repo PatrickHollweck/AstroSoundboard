@@ -9,7 +9,7 @@
 // <copyright file="IAddableView.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
 
-namespace AstroSoundBoard.Core.Objects.Interfaces
+namespace AstroSoundBoard.Objects.Interfaces
 {
     public interface IAddableView
     {

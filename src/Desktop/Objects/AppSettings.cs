@@ -9,7 +9,7 @@
 // <copyright file="AppSettings.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
 
-namespace AstroSoundBoard.Core.Objects
+namespace AstroSoundBoard.Objects
 {
     using System;
     using System.IO;

@@ -9,12 +9,12 @@
 // <copyright file="BoardView.xaml.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
 
-namespace AstroSoundBoard.Pages.Board
+namespace AstroSoundBoard.Views.Pages
 {
     using System.Windows.Controls;
 
     using AstroSoundBoard.Controls.Sound;
-    using AstroSoundBoard.Core.Components;
+    using AstroSoundBoard.Services;
 
     [PropertyChanged.AddINotifyPropertyChangedInterface]
     public partial class BoardView : UserControl

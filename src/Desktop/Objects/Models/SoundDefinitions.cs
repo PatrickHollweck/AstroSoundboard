@@ -9,11 +9,11 @@
 // <copyright file="SoundDefinitions.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
 
-namespace AstroSoundBoard.Core.Objects.Models
+namespace AstroSoundBoard.Objects.Models
 {
     using System.Collections.Generic;
 
-    using AstroSoundBoard.Core.Components;
+    using AstroSoundBoard.Services;
 
     using Newtonsoft.Json;
 

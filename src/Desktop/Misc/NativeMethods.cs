@@ -9,7 +9,7 @@
 // <copyright file="NativeMethods.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
 
-namespace AstroSoundBoard.Core.Utils
+namespace AstroSoundBoard.Misc
 {
     using System;
     using System.Runtime.InteropServices;

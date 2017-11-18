@@ -265,47 +265,47 @@
     <Compile Include="Misc\KeyDetector.cs" />
     <Compile Include="Misc\NativeMethods.cs" />
     <Compile Include="Objects\Models\JsonSoundModel.cs" />
-    <Compile Include="Controls\Keybind\KeybindViewModel.cs" />
-    <Compile Include="Controls\Keybind\KeybindView.xaml.cs">
+    <Compile Include="Views\Controls\KeybindViewModel.cs" />
+    <Compile Include="Views\Controls\KeybindView.xaml.cs">
       <DependentUpon>KeybindView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Sound\SoundViewModel.cs" />
-    <Compile Include="Pages\About\AboutView.xaml.cs">
+    <Compile Include="Views\Controls\SoundViewModel.cs" />
+    <Compile Include="Views\Pages\AboutView.xaml.cs">
       <DependentUpon>AboutView.xaml</DependentUpon>
     </Compile>
-    <Page Include="Controls\Keybind\KeybindView.xaml">
+    <Page Include="Views\Controls\KeybindView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\Sound\SoundView.xaml">
+    <Page Include="Views\Controls\SoundView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\About\AboutView.xaml">
+    <Page Include="Views\Pages\AboutView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\Board\BoardView.xaml">
+    <Page Include="Views\Pages\BoardView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\Settings\SettingsView.xaml">
+    <Page Include="Views\Pages\SettingsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\FeedbackWindow.xaml">
+    <Page Include="Views\Windows\FeedbackWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\InfoWindow.xaml">
+    <Page Include="Views\Windows\InfoWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\KeybindConfiguratorWindow.xaml">
+    <Page Include="Views\Windows\KeybindConfiguratorWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\KeybindManagerWindow.xaml">
+    <Page Include="Views\Windows\KeybindManagerWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -327,27 +327,27 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Sound\SoundView.xaml.cs">
+    <Compile Include="Views\Controls\SoundView.xaml.cs">
       <DependentUpon>SoundView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Board\BoardView.xaml.cs">
+    <Compile Include="Views\Pages\BoardView.xaml.cs">
       <DependentUpon>BoardView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Settings\SettingsModel.cs" />
-    <Compile Include="Pages\Settings\SettingsView.xaml.cs">
+    <Compile Include="Objects\Models\SettingsModel.cs" />
+    <Compile Include="Views\Pages\SettingsView.xaml.cs">
       <DependentUpon>SettingsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\ShellViewModel.cs" />
-    <Compile Include="Windows\FeedbackWindow.xaml.cs">
+    <Compile Include="Views\Windows\FeedbackWindow.xaml.cs">
       <DependentUpon>FeedbackWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\InfoWindow.xaml.cs">
+    <Compile Include="Views\Windows\InfoWindow.xaml.cs">
       <DependentUpon>InfoWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\KeybindConfiguratorWindow.xaml.cs">
+    <Compile Include="Views\Windows\KeybindConfiguratorWindow.xaml.cs">
       <DependentUpon>KeybindConfiguratorWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\KeybindManagerWindow.xaml.cs">
+    <Compile Include="Views\Windows\KeybindManagerWindow.xaml.cs">
       <DependentUpon>KeybindManagerWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ShellView.xaml.cs">

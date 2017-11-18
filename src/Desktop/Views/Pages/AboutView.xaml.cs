@@ -1,15 +1,15 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 08:05:2017 / 18:26
-// Creation: 08:05:2017
+// Last Modified: 18:11:2017 / 14:44
+// Creation: 18:11:2017
 // Project: AstroSoundBoard
 //
 //
 // <copyright file="AboutView.xaml.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
 
-namespace AstroSoundBoard.Pages.About
+namespace AstroSoundBoard.Views.Pages
 {
     using System.Diagnostics;
     using System.Windows;

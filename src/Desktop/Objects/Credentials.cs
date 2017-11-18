@@ -9,7 +9,7 @@
 // <copyright file="Credentials.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
 
-namespace AstroSoundBoard.Core.Objects
+namespace AstroSoundBoard.Objects
 {
     /// <summary>
     /// Credentials and API Keys

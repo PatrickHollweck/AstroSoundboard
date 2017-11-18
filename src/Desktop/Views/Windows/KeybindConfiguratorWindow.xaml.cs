@@ -9,16 +9,16 @@
 // <copyright file="KeybindConfiguratorWindow.xaml.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
 
-namespace AstroSoundBoard.Windows
+namespace AstroSoundBoard.Views.Windows
 {
     using System.ComponentModel;
     using System.Reflection;
     using System.Windows;
     using System.Windows.Input;
 
-    using AstroSoundBoard.Core.Components;
-    using AstroSoundBoard.Core.Objects.Models;
-    using AstroSoundBoard.Core.Utils;
+    using AstroSoundBoard.Misc;
+    using AstroSoundBoard.Objects.Models;
+    using AstroSoundBoard.Services;
 
     using log4net;
 

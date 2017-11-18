@@ -1,8 +1,8 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 04:07:2017 / 17:05
-// Creation: 01:07:2017
+// Last Modified: 18:11:2017 / 14:45
+// Creation: 18:11:2017
 // Project: AstroSoundBoard
 //
 //
@@ -11,9 +11,10 @@
 
 namespace AstroSoundBoard.Controls.Keybind
 {
-    using AstroSoundBoard.Core.Objects.Interfaces;
-    using AstroSoundBoard.Core.Objects.Models;
+    using AstroSoundBoard.Objects.Interfaces;
+    using AstroSoundBoard.Objects.Models;
 
+    // TODO: Move viewmodel to viewmodels folder!
     public class KeybindViewModel : IAddableViewModel
     {
         public SoundModel Sound { get; set; }

@@ -21,10 +21,10 @@ namespace AstroSoundBoard.Views
     using System.Windows.Controls;
     using System.Windows.Media.Animation;
 
-    using AstroSoundBoard.Core.Components;
-    using AstroSoundBoard.Core.Utils;
-    using AstroSoundBoard.Pages.Board;
-    using AstroSoundBoard.Windows;
+    using AstroSoundBoard.Misc;
+    using AstroSoundBoard.Services;
+    using AstroSoundBoard.Views.Pages;
+    using AstroSoundBoard.Views.Windows;
 
     using AutoUpdaterDotNET;
 

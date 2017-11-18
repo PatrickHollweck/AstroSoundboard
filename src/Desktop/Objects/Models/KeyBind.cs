@@ -9,7 +9,7 @@
 // <copyright file="KeyBind.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
 
-namespace AstroSoundBoard.Core.Objects.Models
+namespace AstroSoundBoard.Objects.Models
 {
     using System.ComponentModel;
     using System.Runtime.CompilerServices;

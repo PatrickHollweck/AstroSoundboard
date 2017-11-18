@@ -1,18 +1,18 @@
 ﻿<UserControl
-	x:Class="AstroSoundBoard.Pages.Settings.SettingsView"
-	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-	xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-	d:DesignHeight="1000"
-	d:DesignWidth="800"
-	Background="{DynamicResource MaterialDesignPaper}"
-	FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
-	TextElement.FontSize="14"
-	TextElement.FontWeight="Medium"
-	TextElement.Foreground="{DynamicResource MaterialDesignBody}"
-	mc:Ignorable="d">
+    x:Class="AstroSoundBoard.Views.Pages.SettingsView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="1000"
+    d:DesignWidth="800"
+    Background="{DynamicResource MaterialDesignPaper}"
+    FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
+    TextElement.FontSize="14"
+    TextElement.FontWeight="Medium"
+    TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+    mc:Ignorable="d">
     <ScrollViewer Margin="5">
         <Grid>
             <Grid.ColumnDefinitions>
@@ -21,55 +21,55 @@
             </Grid.ColumnDefinitions>
             <StackPanel>
                 <GroupBox
-					Margin="16,16,16,0"
-					Header="Application"
-					Style="{DynamicResource MaterialDesignCardGroupBox}">
+                    Margin="16,16,16,0"
+                    Header="Application"
+                    Style="{DynamicResource MaterialDesignCardGroupBox}">
                     <StackPanel>
                         <StackPanel Orientation="Horizontal">
                             <Label Margin="-3,0,10,0" Content="Current Version: " />
                             <Label Content="{Binding CurrentVersion}" />
                         </StackPanel>
                         <Button
-							Margin="0,5"
-							Click="BrowserChangeLog"
-							Content="Open Download Page" />
+                            Margin="0,5"
+                            Click="BrowserChangeLog"
+                            Content="Open Download Page" />
                         <Button
-							Margin="0,5"
-							Click="ResetSoundboard"
-							Content="Reset Soundboard" />
+                            Margin="0,5"
+                            Click="ResetSoundboard"
+                            Content="Reset Soundboard" />
                     </StackPanel>
                 </GroupBox>
                 <GroupBox
-					Margin="16,16,16,0"
-					Header="Reporting"
-					Style="{DynamicResource MaterialDesignCardGroupBox}">
+                    Margin="16,16,16,0"
+                    Header="Reporting"
+                    Style="{DynamicResource MaterialDesignCardGroupBox}">
                     <StackPanel>
                         <Button
-							Margin="5"
-							Click="GiveFeedback_Click"
-							ToolTip="Report a Issue">
+                            Margin="5"
+                            Click="GiveFeedback_Click"
+                            ToolTip="Report a Issue">
                             <Button.Content>
                                 <StackPanel Orientation="Horizontal">
                                     <Label Content="Report Issue" />
                                     <materialDesign:PackIcon
-										HorizontalAlignment="Center"
-										VerticalAlignment="Center"
-										Kind="AlertBox" />
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        Kind="AlertBox" />
                                 </StackPanel>
                             </Button.Content>
                         </Button>
 
                         <Button
-							Margin="5"
-							Click="GiveFeedback_Click"
-							ToolTip="Report a Issue">
+                            Margin="5"
+                            Click="GiveFeedback_Click"
+                            ToolTip="Report a Issue">
                             <Button.Content>
                                 <StackPanel Orientation="Horizontal">
                                     <Label Content="Request Feature / Sound" />
                                     <materialDesign:PackIcon
-										HorizontalAlignment="Center"
-										VerticalAlignment="Center"
-										Kind="Application" />
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        Kind="Application" />
                                 </StackPanel>
                             </Button.Content>
                         </Button>
@@ -78,9 +78,9 @@
             </StackPanel>
             <StackPanel Grid.Column="1">
                 <GroupBox
-					Margin="16,16,16,0"
-					Header="Appearance"
-					Style="{DynamicResource MaterialDesignCardGroupBox}">
+                    Margin="16,16,16,0"
+                    Header="Appearance"
+                    Style="{DynamicResource MaterialDesignCardGroupBox}">
                     <StackPanel>
                         <StackPanel Orientation="Horizontal">
                             <Label Margin="-3,0,25,0" Content="Disable Dark Mode?    " />
@@ -88,13 +88,13 @@
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
                             <ComboBox
-								Name="ColorBox"
-								Width="200"
-								HorizontalAlignment="Stretch"
-								materialDesign:HintAssist.Hint="Primary Color"
-								materialDesign:HintAssist.IsFloating="True"
-								SelectedIndex="{Binding SelectedColor}"
-								SelectionChanged="ChangePrimaryColor">
+                                Name="ColorBox"
+                                Width="200"
+                                HorizontalAlignment="Stretch"
+                                materialDesign:HintAssist.Hint="Primary Color"
+                                materialDesign:HintAssist.IsFloating="True"
+                                SelectedIndex="{Binding SelectedColor}"
+                                SelectionChanged="ChangePrimaryColor">
                                 <ComboBoxItem>Red</ComboBoxItem>
                                 <ComboBoxItem>Pink</ComboBoxItem>
                                 <ComboBoxItem>Purple</ComboBoxItem>
@@ -111,14 +111,14 @@
                                 <ComboBoxItem>Grey</ComboBoxItem>
                             </ComboBox>
                             <ComboBox
-								Name="AccentColorBox"
-								Width="200"
-								Margin="30,0"
-								HorizontalAlignment="Stretch"
-								materialDesign:HintAssist.Hint="Accent Color"
-								materialDesign:HintAssist.IsFloating="True"
-								SelectedIndex="{Binding SelectedAccentColor}"
-								SelectionChanged="ChangeAccentColor">
+                                Name="AccentColorBox"
+                                Width="200"
+                                Margin="30,0"
+                                HorizontalAlignment="Stretch"
+                                materialDesign:HintAssist.Hint="Accent Color"
+                                materialDesign:HintAssist.IsFloating="True"
+                                SelectedIndex="{Binding SelectedAccentColor}"
+                                SelectionChanged="ChangeAccentColor">
                                 <ComboBoxItem>Red</ComboBoxItem>
                                 <ComboBoxItem>Pink</ComboBoxItem>
                                 <ComboBoxItem>Purple</ComboBoxItem>
@@ -138,9 +138,9 @@
                     </StackPanel>
                 </GroupBox>
                 <GroupBox
-					Margin="16,16,16,0"
-					Header="Privacy"
-					Style="{DynamicResource MaterialDesignCardGroupBox}">
+                    Margin="16,16,16,0"
+                    Header="Privacy"
+                    Style="{DynamicResource MaterialDesignCardGroupBox}">
                     <StackPanel>
                         <Grid>
                             <Grid.ColumnDefinitions>
@@ -157,16 +157,16 @@
                         </Grid>
 
                         <TextBlock
-							Margin="0,10,0,0"
-							FontSize="10"
-							TextWrapping="Wrap"><Run Text="Please note that all informations sent about your computer will not make it uniquely identifiable, and is exclusively used " /><Run Text="to" /><Run Text=" improv" /><Run Text="e" /><Run Text=" the Application!" /></TextBlock>
+                            Margin="0,10,0,0"
+                            FontSize="10"
+                            TextWrapping="Wrap"><Run Text="Please note that all informations sent about your computer will not make it uniquely identifiable, and is exclusively used " /><Run Text="to" /><Run Text=" improv" /><Run Text="e" /><Run Text=" the Application!" /></TextBlock>
                     </StackPanel>
                 </GroupBox>
 
                 <GroupBox
-					Margin="16,16,16,0"
-					Header="Keybinds"
-					Style="{DynamicResource MaterialDesignCardGroupBox}">
+                    Margin="16,16,16,0"
+                    Header="Keybinds"
+                    Style="{DynamicResource MaterialDesignCardGroupBox}">
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="250*" />
@@ -178,9 +178,9 @@
                         </StackPanel>
                         <StackPanel Grid.Column="1">
                             <ToggleButton
-								Margin="0,5,0,3.6"
-								Click="EnableKeybindsToogle"
-								IsChecked="{Binding EnableKeybinds}" />
+                                Margin="0,5,0,3.6"
+                                Click="EnableKeybindsToogle"
+                                IsChecked="{Binding EnableKeybinds}" />
                         </StackPanel>
                     </Grid>
                 </GroupBox>
@@ -190,22 +190,22 @@
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text="Debug " />
                             <TextBlock
-								VerticalAlignment="Bottom"
-								FontSize="8"
-								Text="( Advanced Users Only )" />
+                                VerticalAlignment="Bottom"
+                                FontSize="8"
+                                Text="( Advanced Users Only )" />
                         </StackPanel>
                     </GroupBox.Header>
                     <Expander Header="Toggle Debug Settings">
                         <StackPanel Margin="5" HorizontalAlignment="Stretch">
                             <Button Click="OpenLogsFolder" Content="Open Logs Folder" />
                             <Button
-								Margin="0,10,0,0"
-								Click="OpenApplicationPath_Click"
-								Content="Open Assembly Folder" />
+                                Margin="0,10,0,0"
+                                Click="OpenApplicationPath_Click"
+                                Content="Open Assembly Folder" />
                             <Label
-								HorizontalAlignment="Center"
-								Content="Real dev's test in production!"
-								FontSize="10" />
+                                HorizontalAlignment="Center"
+                                Content="Real dev's test in production!"
+                                FontSize="10" />
                         </StackPanel>
                     </Expander>
                 </GroupBox>

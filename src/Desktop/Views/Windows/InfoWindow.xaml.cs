@@ -9,17 +9,17 @@
 // <copyright file="InfoWindow.xaml.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
 
-namespace AstroSoundBoard.Windows
+namespace AstroSoundBoard.Views.Windows
 {
     using System.Diagnostics;
     using System.IO;
     using System.Net;
     using System.Windows;
 
-    using AstroSoundBoard.Core.Components;
-    using AstroSoundBoard.Core.Objects;
-    using AstroSoundBoard.Core.Objects.Models;
-    using AstroSoundBoard.Core.Utils.Extensions;
+    using AstroSoundBoard.Misc.Extensions;
+    using AstroSoundBoard.Objects;
+    using AstroSoundBoard.Objects.Models;
+    using AstroSoundBoard.Services;
 
     using Microsoft.Win32;
 

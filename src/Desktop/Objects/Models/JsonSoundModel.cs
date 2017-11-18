@@ -9,7 +9,7 @@
 // <copyright file="JsonSoundModel.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
 
-namespace AstroSoundBoard.Core.Objects.Models
+namespace AstroSoundBoard.Objects.Models
 {
     using Newtonsoft.Json;
 

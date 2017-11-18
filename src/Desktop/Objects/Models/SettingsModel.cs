@@ -9,7 +9,7 @@
 // <copyright file="SettingsModel.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
 
-namespace AstroSoundBoard.Pages.Settings
+namespace AstroSoundBoard.Objects.Models
 {
     using System.Reflection;
 
