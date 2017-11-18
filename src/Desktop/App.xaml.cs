@@ -1,8 +1,8 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 16:11:2017 / 18:10
-// Creation: 31:07:2017
+// Last Modified: 18:11:2017 / 14:09
+// Creation: 18:11:2017
 // Project: AstroSoundBoard
 //
 //
@@ -11,88 +11,13 @@
 
 namespace AstroSoundBoard
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Reflection;
     using System.Windows;
-
-    using AstroSoundBoard.Core.Components;
-    using AstroSoundBoard.Core.Objects;
-    using AstroSoundBoard.Core.Utils;
-    using AstroSoundBoard.Properties;
-
-    using CrashReporterDotNET;
-
-    using log4net;
-    using log4net.Core;
-    using log4net.Repository.Hierarchy;
-
-    using MaterialDesignThemes.Wpf;
-
-    using SharpRaven;
 
     public partial class App : Application
     {
-        private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
-
-        private void Application_Startup(object sender, StartupEventArgs e)
+        public App()
         {
-#if DEBUG
-            ((Hierarchy)LogManager.GetRepository()).Root.Level = Level.Debug;
-            ((Hierarchy)LogManager.GetRepository()).RaiseConfigurationChanged(EventArgs.Empty);
-#else
-            ((Hierarchy)LogManager.GetRepository()).Root.Level = Level.Warn;
-            ((Hierarchy)LogManager.GetRepository()).RaiseConfigurationChanged(EventArgs.Empty);
-
-            // Setup error handler
-            AppDomain.CurrentDomain.UnhandledException += ReportError;
-#endif
-
-            Log.Info("--- APP START! ---");
-            Log.Info($"Current Version: {Assembly.GetExecutingAssembly().GetName().Version}");
-
-            FileSystem.FolderHelper.CreateIfMissing($"{AppSettings.InstallationFilePath}/");
-
-            ApplyMaterialTheme();
-            SoundManager.Init();
-            SettingsManager.Init();
-        }
-
-        public static void ReportError(object sender, UnhandledExceptionEventArgs args)
-        {
-            Log.Fatal($"Fatal unhanded exception. (caught in ReportError Handler) - {args.ExceptionObject}");
-
-            if (Settings.Default.AllowErrorReporting)
-            {
-                // Sentry
-                var ravenClient = new RavenClient(Credentials.SentryApiKey);
-                ravenClient.Capture(new SharpRaven.Data.SentryEvent((Exception)args.ExceptionObject));
-
-                // CrashReporter.NET
-                var reportCrash = new ReportCrash
-                {
-                    IncludeScreenshot = true,
-                    CaptureScreen = true,
-
-                    ToEmail = "patrick-hollweck@gmx.de"
-                };
-                reportCrash.Send((Exception)args.ExceptionObject);
-            }
-        }
-
-        private void Application_Exit(object sender, ExitEventArgs e)
-        {
-            Log.Info("--- APP EXIT! ---");
-        }
-
-        public static void ApplyMaterialTheme()
-        {
-            List<string> colorList = new List<string> { "Red", "Pink", "Purple", "Indigo", "Blue", "Cyan", "Teal", "Green", "Lime", "Yellow", "Amber", "Orange", "Brown", "Grey" };
-
-            var palette = new PaletteHelper();
-            palette.SetLightDark(Settings.Default.IsDarkModeEnabled);
-            palette.ReplaceAccentColor(colorList[Settings.Default.AccentColor]);
-            palette.ReplacePrimaryColor(colorList[Settings.Default.PrimaryColor]);
+            InitializeComponent();
         }
     }
 }

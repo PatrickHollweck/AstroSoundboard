@@ -105,6 +105,15 @@
     <Reference Include="AutoUpdater.NET, Version=1.4.4.0, Culture=neutral, PublicKeyToken=942f95247e354701, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Autoupdater.NET.Official.1.4.4\lib\net462\AutoUpdater.NET.dll</HintPath>
     </Reference>
+    <Reference Include="Caliburn.Micro, Version=3.2.0.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Caliburn.Micro.Core.3.2.0\lib\net45\Caliburn.Micro.dll</HintPath>
+    </Reference>
+    <Reference Include="Caliburn.Micro.Platform, Version=3.2.0.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Caliburn.Micro.3.2.0\lib\net45\Caliburn.Micro.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Caliburn.Micro.Platform.Core, Version=3.2.0.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Caliburn.Micro.3.2.0\lib\net45\Caliburn.Micro.Platform.Core.dll</HintPath>
+    </Reference>
     <Reference Include="Costura, Version=1.6.2.0, Culture=neutral, PublicKeyToken=9919ef960d84173d, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Costura.Fody.1.6.2\lib\dotnet\Costura.dll</HintPath>
       <Private>False</Private>
@@ -142,9 +151,6 @@
     </Reference>
     <Reference Include="NHotkey.Wpf, Version=1.2.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\NHotkey.Wpf.1.2.1\lib\net35\NHotkey.Wpf.dll</HintPath>
-    </Reference>
-    <Reference Include="Ninject, Version=3.3.4.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Ninject.3.3.4\lib\net45\Ninject.dll</HintPath>
     </Reference>
     <Reference Include="PropertyChanged, Version=2.1.4.0, Culture=neutral, PublicKeyToken=ee3ee20bcf148ddd, processorArchitecture=MSIL">
       <HintPath>..\..\packages\PropertyChanged.Fody.2.1.4\lib\netstandard1.0\PropertyChanged.dll</HintPath>
@@ -223,6 +229,9 @@
       <HintPath>..\..\packages\System.Security.Cryptography.X509Certificates.4.3.2\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
     </Reference>
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Caliburn.Micro.3.2.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -243,63 +252,64 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Core\Components\ItemManager.cs" />
-    <Compile Include="Core\Components\KeybindManager.cs" />
-    <Compile Include="Core\Objects\Interfaces\IAddableView.cs" />
-    <Compile Include="Core\Objects\Interfaces\IAddableViewModel.cs" />
-    <Compile Include="Core\Utils\Extensions\StringExtensions.cs" />
-    <Compile Include="Core\Objects\Credentials.cs" />
-    <Compile Include="Core\Objects\Models\KeyBind.cs" />
-    <Compile Include="Core\Objects\Models\SoundModel.cs" />
-    <Compile Include="Core\Objects\Models\SoundDefinitions.cs" />
-    <Compile Include="Core\Utils\KeyDetector.cs" />
-    <Compile Include="Core\Utils\NativeMethods.cs" />
-    <Compile Include="Core\Objects\Models\JsonSoundModel.cs" />
-    <Compile Include="WPF\Controls\Keybind\KeybindViewModel.cs" />
-    <Compile Include="WPF\Controls\Keybind\KeybindView.xaml.cs">
+    <Compile Include="Bootstrapper.cs" />
+    <Compile Include="Services\ItemManager.cs" />
+    <Compile Include="Services\KeybindManager.cs" />
+    <Compile Include="Objects\Interfaces\IAddableView.cs" />
+    <Compile Include="Objects\Interfaces\IAddableViewModel.cs" />
+    <Compile Include="Misc\Extensions\StringExtensions.cs" />
+    <Compile Include="Objects\Credentials.cs" />
+    <Compile Include="Objects\Models\KeyBind.cs" />
+    <Compile Include="Objects\Models\SoundModel.cs" />
+    <Compile Include="Objects\Models\SoundDefinitions.cs" />
+    <Compile Include="Misc\KeyDetector.cs" />
+    <Compile Include="Misc\NativeMethods.cs" />
+    <Compile Include="Objects\Models\JsonSoundModel.cs" />
+    <Compile Include="Controls\Keybind\KeybindViewModel.cs" />
+    <Compile Include="Controls\Keybind\KeybindView.xaml.cs">
       <DependentUpon>KeybindView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WPF\Controls\Sound\SoundViewModel.cs" />
-    <Compile Include="WPF\Pages\About\AboutView.xaml.cs">
+    <Compile Include="Controls\Sound\SoundViewModel.cs" />
+    <Compile Include="Pages\About\AboutView.xaml.cs">
       <DependentUpon>AboutView.xaml</DependentUpon>
     </Compile>
-    <Page Include="WPF\Controls\Keybind\KeybindView.xaml">
+    <Page Include="Controls\Keybind\KeybindView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WPF\Controls\Sound\SoundView.xaml">
+    <Page Include="Controls\Sound\SoundView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WPF\Pages\About\AboutView.xaml">
+    <Page Include="Pages\About\AboutView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WPF\Pages\Board\BoardView.xaml">
+    <Page Include="Pages\Board\BoardView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WPF\Pages\Settings\SettingsView.xaml">
+    <Page Include="Pages\Settings\SettingsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WPF\Windows\FeedbackWindow.xaml">
+    <Page Include="Windows\FeedbackWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WPF\Windows\InfoWindow.xaml">
+    <Page Include="Windows\InfoWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WPF\Windows\KeybindConfiguratorWindow.xaml">
+    <Page Include="Windows\KeybindConfiguratorWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WPF\Windows\KeybindManagerWindow.xaml">
+    <Page Include="Windows\KeybindManagerWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WPF\Windows\MainWindow.xaml">
+    <Page Include="Views\ShellView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -307,40 +317,41 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Core\Components\SettingsManager.cs" />
-    <Compile Include="Core\Components\SoundManager.cs" />
-    <Compile Include="Core\Components\ViewChanger.cs" />
-    <Compile Include="Core\Objects\AppSettings.cs" />
-    <Compile Include="Core\Utils\FileSystem.cs" />
+    <Compile Include="Services\SettingsManager.cs" />
+    <Compile Include="Services\SoundManager.cs" />
+    <Compile Include="Services\ViewChanger.cs" />
+    <Compile Include="Objects\AppSettings.cs" />
+    <Compile Include="Misc\FileSystem.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="WPF\Controls\Sound\SoundView.xaml.cs">
+    <Compile Include="Controls\Sound\SoundView.xaml.cs">
       <DependentUpon>SoundView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WPF\Pages\Board\BoardView.xaml.cs">
+    <Compile Include="Pages\Board\BoardView.xaml.cs">
       <DependentUpon>BoardView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WPF\Pages\Settings\SettingsModel.cs" />
-    <Compile Include="WPF\Pages\Settings\SettingsView.xaml.cs">
+    <Compile Include="Pages\Settings\SettingsModel.cs" />
+    <Compile Include="Pages\Settings\SettingsView.xaml.cs">
       <DependentUpon>SettingsView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WPF\Windows\FeedbackWindow.xaml.cs">
+    <Compile Include="ViewModels\ShellViewModel.cs" />
+    <Compile Include="Windows\FeedbackWindow.xaml.cs">
       <DependentUpon>FeedbackWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WPF\Windows\InfoWindow.xaml.cs">
+    <Compile Include="Windows\InfoWindow.xaml.cs">
       <DependentUpon>InfoWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WPF\Windows\KeybindConfiguratorWindow.xaml.cs">
+    <Compile Include="Windows\KeybindConfiguratorWindow.xaml.cs">
       <DependentUpon>KeybindConfiguratorWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WPF\Windows\KeybindManagerWindow.xaml.cs">
+    <Compile Include="Windows\KeybindManagerWindow.xaml.cs">
       <DependentUpon>KeybindManagerWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WPF\Windows\MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="Views\ShellView.xaml.cs">
+      <DependentUpon>ShellView.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -662,6 +673,9 @@
     <Content Include="libmp3lame.64.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
