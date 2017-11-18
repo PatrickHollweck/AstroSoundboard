@@ -1,20 +1,18 @@
 ﻿// ****************************** Module Header ****************************** //
-// 
-// 
+//
+//
 // Last Modified: 18:11:2017 / 14:46
 // Creation: 18:11:2017
 // Project: AstroSoundBoard
-// 
-// 
+//
+//
 // <copyright file="SoundViewModel.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
 
-
-
-namespace AstroSoundBoard.Controls.Sound
+namespace AstroSoundBoard.Views.Controls
 {
+    using AstroSoundBoard.Models;
     using AstroSoundBoard.Objects.Interfaces;
-    using AstroSoundBoard.Objects.Models;
 
     using Newtonsoft.Json;
 

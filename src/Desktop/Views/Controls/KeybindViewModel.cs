@@ -9,10 +9,10 @@
 // <copyright file="KeybindViewModel.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
 
-namespace AstroSoundBoard.Controls.Keybind
+namespace AstroSoundBoard.Views.Controls
 {
+    using AstroSoundBoard.Models;
     using AstroSoundBoard.Objects.Interfaces;
-    using AstroSoundBoard.Objects.Models;
 
     // TODO: Move viewmodel to viewmodels folder!
     public class KeybindViewModel : IAddableViewModel

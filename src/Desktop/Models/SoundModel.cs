@@ -1,41 +1,41 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 17:07:2017 / 18:09
-// Creation: 20:06:2017
+// Last Modified: 18:11:2017 / 15:00
+// Creation: 18:11:2017
 // Project: AstroSoundBoard
 //
 //
 // <copyright file="SoundModel.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
 
-namespace AstroSoundBoard.Objects.Models
+namespace AstroSoundBoard.Models
 {
     using System;
-    using System.ComponentModel;
     using System.IO;
     using System.Media;
-    using System.Runtime.CompilerServices;
     using System.Windows.Forms;
     using System.Windows.Input;
 
     using AstroSoundBoard.Misc.Extensions;
     using AstroSoundBoard.Services;
 
-    using log4net;
+    using Caliburn.Micro;
 
     using Newtonsoft.Json;
+
+    using ILog = log4net.ILog;
+    using LogManager = log4net.LogManager;
 
     /// <summary>
     /// Model for a Sound.
     /// </summary>
     [PropertyChanged.AddINotifyPropertyChangedInterface]
-    public class SoundModel : INotifyPropertyChanged
+    public class SoundModel : PropertyChangedBase
     {
         private static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
         private string name;
-        private string videoLink;
         private string isFavorite;
         private KeyBind hotKey;
 
@@ -48,7 +48,7 @@ namespace AstroSoundBoard.Objects.Models
             set
             {
                 name = value;
-                OnPropertyChanged(nameof(Name));
+                NotifyOfPropertyChange(nameof(Name));
             }
         }
 
@@ -65,27 +65,19 @@ namespace AstroSoundBoard.Objects.Models
             set
             {
                 isFavorite = value;
-                OnPropertyChanged(nameof(isFavorite));
+                NotifyOfPropertyChange(nameof(isFavorite));
             }
         }
 
         /// <summary>
         /// Description of the Sound
         /// </summary>
-        public string Description { get; set; }
+        public string Description { get; private set; }
 
         /// <summary>
         /// Link to the Video the Sound is originating from.
         /// </summary>
-        public string VideoLink
-        {
-            get => videoLink;
-            set
-            {
-                videoLink = value;
-                OnPropertyChanged(nameof(VideoLink));
-            }
-        }
+        public string VideoLink { get; private set; }
 
         /// <summary>
         /// The Hotkey.
@@ -96,34 +88,15 @@ namespace AstroSoundBoard.Objects.Models
             set
             {
                 hotKey = value;
-                OnPropertyChanged(nameof(HotKey));
+                NotifyOfPropertyChange(nameof(HotKey));
             }
         }
-
-        #region PropertyChanged
-
-        /// <summary>
-        /// Helper to Raise the Property changed event;
-        /// </summary>
-        public void RaisePropertyChanged()
-        {
-            OnPropertyChanged();
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        public void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-        #endregion PropertyChanged
 
         #region Methods
 
         public void PlaySound()
         {
-            // TODO: In a future version I hope to implement mp3 files since currently I am using .wave which is lossless and quite big in size.
+            // TODO: In a future version I hope to implement mp3 files since currently I am using .wav which is lossless but quite big in size.
             try
             {
                 Log.Debug($"Trying to Play sound : {Name}");
@@ -132,17 +105,17 @@ namespace AstroSoundBoard.Objects.Models
 
                 if (stream == null)
                 {
-                    MessageBox.Show(@"Sorry this sound can not be played! Please contact the developers, with the name of the Sound you tried to play!", @"ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(@"Sorry this sound can not be played! Please contact the developers, with the name of the Sound you tried to play! (Stream was null)", @"ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
-                using (SoundPlayer player = new SoundPlayer(stream))
+                using (var player = new SoundPlayer(stream))
                 {
                     player.Play();
                 }
             }
             catch (Exception exception)
             {
-                Log.Error("Can not play Definition!", exception);
+                Log.Error("Can not play Sound!", exception);
             }
         }
 

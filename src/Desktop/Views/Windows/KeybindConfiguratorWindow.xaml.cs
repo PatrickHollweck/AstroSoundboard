@@ -17,7 +17,7 @@ namespace AstroSoundBoard.Views.Windows
     using System.Windows.Input;
 
     using AstroSoundBoard.Misc;
-    using AstroSoundBoard.Objects.Models;
+    using AstroSoundBoard.Models;
     using AstroSoundBoard.Services;
 
     using log4net;

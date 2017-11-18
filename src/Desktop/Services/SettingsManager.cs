@@ -18,8 +18,8 @@ namespace AstroSoundBoard.Services
     using System.Windows.Forms;
 
     using AstroSoundBoard.Misc.Extensions;
+    using AstroSoundBoard.Models;
     using AstroSoundBoard.Objects;
-    using AstroSoundBoard.Objects.Models;
     using AstroSoundBoard.Properties;
 
     using log4net;

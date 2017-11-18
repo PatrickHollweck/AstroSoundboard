@@ -11,7 +11,7 @@
 
 namespace AstroSoundBoard.Objects.Interfaces
 {
-    using AstroSoundBoard.Objects.Models;
+    using AstroSoundBoard.Models;
 
     public interface IAddableViewModel
     {

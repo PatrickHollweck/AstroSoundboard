@@ -259,12 +259,15 @@
     <Compile Include="Objects\Interfaces\IAddableViewModel.cs" />
     <Compile Include="Misc\Extensions\StringExtensions.cs" />
     <Compile Include="Objects\Credentials.cs" />
-    <Compile Include="Objects\Models\KeyBind.cs" />
-    <Compile Include="Objects\Models\SoundModel.cs" />
-    <Compile Include="Objects\Models\SoundDefinitions.cs" />
+    <Compile Include="Models\KeyBind.cs" />
+    <Compile Include="Models\SoundModel.cs" />
+    <Compile Include="Models\SoundDefinitions.cs" />
     <Compile Include="Misc\KeyDetector.cs" />
     <Compile Include="Misc\NativeMethods.cs" />
-    <Compile Include="Objects\Models\JsonSoundModel.cs" />
+    <Compile Include="Models\JsonSoundModel.cs" />
+    <Compile Include="Services\Persistence\FileStore.cs" />
+    <Compile Include="Services\Persistence\IStore.cs" />
+    <Compile Include="Services\Persistence\MemoryStore.cs" />
     <Compile Include="Views\Controls\KeybindViewModel.cs" />
     <Compile Include="Views\Controls\KeybindView.xaml.cs">
       <DependentUpon>KeybindView.xaml</DependentUpon>
@@ -333,7 +336,7 @@
     <Compile Include="Views\Pages\BoardView.xaml.cs">
       <DependentUpon>BoardView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Objects\Models\SettingsModel.cs" />
+    <Compile Include="Models\SettingsModel.cs" />
     <Compile Include="Views\Pages\SettingsView.xaml.cs">
       <DependentUpon>SettingsView.xaml</DependentUpon>
     </Compile>
@@ -674,9 +677,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

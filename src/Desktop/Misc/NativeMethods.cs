@@ -1,8 +1,8 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 18:05:2017 / 17:37
-// Creation: 10:05:2017
+// Last Modified: 18:11:2017 / 15:05
+// Creation: 18:11:2017
 // Project: AstroSoundBoard
 //
 //
@@ -19,7 +19,7 @@ namespace AstroSoundBoard.Misc
     /// </summary>
     public class NativeMethods
     {
-        // SOUNDS
+        // Sound
         [DllImport("winmm.dll")]
         public static extern int waveOutSetVolume(IntPtr hwo, uint dwVolume);
 

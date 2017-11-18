@@ -1,23 +1,26 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 04:07:2017 / 17:12
-// Creation: 20:06:2017
+// Last Modified: 18:11:2017 / 15:03
+// Creation: 18:11:2017
 // Project: AstroSoundBoard
 //
 //
 // <copyright file="KeyBind.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
 
-namespace AstroSoundBoard.Objects.Models
+namespace AstroSoundBoard.Models
 {
-    using System.ComponentModel;
-    using System.Runtime.CompilerServices;
     using System.Windows.Input;
 
+    using Caliburn.Micro;
+
     [PropertyChanged.AddINotifyPropertyChangedInterface]
-    public class KeyBind : INotifyPropertyChanged
+    public class KeyBind : PropertyChangedBase
     {
+        private ModifierKeys modifier;
+        private Key key;
+
         public KeyBind(Key key, ModifierKeys modifier)
         {
             Modifier = modifier;
@@ -30,16 +33,13 @@ namespace AstroSoundBoard.Objects.Models
             Key = Key.None;
         }
 
-        private ModifierKeys modifier;
-        private Key key;
-
         public ModifierKeys Modifier
         {
             get => modifier;
             set
             {
                 modifier = value;
-                OnPropertyChanged(nameof(Modifier));
+                NotifyOfPropertyChange(nameof(Modifier));
             }
         }
 
@@ -49,7 +49,7 @@ namespace AstroSoundBoard.Objects.Models
             set
             {
                 key = value;
-                OnPropertyChanged(nameof(Key));
+                NotifyOfPropertyChange(nameof(Key));
             }
         }
 
@@ -59,21 +59,5 @@ namespace AstroSoundBoard.Objects.Models
         public string ModifierString => Modifier.ToString();
 
         public string KeyString => Key.ToString();
-
-        #region PropertyChanged
-
-        public void RaisePropertyChanged()
-        {
-            OnPropertyChanged();
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-        #endregion PropertyChanged
     }
 }

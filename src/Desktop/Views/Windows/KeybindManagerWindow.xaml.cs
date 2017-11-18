@@ -15,8 +15,8 @@ namespace AstroSoundBoard.Views.Windows
     using System.Windows;
     using System.Windows.Controls;
 
-    using AstroSoundBoard.Controls.Keybind;
     using AstroSoundBoard.Services;
+    using AstroSoundBoard.Views.Controls;
 
     [PropertyChanged.AddINotifyPropertyChangedInterface]
     public partial class KeybindManagerWindow : Window

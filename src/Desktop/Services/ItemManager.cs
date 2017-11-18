@@ -16,9 +16,9 @@ namespace AstroSoundBoard.Services
     using System.Diagnostics;
     using System.Windows.Controls;
 
+    using AstroSoundBoard.Models;
     using AstroSoundBoard.Objects;
     using AstroSoundBoard.Objects.Interfaces;
-    using AstroSoundBoard.Objects.Models;
 
     using FetzDeLib.Extensions;
 

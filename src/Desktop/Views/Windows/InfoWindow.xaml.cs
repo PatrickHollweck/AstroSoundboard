@@ -17,8 +17,8 @@ namespace AstroSoundBoard.Views.Windows
     using System.Windows;
 
     using AstroSoundBoard.Misc.Extensions;
+    using AstroSoundBoard.Models;
     using AstroSoundBoard.Objects;
-    using AstroSoundBoard.Objects.Models;
     using AstroSoundBoard.Services;
 
     using Microsoft.Win32;

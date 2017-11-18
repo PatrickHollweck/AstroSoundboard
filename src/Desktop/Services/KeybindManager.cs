@@ -1,8 +1,8 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 16:07:2017 / 19:06
-// Creation: 24:06:2017
+// Last Modified: 18:11:2017 / 15:07
+// Creation: 18:11:2017
 // Project: AstroSoundBoard
 //
 //
@@ -11,19 +11,13 @@
 
 namespace AstroSoundBoard.Services
 {
-    using System.Reflection;
-
-    using AstroSoundBoard.Objects.Models;
-
-    using log4net;
+    using AstroSoundBoard.Models;
 
     using NHotkey;
     using NHotkey.Wpf;
 
     public class KeybindManager
     {
-        private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
-
         public static void SetKeybinds()
         {
             SettingsManager.Cache.ForEach(sound => HotkeyManager.Current.Remove(sound.Name));
@@ -38,7 +32,7 @@ namespace AstroSoundBoard.Services
                 }
                 catch (HotkeyAlreadyRegisteredException)
                 {
-                    // This exception will occur often but is not a problem, since then there is already a hotkey registered for that key - name, which is fine.
+                    // Eat. Exception for flow control what a genuine good idea...
                 }
             }
         }
@@ -71,7 +65,7 @@ namespace AstroSoundBoard.Services
             foreach (SoundModel sound in SettingsManager.Cache)
             {
                 sound.HotKey = new KeyBind();
-                sound.HotKey.RaisePropertyChanged();
+                sound.HotKey.NotifyOfPropertyChange();
             }
         }
 

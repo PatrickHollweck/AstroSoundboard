@@ -19,7 +19,7 @@ namespace AstroSoundBoard.Services
     using System.Reflection;
     using System.Resources;
 
-    using AstroSoundBoard.Objects.Models;
+    using AstroSoundBoard.Models;
     using AstroSoundBoard.Properties;
 
     using log4net;

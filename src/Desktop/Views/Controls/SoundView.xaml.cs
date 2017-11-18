@@ -9,15 +9,15 @@
 // <copyright file="SoundView.xaml.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
 
-namespace AstroSoundBoard.Controls.Sound
+namespace AstroSoundBoard.Views.Controls
 {
     using System.Reflection;
     using System.Windows;
     using System.Windows.Controls;
 
     using AstroSoundBoard.Misc.Extensions;
+    using AstroSoundBoard.Models;
     using AstroSoundBoard.Objects.Interfaces;
-    using AstroSoundBoard.Objects.Models;
     using AstroSoundBoard.Services;
     using AstroSoundBoard.Views.Windows;
 

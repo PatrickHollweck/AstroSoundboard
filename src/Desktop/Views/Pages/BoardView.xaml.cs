@@ -13,8 +13,8 @@ namespace AstroSoundBoard.Views.Pages
 {
     using System.Windows.Controls;
 
-    using AstroSoundBoard.Controls.Sound;
     using AstroSoundBoard.Services;
+    using AstroSoundBoard.Views.Controls;
 
     [PropertyChanged.AddINotifyPropertyChangedInterface]
     public partial class BoardView : UserControl

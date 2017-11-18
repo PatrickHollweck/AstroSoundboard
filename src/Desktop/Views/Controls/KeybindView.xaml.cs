@@ -1,7 +1,7 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 18:11:2017 / 13:38
+// Last Modified: 18:11:2017 / 15:06
 // Creation: 18:11:2017
 // Project: AstroSoundBoard
 //
@@ -9,13 +9,13 @@
 // <copyright file="KeybindView.xaml.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
 
-namespace AstroSoundBoard.Controls.Keybind
+namespace AstroSoundBoard.Views.Controls
 {
     using System.Windows;
     using System.Windows.Controls;
 
+    using AstroSoundBoard.Models;
     using AstroSoundBoard.Objects.Interfaces;
-    using AstroSoundBoard.Objects.Models;
     using AstroSoundBoard.Services;
     using AstroSoundBoard.Views.Windows;
 
@@ -42,7 +42,7 @@ namespace AstroSoundBoard.Controls.Keybind
             Log.Debug(Model.Sound.Name + " " + Model.Sound.HotKey.HasAssignedKeybind);
 
             Model.Sound.HotKey.PropertyChanged += (sender, args) => { CurrentKeybindPanel.Visibility = Model.Sound.HotKey.HasAssignedKeybind ? Visibility.Visible : Visibility.Hidden; };
-            Model.Sound.HotKey.RaisePropertyChanged();
+            Model.Sound.HotKey.NotifyOfPropertyChange();
         }
 
         public void ConfigureKeybind(object sender, RoutedEventArgs e)
