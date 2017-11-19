@@ -1,7 +1,7 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 18:11:2017 / 15:53
+// Last Modified: 18:11:2017 / 16:47
 // Creation: 18:11:2017
 // Project: AstroSoundBoard
 //
@@ -14,7 +14,7 @@ namespace AstroSoundBoard.Services.Persistence
     using System;
     using System.Collections.Generic;
 
-    internal class MemoryStore<T> : IStore<T>
+    public class MemoryStore<T> : IStore<T>
     {
         private readonly List<T> cache;
 
@@ -35,6 +35,11 @@ namespace AstroSoundBoard.Services.Persistence
         public T Get(Predicate<T> predicate)
         {
             return cache.Find(predicate);
+        }
+
+        public ICollection<T> GetAll()
+        {
+            return cache;
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 18:11:2017 / 14:13
+// Last Modified: 19:11:2017 / 18:37
 // Creation: 18:11:2017
 // Project: AstroSoundBoard
 //
@@ -14,6 +14,7 @@ namespace AstroSoundBoard.Models
     using System.Reflection;
 
     using AstroSoundBoard.Properties;
+    using AstroSoundBoard.Services.Theme;
 
     public class SettingsModel
     {
@@ -38,7 +39,7 @@ namespace AstroSoundBoard.Models
             {
                 isDarkModeEnabled = configuration.IsDarkModeEnabled = value;
                 configuration.Save();
-                Bootstrapper.ApplyMaterialTheme();
+                ThemeService.ApplyTheme();
             }
         }
 
@@ -50,7 +51,7 @@ namespace AstroSoundBoard.Models
             {
                 selectedColor = configuration.PrimaryColor = value;
                 configuration.Save();
-                Bootstrapper.ApplyMaterialTheme();
+                ThemeService.ApplyTheme();
             }
         }
 
@@ -62,7 +63,7 @@ namespace AstroSoundBoard.Models
             {
                 selectedAccentColor = configuration.AccentColor = value;
                 configuration.Save();
-                Bootstrapper.ApplyMaterialTheme();
+                ThemeService.ApplyTheme();
             }
         }
 
