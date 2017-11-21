@@ -1,8 +1,8 @@
 // ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 17:07:2017 / 18:09
-// Creation: 17:07:2017
+// Last Modified: 21:11:2017 / 20:26
+// Creation: 18:11:2017
 // Project: AstroSoundBoard
 //
 //
@@ -18,43 +18,28 @@ namespace AstroSoundBoard.Services
     using System.Windows.Forms;
 
     using AstroSoundBoard.Misc.Extensions;
-    using AstroSoundBoard.Models;
+    using AstroSoundBoard.Models.DataModels;
     using AstroSoundBoard.Objects;
     using AstroSoundBoard.Properties;
+    using AstroSoundBoard.Services.Repositories;
 
     using log4net;
 
     using Newtonsoft.Json;
 
-    /// <summary>
-    /// The SettingsManager is a class managing the SoundSettings.json file (C:\ProgramData\AstroKittySoundBoard\)<para/>
-    /// The file is in Json format and for serialisation Json.NET is used.<para/>
-    /// Contained in this Sound File is a list of all sounds in the Application.<para/>
-    /// These Sounds are stored as a Sound object which describes the Sound with properties like "isFavorite" and "HotKey".<para/>
-    /// If a property changes the file can get rewritten to the disk effectively saving the Settings the users has made to the Sounds.<para/>
-    /// From there the Sounds can get read back from the file and the UI can get setup.
-    /// </summary>
+    // TODO: BUG - Settings not getting saved!
     public class SettingsManager
     {
+        internal static List<SoundModel> Cache { get; set; }
         internal static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
-        /// <summary>
-        /// The Cache is a List of Sounds containing a list of all the Sounds. This list is used for interaction with other components and as a buffer.
-        /// </summary>
-        internal static List<SoundModel> Cache { get; set; }
-
-        /// <summary>
-        /// Initializes the Settings Manager.
-        /// </summary>
-        public static void Init()
+        static SettingsManager()
         {
-            Log.Debug("Starting the SettingsManager");
-
             if (!File.Exists(AppSettings.SoundSettingsFilePath))
             {
                 Cache = new List<SoundModel>();
 
-                foreach (var definition in SoundManager.Cache.SoundList)
+                foreach (var definition in SoundRepository.Cache.SoundList)
                 {
                     Cache.Add(SoundModel.GetModel(definition));
                 }
@@ -90,6 +75,7 @@ namespace AstroSoundBoard.Services
 
             Cache.RemoveAll(item => item.Name == "DummyItem");
 
+            // TODO: Refactor.
             if (Settings.Default.EnableSoundHotKeys)
             {
                 // When the Definitions are read in, the application can start setting up the Keybinds. (Keybinds are stored in the soundSettings.json!)
@@ -103,20 +89,6 @@ namespace AstroSoundBoard.Services
         private static void CreateStandardFile()
         {
             File.WriteAllText(AppSettings.SoundSettingsFilePath, JsonConvert.SerializeObject(Cache));
-        }
-
-        /// <summary>
-        /// Resets the Cache.
-        /// </summary>
-        /// <param name="loadSounds">Optionally reloads all sounds back from the File.</param>
-        private static void ResetCache(bool loadSounds = false)
-        {
-            Cache = new List<SoundModel>();
-
-            if (loadSounds)
-            {
-                Init();
-            }
         }
 
         /// <summary>
@@ -181,7 +153,7 @@ namespace AstroSoundBoard.Services
         {
             Log.Debug($"Changing Definition of {soundModel.Name}");
 
-            for (int i = 0; i < Cache.Count; i++)
+            for (var i = 0; i < Cache.Count; i++)
             {
                 if (Cache[i].Name == soundModel.Name)
                 {
@@ -191,8 +163,6 @@ namespace AstroSoundBoard.Services
                     return;
                 }
             }
-
-            Log.Error("NO MATCH!");
         }
 
         public static List<SoundModel> GetSounds()

@@ -1,15 +1,17 @@
 ﻿// ****************************** Module Header ****************************** //
-//
-//
-// Last Modified: 19:11:2017 / 18:37
-// Creation: 18:11:2017
+// 
+// 
+// Last Modified: 19:11:2017 / 18:46
+// Creation: 19:11:2017
 // Project: AstroSoundBoard
-//
-//
+// 
+// 
 // <copyright file="SettingsModel.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
 
-namespace AstroSoundBoard.Models
+
+
+namespace AstroSoundBoard.Models.DataModels
 {
     using System.Reflection;
 

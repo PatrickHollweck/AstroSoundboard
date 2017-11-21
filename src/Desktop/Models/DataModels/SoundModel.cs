@@ -1,15 +1,15 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 18:11:2017 / 15:00
-// Creation: 18:11:2017
+// Last Modified: 21:11:2017 / 20:17
+// Creation: 19:11:2017
 // Project: AstroSoundBoard
 //
 //
 // <copyright file="SoundModel.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
 
-namespace AstroSoundBoard.Models
+namespace AstroSoundBoard.Models.DataModels
 {
     using System;
     using System.IO;
@@ -18,7 +18,7 @@ namespace AstroSoundBoard.Models
     using System.Windows.Input;
 
     using AstroSoundBoard.Misc.Extensions;
-    using AstroSoundBoard.Services;
+    using AstroSoundBoard.Services.Repositories;
 
     using Caliburn.Micro;
 
@@ -101,7 +101,7 @@ namespace AstroSoundBoard.Models
             {
                 Log.Debug($"Trying to Play sound : {Name}");
 
-                var stream = (UnmanagedMemoryStream)SoundManager.GetAudioFileFromResources(FileName);
+                var stream = (UnmanagedMemoryStream)SoundRepository.GetAudioFileFromResources(FileName);
 
                 if (stream == null)
                 {

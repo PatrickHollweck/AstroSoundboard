@@ -1,7 +1,7 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 18:11:2017 / 14:36
+// Last Modified: 19:11:2017 / 18:45
 // Creation: 18:11:2017
 // Project: AstroSoundBoard
 //
@@ -15,6 +15,5 @@ namespace AstroSoundBoard.ViewModels
 
     public class ShellViewModel : PropertyChangedBase
     {
-        public string Name { get; set; } = "PATIRCK";
     }
 }

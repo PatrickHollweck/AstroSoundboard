@@ -1,19 +1,18 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 16:07:2017 / 19:06
-// Creation: 20:06:2017
+// Last Modified: 19:11:2017 / 18:46
+// Creation: 19:11:2017
 // Project: AstroSoundBoard
 //
 //
 // <copyright file="SoundDefinitions.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
 
-namespace AstroSoundBoard.Models
+namespace AstroSoundBoard.Models.DataModels
 {
     using System.Collections.Generic;
-
-    using AstroSoundBoard.Services;
+    using AstroSoundBoard.Services.Repositories;
 
     using Newtonsoft.Json;
 
@@ -42,7 +41,7 @@ namespace AstroSoundBoard.Models
 
         public SoundModel ToSoundModel()
         {
-            return SoundModel.GetModel(SoundManager.GetSound(Sound.Name));
+            return SoundModel.GetModel(SoundRepository.Get(Sound.Name));
         }
     }
 

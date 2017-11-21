@@ -1,7 +1,7 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 19:11:2017 / 18:37
+// Last Modified: 19:11:2017 / 18:38
 // Creation: 19:11:2017
 // Project: AstroSoundBoard
 //
@@ -20,15 +20,12 @@ namespace AstroSoundBoard.Services.Theme
     public class ThemeService
     {
         // TODO: Implement and make use of.
-
         public static void SetPrimaryColor()
         {
-
         }
 
         public static void SetAccentColor()
         {
-
         }
 
         public static void ApplyTheme()

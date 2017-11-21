@@ -11,7 +11,7 @@
 
 namespace AstroSoundBoard.Services
 {
-    using AstroSoundBoard.Models;
+    using AstroSoundBoard.Models.DataModels;
 
     using NHotkey;
     using NHotkey.Wpf;

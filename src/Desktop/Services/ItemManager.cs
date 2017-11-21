@@ -1,7 +1,7 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 18:11:2017 / 14:39
+// Last Modified: 21:11:2017 / 20:13
 // Creation: 18:11:2017
 // Project: AstroSoundBoard
 //
@@ -16,9 +16,10 @@ namespace AstroSoundBoard.Services
     using System.Diagnostics;
     using System.Windows.Controls;
 
-    using AstroSoundBoard.Models;
+    using AstroSoundBoard.Models.DataModels;
     using AstroSoundBoard.Objects;
     using AstroSoundBoard.Objects.Interfaces;
+    using AstroSoundBoard.Services.Repositories;
 
     using FetzDeLib.Extensions;
 
@@ -42,9 +43,9 @@ namespace AstroSoundBoard.Services
         {
             models = SettingsManager.GetSounds();
 
-            if (models.Count < SoundManager.GetSounds().Count)
+            if (models.Count < SoundRepository.GetAll().Count)
             {
-                foreach (Definition definition in SoundManager.GetSounds())
+                foreach (var definition in SoundRepository.GetAll())
                 {
                     var sound = SoundModel.GetModel(definition);
 

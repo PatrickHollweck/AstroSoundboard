@@ -1,7 +1,7 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 19:11:2017 / 18:35
+// Last Modified: 21:11:2017 / 20:22
 // Creation: 18:11:2017
 // Project: AstroSoundBoard
 //
@@ -55,10 +55,6 @@ namespace AstroSoundBoard
 
             // Apply logging settings.
             Logger.ApplyLoggerSettings();
-
-            // TODO: Refactor.
-            SoundManager.Init();
-            SettingsManager.Init();
 
             // Display Root view.
             DisplayRootViewFor<ShellViewModel>();

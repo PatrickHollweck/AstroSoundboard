@@ -1,8 +1,9 @@
-﻿// ****************************** Module Header ****************************** //
+﻿
+// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 04:07:2017 / 17:30
-// Creation: 01:07:2017
+// Last Modified: 19:11:2017 / 18:46
+// Creation: 18:11:2017
 // Project: AstroSoundBoard
 //
 //
@@ -17,7 +18,7 @@ namespace AstroSoundBoard.Views.Windows
     using System.Windows.Input;
 
     using AstroSoundBoard.Misc;
-    using AstroSoundBoard.Models;
+    using AstroSoundBoard.Models.DataModels;
     using AstroSoundBoard.Services;
 
     using log4net;

@@ -11,7 +11,7 @@
 
 namespace AstroSoundBoard.Views.Controls
 {
-    using AstroSoundBoard.Models;
+    using AstroSoundBoard.Models.DataModels;
     using AstroSoundBoard.Objects.Interfaces;
 
     using Newtonsoft.Json;

@@ -17,9 +17,9 @@ namespace AstroSoundBoard.Views.Windows
     using System.Windows;
 
     using AstroSoundBoard.Misc.Extensions;
-    using AstroSoundBoard.Models;
+    using AstroSoundBoard.Models.DataModels;
     using AstroSoundBoard.Objects;
-    using AstroSoundBoard.Services;
+    using AstroSoundBoard.Services.Repositories;
 
     using Microsoft.Win32;
 
@@ -40,7 +40,7 @@ namespace AstroSoundBoard.Views.Windows
         private async void SaveSound(object sender, RoutedEventArgs e)
         {
             // Get the audio stream ( file from resources )
-            var soundStream = (UnmanagedMemoryStream)SoundManager.GetAudioFileFromResources(Model.Name.ToFileName());
+            var soundStream = (UnmanagedMemoryStream)SoundRepository.GetAudioFileFromResources(Model.Name.ToFileName());
 
             if (!File.Exists($"{AppSettings.AssemblyDirectory}/libmp3lame.32.dll"))
             {

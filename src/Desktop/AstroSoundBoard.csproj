@@ -253,21 +253,31 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Bootstrapper.cs" />
+    <Compile Include="Services\Error\CrashReporterDotNetReporter.cs" />
+    <Compile Include="Services\Error\ErrorReporterService.cs" />
+    <Compile Include="Services\Error\IErrorReporter.cs" />
+    <Compile Include="Services\Error\LogReporter.cs" />
+    <Compile Include="Services\Error\SentryReporter.cs" />
     <Compile Include="Services\ItemManager.cs" />
     <Compile Include="Services\KeybindManager.cs" />
     <Compile Include="Objects\Interfaces\IAddableView.cs" />
     <Compile Include="Objects\Interfaces\IAddableViewModel.cs" />
-    <Compile Include="Misc\Extensions\StringExtensions.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Objects\Credentials.cs" />
-    <Compile Include="Models\KeyBind.cs" />
-    <Compile Include="Models\SoundModel.cs" />
-    <Compile Include="Models\SoundDefinitions.cs" />
+    <Compile Include="Models\DataModels\KeyBind.cs" />
+    <Compile Include="Models\DataModels\SoundModel.cs" />
+    <Compile Include="Models\DataModels\SoundDefinitions.cs" />
     <Compile Include="Misc\KeyDetector.cs" />
     <Compile Include="Misc\NativeMethods.cs" />
-    <Compile Include="Models\JsonSoundModel.cs" />
+    <Compile Include="Models\DataModels\JsonSoundModel.cs" />
+    <Compile Include="Services\Logging\Logger.cs" />
     <Compile Include="Services\Persistence\FileStore.cs" />
     <Compile Include="Services\Persistence\IStore.cs" />
     <Compile Include="Services\Persistence\MemoryStore.cs" />
+    <Compile Include="Services\Repositories\IRepository.cs" />
+    <Compile Include="Services\Repositories\SoundRepository.cs" />
+    <Compile Include="Services\Resource\ResourceService.cs" />
+    <Compile Include="Services\Theme\ThemeService.cs" />
     <Compile Include="Views\Controls\KeybindViewModel.cs" />
     <Compile Include="Views\Controls\KeybindView.xaml.cs">
       <DependentUpon>KeybindView.xaml</DependentUpon>
@@ -321,7 +331,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Services\SettingsManager.cs" />
-    <Compile Include="Services\SoundManager.cs" />
     <Compile Include="Services\ViewChanger.cs" />
     <Compile Include="Objects\AppSettings.cs" />
     <Compile Include="Misc\FileSystem.cs" />
@@ -336,7 +345,7 @@
     <Compile Include="Views\Pages\BoardView.xaml.cs">
       <DependentUpon>BoardView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Models\SettingsModel.cs" />
+    <Compile Include="Models\DataModels\SettingsModel.cs" />
     <Compile Include="Views\Pages\SettingsView.xaml.cs">
       <DependentUpon>SettingsView.xaml</DependentUpon>
     </Compile>

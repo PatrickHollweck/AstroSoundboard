@@ -1,15 +1,15 @@
 ﻿// ****************************** Module Header ****************************** //
 //
 //
-// Last Modified: 17:07:2017 / 18:07
-// Creation: 17:07:2017
+// Last Modified: 19:11:2017 / 18:46
+// Creation: 19:11:2017
 // Project: AstroSoundBoard
 //
 //
 // <copyright file="JsonSoundModel.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
 
-namespace AstroSoundBoard.Models
+namespace AstroSoundBoard.Models.DataModels
 {
     using Newtonsoft.Json;
 
