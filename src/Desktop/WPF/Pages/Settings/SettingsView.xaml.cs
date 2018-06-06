@@ -25,7 +25,6 @@ namespace AstroSoundBoard.WPF.Pages.Settings
 
     public partial class SettingsView : UserControl
     {
-        private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
         private SettingsModel Model { get; set; }
 
         public SettingsView()

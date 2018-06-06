@@ -360,6 +360,7 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <None Include="Resources\Assets\soundDefinition.json" />
+    <None Include="TODO.todo" />
     <Resource Include="Resources\Fonts\big_noodle_titling.ttf" />
   </ItemGroup>
   <ItemGroup>
@@ -491,9 +492,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="libmp3lame.32.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="libmp3lame.64.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

@@ -38,7 +38,6 @@ namespace AstroSoundBoard
         private void Application_Startup(object sender, StartupEventArgs e)
         {
 #if DEBUG
-
             ((Hierarchy)LogManager.GetRepository()).Root.Level = Level.Debug;
             ((Hierarchy)LogManager.GetRepository()).RaiseConfigurationChanged(EventArgs.Empty);
 #else

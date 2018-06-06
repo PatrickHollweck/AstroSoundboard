@@ -35,7 +35,7 @@ namespace AstroSoundBoard.Core.Components
     /// If a property changes the file can get rewritten to the disk effectively saving the Settings the users has made to the Sounds.<para/>
     /// From there the Sounds can get read back from the file and the UI can get setup.
     /// </summary>
-    public class SettingsManager
+    public static class SettingsManager
     {
         internal static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
@@ -57,7 +57,7 @@ namespace AstroSoundBoard.Core.Components
 
                 foreach (var definition in SoundManager.Cache.SoundList)
                 {
-                    Cache.Add(SoundModel.GetModel(definition));
+                    Cache.Add(SoundModel.fromDefinition(definition));
                 }
 
                 CreateStandardFile();
@@ -79,7 +79,7 @@ namespace AstroSoundBoard.Core.Components
                     Cache = new List<SoundModel>();
                     foreach (JsonSoundModel model in jsonModels)
                     {
-                        Cache.Add(SoundModel.GetModel(model));
+                        Cache.Add(SoundModel.fromJsonSoundModel(model));
                     }
                 }
                 catch (Exception exception)
@@ -104,20 +104,6 @@ namespace AstroSoundBoard.Core.Components
         private static void CreateStandardFile()
         {
             File.WriteAllText(AppSettings.SoundSettingsFilePath, JsonConvert.SerializeObject(Cache));
-        }
-
-        /// <summary>
-        /// Resets the Cache.
-        /// </summary>
-        /// <param name="loadSounds">Optionally reloads all sounds back from the File.</param>
-        private static void ResetCache(bool loadSounds = false)
-        {
-            Cache = new List<SoundModel>();
-
-            if (loadSounds)
-            {
-                Init();
-            }
         }
 
         /// <summary>

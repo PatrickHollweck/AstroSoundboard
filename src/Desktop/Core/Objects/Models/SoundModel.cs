@@ -125,7 +125,6 @@ namespace AstroSoundBoard.Core.Objects.Models
 
         public void PlaySound()
         {
-            // TODO: In a future version I hope to implement mp3 files since currently I am using .wave which is lossless and quite big in size.
             try
             {
                 Log.Debug($"Trying to Play sound : {Name}");
@@ -153,7 +152,7 @@ namespace AstroSoundBoard.Core.Objects.Models
         /// </summary>
         /// <param name="definition">Definition of the Sound</param>
         /// <returns>New SoundModel object</returns>
-        public static SoundModel GetModel(Definition definition)
+        public static SoundModel fromDefinition(Definition definition)
         {
             return new SoundModel
             {
@@ -170,7 +169,7 @@ namespace AstroSoundBoard.Core.Objects.Models
         /// </summary>
         /// <param name="jsonModel">Definition of the Sound</param>
         /// <returns>New SoundModel object</returns>
-        public static SoundModel GetModel(JsonSoundModel jsonModel)
+        public static SoundModel fromJsonSoundModel(JsonSoundModel jsonModel)
         {
             return new SoundModel
             {

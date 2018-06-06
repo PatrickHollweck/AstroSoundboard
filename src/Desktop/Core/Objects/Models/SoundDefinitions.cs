@@ -43,7 +43,7 @@ namespace AstroSoundBoard.Core.Objects.DataObjects.SoundDefinitionJsonTypes
 
         public SoundModel ToSoundModel()
         {
-            return SoundModel.GetModel(SoundManager.GetSound(Sound.Name));
+            return SoundModel.fromDefinition(SoundManager.GetSound(Sound.Name));
         }
     }
 }

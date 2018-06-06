@@ -28,7 +28,6 @@ namespace AstroSoundBoard.Core.Components
     public class ItemManager<TView>
         where TView : class, IAddableView
     {
-        private List<SoundModel> models = new List<SoundModel>();
         private readonly List<TView> views = new List<TView>();
         private readonly Func<SoundModel, TView> creationDelegate;
         private bool CurrentFavoriteStatus { get; set; }
@@ -41,27 +40,17 @@ namespace AstroSoundBoard.Core.Components
 
         private void Reload()
         {
-            models = SettingsManager.GetSounds();
-
-            if (models.Count < SoundManager.GetSounds().Count)
+            SoundManager.GetSounds().ForEach(definition =>
             {
-                foreach (Definition definition in SoundManager.GetSounds())
-                {
-                    var sound = SoundModel.GetModel(definition);
+                SettingsManager.Cache.Add(SoundModel.fromDefinition(definition));
+            });
 
-                    if (!models.Contains(sound))
-                    {
-                        SettingsManager.Cache.Add(sound);
-                    }
-                }
-
-                SettingsManager.Save();
-            }
+            SettingsManager.Save();
 
             views.Clear();
-            foreach (SoundModel model in models)
+            foreach (Definition definition in SoundManager.GetSounds())
             {
-                views.Add(creationDelegate(model));
+                views.Add(creationDelegate(SoundModel.fromDefinition(definition)));
             }
         }
 
@@ -79,7 +68,7 @@ namespace AstroSoundBoard.Core.Components
 
             if (element.ToLower().EqualsAnyOf("static", "void", "main", "public"))
             {
-                Process.Start(links[AppSettings.Rng.Next(0, links.Length)]);
+                Process.Start(links[AppSettings.AppRandom.Next(0, links.Length)]);
             }
 
             /* END EASTER EGG CODE */

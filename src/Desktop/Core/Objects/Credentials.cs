@@ -14,7 +14,7 @@ namespace AstroSoundBoard.Core.Objects
     /// <summary>
     /// Credentials and API Keys
     /// </summary>
-    public class Credentials
+    public static class Credentials
     {
         /// <summary>
         /// Public Api key for the Sentry Error reporting system.

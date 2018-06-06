@@ -28,8 +28,6 @@ namespace AstroSoundBoard.WPF.Windows
         public static bool HasOpenInstance { get; set; }
         public SoundModel Model { get; set; }
 
-        private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
-
         public KeybindConfiguratorWindow(SoundModel definition)
         {
             InitializeComponent();

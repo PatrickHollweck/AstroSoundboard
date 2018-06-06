@@ -17,15 +17,15 @@ namespace AstroSoundBoard.Core.Utils
     /// <summary>
     /// All native methods used in the Application (Fody forces this behavior!)
     /// </summary>
-    public class NativeMethods
+    public static class NativeMethods
     {
         // SOUNDS
         [DllImport("winmm.dll")]
-        public static extern int waveOutSetVolume(IntPtr hwo, uint dwVolume);
+        internal static extern int waveOutSetVolume(IntPtr hwo, uint dwVolume);
 
         // Keybind
         [DllImport("user32.dll")]
         [return: MarshalAs(UnmanagedType.Bool)]
-        public static extern bool GetKeyboardState(byte[] keyState);
+        internal static extern bool GetKeyboardState(byte[] keyState);
     }
 }

@@ -21,13 +21,17 @@ namespace AstroSoundBoard.WPF.Windows
     [PropertyChanged.AddINotifyPropertyChangedInterface]
     public partial class KeybindManagerWindow : Window
     {
-        public static KeybindManagerWindow KeybindManagerInstance;
+#pragma warning disable S1104 // Fields should not have public accessibility
+        private static KeybindManagerWindow KeybindManagerInstance;
+#pragma warning restore S1104 // Fields should not have public accessibility
 
         private readonly ItemManager<KeybindView> itemManager = new ItemManager<KeybindView>(model => new KeybindView(model) { Width = 550 });
 
         public KeybindManagerWindow()
         {
+#pragma warning disable S3010 // Static fields should not be updated in constructors
             KeybindManagerInstance = this;
+#pragma warning restore S3010 // Static fields should not be updated in constructors
 
             InitializeComponent();
             DataContext = this;
@@ -58,7 +62,9 @@ namespace AstroSoundBoard.WPF.Windows
 
         protected override void OnClosing(CancelEventArgs e)
         {
+#pragma warning disable S2696 // Instance members should not write to "static" fields
             KeybindManagerInstance = null;
+#pragma warning restore S2696 // Instance members should not write to "static" fields
             base.OnClosing(e);
         }
     }

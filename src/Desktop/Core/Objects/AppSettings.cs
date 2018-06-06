@@ -18,12 +18,12 @@ namespace AstroSoundBoard.Core.Objects
     /// <summary>
     /// App level Constants
     /// </summary>
-    public class AppSettings
+    public static class AppSettings
     {
         /// <summary>
         /// Static Random.
         /// </summary>
-        public static Random Rng = new Random();
+        public static Random AppRandom { get; } = new Random();
 
         /// <summary>
         /// Installation Path Constant.

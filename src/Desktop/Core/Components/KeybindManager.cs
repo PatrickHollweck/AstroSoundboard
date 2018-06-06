@@ -20,10 +20,8 @@ namespace AstroSoundBoard.Core.Components
     using NHotkey;
     using NHotkey.Wpf;
 
-    public class KeybindManager
+    public static class KeybindManager
     {
-        private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
-
         public static void SetKeybinds()
         {
             SettingsManager.Cache.ForEach(sound => HotkeyManager.Current.Remove(sound.Name));
