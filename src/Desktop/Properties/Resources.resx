@@ -1523,4 +1523,16 @@
   <data name="YOUR_FUCKED" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\YOUR_FUCKED.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="AstroSocial_Facebook" xml:space="preserve">
+    <value>https://www.facebook.com/TheAstroKitty</value>
+  </data>
+  <data name="AstroSocial_Twitch" xml:space="preserve">
+    <value>https://www.twitch.tv/astrokittylive</value>
+  </data>
+  <data name="AstroSocial_Twitter" xml:space="preserve">
+    <value>https://twitter.com/astrokitty</value>
+  </data>
+  <data name="AstroSocial_Youtube" xml:space="preserve">
+    <value>https://www.youtube.com/user/TheAstronautKitty</value>
+  </data>
 </root>

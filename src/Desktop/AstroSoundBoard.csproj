@@ -360,7 +360,6 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <None Include="Resources\Assets\soundDefinition.json" />
-    <None Include="TODO.todo" />
     <Resource Include="Resources\Fonts\big_noodle_titling.ttf" />
   </ItemGroup>
   <ItemGroup>

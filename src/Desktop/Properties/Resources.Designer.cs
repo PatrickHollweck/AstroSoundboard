@@ -19,7 +19,7 @@ namespace AstroSoundBoard.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -102,6 +102,42 @@ namespace AstroSoundBoard.Properties {
         internal static System.IO.UnmanagedMemoryStream ASTROCITY {
             get {
                 return ResourceManager.GetStream("ASTROCITY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to https://www.facebook.com/TheAstroKitty.
+        /// </summary>
+        internal static string AstroSocial_Facebook {
+            get {
+                return ResourceManager.GetString("AstroSocial_Facebook", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to https://www.twitch.tv/astrokittylive.
+        /// </summary>
+        internal static string AstroSocial_Twitch {
+            get {
+                return ResourceManager.GetString("AstroSocial_Twitch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to https://twitter.com/astrokitty.
+        /// </summary>
+        internal static string AstroSocial_Twitter {
+            get {
+                return ResourceManager.GetString("AstroSocial_Twitter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to https://www.youtube.com/user/TheAstronautKitty.
+        /// </summary>
+        internal static string AstroSocial_Youtube {
+            get {
+                return ResourceManager.GetString("AstroSocial_Youtube", resourceCulture);
             }
         }
         

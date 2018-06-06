@@ -146,11 +146,13 @@ namespace AstroSoundBoard.WPF.Windows
 
         private void ShowSettings_Click(object sender, RoutedEventArgs e) => ViewChanger.ChangeViewTo(ViewChanger.Page.Settings);
 
-        private void BrowserFaceBook_Click(object sender, RoutedEventArgs e) => Process.Start("https://www.facebook.com/TheAstronautKitty");
+        private void BrowserFaceBook_Click(object sender, RoutedEventArgs e) => Process.Start(Properties.Resources.AstroSocial_Facebook);
 
-        private void BrowserTwitter_Click(object sender, RoutedEventArgs e) => Process.Start("https://twitter.com/AstroShitty");
+        private void BrowserTwitter_Click(object sender, RoutedEventArgs e) => Process.Start(Properties.Resources.AstroSocial_Twitter);
 
-        private void BrowserYoutube_Click(object sender, RoutedEventArgs e) => Process.Start("https://www.youtube.com/user/TheAstronautKitty");
+        private void BrowserYoutube_Click(object sender, RoutedEventArgs e) => Process.Start(Properties.Resources.AstroSocial_Youtube);
+
+        private void BrowserTwitch_Click(object sender, RoutedEventArgs e) => Process.Start(Properties.Resources.AstroSocial_Twitch);
 
         private void OpenFeedback(object sender, RoutedEventArgs e) => new FeedbackWindow().Show();
 
