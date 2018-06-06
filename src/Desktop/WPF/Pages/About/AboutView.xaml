@@ -14,22 +14,8 @@
 	TextElement.FontWeight="Medium"
 	TextElement.Foreground="{DynamicResource MaterialDesignBody}"
 	mc:Ignorable="d">
-	<Grid Margin="5">
-
-		<Grid.ColumnDefinitions>
-			<ColumnDefinition Width="369*" />
-			<ColumnDefinition Width="421*" />
-		</Grid.ColumnDefinitions>
-
-		<ScrollViewer>
-			<StackPanel>
-				<Label FontFamily="/AstroSoundBoard;component/Resources/Fonts/#BigNoodleTitling" FontSize="36">Hello there,</Label>
-				<TextBlock Margin="5" TextWrapping="Wrap"><Run Text="I am Patrick and I am the Developer of this Project, The AstroKitty Soundboard is a Open Source Project, so if you are a Developer why not check my GitHub and cringe at all the mistakes I made" /><Run Text="?" /></TextBlock>
-			</StackPanel>
-		</ScrollViewer>
-
+	<Grid Margin="20">
 		<StackPanel
-			Grid.Column="1"
 			Height="504"
 			HorizontalAlignment="Stretch"
 			VerticalAlignment="Center">
@@ -50,7 +36,6 @@
 							<RowDefinition Height="Auto" />
 							<RowDefinition Height="Auto" />
 							<RowDefinition Height="Auto" />
-							<RowDefinition Height="Auto" />
 						</Grid.RowDefinitions>
 						<Grid.ColumnDefinitions>
 							<ColumnDefinition Width="200" />
@@ -67,9 +52,7 @@
 						<TextBlock
 							Grid.Column="1"
 							Margin="16,16,16,2"
-							Style="{StaticResource MaterialDesignHeadlineTextBlock}">
-							Get In Touch
-						</TextBlock>
+							Style="{StaticResource MaterialDesignHeadlineTextBlock}"><Run Text="Get " /><Run Text="in touch with the developers" /></TextBlock>
 						<TextBlock
 							Grid.Row="1"
 							Grid.Column="1"
@@ -79,41 +62,68 @@
 							TextWrapping="Wrap">
 							Say hello, make a feature request, or raise a bug through one of these channels:
 						</TextBlock>
-						<Border
-							Grid.Row="2"
-							Grid.Column="1"
-							Margin="0,8,0,0"
-							BorderBrush="{DynamicResource MaterialDesignDivider}"
-							BorderThickness="0,1,0,0">
-							<Grid Margin="8" HorizontalAlignment="Center">
-								<Button
-									HorizontalAlignment="Right"
-									Click="ShowDiscordInfo"
-									Style="{DynamicResource MaterialDesignFlatButton}">
-									<StackPanel Orientation="Horizontal">
-										<materialDesign:PackIcon Kind="Discord" />
-										<TextBlock Margin="8,0,0,0" VerticalAlignment="Center">Discord</TextBlock>
-									</StackPanel>
-								</Button>
-							</Grid>
-						</Border>
-						<Border
-							Grid.Row="3"
-							Grid.Column="1"
-							BorderBrush="{DynamicResource MaterialDesignDivider}"
-							BorderThickness="0,1,0,0">
-							<Grid Margin="8" HorizontalAlignment="Center">
-								<Button
-									HorizontalAlignment="Right"
-									Click="OpenMail"
-									Style="{DynamicResource MaterialDesignFlatButton}">
-									<StackPanel Orientation="Horizontal">
-										<materialDesign:PackIcon Kind="Email" />
-										<TextBlock Margin="8,0,0,0" VerticalAlignment="Center">Email</TextBlock>
-									</StackPanel>
-								</Button>
-							</Grid>
-						</Border>
+						<Grid Grid.Row="2" Grid.Column="1">
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition />
+								<ColumnDefinition />
+								<ColumnDefinition />
+							</Grid.ColumnDefinitions>
+
+							<Border
+								Grid.Row="2"
+								Grid.Column="1"
+								Margin="0,8,0,0"
+								BorderBrush="{DynamicResource MaterialDesignDivider}"
+								BorderThickness="0,1,0,0">
+								<Grid Margin="8" HorizontalAlignment="Center">
+									<Button
+										HorizontalAlignment="Right"
+										Click="ShowDiscordInfo"
+										Style="{DynamicResource MaterialDesignFlatButton}">
+										<StackPanel Orientation="Horizontal">
+											<materialDesign:PackIcon Kind="Discord" />
+											<TextBlock Margin="8,0,0,0" VerticalAlignment="Center">Discord</TextBlock>
+										</StackPanel>
+									</Button>
+								</Grid>
+							</Border>
+							<Border
+								Grid.Row="3"
+								Margin="0,8,0,0"
+								BorderBrush="{DynamicResource MaterialDesignDivider}"
+								BorderThickness="0,1,0,0">
+								<Grid Margin="8" HorizontalAlignment="Center">
+									<Button
+										HorizontalAlignment="Right"
+										Click="OpenGitHub"
+										Style="{DynamicResource MaterialDesignFlatButton}">
+										<StackPanel Orientation="Horizontal">
+											<materialDesign:PackIcon Kind="GithubBox" />
+											<TextBlock Margin="8,0,0,0" VerticalAlignment="Center">Github</TextBlock>
+										</StackPanel>
+									</Button>
+								</Grid>
+							</Border>
+							<Border
+								Grid.Row="4"
+								Grid.Column="2"
+								Margin="0,8,0,0"
+								BorderBrush="{DynamicResource MaterialDesignDivider}"
+								BorderThickness="0,1,0,0">
+								<Grid Margin="8" HorizontalAlignment="Center">
+									<Button
+										HorizontalAlignment="Right"
+										Click="OpenMail"
+										Style="{DynamicResource MaterialDesignFlatButton}">
+										<StackPanel Orientation="Horizontal">
+											<materialDesign:PackIcon Kind="Email" />
+											<TextBlock Margin="8,0,0,0" VerticalAlignment="Center">Email</TextBlock>
+										</StackPanel>
+									</Button>
+								</Grid>
+							</Border>
+
+						</Grid>
 					</Grid>
 				</materialDesign:Card>
 				<materialDesign:Card
@@ -132,6 +142,7 @@
 						<materialDesign:PackIcon
 							MinWidth="160"
 							MinHeight="160"
+							Margin="10"
 							HorizontalAlignment="Center"
 							VerticalAlignment="Center"
 							Kind="GithubCircle" />
@@ -149,8 +160,8 @@
 							Grid.Row="1"
 							Grid.ColumnSpan="2"
 							Padding="8"
-							HorizontalAlignment="Center"
-							VerticalAlignment="Center"
+							HorizontalAlignment="Stretch"
+							VerticalAlignment="Stretch"
 							BorderBrush="{DynamicResource MaterialDesignDivider}"
 							BorderThickness="0,1,0,0">
 							<DockPanel>

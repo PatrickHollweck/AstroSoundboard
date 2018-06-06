@@ -22,7 +22,7 @@ namespace AstroSoundBoard.WPF.Pages.About
             InitializeComponent();
         }
 
-        private void OpenGitHub(object sender, RoutedEventArgs e) => Process.Start("https://github.com/FetzenRndy/AstroSoundboard");
+        private void OpenGitHub(object sender, RoutedEventArgs e) => Process.Start(Properties.Resources.Project_Github);
 
         private void ShowDiscordInfo(object sender, RoutedEventArgs e) => MessageBox.Show("Add me on discord : Fetzen.NET#9296");
 

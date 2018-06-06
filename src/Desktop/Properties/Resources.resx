@@ -1535,4 +1535,7 @@
   <data name="AstroSocial_Youtube" xml:space="preserve">
     <value>https://www.youtube.com/user/TheAstronautKitty</value>
   </data>
+  <data name="Project_Github" xml:space="preserve">
+    <value>https://github.com/FetzenRndy/AstroSoundboard</value>
+  </data>
 </root>

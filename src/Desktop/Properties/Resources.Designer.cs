@@ -853,6 +853,15 @@ namespace AstroSoundBoard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to https://github.com/FetzenRndy/AstroSoundboard.
+        /// </summary>
+        internal static string Project_Github {
+            get {
+                return ResourceManager.GetString("Project_Github", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
         internal static System.IO.UnmanagedMemoryStream REZ_ME {
