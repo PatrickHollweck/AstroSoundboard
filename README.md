@@ -1,6 +1,6 @@
 # AstroKitty Soundboard
 
-![HeaderImage](https://github.com//FetzenRndy/AstroSoundboard/blob/master/src/AstroSoundBoard/Resources/Images/SplashScreen.png?raw=true)
+![HeaderImage](https://raw.githubusercontent.com/FetzenRndy/AstroSoundboard/master/src/Desktop/Resources/Images/SplashScreen.png)
 
 ---
 
@@ -8,34 +8,6 @@
 
 ## How to get the Soundboard?
 Download the AstroKittySoundBoard.exe [here](https://github.com/FetzenRndy/AstroSoundboard/releases) and run it. - Thats all.
-
-## Code
-
-A little tour of the Code.
-
-#### Folder Structure
-```
-├───public
-│   └───versions
-└───src
-    └───AstroSoundBoard
-        ├───Core
-        │   ├───Components
-        │   ├───Objects
-        │   │   └───DataObjects
-        │   └───Utils
-        │       └───Extensions
-        ├───Resources
-        │   ├───Assets
-        │   ├───Fonts
-        │   └───Images
-        └───WPF
-            ├───Base
-            ├───Controls
-            ├───Pages
-            └───Windows
-            
-```
 
 ### Building
 
