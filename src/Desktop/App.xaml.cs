@@ -47,7 +47,7 @@ namespace AstroSoundBoard
             Log.Info("--- APP START! ---");
             Log.Info($"Current Version: {Assembly.GetExecutingAssembly().GetName().Version}");
 
-            FileSystem.FolderHelper.CreateIfMissing($"{AppSettings.InstallationFilePath}/");
+            FileSystem.FolderHelper.CreateIfMissing($"{AppSettings.SettingsFilePath}/");
 
             ApplyMaterialTheme();
             SoundManager.Init();
@@ -71,13 +71,11 @@ namespace AstroSoundBoard
 
         public static void ReportCrash(Exception exception, string developerMessage = "")
         {
-            var reportCrash = new ReportCrash
+            var reportCrash = new ReportCrash("patrick-hollweck@gmx.de")
             {
                 IncludeScreenshot = true,
                 CaptureScreen = true,
-
-                DeveloperMessage = developerMessage,
-                ToEmail = "patrick-hollweck@gmx.de"
+                DeveloperMessage = developerMessage
             };
 
             reportCrash.Send(exception);

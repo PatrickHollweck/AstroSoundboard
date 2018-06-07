@@ -52,7 +52,7 @@ namespace AstroSoundBoard.WPF.Pages.Settings
         {
             try
             {
-                Directory.Delete(@"C:\ProgramData\AstroKittySoundBoard", true);
+                Directory.Delete(AppSettings.SettingsFilePath, true);
 
                 Properties.Settings.Default.IsDarkModeEnabled = true;
                 Properties.Settings.Default.PrimaryColor = 3;

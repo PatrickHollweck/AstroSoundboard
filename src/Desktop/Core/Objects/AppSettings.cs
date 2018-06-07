@@ -28,12 +28,12 @@ namespace AstroSoundBoard.Core.Objects
         /// <summary>
         /// Installation Path Constant.
         /// </summary>
-        public static readonly string InstallationFilePath = $"{Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles)}/AstroKittySoundBoard";
+        public static readonly string SettingsFilePath = $"{Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles)}/AstroKittySoundBoard";
 
         /// <summary>
         /// Path to the /soundSettings.json file.
         /// </summary>
-        public static string SoundSettingsFilePath { get; } = $"{InstallationFilePath}/soundSettings.json";
+        public static string SoundSettingsFilePath { get; } = $"{SettingsFilePath}/soundSettings.json";
 
         /// <summary>
         /// Get the Directory the Assembly is in.
