@@ -9,24 +9,21 @@
 // <copyright file="SoundManager.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
 
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
+using System.Reflection;
+using System.Resources;
+using AstroSoundBoard.Core.Objects.DataObjects.SoundDefinition;
+using AstroSoundBoard.Core.Objects.DataObjects.SoundDefinitionJsonTypes;
+using AstroSoundBoard.Properties;
+using log4net;
+using Newtonsoft.Json;
+
 namespace AstroSoundBoard.Core.Components
 {
-    using System;
-    using System.Collections;
-    using System.Collections.Generic;
-    using System.Globalization;
-    using System.Linq;
-    using System.Reflection;
-    using System.Resources;
-
-    using AstroSoundBoard.Core.Objects.DataObjects.SoundDefinition;
-    using AstroSoundBoard.Core.Objects.DataObjects.SoundDefinitionJsonTypes;
-    using AstroSoundBoard.Properties;
-
-    using log4net;
-
-    using Newtonsoft.Json;
-
     public static class SoundManager
     {
         public static SoundDefinitions Cache { get; set; }

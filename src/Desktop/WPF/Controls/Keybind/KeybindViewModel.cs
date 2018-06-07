@@ -9,11 +9,11 @@
 // <copyright file="KeybindViewModel.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
 
+using AstroSoundBoard.Core.Objects.Interfaces;
+using AstroSoundBoard.Core.Objects.Models;
+
 namespace AstroSoundBoard.WPF.Controls.Keybind
 {
-    using AstroSoundBoard.Core.Objects.Interfaces;
-    using AstroSoundBoard.Core.Objects.Models;
-
     public class KeybindViewModel : IAddableViewModel
     {
         public SoundModel Sound { get; set; }

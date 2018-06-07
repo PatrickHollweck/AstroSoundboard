@@ -10,14 +10,14 @@
 // *************************************************************************** //
 
 
+using System.Collections.Generic;
+using AstroSoundBoard.Core.Components;
+using AstroSoundBoard.Core.Objects.DataObjects.SoundDefinitionJsonTypes;
+using AstroSoundBoard.Core.Objects.Models;
+using Newtonsoft.Json;
 
 namespace AstroSoundBoard.Core.Objects.DataObjects.SoundDefinitionJsonTypes
 {
-    using AstroSoundBoard.Core.Components;
-    using AstroSoundBoard.Core.Objects.Models;
-
-    using Newtonsoft.Json;
-
     public class SoundAttribute
     {
         [JsonProperty("name")]
@@ -50,12 +50,6 @@ namespace AstroSoundBoard.Core.Objects.DataObjects.SoundDefinitionJsonTypes
 
 namespace AstroSoundBoard.Core.Objects.DataObjects.SoundDefinition
 {
-    using System.Collections.Generic;
-
-    using AstroSoundBoard.Core.Objects.DataObjects.SoundDefinitionJsonTypes;
-
-    using Newtonsoft.Json;
-
     public class SoundDefinitions
     {
         public SoundDefinitions()

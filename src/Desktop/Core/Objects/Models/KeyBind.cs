@@ -9,13 +9,14 @@
 // <copyright file="KeyBind.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
 
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
+using System.Windows.Input;
+using PropertyChanged;
+
 namespace AstroSoundBoard.Core.Objects.Models
 {
-    using System.ComponentModel;
-    using System.Runtime.CompilerServices;
-    using System.Windows.Input;
-
-    [PropertyChanged.AddINotifyPropertyChangedInterface]
+    [AddINotifyPropertyChangedInterface]
     public class KeyBind : INotifyPropertyChanged
     {
         public KeyBind(Key key, ModifierKeys modifier)

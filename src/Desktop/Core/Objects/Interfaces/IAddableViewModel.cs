@@ -9,10 +9,10 @@
 // <copyright file="IAddableViewModel.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
 
+using AstroSoundBoard.Core.Objects.Models;
+
 namespace AstroSoundBoard.Core.Objects.Interfaces
 {
-    using AstroSoundBoard.Core.Objects.Models;
-
     public interface IAddableViewModel
     {
         SoundModel Sound { get; }

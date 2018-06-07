@@ -9,22 +9,19 @@
 // <copyright file="ItemManager.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
 
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Windows.Controls;
+using AstroSoundBoard.Core.Objects;
+using AstroSoundBoard.Core.Objects.DataObjects.SoundDefinitionJsonTypes;
+using AstroSoundBoard.Core.Objects.Interfaces;
+using AstroSoundBoard.Core.Objects.Models;
+using FetzDeLib.Extensions;
+using Newtonsoft.Json;
+
 namespace AstroSoundBoard.Core.Components
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Diagnostics;
-    using System.Windows.Controls;
-
-    using AstroSoundBoard.Core.Objects;
-    using AstroSoundBoard.Core.Objects.DataObjects.SoundDefinitionJsonTypes;
-    using AstroSoundBoard.Core.Objects.Interfaces;
-    using AstroSoundBoard.Core.Objects.Models;
-
-    using FetzDeLib.Extensions;
-
-    using Newtonsoft.Json;
-
     public class ItemManager<TView>
         where TView : class, IAddableView
     {
@@ -103,10 +100,8 @@ namespace AstroSoundBoard.Core.Components
                 {
                     return isFavorite;
                 }
-                else
-                {
-                    return !isFavorite;
-                }
+
+                return !isFavorite;
             }
         }
 

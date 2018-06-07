@@ -9,34 +9,31 @@
 // <copyright file="MainWindow.xaml.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
 
+using System;
+using System.ComponentModel;
+using System.Diagnostics;
+using System.Globalization;
+using System.Reflection;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Media.Animation;
+
+using AstroSoundBoard.Core.Components;
+using AstroSoundBoard.Core.Utils;
+using AstroSoundBoard.WPF.Pages.Board;
+using AutoUpdaterDotNET;
+using log4net;
+
 namespace AstroSoundBoard.WPF.Windows
 {
-    using System;
-    using System.ComponentModel;
-    using System.Diagnostics;
-    using System.Globalization;
-    using System.Reflection;
-    using System.Threading;
-    using System.Threading.Tasks;
-    using System.Windows;
-    using System.Windows.Controls;
-    using System.Windows.Media.Animation;
-
-    using AstroSoundBoard.Core.Components;
-    using AstroSoundBoard.Core.Utils;
-    using AstroSoundBoard.WPF.Pages.Board;
-
-    using AutoUpdaterDotNET;
-
-    using log4net;
-
     public partial class MainWindow : Window
     {
         private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
         public MainWindow()
         {
-            AutoUpdater.CurrentCulture = CultureInfo.CreateSpecificCulture("en");
             AutoUpdater.Start("https://raw.githubusercontent.com/FetzenRndy/AstroSoundboard/master/public/versions/updaterInfo.xml");
 
             ViewChanger.MainWindowInstance = this;
@@ -56,8 +53,6 @@ namespace AstroSoundBoard.WPF.Windows
             base.OnClosing(e);
         }
 
-        #region Helpers
-
         private bool CanSearchItemsExecute()
         {
             if (ViewChanger.MainWindowInstance.DataContext is BoardView)
@@ -66,18 +61,12 @@ namespace AstroSoundBoard.WPF.Windows
                 FavoriteButton.IsEnabled = true;
                 return true;
             }
-            else
-            {
-                SearchBox.IsEnabled = false;
-                FavoriteButton.IsEnabled = false;
-                return false;
-            }
+
+            SearchBox.IsEnabled = false;
+            FavoriteButton.IsEnabled = false;
+            return false;
         }
-
-        #endregion Helpers
-
-        #region Search
-
+        
         public void SearchForItem(object sender, TextChangedEventArgs e)
         {
             if (!CanSearchItemsExecute())
@@ -87,10 +76,6 @@ namespace AstroSoundBoard.WPF.Windows
 
             BoardView.BoardViewInstance?.SearchForElement(SearchBox.Text);
         }
-
-        #endregion Search
-
-        #region Favorites
 
         public void ToogleFavorites()
         {
@@ -114,10 +99,6 @@ namespace AstroSoundBoard.WPF.Windows
             CanSearchItemsExecute();
         }
 
-        #endregion Favorites
-
-        #region VolumeSlider
-
         private void VolumeSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             int newVolume = ushort.MaxValue / 100 * (int)e.NewValue;
@@ -125,20 +106,12 @@ namespace AstroSoundBoard.WPF.Windows
 
             NativeMethods.waveOutSetVolume(IntPtr.Zero, newVolumeAllChannels);
 
-            if (VolumeSlider.ToolTip != null)
+            if (VolumeSlider.ToolTip != null && VolumeSlider.ToolTip is ToolTip toolTip)
             {
-                // Main condition
-                if (VolumeSlider.ToolTip is ToolTip castToolTip)
-                {
-                    castToolTip.ToolTip = $"Volume: {newVolumeAllChannels}%";
-                    castToolTip.IsOpen = true;
-                }
+                toolTip.ToolTip = $"Volume: {newVolumeAllChannels}%";
+                toolTip.IsOpen = true;
             }
         }
-
-        #endregion VolumeSlider
-
-        #region UI Events
 
         private bool isMenuExpanded = true;
 
@@ -201,7 +174,5 @@ namespace AstroSoundBoard.WPF.Windows
                         });
             }
         }
-
-        #endregion UI Events
     }
 }

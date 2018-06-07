@@ -9,20 +9,17 @@
 // <copyright file="KeybindConfiguratorWindow.xaml.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
 
+using System.ComponentModel;
+using System.Windows;
+using System.Windows.Input;
+using AstroSoundBoard.Core.Components;
+using AstroSoundBoard.Core.Objects.Models;
+using AstroSoundBoard.Core.Utils;
+using PropertyChanged;
+
 namespace AstroSoundBoard.WPF.Windows
 {
-    using System.ComponentModel;
-    using System.Reflection;
-    using System.Windows;
-    using System.Windows.Input;
-
-    using AstroSoundBoard.Core.Components;
-    using AstroSoundBoard.Core.Objects.Models;
-    using AstroSoundBoard.Core.Utils;
-
-    using log4net;
-
-    [PropertyChanged.AddINotifyPropertyChangedInterface]
+    [AddINotifyPropertyChangedInterface]
     public partial class KeybindConfiguratorWindow : Window
     {
         public static bool HasOpenInstance { get; set; }

@@ -9,12 +9,12 @@
 // <copyright file="KeyDetector.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
 
+using System.Collections.Generic;
+using System.Linq;
+using System.Windows.Input;
+
 namespace AstroSoundBoard.Core.Utils
 {
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Windows.Input;
-
     public class KeyDetector
     {
         private static readonly byte[] DistinctVirtualKeys = Enumerable

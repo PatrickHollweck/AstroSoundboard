@@ -9,32 +9,31 @@
 // <copyright file="SoundModel.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
 
+using System;
+using System.ComponentModel;
+using System.IO;
+using System.Media;
+using System.Reflection;
+using System.Runtime.CompilerServices;
+using System.Windows.Forms;
+using System.Windows.Input;
+using AstroSoundBoard.Core.Components;
+using AstroSoundBoard.Core.Objects.DataObjects;
+using AstroSoundBoard.Core.Objects.DataObjects.SoundDefinitionJsonTypes;
+using AstroSoundBoard.Core.Utils.Extensions;
+using log4net;
+using Newtonsoft.Json;
+using PropertyChanged;
+
 namespace AstroSoundBoard.Core.Objects.Models
 {
-    using System;
-    using System.ComponentModel;
-    using System.IO;
-    using System.Media;
-    using System.Runtime.CompilerServices;
-    using System.Windows.Forms;
-    using System.Windows.Input;
-
-    using AstroSoundBoard.Core.Components;
-    using AstroSoundBoard.Core.Objects.DataObjects;
-    using AstroSoundBoard.Core.Objects.DataObjects.SoundDefinitionJsonTypes;
-    using AstroSoundBoard.Core.Utils.Extensions;
-
-    using log4net;
-
-    using Newtonsoft.Json;
-
     /// <summary>
     /// Model for a Sound.
     /// </summary>
-    [PropertyChanged.AddINotifyPropertyChangedInterface]
+    [AddINotifyPropertyChangedInterface]
     public class SoundModel : INotifyPropertyChanged
     {
-        private static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
         private string name;
         private string videoLink;

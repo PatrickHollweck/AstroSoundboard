@@ -9,12 +9,12 @@
 // <copyright file="AppSettings.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
 
+using System;
+using System.IO;
+using System.Reflection;
+
 namespace AstroSoundBoard.Core.Objects
 {
-    using System;
-    using System.IO;
-    using System.Reflection;
-
     /// <summary>
     /// App level Constants
     /// </summary>
@@ -28,7 +28,7 @@ namespace AstroSoundBoard.Core.Objects
         /// <summary>
         /// Installation Path Constant.
         /// </summary>
-        public const string InstallationFilePath = @"C:/ProgramData/AstroKittySoundBoard";
+        public static readonly string InstallationFilePath = $"{Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles)}/AstroKittySoundBoard";
 
         /// <summary>
         /// Path to the /soundSettings.json file.

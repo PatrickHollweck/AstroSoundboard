@@ -9,10 +9,11 @@
 // <copyright file="JsonSoundModel.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
 
+using AstroSoundBoard.Core.Objects.DataObjects.DefinitionsJsonTypes;
+using Newtonsoft.Json;
+
 namespace AstroSoundBoard.Core.Objects.DataObjects.DefinitionsJsonTypes
 {
-    using Newtonsoft.Json;
-
     public class JsonHotKey
     {
         [JsonProperty("Modifier")]
@@ -34,10 +35,6 @@ namespace AstroSoundBoard.Core.Objects.DataObjects.DefinitionsJsonTypes
 
 namespace AstroSoundBoard.Core.Objects.DataObjects
 {
-    using AstroSoundBoard.Core.Objects.DataObjects.DefinitionsJsonTypes;
-
-    using Newtonsoft.Json;
-
     public class JsonSoundModel
     {
         [JsonProperty("Name")]

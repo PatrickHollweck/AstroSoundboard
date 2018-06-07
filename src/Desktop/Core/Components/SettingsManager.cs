@@ -9,24 +9,21 @@
 // <copyright file="SettingsManager.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
 
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Reflection;
+using System.Windows.Forms;
+using AstroSoundBoard.Core.Objects;
+using AstroSoundBoard.Core.Objects.DataObjects;
+using AstroSoundBoard.Core.Objects.Models;
+using AstroSoundBoard.Core.Utils.Extensions;
+using AstroSoundBoard.Properties;
+using log4net;
+using Newtonsoft.Json;
+
 namespace AstroSoundBoard.Core.Components
 {
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using System.Reflection;
-    using System.Windows.Forms;
-
-    using AstroSoundBoard.Core.Objects;
-    using AstroSoundBoard.Core.Objects.DataObjects;
-    using AstroSoundBoard.Core.Objects.Models;
-    using AstroSoundBoard.Core.Utils.Extensions;
-    using AstroSoundBoard.Properties;
-
-    using log4net;
-
-    using Newtonsoft.Json;
-
     /// <summary>
     /// The SettingsManager is a class managing the SoundSettings.json file (C:\ProgramData\AstroKittySoundBoard\)<para/>
     /// The file is in Json format and for serialisation Json.NET is used.<para/>

@@ -10,19 +10,16 @@
 // *************************************************************************** //
 
 
+using System;
+using System.Reflection;
+using AstroSoundBoard.WPF.Pages.About;
+using AstroSoundBoard.WPF.Pages.Board;
+using AstroSoundBoard.WPF.Pages.Settings;
+using AstroSoundBoard.WPF.Windows;
+using log4net;
 
 namespace AstroSoundBoard.Core.Components
 {
-    using System;
-    using System.Reflection;
-
-    using AstroSoundBoard.WPF.Pages.About;
-    using AstroSoundBoard.WPF.Pages.Board;
-    using AstroSoundBoard.WPF.Pages.Settings;
-    using AstroSoundBoard.WPF.Windows;
-
-    using log4net;
-
     /// <summary>
     /// This is a helper class to compensate for my incompetence, also it allows view changing.
     /// </summary>

@@ -9,10 +9,10 @@
 // <copyright file="FileSystem.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
 
+using System.IO;
+
 namespace AstroSoundBoard.Core.Utils
 {
-    using System.IO;
-
     public static class FileSystem
     {
         public static class FolderHelper

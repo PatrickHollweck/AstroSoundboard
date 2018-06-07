@@ -9,14 +9,14 @@
 // <copyright file="BoardView.xaml.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
 
+using System.Windows.Controls;
+using AstroSoundBoard.Core.Components;
+using AstroSoundBoard.WPF.Controls.Sound;
+using PropertyChanged;
+
 namespace AstroSoundBoard.WPF.Pages.Board
 {
-    using System.Windows.Controls;
-
-    using AstroSoundBoard.Core.Components;
-    using AstroSoundBoard.WPF.Controls.Sound;
-
-    [PropertyChanged.AddINotifyPropertyChangedInterface]
+    [AddINotifyPropertyChangedInterface]
     public partial class BoardView : UserControl
     {
         private static readonly ItemManager<SoundView> ItemManager = new ItemManager<SoundView>(model => new SoundView(model));

@@ -9,11 +9,11 @@
 // <copyright file="NativeMethods.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
 
+using System;
+using System.Runtime.InteropServices;
+
 namespace AstroSoundBoard.Core.Utils
 {
-    using System;
-    using System.Runtime.InteropServices;
-
     /// <summary>
     /// All native methods used in the Application (Fody forces this behavior!)
     /// </summary>

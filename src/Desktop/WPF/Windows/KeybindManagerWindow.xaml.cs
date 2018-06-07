@@ -9,16 +9,16 @@
 // <copyright file="KeybindManagerWindow.xaml.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
 
+using System.ComponentModel;
+using System.Windows;
+using System.Windows.Controls;
+using AstroSoundBoard.Core.Components;
+using AstroSoundBoard.WPF.Controls.Keybind;
+using PropertyChanged;
+
 namespace AstroSoundBoard.WPF.Windows
 {
-    using System.ComponentModel;
-    using System.Windows;
-    using System.Windows.Controls;
-
-    using AstroSoundBoard.Core.Components;
-    using AstroSoundBoard.WPF.Controls.Keybind;
-
-    [PropertyChanged.AddINotifyPropertyChangedInterface]
+    [AddINotifyPropertyChangedInterface]
     public partial class KeybindManagerWindow : Window
     {
 #pragma warning disable S1104 // Fields should not have public accessibility

@@ -9,23 +9,21 @@
 // <copyright file="SoundView.xaml.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
 
+using System.Reflection;
+using System.Windows;
+using System.Windows.Controls;
+using AstroSoundBoard.Core.Components;
+using AstroSoundBoard.Core.Objects.Interfaces;
+using AstroSoundBoard.Core.Objects.Models;
+using AstroSoundBoard.Core.Utils.Extensions;
+using AstroSoundBoard.WPF.Windows;
+using log4net;
+using Newtonsoft.Json;
+using PropertyChanged;
+
 namespace AstroSoundBoard.WPF.Controls.Sound
 {
-    using System.Reflection;
-    using System.Windows;
-    using System.Windows.Controls;
-
-    using AstroSoundBoard.Core.Components;
-    using AstroSoundBoard.Core.Objects.Interfaces;
-    using AstroSoundBoard.Core.Objects.Models;
-    using AstroSoundBoard.Core.Utils.Extensions;
-    using AstroSoundBoard.WPF.Windows;
-
-    using log4net;
-
-    using Newtonsoft.Json;
-
-    [PropertyChanged.AddINotifyPropertyChangedInterface]
+    [AddINotifyPropertyChangedInterface]
     public partial class SoundView : UserControl, IAddableView
     {
         private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);

@@ -9,17 +9,12 @@
 // <copyright file="KeybindManager.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
 
+using AstroSoundBoard.Core.Objects.Models;
+using NHotkey;
+using NHotkey.Wpf;
+
 namespace AstroSoundBoard.Core.Components
 {
-    using System.Reflection;
-
-    using AstroSoundBoard.Core.Objects.Models;
-
-    using log4net;
-
-    using NHotkey;
-    using NHotkey.Wpf;
-
     public static class KeybindManager
     {
         public static void SetKeybinds()

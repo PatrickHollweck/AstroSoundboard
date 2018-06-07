@@ -9,12 +9,12 @@
 // <copyright file="AboutView.xaml.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
 
+using System.Diagnostics;
+using System.Windows;
+using System.Windows.Controls;
+
 namespace AstroSoundBoard.WPF.Pages.About
 {
-    using System.Diagnostics;
-    using System.Windows;
-    using System.Windows.Controls;
-
     public partial class AboutView : UserControl
     {
         public AboutView()

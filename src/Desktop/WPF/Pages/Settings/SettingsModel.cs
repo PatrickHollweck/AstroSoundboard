@@ -9,17 +9,15 @@
 // <copyright file="SettingsModel.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
 
+using System.Reflection;
+
 namespace AstroSoundBoard.WPF.Pages.Settings
 {
-    using System.Reflection;
-
-    using AstroSoundBoard.Properties;
-
     public class SettingsModel
     {
-        private readonly Settings configuration = Settings.Default;
+        private readonly Properties.Settings configuration = Properties.Settings.Default;
 
-        private bool enableKeybinds = Settings.Default.EnableSoundHotKeys;
+        private bool enableKeybinds = Properties.Settings.Default.EnableSoundHotKeys;
         public bool EnableKeybinds
         {
             get => enableKeybinds;
@@ -30,7 +28,7 @@ namespace AstroSoundBoard.WPF.Pages.Settings
             }
         }
 
-        private bool isDarkModeEnabled = Settings.Default.IsDarkModeEnabled;
+        private bool isDarkModeEnabled = Properties.Settings.Default.IsDarkModeEnabled;
         public bool IsDarkModeEnabled
         {
             get => isDarkModeEnabled;
@@ -42,7 +40,7 @@ namespace AstroSoundBoard.WPF.Pages.Settings
             }
         }
 
-        private int selectedColor = Settings.Default.PrimaryColor;
+        private int selectedColor = Properties.Settings.Default.PrimaryColor;
         public int SelectedColor
         {
             get => selectedColor;
@@ -54,7 +52,7 @@ namespace AstroSoundBoard.WPF.Pages.Settings
             }
         }
 
-        private int selectedAccentColor = Settings.Default.AccentColor;
+        private int selectedAccentColor = Properties.Settings.Default.AccentColor;
         public int SelectedAccentColor
         {
             get => selectedAccentColor;

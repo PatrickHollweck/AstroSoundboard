@@ -9,14 +9,14 @@
 // <copyright file="SoundViewModel.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
 
+using AstroSoundBoard.Core.Objects.Interfaces;
+using AstroSoundBoard.Core.Objects.Models;
+using Newtonsoft.Json;
+using PropertyChanged;
+
 namespace AstroSoundBoard.WPF.Controls.Sound
 {
-    using AstroSoundBoard.Core.Objects.Interfaces;
-    using AstroSoundBoard.Core.Objects.Models;
-
-    using Newtonsoft.Json;
-
-    [PropertyChanged.AddINotifyPropertyChangedInterface]
+    [AddINotifyPropertyChangedInterface]
     public class SoundViewModel : IAddableViewModel
     {
         public SoundModel Sound { get; set; }

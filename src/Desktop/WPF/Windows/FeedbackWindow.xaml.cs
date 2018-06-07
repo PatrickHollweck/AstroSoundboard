@@ -9,15 +9,13 @@
 // <copyright file="FeedbackWindow.xaml.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
 
+using System.Windows;
+using AstroSoundBoard.Core.Objects;
+using SharpRaven;
+using SharpRaven.Data;
+
 namespace AstroSoundBoard.WPF.Windows
 {
-    using System.Windows;
-
-    using AstroSoundBoard.Core.Objects;
-
-    using SharpRaven;
-    using SharpRaven.Data;
-
     public partial class FeedbackWindow : Window
     {
 

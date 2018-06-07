@@ -9,21 +9,20 @@
 // <copyright file="KeybindView.xaml.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
 
+using System.Reflection;
+using System.Windows;
+using System.Windows.Controls;
+using AstroSoundBoard.Core.Components;
+using AstroSoundBoard.Core.Objects.Interfaces;
+using AstroSoundBoard.Core.Objects.Models;
+using AstroSoundBoard.WPF.Windows;
+using log4net;
+
 namespace AstroSoundBoard.WPF.Controls.Keybind
 {
-    using System.Windows;
-    using System.Windows.Controls;
-
-    using AstroSoundBoard.Core.Components;
-    using AstroSoundBoard.Core.Objects.Interfaces;
-    using AstroSoundBoard.Core.Objects.Models;
-    using AstroSoundBoard.WPF.Windows;
-
-    using log4net;
-
     public partial class KeybindView : UserControl, IAddableView
     {
-        private static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
         public KeybindViewModel Model { get; set; }
         public IAddableViewModel SoundModel

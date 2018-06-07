@@ -9,23 +9,20 @@
 // <copyright file="InfoWindow.xaml.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
 
+using System.Diagnostics;
+using System.IO;
+using System.Net;
+using System.Windows;
+using AstroSoundBoard.Core.Components;
+using AstroSoundBoard.Core.Objects;
+using AstroSoundBoard.Core.Objects.Models;
+using AstroSoundBoard.Core.Utils.Extensions;
+using Microsoft.Win32;
+using NAudio.Lame;
+using NAudio.Wave;
+
 namespace AstroSoundBoard.WPF.Windows
 {
-    using System.Diagnostics;
-    using System.IO;
-    using System.Net;
-    using System.Windows;
-
-    using AstroSoundBoard.Core.Components;
-    using AstroSoundBoard.Core.Objects;
-    using AstroSoundBoard.Core.Objects.Models;
-    using AstroSoundBoard.Core.Utils.Extensions;
-
-    using Microsoft.Win32;
-
-    using NAudio.Lame;
-    using NAudio.Wave;
-
     public partial class InfoWindow : Window
     {
         public SoundModel Model { get; set; }
@@ -96,6 +93,6 @@ namespace AstroSoundBoard.WPF.Windows
             }
         }
 
-        private void OpenSoundsGit(object sender, RoutedEventArgs e) => Process.Start("https://github.com/FetzenRndy/AstroSoundboard/tree/master/src/AstroSoundBoard/Resources");
+        private void OpenSoundsGit(object sender, RoutedEventArgs e) => Process.Start($"{Properties.Resources.Project_Github}/tree/master/src/AstroSoundBoard/Resources");
     }
 }

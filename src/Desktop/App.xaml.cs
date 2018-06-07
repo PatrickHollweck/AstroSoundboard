@@ -9,28 +9,24 @@
 // <copyright file="App.xaml.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
 
+using System;
+using System.Collections.Generic;
+using System.Reflection;
+using System.Windows;
+using AstroSoundBoard.Core.Components;
+using AstroSoundBoard.Core.Objects;
+using AstroSoundBoard.Core.Utils;
+using AstroSoundBoard.Properties;
+using CrashReporterDotNET;
+using log4net;
+using log4net.Core;
+using log4net.Repository.Hierarchy;
+using MaterialDesignThemes.Wpf;
+using SharpRaven;
+using SharpRaven.Data;
+
 namespace AstroSoundBoard
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Reflection;
-    using System.Windows;
-
-    using AstroSoundBoard.Core.Components;
-    using AstroSoundBoard.Core.Objects;
-    using AstroSoundBoard.Core.Utils;
-    using AstroSoundBoard.Properties;
-
-    using CrashReporterDotNET;
-
-    using log4net;
-    using log4net.Core;
-    using log4net.Repository.Hierarchy;
-
-    using MaterialDesignThemes.Wpf;
-
-    using SharpRaven;
-
     public partial class App : Application
     {
         private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
@@ -65,7 +61,7 @@ namespace AstroSoundBoard
             if (Settings.Default.AllowErrorReporting)
             {
                 var ravenClient = new RavenClient(Credentials.SentryApiKey);
-                ravenClient.Capture(new SharpRaven.Data.SentryEvent((Exception)args.ExceptionObject));
+                ravenClient.Capture(new SentryEvent((Exception)args.ExceptionObject));
 
                 ReportCrash((Exception)args.ExceptionObject);
 
