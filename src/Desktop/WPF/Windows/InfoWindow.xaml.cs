@@ -9,16 +9,17 @@
 // <copyright file="InfoWindow.xaml.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
 
-using System.Diagnostics;
 using System.IO;
-using System.Net;
+using System.Diagnostics;
 using System.Windows;
+
 using AstroSoundBoard.Core.Components;
 using AstroSoundBoard.Core.Objects;
 using AstroSoundBoard.Core.Objects.Models;
 using AstroSoundBoard.Core.Utils.Extensions;
+
 using Microsoft.Win32;
-using NAudio.Lame;
+
 using NAudio.Wave;
 
 namespace AstroSoundBoard.WPF.Windows
@@ -34,63 +35,54 @@ namespace AstroSoundBoard.WPF.Windows
             DataContext = this;
         }
 
-        private async void SaveSound(object sender, RoutedEventArgs e)
+        // TODO: This needs more abstractions - But until I refactor the app structure this is better than before.
+        private void SaveSound(object sender, RoutedEventArgs e)
         {
             // Get the audio stream ( file from resources )
             var soundStream = (UnmanagedMemoryStream)SoundManager.GetAudioFileFromResources(Model.Name.ToFileName());
 
-            if (!File.Exists($"{AppSettings.AssemblyDirectory}/libmp3lame.32.dll"))
+            if (soundStream == null)
             {
-                var result = MessageBox.Show("A library is required to be able to save Sounds. If you click OK the library will be downloaded automatically, and you will be able to save the Sound.", "Notification", MessageBoxButton.OKCancel, MessageBoxImage.Asterisk);
-
-                if (result == MessageBoxResult.OK)
-                {
-                    try
-                    {
-                        using (WebClient wc = new WebClient())
-                        {
-                            await wc.DownloadFileTaskAsync(@"http://www.github.com/FetzenRndy/AstroSoundboard/raw/develop/src/Desktop/libmp3lame.32.dll", "libmp3lame.32.dll");
-                        }
-
-                        MessageBox.Show("Download Completed! \nNow there is a file named libmp3lame.32.dll in the directory, you started the Programm from, when you are done saving sounds, you can delete this file savely again! \nNow you can Save Sounds :) Have fun.", "Success", MessageBoxButton.OK, MessageBoxImage.Asterisk);
-                    }
-                    catch
-                    {
-                        MessageBox.Show("Error, while downloading!");
-                        return;
-                    }
-                }
+                MessageBox.Show("There was a internal problem - Could not get sound source stream!", "Error", MessageBoxButton.OK);
+                return;
             }
 
-            // Save it to the file if the getting was successful, yes getting, thats absolutely correct
-            if (soundStream != null)
+            var dialog = new SaveFileDialog
             {
-                // Dialog to determine the file path
-                var dialog = new SaveFileDialog
-                {
-                    InitialDirectory = $"{AppSettings.AssemblyDirectory}",
-                    Filter = ".mp3 File (*.mp3)|*.mp3",
-                    Title = $"Sound Location for sound : {Model.Name}",
-                    FileName = Model.Name
-                };
+                InitialDirectory = $"{AppSettings.AssemblyDirectory}",
+                Filter = "Wave sound file (*.wav)|*.wav",
+                Title = $"Sound Location for sound : {Model.Name}",
+                FileName = Model.Name
+            };
 
-                if (dialog.ShowDialog() != true)
-                {
-                    return;
-                }
-
-                using (var reader = new WaveFileReader(soundStream))
-                using (var writer = new LameMP3FileWriter(dialog.FileName, reader.WaveFormat, LAMEPreset.VBR_90))
-                {
-                    reader.CopyTo(writer);
-                }
-
-                MessageBox.Show($"Sound has been successfully created! At {dialog.FileName}", "Success!", MessageBoxButton.OK, MessageBoxImage.Information);
-            }
-            else
+            if (dialog.ShowDialog() != true)
             {
-                MessageBox.Show("There was a problem creating the File.", "Error!", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+                return;
             }
+
+            // Fill the input stream with the sound data.
+            var inputStream = new MemoryStream();
+            var buffer = new byte[65536];
+            var bytesRead = soundStream.Read(buffer, 0, buffer.Length);
+
+            while (bytesRead > 0)
+            {
+                inputStream.Write(buffer, 0, bytesRead);
+                bytesRead = soundStream.Read(buffer, 0, buffer.Length);
+            }
+
+            // Reset the input streams position to the start
+            inputStream.Position = 0;
+
+            // Start writing the file to the disk
+            using (var mp3Stream = new WaveFileReader(inputStream))
+            {    
+                WaveFileWriter.CreateWaveFile(dialog.FileName, mp3Stream);
+            }
+
+            soundStream.Dispose();
+
+            MessageBox.Show($"Sound has been successfully created! At {dialog.FileName}", "Success!", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
         private void OpenSoundsGit(object sender, RoutedEventArgs e) => Process.Start($"{Properties.Resources.Project_Github}/tree/master/src/AstroSoundBoard/Resources");
