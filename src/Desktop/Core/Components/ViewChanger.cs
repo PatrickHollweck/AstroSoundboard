@@ -10,12 +10,11 @@
 // *************************************************************************** //
 
 
-using System;
+using System.Collections.Generic;
 using System.Reflection;
-using AstroSoundBoard.WPF.Pages.About;
-using AstroSoundBoard.WPF.Pages.Board;
-using AstroSoundBoard.WPF.Pages.Settings;
+using System.Windows.Controls;
 using AstroSoundBoard.WPF.Windows;
+
 using log4net;
 
 namespace AstroSoundBoard.Core.Components
@@ -23,52 +22,31 @@ namespace AstroSoundBoard.Core.Components
     /// <summary>
     /// This is a helper class to compensate for my incompetence, also it allows view changing.
     /// </summary>
-    public class ViewChanger
+    internal static class ViewChanger
     {
         private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+
+        private static readonly Dictionary<string, UserControl> ViewCache = new Dictionary<string, UserControl>();
 
         // Instance of the MainWindow active (Gets set in the MainWindow ctor)
         public static MainWindow MainWindowInstance { get; set; }
 
-        // Enum of Pages in the Application.
-        public enum Page
-        {
-            Board,
-            Settings,
-            About
-        }
-
         /// <summary>
         /// Changes to the specified view.
         /// </summary>
-        /// <param name="p">Page to change to</param>
-        public static void ChangeViewTo(Page page)
+        public static void ChangeViewTo<TPage>() where TPage : UserControl, new()
         {
-            Log.Info($"Changing View to : {page}");
-            MainWindowInstance.DataContext = GetViewFromEnum(page);
-        }
+            var viewName = typeof(TPage).Name;
 
-        /// <summary>
-        /// Returns a new View from the requested Page enum.
-        /// </summary>
-        /// <param name="page">Page to get</param>
-        /// <returns><paramref name="page"/></returns>
-        private static object GetViewFromEnum(Page page)
-        {
-            switch (page)
+            if (!ViewCache.ContainsKey(viewName))
             {
-                case Page.Board:
-                    return new BoardView();
-
-                case Page.Settings:
-                    return new SettingsView();
-
-                case Page.About:
-                    return new AboutView();
-
-                default:
-                    throw new ArgumentException("Illegal Argument");
+                ViewCache.Add(viewName, new TPage());
             }
+
+            ViewCache.TryGetValue(viewName, out UserControl view);
+
+            Log.Info($"Changing view to {viewName}");
+            MainWindowInstance.DataContext = view;
         }
     }
 }

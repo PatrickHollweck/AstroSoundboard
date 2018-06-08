@@ -22,7 +22,9 @@ using System.Windows.Media.Animation;
 
 using AstroSoundBoard.Core.Components;
 using AstroSoundBoard.Core.Utils;
+using AstroSoundBoard.WPF.Pages.About;
 using AstroSoundBoard.WPF.Pages.Board;
+using AstroSoundBoard.WPF.Pages.Settings;
 using AutoUpdaterDotNET;
 using log4net;
 
@@ -40,7 +42,7 @@ namespace AstroSoundBoard.WPF.Windows
 
             InitializeComponent();
 
-            ViewChanger.ChangeViewTo(ViewChanger.Page.Board);
+            ViewChanger.ChangeViewTo<BoardView>();
 
             VolumeSlider_ValueChanged(new object(), new RoutedPropertyChangedEventArgs<double>(0, 50));
             VolumeSlider.Value = 50;
@@ -115,9 +117,9 @@ namespace AstroSoundBoard.WPF.Windows
 
         private bool isMenuExpanded = true;
 
-        private void ShowHome_Click(object sender, RoutedEventArgs e) => ViewChanger.ChangeViewTo(ViewChanger.Page.Board);
+        private void ShowHome_Click(object sender, RoutedEventArgs e) => ViewChanger.ChangeViewTo<BoardView>();
 
-        private void ShowSettings_Click(object sender, RoutedEventArgs e) => ViewChanger.ChangeViewTo(ViewChanger.Page.Settings);
+        private void ShowSettings_Click(object sender, RoutedEventArgs e) => ViewChanger.ChangeViewTo<SettingsView>();
 
         private void BrowserFaceBook_Click(object sender, RoutedEventArgs e) => Process.Start(Properties.Resources.AstroSocial_Facebook);
 
@@ -129,7 +131,7 @@ namespace AstroSoundBoard.WPF.Windows
 
         private void OpenFeedback(object sender, RoutedEventArgs e) => new FeedbackWindow().Show();
 
-        private void SwitchToAbout(object sender, RoutedEventArgs e) => ViewChanger.ChangeViewTo(ViewChanger.Page.About);
+        private void SwitchToAbout(object sender, RoutedEventArgs e) => ViewChanger.ChangeViewTo<AboutView>();
 
         private void OpenKeybindManager(object sender, RoutedEventArgs e) => new KeybindManagerWindow().Show();
 
