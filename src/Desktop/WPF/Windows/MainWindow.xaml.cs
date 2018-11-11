@@ -30,151 +30,151 @@ using log4net;
 
 namespace AstroSoundBoard.WPF.Windows
 {
-    public partial class MainWindow : Window
-    {
-        private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+	public partial class MainWindow : Window
+	{
+		private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
-        public MainWindow()
-        {
-            AutoUpdater.Start("https://raw.githubusercontent.com/FetzenRndy/AstroSoundboard/master/public/versions/updaterInfo.xml");
+		public MainWindow()
+		{
+			AutoUpdater.Start("https://cdn.jsdelivr.net/gh/fetzenrndy/astrosoundboard@latest/public/versions/updaterInfo.xml");
 
-            ViewChanger.MainWindowInstance = this;
+			ViewChanger.MainWindowInstance = this;
 
-            InitializeComponent();
+			InitializeComponent();
 
-            ViewChanger.ChangeViewTo<BoardView>();
+			ViewChanger.ChangeViewTo<BoardView>();
 
-            VolumeSlider_ValueChanged(new object(), new RoutedPropertyChangedEventArgs<double>(0, 50));
-            VolumeSlider.Value = 50;
-        }
+			VolumeSlider_ValueChanged(new object(), new RoutedPropertyChangedEventArgs<double>(0, 50));
+			VolumeSlider.Value = 50;
+		}
 
-        protected override void OnClosing(CancelEventArgs e)
-        {
-            KeybindManager.UnregisterAllKeybinds();
-            SettingsManager.Save();
-            base.OnClosing(e);
-        }
+		protected override void OnClosing(CancelEventArgs e)
+		{
+			KeybindManager.UnregisterAllKeybinds();
+			SettingsManager.Save();
+			base.OnClosing(e);
+		}
 
-        private bool CanSearchItemsExecute()
-        {
-            if (ViewChanger.MainWindowInstance.DataContext is BoardView)
-            {
-                SearchBox.IsEnabled = true;
-                FavoriteButton.IsEnabled = true;
-                return true;
-            }
+		private bool CanSearchItemsExecute()
+		{
+			if (ViewChanger.MainWindowInstance.DataContext is BoardView)
+			{
+				SearchBox.IsEnabled = true;
+				FavoriteButton.IsEnabled = true;
+				return true;
+			}
 
-            SearchBox.IsEnabled = false;
-            FavoriteButton.IsEnabled = false;
-            return false;
-        }
-        
-        public void SearchForItem(object sender, TextChangedEventArgs e)
-        {
-            if (!CanSearchItemsExecute())
-            {
-                return;
-            }
+			SearchBox.IsEnabled = false;
+			FavoriteButton.IsEnabled = false;
+			return false;
+		}
 
-            BoardView.BoardViewInstance?.SearchForElement(SearchBox.Text);
-        }
+		public void SearchForItem(object sender, TextChangedEventArgs e)
+		{
+			if (!CanSearchItemsExecute())
+			{
+				return;
+			}
 
-        public void ToogleFavorites()
-        {
-            Log.Debug("Toggling Favorites!");
+			BoardView.BoardViewInstance?.SearchForElement(SearchBox.Text);
+		}
 
-            if (!CanSearchItemsExecute())
-            {
-                return;
-            }
+		public void ToogleFavorites()
+		{
+			Log.Debug("Toggling Favorites!");
 
-            BoardView.BoardViewInstance?.OnlyShowFavorites();
-        }
+			if (!CanSearchItemsExecute())
+			{
+				return;
+			}
 
-        private void FavoriteButton_Click(object sender, RoutedEventArgs e)
-        {
-            ToogleFavorites();
-        }
+			BoardView.BoardViewInstance?.OnlyShowFavorites();
+		}
 
-        private void ContentControl_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
-        {
-            CanSearchItemsExecute();
-        }
+		private void FavoriteButton_Click(object sender, RoutedEventArgs e)
+		{
+			ToogleFavorites();
+		}
 
-        private void VolumeSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
-        {
-            int newVolume = ushort.MaxValue / 100 * (int)e.NewValue;
-            uint newVolumeAllChannels = ((uint)newVolume & 0x0000ffff) | ((uint)newVolume << 16);
+		private void ContentControl_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
+		{
+			CanSearchItemsExecute();
+		}
 
-            NativeMethods.waveOutSetVolume(IntPtr.Zero, newVolumeAllChannels);
+		private void VolumeSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+		{
+			int newVolume = ushort.MaxValue / 100 * (int)e.NewValue;
+			uint newVolumeAllChannels = ((uint)newVolume & 0x0000ffff) | ((uint)newVolume << 16);
 
-            if (VolumeSlider.ToolTip != null && VolumeSlider.ToolTip is ToolTip toolTip)
-            {
-                toolTip.ToolTip = $"Volume: {newVolumeAllChannels}%";
-                toolTip.IsOpen = true;
-            }
-        }
+			NativeMethods.waveOutSetVolume(IntPtr.Zero, newVolumeAllChannels);
 
-        private bool isMenuExpanded = true;
+			if (VolumeSlider.ToolTip != null && VolumeSlider.ToolTip is ToolTip toolTip)
+			{
+				toolTip.ToolTip = $"Volume: {newVolumeAllChannels}%";
+				toolTip.IsOpen = true;
+			}
+		}
 
-        private void ShowHome_Click(object sender, RoutedEventArgs e) => ViewChanger.ChangeViewTo<BoardView>();
+		private bool isMenuExpanded = true;
 
-        private void ShowSettings_Click(object sender, RoutedEventArgs e) => ViewChanger.ChangeViewTo<SettingsView>();
+		private void ShowHome_Click(object sender, RoutedEventArgs e) => ViewChanger.ChangeViewTo<BoardView>();
 
-        private void BrowserFaceBook_Click(object sender, RoutedEventArgs e) => Process.Start(Properties.Resources.AstroSocial_Facebook);
+		private void ShowSettings_Click(object sender, RoutedEventArgs e) => ViewChanger.ChangeViewTo<SettingsView>();
 
-        private void BrowserTwitter_Click(object sender, RoutedEventArgs e) => Process.Start(Properties.Resources.AstroSocial_Twitter);
+		private void BrowserFaceBook_Click(object sender, RoutedEventArgs e) => Process.Start(Properties.Resources.AstroSocial_Facebook);
 
-        private void BrowserYoutube_Click(object sender, RoutedEventArgs e) => Process.Start(Properties.Resources.AstroSocial_Youtube);
+		private void BrowserTwitter_Click(object sender, RoutedEventArgs e) => Process.Start(Properties.Resources.AstroSocial_Twitter);
 
-        private void BrowserTwitch_Click(object sender, RoutedEventArgs e) => Process.Start(Properties.Resources.AstroSocial_Twitch);
+		private void BrowserYoutube_Click(object sender, RoutedEventArgs e) => Process.Start(Properties.Resources.AstroSocial_Youtube);
 
-        private void OpenFeedback(object sender, RoutedEventArgs e) => new FeedbackWindow().Show();
+		private void BrowserTwitch_Click(object sender, RoutedEventArgs e) => Process.Start(Properties.Resources.AstroSocial_Twitch);
 
-        private void SwitchToAbout(object sender, RoutedEventArgs e) => ViewChanger.ChangeViewTo<AboutView>();
+		private void OpenFeedback(object sender, RoutedEventArgs e) => new FeedbackWindow().Show();
 
-        private void OpenKeybindManager(object sender, RoutedEventArgs e) => new KeybindManagerWindow().Show();
+		private void SwitchToAbout(object sender, RoutedEventArgs e) => ViewChanger.ChangeViewTo<AboutView>();
 
-        private void ToogleMenu(object sender, RoutedEventArgs e)
-        {
-            if (isMenuExpanded)
-            {
-                isMenuExpanded = false;
+		private void OpenKeybindManager(object sender, RoutedEventArgs e) => new KeybindManagerWindow().Show();
 
-                Storyboard anim = (Storyboard)Resources["InAnimation"];
-                anim.Begin();
+		private void ToogleMenu(object sender, RoutedEventArgs e)
+		{
+			if (isMenuExpanded)
+			{
+				isMenuExpanded = false;
 
-                Task.Run(
-                    () =>
-                        {
-                            int leftThickness = 0;
-                            while (leftThickness >= -300)
-                            {
-                                Thread.Sleep(10);
-                                leftThickness -= 10;
-                                Application.Current.Dispatcher.Invoke(() => { SideMenu.Margin = new Thickness(leftThickness, 0, 0, 0); });
-                            }
-                        });
-            }
-            else
-            {
-                isMenuExpanded = true;
+				Storyboard anim = (Storyboard)Resources["InAnimation"];
+				anim.Begin();
 
-                Storyboard anim = (Storyboard)Resources["OutAnimation"];
-                anim.Begin();
+				Task.Run(
+					() =>
+						{
+							int leftThickness = 0;
+							while (leftThickness >= -300)
+							{
+								Thread.Sleep(10);
+								leftThickness -= 10;
+								Application.Current.Dispatcher.Invoke(() => { SideMenu.Margin = new Thickness(leftThickness, 0, 0, 0); });
+							}
+						});
+			}
+			else
+			{
+				isMenuExpanded = true;
 
-                Task.Run(
-                    () =>
-                        {
-                            int leftThickness = -300;
-                            while (leftThickness != 0)
-                            {
-                                Thread.Sleep(13);
-                                leftThickness += 10;
-                                Application.Current.Dispatcher.Invoke(() => { SideMenu.Margin = new Thickness(leftThickness, 0, 0, 0); });
-                            }
-                        });
-            }
-        }
-    }
+				Storyboard anim = (Storyboard)Resources["OutAnimation"];
+				anim.Begin();
+
+				Task.Run(
+					() =>
+						{
+							int leftThickness = -300;
+							while (leftThickness != 0)
+							{
+								Thread.Sleep(13);
+								leftThickness += 10;
+								Application.Current.Dispatcher.Invoke(() => { SideMenu.Margin = new Thickness(leftThickness, 0, 0, 0); });
+							}
+						});
+			}
+		}
+	}
 }
