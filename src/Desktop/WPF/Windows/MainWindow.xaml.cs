@@ -10,23 +10,24 @@
 // *************************************************************************** //
 
 using System;
-using System.ComponentModel;
-using System.Diagnostics;
-using System.Globalization;
-using System.Reflection;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows;
+using System.Threading;
+using System.Reflection;
+using System.Diagnostics;
+using System.ComponentModel;
+using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Media.Animation;
 
-using AstroSoundBoard.Core.Components;
+using AutoUpdaterDotNET;
+using log4net;
+
 using AstroSoundBoard.Core.Utils;
+using AstroSoundBoard.Core.Components;
+
 using AstroSoundBoard.WPF.Pages.About;
 using AstroSoundBoard.WPF.Pages.Board;
 using AstroSoundBoard.WPF.Pages.Settings;
-using AutoUpdaterDotNET;
-using log4net;
 
 namespace AstroSoundBoard.WPF.Windows
 {
@@ -152,7 +153,7 @@ namespace AstroSoundBoard.WPF.Windows
 							{
 								Thread.Sleep(10);
 								leftThickness -= 10;
-								Application.Current.Dispatcher.Invoke(() => { SideMenu.Margin = new Thickness(leftThickness, 0, 0, 0); });
+								Application.Current.Dispatcher.Invoke(() => SideMenu.Margin = new Thickness(leftThickness, 0, 0, 0));
 							}
 						});
 			}
@@ -171,7 +172,7 @@ namespace AstroSoundBoard.WPF.Windows
 							{
 								Thread.Sleep(13);
 								leftThickness += 10;
-								Application.Current.Dispatcher.Invoke(() => { SideMenu.Margin = new Thickness(leftThickness, 0, 0, 0); });
+								Application.Current.Dispatcher.Invoke(() => SideMenu.Margin = new Thickness(leftThickness, 0, 0, 0));
 							}
 						});
 			}

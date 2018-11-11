@@ -132,7 +132,12 @@ namespace AstroSoundBoard.Core.Objects.Models
 
                 if (stream == null)
                 {
-                    MessageBox.Show(@"Sorry this sound can not be played! Please contact the developers, with the name of the Sound you tried to play!", @"ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(
+                        "Sorry this sound can not be played! Please contact the developers, with the name of the Sound you tried to play!",
+                        "ERROR",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error
+                    );
                 }
 
                 using (SoundPlayer player = new SoundPlayer(stream))

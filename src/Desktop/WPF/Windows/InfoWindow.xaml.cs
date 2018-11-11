@@ -35,7 +35,6 @@ namespace AstroSoundBoard.WPF.Windows
             DataContext = this;
         }
 
-        // TODO: This needs more abstractions - But until I refactor the app structure this is better than before.
         private void SaveSound(object sender, RoutedEventArgs e)
         {
             // Get the audio stream ( file from resources )
@@ -49,7 +48,7 @@ namespace AstroSoundBoard.WPF.Windows
 
             var dialog = new SaveFileDialog
             {
-                InitialDirectory = $"{AppSettings.AssemblyDirectory}",
+                InitialDirectory = AppSettings.AssemblyDirectory,
                 Filter = "Wave sound file (*.wav)|*.wav",
                 Title = $"Sound Location for sound : {Model.Name}",
                 FileName = Model.Name
@@ -76,7 +75,7 @@ namespace AstroSoundBoard.WPF.Windows
 
             // Start writing the file to the disk
             using (var mp3Stream = new WaveFileReader(inputStream))
-            {    
+            {
                 WaveFileWriter.CreateWaveFile(dialog.FileName, mp3Stream);
             }
 

@@ -9,8 +9,9 @@
 // <copyright file="SoundViewModel.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
 
-using AstroSoundBoard.Core.Objects.Interfaces;
 using AstroSoundBoard.Core.Objects.Models;
+using AstroSoundBoard.Core.Objects.Interfaces;
+
 using Newtonsoft.Json;
 using PropertyChanged;
 
@@ -20,22 +21,16 @@ namespace AstroSoundBoard.WPF.Controls.Sound
     public class SoundViewModel : IAddableViewModel
     {
         public SoundModel Sound { get; set; }
+        public string IconKind { get;set; }
 
         public SoundViewModel(SoundModel modelDef)
         {
             Sound = modelDef;
         }
 
-        private string iconKind;
-        public string IconKind
+        public void UpdateIcon()
         {
-            get => UpdateIcon();
-            set => iconKind = value;
-        }
-
-        public string UpdateIcon()
-        {
-            return Sound.IsFavorite == JsonConvert.True ? "Heart" : "HeartOutline";
+            IconKind = Sound.IsFavorite == JsonConvert.True ? "Heart" : "HeartOutline";
         }
     }
 }

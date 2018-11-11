@@ -9,14 +9,17 @@
 // <copyright file="SoundView.xaml.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
 // *************************************************************************** //
 
-using System.Reflection;
 using System.Windows;
+using System.Reflection;
 using System.Windows.Controls;
+
 using AstroSoundBoard.Core.Components;
-using AstroSoundBoard.Core.Objects.Interfaces;
 using AstroSoundBoard.Core.Objects.Models;
 using AstroSoundBoard.Core.Utils.Extensions;
+using AstroSoundBoard.Core.Objects.Interfaces;
+
 using AstroSoundBoard.WPF.Windows;
+
 using log4net;
 using Newtonsoft.Json;
 using PropertyChanged;
@@ -40,6 +43,7 @@ namespace AstroSoundBoard.WPF.Controls.Sound
             Log.Debug($"Creating Control for {def.Name}");
 
             Model = new SoundViewModel(def);
+            Model.UpdateIcon();
             Model.Sound.Name = Model.Sound.Name.ToDisplayName();
 
             InitializeComponent();
@@ -54,7 +58,7 @@ namespace AstroSoundBoard.WPF.Controls.Sound
         private void ToggleFavorite(object sender, RoutedEventArgs e)
         {
             Model.Sound.IsFavorite = SoundModel.Sound.IsFavorite == JsonConvert.True ? JsonConvert.False : JsonConvert.True;
-            Model.IconKind = Model.UpdateIcon();
+            Model.UpdateIcon();
             SettingsManager.Update(Model.Sound);
         }
 

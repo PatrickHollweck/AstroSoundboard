@@ -37,10 +37,7 @@ namespace AstroSoundBoard.Core.Components
 
         private void Reload()
         {
-            SoundManager.GetSounds().ForEach(definition =>
-            {
-                SettingsManager.Cache.Add(SoundModel.fromDefinition(definition));
-            });
+            SoundManager.GetSounds().ForEach(definition => SettingsManager.Cache.Add(SoundModel.fromDefinition(definition)));
 
             SettingsManager.Save();
 
@@ -53,22 +50,6 @@ namespace AstroSoundBoard.Core.Components
 
         public void Search(ref ItemsControl itemControl, string element)
         {
-            /* BEGIN EASTER EGG CODE */
-            string[] links =
-                {
-                    "http://stackoverflow.com/admin.php",
-                    "https://youtu.be/dWja_zn_ftc",
-                    "https://youtu.be/LVGRAd8TuaQ",
-                    "https://youtu.be/k7VcSMr3hbc",
-                    "https://youtu.be/K5tVbVu9Mkg"
-                };
-
-            if (element.ToLower().EqualsAnyOf("static", "void", "main", "public"))
-            {
-                Process.Start(links[AppSettings.AppRandom.Next(0, links.Length)]);
-            }
-
-            /* END EASTER EGG CODE */
             itemControl.Items.Filter = item => Filter(item as TView);
 
             bool Filter(IAddableView model)
@@ -78,7 +59,7 @@ namespace AstroSoundBoard.Core.Components
                     return false;
                 }
 
-                return model.SoundModel.Sound.Name.ToLower().Contains(element.ToLower());
+                return model.SoundModel.Sound.Name.IndexOf(element, StringComparison.CurrentCultureIgnoreCase) >= 0;
             }
         }
 

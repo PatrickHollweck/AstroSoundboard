@@ -132,7 +132,12 @@ namespace AstroSoundBoard.Core.Components
             }
             catch (UnauthorizedAccessException exception)
             {
-                MessageBox.Show($@"The settings file could not be read! Make sure you only have one instance of the soundboard running and restart the Application \n\n {exception.Message}", @"Error", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                MessageBox.Show(
+                    $"The settings file could not be read! Make sure you only have one instance of the soundboard running and restart the Application \n\n {exception.Message}",
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Asterisk
+                );
 
                 Environment.Exit(1);
             }

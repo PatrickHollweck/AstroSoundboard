@@ -25,6 +25,7 @@ namespace AstroSoundBoard.WPF.Controls.Keybind
         private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
         public KeybindViewModel Model { get; set; }
+
         public IAddableViewModel SoundModel
         {
             get => Model;
@@ -40,7 +41,7 @@ namespace AstroSoundBoard.WPF.Controls.Keybind
 
             Log.Debug(Model.Sound.Name + " " + Model.Sound.HotKey.HasAssignedKeybind);
 
-            Model.Sound.HotKey.PropertyChanged += (sender, args) => { CurrentKeybindPanel.Visibility = Model.Sound.HotKey.HasAssignedKeybind ? Visibility.Visible : Visibility.Hidden; };
+            Model.Sound.HotKey.PropertyChanged += (sender, args) => CurrentKeybindPanel.Visibility = Model.Sound.HotKey.HasAssignedKeybind ? Visibility.Visible : Visibility.Hidden;
             Model.Sound.HotKey.RaisePropertyChanged();
         }
 

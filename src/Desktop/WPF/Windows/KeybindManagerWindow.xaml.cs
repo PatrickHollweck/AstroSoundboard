@@ -52,7 +52,6 @@ namespace AstroSoundBoard.WPF.Windows
         private void ToogleFavorites(object sender, RoutedEventArgs e)
         {
             itemManager.ToogleFavorites(ref ItemCtrl);
-
         }
 
         public static void Update()

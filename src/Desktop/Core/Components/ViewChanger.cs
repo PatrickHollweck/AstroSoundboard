@@ -1,16 +1,4 @@
-﻿// ****************************** Module Header ****************************** //
-// 
-// 
-// Last Modified: 11:05:2017 / 16:23
-// Creation: 11:05:2017
-// Project: AstroSoundBoard
-// 
-// 
-// <copyright file="ViewChanger.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
-// *************************************************************************** //
-
-
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Reflection;
 using System.Windows.Controls;
 using AstroSoundBoard.WPF.Windows;

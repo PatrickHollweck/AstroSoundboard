@@ -20,7 +20,7 @@ namespace AstroSoundBoard.WPF.Pages.Settings
 {
     public partial class SettingsView : UserControl
     {
-        private SettingsModel Model { get; set; }
+        private SettingsModel Model { get; }
 
         public SettingsView()
         {

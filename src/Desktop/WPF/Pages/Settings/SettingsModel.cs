@@ -17,7 +17,14 @@ namespace AstroSoundBoard.WPF.Pages.Settings
     {
         private readonly Properties.Settings configuration = Properties.Settings.Default;
 
+        private int selectedColor = Properties.Settings.Default.PrimaryColor;
+        private int selectedAccentColor = Properties.Settings.Default.AccentColor;
+
+        private bool isDarkModeEnabled = Properties.Settings.Default.IsDarkModeEnabled;
         private bool enableKeybinds = Properties.Settings.Default.EnableSoundHotKeys;
+
+        public string CurrentVersion { get; } = Assembly.GetExecutingAssembly().GetName().Version.ToString();
+
         public bool EnableKeybinds
         {
             get => enableKeybinds;
@@ -28,7 +35,6 @@ namespace AstroSoundBoard.WPF.Pages.Settings
             }
         }
 
-        private bool isDarkModeEnabled = Properties.Settings.Default.IsDarkModeEnabled;
         public bool IsDarkModeEnabled
         {
             get => isDarkModeEnabled;
@@ -40,7 +46,6 @@ namespace AstroSoundBoard.WPF.Pages.Settings
             }
         }
 
-        private int selectedColor = Properties.Settings.Default.PrimaryColor;
         public int SelectedColor
         {
             get => selectedColor;
@@ -52,7 +57,6 @@ namespace AstroSoundBoard.WPF.Pages.Settings
             }
         }
 
-        private int selectedAccentColor = Properties.Settings.Default.AccentColor;
         public int SelectedAccentColor
         {
             get => selectedAccentColor;
@@ -63,7 +67,5 @@ namespace AstroSoundBoard.WPF.Pages.Settings
                 App.ApplyMaterialTheme();
             }
         }
-
-        public string CurrentVersion { get; } = Assembly.GetExecutingAssembly().GetName().Version.ToString();
     }
 }

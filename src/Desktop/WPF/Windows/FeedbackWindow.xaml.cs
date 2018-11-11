@@ -1,15 +1,4 @@
-﻿// ****************************** Module Header ****************************** //
-//
-//
-// Last Modified: 29:04:2017 / 20:53
-// Creation: 29:04:2017
-// Project: AstroSoundBoard
-//
-//
-// <copyright file="FeedbackWindow.xaml.cs" company="Patrick Hollweck" GitHub="https://github.com/FetzenRndy">//</copyright>
-// *************************************************************************** //
-
-using System.Windows;
+﻿using System.Windows;
 using AstroSoundBoard.Core.Objects;
 using SharpRaven;
 using SharpRaven.Data;
@@ -18,7 +7,6 @@ namespace AstroSoundBoard.WPF.Windows
 {
     public partial class FeedbackWindow : Window
     {
-
         public FeedbackWindow()
         {
             InitializeComponent();
